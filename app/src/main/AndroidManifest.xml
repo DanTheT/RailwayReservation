@@ -10,6 +10,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
         <activity
+            android:name=".passenger.PassengerTicket"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerSignup"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerScreen"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerReservation"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerPayment"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerMembership"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerLogin"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerHome"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerCancellation"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerAccount"
+            android:exported="false" />
+        <activity
             android:name=".passengerTrain.TrainMainActivity"
             android:exported="false" />
         <activity
