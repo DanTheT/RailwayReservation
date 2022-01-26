@@ -1,0 +1,162 @@
+<resources>
+    <string name="app_name">RailwayReservation</string>
+
+    //admin login
+    <string name="title_activity_admin_login">Login</string>
+    <string name="admin_login_title">Admin Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="register_acc">New? Register</string>
+    <string name="background_photo_contentDesc">train background photo</string>
+    <string name="btn_train_manage">Train Management</string>
+    <string name="btn_train_announce">Announcement Management</string>
+    <string name="btn_train_reporting">Reports</string>
+    <string name="btn_train_issueManage">Issues Management</string>
+
+    //admin register
+    <string name="admin_register_title">Registration</string>
+    <string name="register_name">Enter Name</string>
+    <string name="prompt_phoneNumber">E.g. 0121124562</string>
+    <string name="register_confirm_pass">Confirm Password</string>
+    <string name="action_register">Register</string>
+
+    //Train Page
+    <string name="title_activity_train_main">Main Train Page</string>
+    <string name="title_home">Home</string>
+    <string name="title_passenger">Passenger</string>
+    <string name="title_admin">Admin</string>
+
+    //Train Info
+    <string name="type_text">Train Type: </string>
+    <string name="add_type_hint">E.g. XXX Train</string>
+    <string name="type_spinner_desc">Select train type</string>
+    <string name="lane_text">Train Lane: </string>
+    <string name="add_lane_hint">E.g. Angsana Line</string>
+    <string name="lane_spinner_desc">Select train lane</string>
+    <string name="stationStart_text">Train Station - Start: </string>
+    <string name="add_stationStart_hint">E.g. Station SXXX</string>
+    <string name="stationEnd_text">Train Station - End: </string>
+    <string name="trainInfoFrag_trainTypeSpinner">Select what train want to make reserve</string>
+    <string name="trainInfoFrag_trainNoText">Train Number: </string>
+
+    //Add Train Info
+    <string name="add_stationEnd_hint">E.g. Station EXXX</string>
+    <string name="station_spinner_desc">Select start train station</string>
+    <string name="station_spinner_desc2">Select end train station</string>
+    <string name="search_train_btn">Search</string>
+    <string name="selection_train_btn">Select</string>
+    <string name="add_train_btn">Add</string>
+    <string name="add_trainInfo_back_btn">Back to info page</string>
+    <string name="numOfCoachText">No of car/coach: </string>
+    <string name="numOfCoachSpinnerCD">The train has how many car/coach</string>
+    <string name="addTrainInfoStartStationCD">Start from where</string>
+    <string name="addTrainInfoEndStationCD">End at where</string>
+    <string name="addTrainNoText">Train No: </string>
+    <string name="addTrainNoHint">E.g. 10</string>
+
+    <string-array name="numOfTrainCar">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="trainType_items">
+        <item>Angsana Train</item>
+        <item>Baram Train</item>
+        <item>Cate Train</item>
+        <item>Dalhim Train</item>
+        <item>Eve Train</item>
+    </string-array>
+
+    <string-array name="lane_items">
+        <item>Standard Lane</item>
+        <item>Express Lane</item>
+    </string-array>
+
+    //Train Schedule
+    <string name="schedule_page_title">Schedule</string>
+    <string name="schedule_train_type_txt">Train Type: </string>
+    <string name="arrow_towards_image">This image to show from station towards next station</string>
+
+    //Train Schedule Add
+    <string name="add_departureTime">Departure Time: </string>
+    <string name="add_arrivalTime">Arrival Time: </string>
+
+    //Train Schedule Update
+    <string name="update_departureTime">Departure Time: </string>
+    <string name="update_arrivalTime">Arrival Time: </string>
+
+    //Issues
+    <string name="issue_text">Issues: </string>
+    <string name="issue_describe">Describe issue: </string>
+    <string name="issue_coach">Coach Id: </string>
+    <string name="issue_coachHint">E.g. A12</string>
+    <string name="issue_describeHint">Explain the issue</string>
+    <string name="issue_spinnerHint">Select suitable issue</string>
+    <string name="issue_btn">Report</string>
+    <string name="title_activity_main2">MainActivity2</string>
+
+    //Train Manage Page
+    <string name="train_info_text">Train Info</string>
+    <string name="train_schedule_text">Train Schedule</string>
+    <string name="train_seats_text">Train Seats</string>
+
+    //Train Info Manage Page
+    <string name="add_text">Add</string>
+    <string name="update_text">Update</string>
+    <string name="delete_text">Delete</string>
+
+    //Train Schedule Manage Page
+    <string-array name="schedule_time">
+        <item>0800</item>
+        <item>0830</item>
+        <item>0900</item>
+        <item>0930</item>
+        <item>1000</item>
+        <item>1030</item>
+        <item>1100</item>
+        <item>1130</item>
+        <item>1200</item>
+        <item>1230</item>
+    </string-array>
+
+    <string-array name="station_names">
+        <item>Angsana Station</item>
+        <item>Avion Station</item>
+        <item>Balak Station</item>
+        <item>Chino Station</item>
+        <item>Dalluman Station</item>
+        <item>Edward Station</item>
+        <item>Federick Station</item>
+        <item>Golum Station</item>
+        <item>Helumin Station</item>
+        <item>Indigo Station</item>
+        <item>Jesper Station </item>
+    </string-array>
+
+    //Delete page
+    <string-array name="train_type_items">
+        <item>Angsana Train</item>
+        <item>Baram Train</item>
+        <item>Cate Train</item>
+        <item>Dalhim Train</item>
+    </string-array>
+    <string name="dlt_start_station_contentDesc">Select start station to find into</string>
+    <string name="dlt_train_contentDesc">Search for train to delete</string>
+    <string name="dlt_page_dlt_btn">Delete</string>
+    <string name="bck_to_info_page_dlt_btn">Back To Info Page</string>
+
+    //update page
+    <string name="update_info_btn">Update</string>
+    <string name="back_info_btn">Back to info</string>
+
+    //recyclerview list_issues
+    <string name="listIssues_issueId">Issue Id: </string>
+    <string name="listIssues_receivedIssue">Received Issue: </string>
+    <string name="listIssues_carId">Car Id: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
