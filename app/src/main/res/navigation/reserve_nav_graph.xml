@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reserve_nav_graph"
+    app:startDestination="@id/trainInfoFragment">
+
+    <fragment
+        android:id="@+id/trainInfoFragment"
+        android:name="com.example.railwayreservation.passengerTrain.trainInfo.TrainInfoFragment"
+        android:label="fragment_train_info"
+        tools:layout="@layout/fragment_train_info" >
+        <action
+            android:id="@+id/action_trainInfoFragment_to_trainScheduleFragment"
+            app:destination="@id/trainScheduleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainScheduleFragment"
+        android:name="com.example.railwayreservation.passengerTrain.trainSchedule.TrainScheduleFragment"
+        android:label="fragment_train_schedule"
+        tools:layout="@layout/fragment_train_schedule" >
+        <action
+            android:id="@+id/action_trainScheduleFragment_to_passengerSeatsFragment"
+            app:destination="@id/passengerSeatsFragment" />
+
+        <argument
+            android:name="recipient"
+            android:defaultValue="None"/>
+    </fragment>
+    <fragment
+        android:id="@+id/passengerSeatsFragment"
+        android:name="com.example.railwayreservation.passengerTrain.trainSeats.PassengerSeatsFragment"
+        android:label="fragment_passenger_seats"
+        tools:layout="@layout/fragment_passenger_seats">
+
+        <argument
+            android:name="recipient"
+            android:defaultValue="None"/>
+    </fragment>
+</navigation>
