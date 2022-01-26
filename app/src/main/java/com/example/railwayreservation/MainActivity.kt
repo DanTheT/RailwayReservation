@@ -7,6 +7,7 @@ import com.example.railwayreservation.admin.AdminLogin
 import com.example.railwayreservation.databinding.ActivityMainBinding
 import com.example.railwayreservation.passenger.PassengerHome
 import com.example.railwayreservation.passenger.PassengerLogin
+import com.example.railwayreservation.passenger.PassengerScreen
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.buttonPassengerLogin.setOnClickListener {
-            val intent = Intent(this, PassengerLogin::class.java).apply {
+            val intent = Intent(this, PassengerScreen::class.java).apply {
 
             }
             startActivity(intent)

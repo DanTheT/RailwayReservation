@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
         <activity
+            android:name=".passenger.PassengerChgPw"
+            android:exported="false" />
+        <activity
             android:name=".passenger.PassengerTicket"
             android:exported="false" />
         <activity

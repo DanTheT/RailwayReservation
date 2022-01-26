@@ -6,4 +6,143 @@
     android:layout_height="match_parent"
     tools:context=".passenger.PassengerMembership">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#eff1f8"
+            android:src="@drawable/membership" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="My Membership"
+            android:textSize="18sp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="83dp"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="Status"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/StatusView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="right|center_vertical"
+                android:paddingRight="20dp"
+                android:text="Status"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="118dp"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="Since"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/sinceDateView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="right|center_vertical"
+                android:paddingRight="20dp"
+                android:text="Date"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="My Account"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="205dp"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="Points Allocated"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/pointsView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="right|center_vertical"
+                android:paddingRight="20dp"
+                android:text="Points"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnApplyMembership"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="Apply new membership"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:backgroundTint="#fff" />
+
+        <Button
+            android:id="@+id/btnMyBenefits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="My Benefits"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:backgroundTint="#fff" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
