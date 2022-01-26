@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
         <activity
+            android:name=".reportIssue.IssueManage"
+            android:exported="false" />
+        <activity
+            android:name=".reportIssue.ReportIssue"
+            android:exported="false" />
+        <activity
+            android:name=".admin.trainManage.TrainManage"
+            android:exported="false" />
+        <activity
             android:name=".admin.AdminLogin"
             android:exported="false" />
         <activity

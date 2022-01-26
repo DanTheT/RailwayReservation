@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".admin.trainInfo.addTrain.AddTrainInfoFragment">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/type_text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/addTrainTypeTxt"
+        app:layout_constraintStart_toStartOf="@+id/addTrainTypeTxt" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lane_text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/addTrainLaneTxt"
+        app:layout_constraintStart_toStartOf="@+id/addTrainLaneTxt" />
+
+    <EditText
+        android:id="@+id/addTrainTypeTxt"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="@string/add_type_hint"
+        android:textColorHint="#757575"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/addTrainLaneTxt"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/add_lane_hint"
+        android:textColorHint="#757575"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTrainTypeTxt" />
+
+    <Button
+        android:id="@+id/add_train_btn"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/add_train_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTrainNoTxt" />
+
+    <Button
+        android:id="@+id/back_info_page_btn"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/add_trainInfo_back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_train_btn" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/numOfCoachText"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/addCoachNumSpinner"
+        app:layout_constraintStart_toStartOf="@+id/addCoachNumSpinner" />
+
+    <Spinner
+        android:id="@+id/addCoachNumSpinner"
+        android:layout_width="355dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription="@string/numOfCoachSpinnerCD"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTrainInfoEndSpinner" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addTrainNoText"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/addTrainNoTxt"
+        app:layout_constraintStart_toStartOf="@+id/addTrainNoTxt" />
+
+    <EditText
+        android:id="@+id/addTrainNoTxt"
+        android:layout_width="355dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addCoachNumSpinner"
+        android:hint="@string/addTrainNoHint"
+        />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Staion: "
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/addTrainInfoStartSpinner"
+        app:layout_constraintStart_toStartOf="@+id/addTrainInfoStartSpinner" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Station: "
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/addTrainInfoEndSpinner"
+        app:layout_constraintStart_toStartOf="@+id/addTrainInfoEndSpinner" />
+
+    <Spinner
+        android:id="@+id/addTrainInfoStartSpinner"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription="@string/addTrainInfoStartStationCD"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTrainLaneTxt" />
+
+    <Spinner
+        android:id="@+id/addTrainInfoEndSpinner"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/addTrainInfoEndStationCD"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTrainInfoStartSpinner" />
+</androidx.constraintlayout.widget.ConstraintLayout>
