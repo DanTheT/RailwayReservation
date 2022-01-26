@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdk 31
 

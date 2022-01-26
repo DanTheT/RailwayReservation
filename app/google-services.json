@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "475423374900",
+    "firebase_url": "https://test-fyp-58751-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "test-fyp-58751",
+    "storage_bucket": "test-fyp-58751.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475423374900:android:94213539c36bb2f2121461",
+        "android_client_info": {
+          "package_name": "com.example.railwayreservation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475423374900-ns8kk2q5ojgu0cqo7mj41thlis67cr3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8nzk_23d25URJn535cvPwZDfMCGm8YEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475423374900-ns8kk2q5ojgu0cqo7mj41thlis67cr3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475423374900:android:8f053bf9c70cdaee121461",
+        "android_client_info": {
+          "package_name": "com.example.railwayreservationfrontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475423374900-ns8kk2q5ojgu0cqo7mj41thlis67cr3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8nzk_23d25URJn535cvPwZDfMCGm8YEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475423374900-ns8kk2q5ojgu0cqo7mj41thlis67cr3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475423374900:android:343f8d62726f94ab121461",
+        "android_client_info": {
+          "package_name": "com.example.trainfyp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475423374900-ns8kk2q5ojgu0cqo7mj41thlis67cr3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8nzk_23d25URJn535cvPwZDfMCGm8YEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475423374900-ns8kk2q5ojgu0cqo7mj41thlis67cr3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
