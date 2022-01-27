@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".passenger.PassengerHome">
 
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
     <ImageButton
         android:id="@+id/btnReservation"
         android:layout_width="wrap_content"
@@ -21,7 +15,9 @@
         android:background="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/reservation" />
+        app:srcCompat="@drawable/reservation"
+        android:contentDescription="something1"
+        />
 
     <ImageButton
         android:id="@+id/btnCancellation"
@@ -32,7 +28,9 @@
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cancellation" />
+        app:srcCompat="@drawable/cancellation"
+        android:contentDescription="something1"
+        />
 
     <ImageButton
         android:id="@+id/btnPayment"
@@ -43,7 +41,9 @@
         android:background="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnReservation"
-        app:srcCompat="@drawable/payment" />
+        app:srcCompat="@drawable/payment"
+        android:contentDescription="something1"
+        />
 
     <ImageButton
         android:id="@+id/btnTicket"
@@ -54,7 +54,9 @@
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCancellation"
-        app:srcCompat="@drawable/tickets" />
+        app:srcCompat="@drawable/tickets"
+        android:contentDescription="something1"
+        />
 
     <ImageButton
         android:id="@+id/btnAccount"
@@ -65,7 +67,9 @@
         android:background="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPayment"
-        app:srcCompat="@drawable/account" />
+        app:srcCompat="@drawable/account"
+        android:contentDescription="something1"
+        />
 
     <ImageButton
         android:id="@+id/btnMembership"
@@ -76,7 +80,9 @@
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnTicket"
-        app:srcCompat="@drawable/membership" />
+        app:srcCompat="@drawable/membership"
+        android:contentDescription="something1"
+        />
 
     <TextView
         android:id="@+id/textView5"
@@ -162,4 +168,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnTicket" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btnToIssues"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/rounded_corner"
+        android:text="Have any issues?"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

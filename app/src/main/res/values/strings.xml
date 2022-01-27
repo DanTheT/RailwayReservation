@@ -65,9 +65,9 @@
 
     <string-array name="trainType_items">
         <item>Angsana Train</item>
-        <item>Baram Train</item>
-        <item>Cate Train</item>
-        <item>Dalhim Train</item>
+        <item>Balak Train</item>
+        <item>Chino Train</item>
+        <item>Dalluman Train</item>
         <item>Eve Train</item>
     </string-array>
 
