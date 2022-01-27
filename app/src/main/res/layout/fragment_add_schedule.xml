@@ -100,10 +100,9 @@
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="32dp"
         android:text="@string/add_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select_end_station_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/button_scheduleCheck" />
 
     <TextView
         android:id="@+id/textView26"
@@ -133,4 +132,14 @@
         android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/schedule_add_btn" />
+
+    <Button
+        android:id="@+id/button_scheduleCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="24dp"
+        android:text="Check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_end_station_spinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.announcement.SendAnnouncementActivity
 import com.example.railwayreservation.admin.login.AdminLoginFragment
+import com.example.railwayreservation.admin.trainManage.TrainManage
 import com.example.railwayreservation.databinding.FragmentAdminMainBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -37,11 +39,18 @@ class AdminMainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.trainManageBtn.setOnClickListener {
-            /*val intent = Intent(context, TrainManagePageActivity::class.java).apply {
+        binding.trainAnnounceBtn.setOnClickListener {
+            val intent = Intent(context, SendAnnouncementActivity::class.java).apply {
 
             }
-            startActivity(intent)*/
+            startActivity(intent)
+        }
+
+        binding.trainManageBtn.setOnClickListener {
+            val intent = Intent(context, TrainManage::class.java).apply {
+
+            }
+            startActivity(intent)
         }
 
         binding.trainIssuesBtn.setOnClickListener {

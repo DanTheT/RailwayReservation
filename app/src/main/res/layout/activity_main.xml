@@ -35,12 +35,13 @@
 
     <Button
         android:id="@+id/button_passengerLogin"
-        android:layout_width="356dp"
-        android:layout_height="46dp"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
         android:layout_marginStart="65dp"
         android:layout_marginTop="400dp"
         android:layout_marginEnd="66dp"
         android:background="@drawable/rounded_corner"
+        android:minHeight="48dp"
         android:text="Passenger Login"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,12 +50,13 @@
 
     <Button
         android:id="@+id/button_adminLogin"
-        android:layout_width="356dp"
-        android:layout_height="46dp"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
         android:layout_marginStart="65dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="66dp"
         android:background="@drawable/rounded_corner"
+        android:minHeight="48dp"
         android:text="Admin Login"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

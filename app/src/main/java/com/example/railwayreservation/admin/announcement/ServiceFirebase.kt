@@ -17,14 +17,14 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import kotlin.random.Random
 
-const val CHANNEL_ID = "announcement_channel"
+private const val CHANNEL_ID = "announcement_channel"
 
 class ServiceFirebase: FirebaseMessagingService() {
 
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, SendAnnouncementActivity::class.java)
         val announcementManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val announcementID = Random.nextInt()
 

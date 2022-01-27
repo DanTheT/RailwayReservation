@@ -8,11 +8,91 @@
 
     <Button
         android:id="@+id/back_seats_manage_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="480dp"
+        android:background="@drawable/rounded_corner"
         android:text="Back"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_addSeats"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="416dp"
+        android:background="@drawable/rounded_corner"
+        android:text="Add"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Train name: "
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText_seatTrainName"
+        app:layout_constraintStart_toStartOf="@+id/editText_seatTrainName" />
+
+    <EditText
+        android:id="@+id/editText_seatTrainName"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="168dp"
+        android:ems="10"
+        android:hint="Place train name: XXX train"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of seats: "
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Place number of seats"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_seatTrainName" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seat number: "
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText_seatNumber"
+        app:layout_constraintStart_toStartOf="@+id/editText_seatNumber" />
+
+    <EditText
+        android:id="@+id/editText_seatNumber"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Place seat number: seatA*"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@ package com.example.railwayreservation.admin.announcement
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.railwayreservation.R
+import android.view.MenuItem
 import com.example.railwayreservation.databinding.ActivitySendAnnouncementBinding
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-const val TOPIC = "/topics/announceTopic"
+const val TOPIC = "announceTopic"
 
 class SendAnnouncementActivity : AppCompatActivity() {
 
@@ -31,8 +31,8 @@ class SendAnnouncementActivity : AppCompatActivity() {
             val announceMessage = binding.editTextAnnonceMsg.text.toString()
 
             if(announceTitle.isNotEmpty() && announceMessage.isNotEmpty()){
-                PushAnnouncement(
-                    AnnouncementData(announceTitle, announceMessage),
+                PushNotification(
+                    NotificationData(announceTitle, announceMessage),
                     TOPIC
                 ).also {
                     sendAnnouncement(it)
@@ -41,9 +41,9 @@ class SendAnnouncementActivity : AppCompatActivity() {
         }
     }
 
-    private fun sendAnnouncement(announcement: PushAnnouncement) = CoroutineScope(Dispatchers.IO).launch {
+    private fun sendAnnouncement(notification: PushNotification) = CoroutineScope(Dispatchers.IO).launch {
         try {
-            val response = RetrofitInstance.api.postAnnouncement(announcement)
+            val response = RetrofitInstance.api.postNotification(notification)
 
             if(response.isSuccessful){
                 Log.d(TAG, "Response: ${Gson().toJson(response)}")

@@ -1,6 +1,6 @@
 package com.example.railwayreservation.admin.announcement
 
-import com.example.railwayreservation.admin.announcement.ApiConstants.Companion.BASE_URL
+import com.example.railwayreservation.admin.announcement.Constants.Companion.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -15,7 +15,7 @@ class RetrofitInstance {
         }
 
         val api by lazy {
-            retrofit.create(AnnouncementAPI::class.java)
+            retrofit.create(NotificationAPI::class.java)
         }
     }
 
