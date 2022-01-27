@@ -1,5 +1,6 @@
 package com.example.railwayreservation.passenger
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -36,9 +37,12 @@ class PassengerTicket : AppCompatActivity() {
         ivQRCode = findViewById(R.id.ivQRCode)
         etData = findViewById(R.id.etData)
         btnGenerate = findViewById(R.id.btnGenerate)
-
         btnViewPayHistory = findViewById(R.id.btnViewPayHistory)
 
+        btnViewPayHistory.setOnClickListener{
+            startActivity(Intent(this,PurchaseHistory::class.java))
+
+        }
 
         btnGenerate.setOnClickListener {
 

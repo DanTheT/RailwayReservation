@@ -24,13 +24,13 @@ class TransactionAdapter(private var historyList: ArrayList<Transactions>) : Rec
 
         val currentItem = historyList[position]
 
-        holder.arrivalTime.text = currentItem.arrivalTime
-        holder.date.text = currentItem.date
-        holder.departTime.text = currentItem.departTime
-        holder.fromStation.text = currentItem.fromStation
-        holder.reachTime.text = currentItem.reachTime
-        holder.toStation.text = currentItem.toStation
-        holder.transactionID.text = currentItem.transactionID
+        holder.arrivalTime.text = currentItem.arrivalTime.toString().trim()
+        holder.date.text = currentItem.date.toString().trim()
+        holder.departTime.text = currentItem.departTime.toString().trim()
+        holder.fromStation.text = currentItem.fromStation.toString().trim()
+        holder.reachTime.text = currentItem.reachTime.toString().trim()
+        holder.toStation.text = currentItem.toStation.toString().trim()
+        holder.transactionID.text = currentItem.transactionID.toString().trim()
     }
 
     override fun getItemCount(): Int {

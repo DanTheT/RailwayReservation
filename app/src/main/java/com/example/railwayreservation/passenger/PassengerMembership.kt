@@ -34,6 +34,12 @@ class PassengerMembership : AppCompatActivity() {
         sinceDateTV = findViewById(R.id.sinceDateView)
         pointsTV = findViewById(R.id.pointsView)
 
+        btnApplyMembership = findViewById(R.id.btnApplyMembership)
+        btnMyBenefits = findViewById(R.id.btnMyBenefits)
+
+        btnApplyMembership.isEnabled = false
+        btnMyBenefits.isEnabled = false
+
 
         loadProfile()
     }
