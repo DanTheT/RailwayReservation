@@ -3,6 +3,7 @@ package com.example.railwayreservation.passenger
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -11,13 +12,14 @@ import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.NavigationFrag
 import com.example.railwayreservation.admin.trainInfo.TrainInfo
 import com.example.railwayreservation.admin.trainInfo.addTrain.AddTrainInfoFragment
+import com.example.railwayreservation.passengerTrain.TrainMainActivity
 import com.example.railwayreservation.passengerTrain.trainInfo.TrainInfoFragment
+import com.example.railwayreservation.reportIssue.ReportIssue
 import com.google.firebase.auth.FirebaseAuth
 
 class PassengerHome : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-
 
     private lateinit var  btnReservation: ImageButton
     private lateinit var  btnCancellation: ImageButton
@@ -25,6 +27,7 @@ class PassengerHome : AppCompatActivity() {
     private lateinit var  btnTicket: ImageButton
     private lateinit var  btnAccount: ImageButton
     private lateinit var  btnMembership: ImageButton
+    private lateinit var btnIssues: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,8 +44,7 @@ class PassengerHome : AppCompatActivity() {
 //go to reservation screen
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
-            startActivity(Intent(this,PassengerReservation::class.java))
-//                        supportFragmentManager.beginTransaction().add(R.id.container, TrainInfoFragment()).commit()
+            startActivity(Intent(this,TrainMainActivity::class.java))
 
             }
 
@@ -76,6 +78,10 @@ class PassengerHome : AppCompatActivity() {
             startActivity(Intent(this, PassengerMembership::class.java))
         }
 
+        btnIssues = findViewById(R.id.btnToIssues)
+        btnIssues.setOnClickListener{
+            startActivity(Intent(this, ReportIssue::class.java))
+        }
     }
 }
 
