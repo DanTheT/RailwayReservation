@@ -48,18 +48,19 @@ class AddSeatsFragment : Fragment() {
         binding.buttonAddSeats.setOnClickListener {
             val trainName = binding.editTextSeatTrainName.text.toString()
             val seatNo = binding.editTextSeatNumber.text.toString()
+            val seatPrice = binding.editTextSeatPrice.text.toString()
 
-            addSeatsData(trainName,seatNo)
+            addSeatsData(trainName,seatNo, seatPrice)
         }
     }
 
-    private fun addSeatsData(trainName: String, seatNo: String){
+    private fun addSeatsData(trainName: String, seatNo: String, pricing: String){
         val available = "Yes"
         val reserved = "No"
 
         seatsDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainName)
 
-        val seats = SeatsData(available, seatNo, reserved)
+        val seats = SeatsData(available, seatNo, reserved, pricing)
 
         seatsDatabase.child("Seats").child(seatNo).setValue(seats).addOnSuccessListener {
             binding.editTextSeatNumber.text.clear()

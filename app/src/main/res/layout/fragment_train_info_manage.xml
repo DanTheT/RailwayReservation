@@ -13,6 +13,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="152dp"
         android:text="@string/add_text"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +26,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="50dp"
         android:text="@string/update_text"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_btn" />
@@ -35,6 +39,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="50dp"
         android:text="@string/delete_text"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_btn" />
@@ -46,6 +52,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="50dp"
         android:text="Check"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/delete_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

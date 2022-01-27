@@ -4,4 +4,5 @@ data class SeatsData(
     val available: String = "",
     val seatNo: String = "",
     val reserved: String = "",
+    val seatPrice: String = ""
 )

@@ -44,7 +44,7 @@ class PassengerSeatsFragment : Fragment() {
     }
 
     private fun getSelectedSeatData(trainType: String){
-        seatsDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainType).child("Seats").child("car1")
+        seatsDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainType).child("Seats")
 
         seatsDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
