@@ -21,6 +21,8 @@ class AddScheduleFragment : Fragment() {
     private var _binding: FragmentAddScheduleBinding? = null
     private val binding get() = _binding!!
     private lateinit var scheduleDatabase: DatabaseReference
+    private lateinit var startTimeValue: Spinner
+    private lateinit var endTimeValue: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,9 @@ class AddScheduleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAddScheduleBinding.inflate(inflater, container, false)
+
+        startTimeValue = binding.scheduleStartTimeSpinner
+        endTimeValue = binding.scheduleDepartTimeSpinner
 
         insertArrivalTimeSpinner()
         insertDepartureTimeSpinner()
@@ -49,14 +54,15 @@ class AddScheduleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val startTimeValue = binding.scheduleStartTimeSpinner.selectedItem.toString()
-        val endTimeValue = binding.scheduleDepartTimeSpinner.selectedItem.toString()
+        binding.buttonScheduleCheck.setOnClickListener {
+            if(startTimeValue.selectedItem.toString() <= endTimeValue.selectedItem.toString()){
+                Toast.makeText(requireContext(), "$startTimeValue and $endTimeValue are clockwise", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(requireContext(), "$startTimeValue and $endTimeValue are anti-clockwise", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         addFunction()
-
-        binding.buttonScheduleCheck.setOnClickListener {
-            checkTimeSelected(startTimeValue, endTimeValue)
-        }
     }
 
     private fun insertArrivalTimeSpinner(){
@@ -112,14 +118,6 @@ class AddScheduleFragment : Fragment() {
             Toast.makeText(requireContext(), "Add successfully to $startStation", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener{
             Toast.makeText(requireContext(), "Failed add to $startStation", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun checkTimeSelected(startTime: String, endTime: String){
-        if(startTime <= endTime){
-            Toast.makeText(requireContext(), "$startTime + and $endTime are clockwise", Toast.LENGTH_SHORT).show()
-        }else{
-            Toast.makeText(requireContext(), "Time selection is illogical", Toast.LENGTH_SHORT).show()
         }
     }
 

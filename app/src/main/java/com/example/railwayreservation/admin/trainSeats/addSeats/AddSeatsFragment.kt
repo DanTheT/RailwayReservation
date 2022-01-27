@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.NavigationFrag
+import com.example.railwayreservation.admin.trainSeats.SeatsData
 import com.example.railwayreservation.admin.trainSeats.SeatsManageFragment
 import com.example.railwayreservation.databinding.FragmentAddSeatsBinding
 import com.google.firebase.database.*
@@ -39,17 +41,34 @@ class AddSeatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val trainName = binding.editTextSeatTrainName.text.toString()
-        val seatNo = binding.editTextSeatNumber.text.toString()
+        addFuncButton()
+    }
 
+    private fun addFuncButton(){
         binding.buttonAddSeats.setOnClickListener {
+            val trainName = binding.editTextSeatTrainName.text.toString()
+            val seatNo = binding.editTextSeatNumber.text.toString()
+
             addSeatsData(trainName,seatNo)
         }
     }
 
     private fun addSeatsData(trainName: String, seatNo: String){
-        val testString = "available"
+        val available = "Yes"
+        val reserved = "No"
+
         seatsDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainName)
+
+        val seats = SeatsData(available, seatNo, reserved)
+
+        seatsDatabase.child("Seats").child(seatNo).setValue(seats).addOnSuccessListener {
+            binding.editTextSeatNumber.text.clear()
+            binding.editTextTextPersonName3.text.clear()
+
+            Toast.makeText(requireContext(), "Add successfully to $seatNo", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+            Toast.makeText(requireContext(), "Failed to add", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroyView() {
