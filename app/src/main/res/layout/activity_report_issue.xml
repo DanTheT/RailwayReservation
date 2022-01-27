@@ -74,10 +74,12 @@
 
     <Button
         android:id="@+id/report_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/issue_btn"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coachId_text" />

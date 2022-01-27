@@ -12,6 +12,8 @@ import com.example.railwayreservation.admin.announcement.SendAnnouncementActivit
 import com.example.railwayreservation.admin.login.AdminLoginFragment
 import com.example.railwayreservation.admin.trainManage.TrainManage
 import com.example.railwayreservation.databinding.FragmentAdminMainBinding
+import com.example.railwayreservation.reportIssue.IssueManage
+import com.example.railwayreservation.reportIssue.ReportIssue
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -54,10 +56,10 @@ class AdminMainFragment : Fragment() {
         }
 
         binding.trainIssuesBtn.setOnClickListener {
-            /*val intent = Intent(context, ReportIssueManageActivity::class.java).apply {
+            val intent = Intent(context, IssueManage::class.java).apply {
 
             }
-            startActivity(intent)*/
+            startActivity(intent)
         }
     }
 }
