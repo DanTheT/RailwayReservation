@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".passenger.PassengerHome">
 
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
     <ImageButton
         android:id="@+id/btnReservation"
         android:layout_width="wrap_content"

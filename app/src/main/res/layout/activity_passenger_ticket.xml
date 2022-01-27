@@ -6,4 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".passenger.PassengerTicket">
 
+    <ImageView
+        android:id="@+id/ivQRCode"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="106dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@mipmap/ic_launcher"/>
+
+    <EditText
+        android:id="@+id/etData"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="80dp"
+        android:hint="Enter Data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivQRCode" />
+
+    <Button
+        android:id="@+id/btnGenerate"
+        android:layout_width="356dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="30dp"
+        android:text="Generate QR Code"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etData" />
+
+    <Button
+        android:id="@+id/btnViewPayHistory"
+        android:layout_width="356dp"
+        android:layout_height="46dp"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:text="View Purchase History"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGenerate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

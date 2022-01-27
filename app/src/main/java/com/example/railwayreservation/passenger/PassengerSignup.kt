@@ -99,14 +99,7 @@ class PassengerSignup : AppCompatActivity() {
                         currentUserDb?.child("points")?.setValue("100")
 
 
-
-
-
-                        Toast.makeText(
-                            baseContext,
-                            "Sign Up Successful. Verification email has been sent. Proceed to Login!",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(applicationContext, "Sign Up Successful. Verification email has been sent. Proceed to Login!", Toast.LENGTH_SHORT).show()
 
                         val user = auth.currentUser
                         user!!.sendEmailVerification()

@@ -4,7 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.NavigationFrag
+import com.example.railwayreservation.admin.trainInfo.TrainInfo
+import com.example.railwayreservation.admin.trainInfo.addTrain.AddTrainInfoFragment
+import com.example.railwayreservation.passengerTrain.trainInfo.TrainInfoFragment
 import com.google.firebase.auth.FirebaseAuth
 
 class PassengerHome : AppCompatActivity() {
@@ -35,7 +42,9 @@ class PassengerHome : AppCompatActivity() {
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
             startActivity(Intent(this,PassengerReservation::class.java))
-        }
+//                        supportFragmentManager.beginTransaction().add(R.id.container, TrainInfoFragment()).commit()
+
+            }
 
         //go to cancellation screen
         btnCancellation = findViewById(R.id.btnCancellation)
@@ -69,3 +78,4 @@ class PassengerHome : AppCompatActivity() {
 
     }
 }
+

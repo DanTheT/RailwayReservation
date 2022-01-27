@@ -34,10 +34,53 @@
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_info.xml" value="0.1539855072463768" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_issues.xml" value="0.12335359675785208" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_schedule_passenger.xml" value="0.12335359675785208" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_admin_login.xml" value="0.16271442986881937" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_issue_manage.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_main.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_account.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_cancellation.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_chg_pw.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_home.xml" value="0.22" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_login.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_membership.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_payment.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_reservation.xml" value="0.16581632653061223" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_screen.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_signup.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_ticket.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_purchase_history.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_report_issue.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_send_announcement.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_train_main.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_train_manage.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/forgotpw_dialog.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_add_schedule.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_add_seats.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_add_train_info.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_admin_login.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_admin_main.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_admin_register.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_check_train_info.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_delete_schedule.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_delete_train_info.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_passenger_seats.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_schedule_manage.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_seats_manage.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_train_info.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_train_info_manage.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_train_manage.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_train_schedule.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_update_schedule.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_update_train_info.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_info.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_issues.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_schedule_passenger.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/purchase_history.xml" value="0.33" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/train_info.xml" value="0.22" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

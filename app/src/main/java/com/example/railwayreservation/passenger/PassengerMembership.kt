@@ -38,6 +38,8 @@ class PassengerMembership : AppCompatActivity() {
         loadProfile()
     }
 
+
+
     private fun loadProfile() {
         val user = auth.currentUser
         val userRef = myRef.child(user?.uid!!)
