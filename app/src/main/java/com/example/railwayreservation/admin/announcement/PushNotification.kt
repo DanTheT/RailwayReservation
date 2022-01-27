@@ -1,6 +1,6 @@
 package com.example.railwayreservation.admin.announcement
 
-data class PushAnnouncement(
-    val data: AnnouncementData,
+data class PushNotification(
+    val data: NotificationData,
     val to: String
 )

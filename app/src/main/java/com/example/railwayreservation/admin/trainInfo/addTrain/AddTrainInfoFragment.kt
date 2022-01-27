@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainInfo.TrainInfo
 import com.example.railwayreservation.databinding.FragmentAddTrainInfoBinding
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class AddTrainInfoFragment : Fragment() {
 
@@ -37,6 +40,10 @@ class AddTrainInfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         insertTrainStartStation()
         insertTrainEndStation()
+
+        binding.addTrainBtn.setOnClickListener {
+            addInfo()
+        }
     }
 
     private fun insertTrainCoach(){
@@ -72,6 +79,30 @@ class AddTrainInfoFragment : Fragment() {
         ).also {
                 adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             endSpinner.adapter = adapter
+        }
+    }
+
+    private fun addInfo(){
+        val trainType = binding.addTrainTypeTxt.text.toString()
+        val trainLane = binding.addTrainLaneTxt.text.toString()
+        val noOfCar = binding.addCoachNumSpinner.selectedItem.toString()
+        val trainNum = binding.addTrainNoTxt.text.toString()
+        val startStation = binding.addTrainInfoStartSpinner.selectedItem.toString()
+        val endStation = binding.addTrainInfoEndSpinner.selectedItem.toString()
+
+        trainDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo")
+        val trainInfos = TrainInfo(
+            trainLane, noOfCar, trainNum, startStation, endStation
+        )
+
+        trainDatabase.child(trainType).setValue(trainInfos).addOnSuccessListener {
+            binding.addTrainTypeTxt.text.clear()
+            binding.addTrainLaneTxt.text.clear()
+            binding.addTrainNoTxt.text.clear()
+
+            Toast.makeText(context, "Add Successful, New Train $trainType", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+            Toast.makeText(context, "Add Failed", Toast.LENGTH_SHORT).show()
         }
     }
 

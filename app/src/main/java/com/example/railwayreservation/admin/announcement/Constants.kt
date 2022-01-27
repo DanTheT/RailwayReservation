@@ -1,6 +1,6 @@
 package com.example.railwayreservation.admin.announcement
 
-class ApiConstants {
+class Constants {
 
     //need this object so can use else where
     companion object {

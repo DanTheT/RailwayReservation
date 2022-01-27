@@ -21,6 +21,8 @@ class AddScheduleFragment : Fragment() {
     private var _binding: FragmentAddScheduleBinding? = null
     private val binding get() = _binding!!
     private lateinit var scheduleDatabase: DatabaseReference
+    private lateinit var startTimeValue: Spinner
+    private lateinit var endTimeValue: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,9 @@ class AddScheduleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAddScheduleBinding.inflate(inflater, container, false)
+
+        startTimeValue = binding.scheduleStartTimeSpinner
+        endTimeValue = binding.scheduleDepartTimeSpinner
 
         insertArrivalTimeSpinner()
         insertDepartureTimeSpinner()
@@ -49,8 +54,15 @@ class AddScheduleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.buttonScheduleCheck.setOnClickListener {
+            if(startTimeValue.selectedItem.toString() <= endTimeValue.selectedItem.toString()){
+                Toast.makeText(requireContext(), "$startTimeValue and $endTimeValue are clockwise", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(requireContext(), "$startTimeValue and $endTimeValue are anti-clockwise", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         addFunction()
-        checkTimeSelected()
     }
 
     private fun insertArrivalTimeSpinner(){
@@ -98,32 +110,14 @@ class AddScheduleFragment : Fragment() {
     }
 
     private fun checkNode(trainType: String, startStation: String, endStation: String, arrivalTime: String, departureTime: String){
-        scheduleDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainType).child("Schedule")
+        scheduleDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainType)
 
-        val isExist = true
         val schedule = TrainSchedule(startStation, endStation, arrivalTime, departureTime)
 
-        if(scheduleDatabase.child(startStation).equals(isExist)){
-            Toast.makeText(requireContext(), "This start station exist already", Toast.LENGTH_LONG).show()
-        }else {
-            scheduleDatabase.setValue(schedule).addOnSuccessListener {
-                binding.addTrainTypeTxt.text.clear()
-
-                Toast.makeText(context, "Add Successful at $trainType", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                Toast.makeText(context, "Add Failed at $trainType", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun checkTimeSelected(){
-        val startTime = binding.scheduleStartTimeSpinner.selectedItem.toString()
-        val endTime = binding.scheduleDepartTimeSpinner.selectedItem.toString()
-
-        if(startTime <= endTime){
-            Toast.makeText(requireContext(), "$startTime + and $endTime are clockwise", Toast.LENGTH_SHORT).show()
-        }else{
-            Toast.makeText(requireContext(), "Time selection is illogical", Toast.LENGTH_SHORT).show()
+        scheduleDatabase.child("Schedule").child(startStation).setValue(schedule).addOnSuccessListener {
+            Toast.makeText(requireContext(), "Add successfully to $startStation", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener{
+            Toast.makeText(requireContext(), "Failed add to $startStation", Toast.LENGTH_SHORT).show()
         }
     }
 
