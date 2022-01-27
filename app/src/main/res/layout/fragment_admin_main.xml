@@ -11,8 +11,10 @@
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/rounded_corner"
         android:text="@string/btn_train_manage"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,6 +25,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="50dp"
         android:text="@string/btn_train_announce"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/train_manage_btn" />
 
@@ -33,6 +37,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="50dp"
         android:text="@string/btn_train_reporting"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/train_announce_btn" />
 
@@ -43,6 +49,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="50dp"
         android:text="@string/btn_train_issueManage"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/train_reporting_btn" />
 
@@ -53,6 +61,8 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="50dp"
         android:text="Sign Out"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/train_issues_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

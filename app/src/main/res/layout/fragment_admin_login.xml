@@ -51,6 +51,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:text="@string/action_sign_in"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +64,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="10dp"
         android:text="@string/reset_password"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signInBtn" />
@@ -72,6 +76,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="10dp"
         android:text="@string/register_acc"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resetPassBtn" />
