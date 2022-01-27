@@ -14,13 +14,14 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentTrainInfoBinding
+import com.example.railwayreservation.passengerTrain.trainInfo.TrainInfoFragment
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class PassengerReservation : AppCompatActivity() {
 //    , View.OnClickListener
 
-//    private lateinit var btnCallFrag: Button
+    private lateinit var btnCallFrag: Button
 
     //    private var _binding: FragmentTrainInfoBinding? = null
 //    private val binding get() = _binding!!
@@ -102,23 +103,29 @@ class PassengerReservation : AppCompatActivity() {
 //    }
 //}
 
-//        btnCallFrag = findViewById(R.id.btnCallFrag)
-//        btnCallFrag.setOnClickListener(this)
-
-//        val trainInfo = TrainInfoFragment()
-//        supportFragmentManager.beginTransaction().add(R.id.container, TrainInfoFragment()).commit()
-
-
-//    override fun onClick(view: View) {
-//        if (view.getId() === R.id.btnCallFrag) {
-////            supportFragmentManager.beginTransaction().replace(R.id.container, TrainInfoFragment())
-////                .commit()
-//            val trainInfo = TrainInfoFragment()
-//        supportFragmentManager.beginTransaction().add(R.id.container, TrainInfoFragment()).commit()
-//            btnCallFrag.setVisibility(View.GONE)
-//
-//        }
-//    }
-
     }
 }
+//        btnCallFrag = findViewById(R.id.btnCallFrag)
+//        btnCallFrag.setOnClickListener {
+//
+//            val trainInfo = TrainInfoFragment()
+//            supportFragmentManager.beginTransaction().add(R.id.container, TrainInfoFragment())
+//                .commit()
+//        }
+//
+//        fun onClick(view: View) {
+//            if (view.getId() === R.id.btnCallFrag) {
+//            supportFragmentManager.beginTransaction().replace(R.id.container, TrainInfoFragment())
+//                .commit()
+//                val trainInfo = TrainInfoFragment()
+//                supportFragmentManager.beginTransaction().add(R.id.container, TrainInfoFragment())
+//                    .commit()
+//                btnCallFrag.setVisibility(View.GONE)
+//
+//            }
+//        }
+//    }
+//}
+
+
+

@@ -15,6 +15,11 @@ import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentTrainInfoBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import android.app.Activity
+
+import android.content.Intent
+import com.example.railwayreservation.passenger.PassengerReservation
+
 
 class TrainInfoFragment : Fragment(), View.OnClickListener {
 
@@ -49,10 +54,10 @@ class TrainInfoFragment : Fragment(), View.OnClickListener {
         view.findViewById<Button>(R.id.selection_btn).setOnClickListener(this)
     }
 
-    private fun checkTrainLine(trainType: String){
+    private fun checkTrainLine(trainType: String) {
         trainInfoDb = FirebaseDatabase.getInstance().getReference("TrainInfo")
         trainInfoDb.child(trainType).get().addOnSuccessListener {
-            if(it.exists()){
+            if (it.exists()) {
                 val endStation = it.child("endStation").value
                 val startStation = it.child("startStation").value
                 val trainLine = it.child("trainLine").value
@@ -67,14 +72,14 @@ class TrainInfoFragment : Fragment(), View.OnClickListener {
 
     }
 
-    private fun preloadTrainType(){
+    private fun preloadTrainType() {
         val spinner: Spinner = binding.trainTypeSpinner
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.trainType_items,
             android.R.layout.simple_spinner_item
-        ).also {
-                adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
         }
     }
@@ -86,11 +91,14 @@ class TrainInfoFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         val trainTypeBtn = binding.trainTypeSpinner.selectedItem
-        when(v!!.id){
+        when (v!!.id) {
             R.id.selection_btn -> {
-                if(trainTypeBtn != null){
+                if (trainTypeBtn != null) {
                     val bundle = bundleOf("recipient" to trainTypeBtn.toString())
-                    navController.navigate(R.id.action_trainInfoFragment_to_trainScheduleFragment, bundle)
+                    navController.navigate(
+                        R.id.action_trainInfoFragment_to_trainScheduleFragment,
+                        bundle
+                    )
                 }
             }
         }

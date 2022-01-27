@@ -42,7 +42,6 @@ class PassengerHome : AppCompatActivity() {
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
             startActivity(Intent(this,PassengerReservation::class.java))
-//                        supportFragmentManager.beginTransaction().add(R.id.container, TrainInfoFragment()).commit()
 
             }
 
