@@ -14,6 +14,8 @@ import androidx.navigation.Navigation
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.AdminMainFragment
 import com.example.railwayreservation.databinding.FragmentAdminLoginBinding
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -25,8 +27,10 @@ class AdminLoginFragment : Fragment(), View.OnClickListener {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var navController: NavController
 
-    private lateinit var adminEmail: EditText
-    private lateinit var adminPassword: EditText
+    private lateinit var adminEmail: TextInputEditText
+    private lateinit var emailLayout: TextInputLayout
+    private lateinit var adminPassword: TextInputEditText
+    private lateinit var passwordLayout: TextInputLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,12 +42,12 @@ class AdminLoginFragment : Fragment(), View.OnClickListener {
     ): View? {
         _binding = FragmentAdminLoginBinding.inflate(inflater, container, false)
 
+        emailLayout = binding.emailTxtLayout
         adminEmail = binding.inputEmailTxt
-        adminPassword = binding.inputPassTxt
+        adminPassword = binding.inputPasswordTxt
+        passwordLayout = binding.passwordTxtLayout
 
         firebaseAuth = Firebase.auth
-
-        checkEmptyInput()
 
         return binding.root
     }
@@ -71,10 +75,10 @@ class AdminLoginFragment : Fragment(), View.OnClickListener {
     private fun checkEmptyInput() {
         when {
             TextUtils.isEmpty(adminEmail.text.toString().trim()) -> {
-                adminEmail.error = "Please a valid email"
+                adminEmail.error = getString(R.string.email_empty)
             }
             TextUtils.isEmpty(adminPassword.text.toString().trim()) -> {
-                adminPassword.error = "Please enter password"
+                adminPassword.error = getString(R.string.password_empty)
             }
 
             adminEmail.text.toString().isNotEmpty() &&
@@ -83,12 +87,11 @@ class AdminLoginFragment : Fragment(), View.OnClickListener {
                 if (adminEmail.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))) {
                     if (adminPassword.text.toString().length >= 6) {
                         signInFromFirebase()
-                        Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT).show()
                     } else {
-                        adminPassword.error = "Please enter at least 6 characters"
+                        adminPassword.error = getString(R.string.password_length)
                     }
                 } else {
-                    adminEmail.error = "Enter a valid email address"
+                    adminEmail.error = getString(R.string.valid_email)
                 }
             }
         }
