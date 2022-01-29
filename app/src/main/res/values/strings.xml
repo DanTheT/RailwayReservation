@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">RailwayReservation</string>
 
-    //
     <string name="email_empty">Please enter your email</string>
     <string name="valid_email">Please enter a valid email address</string>
     <string name="password_empty">Please enter a password</string>
     <string name="password_length">Please enter at least 6 characters</string>
+
+    //imageCD in main admin page
+    <string name="train_image_CD">Train management image</string>
+    <string name="announcement_image_CD">Train announcement image</string>
+    <string name="reports_image_CD">Train reports image</string>
 
     //admin login
     <string name="title_activity_admin_login">Login</string>
