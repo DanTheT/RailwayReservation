@@ -36,14 +36,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Train Management"
+                    android:text="@string/txt_train_management"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Manage train information, train schedule, train seats"
+                    android:text="@string/body_train_management"
                     android:textAppearance="?attr/textAppearanceBody2"
                     />
 
@@ -58,7 +58,7 @@
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Proceed" />
+                        android:text="@string/button_train_management" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -95,14 +95,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Train Announcement"
+                    android:text="@string/txt_train_announcement"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Provide announcements to users"
+                    android:text="@string/body_train_announcement"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:layout_marginBottom="10dp"
                     />
@@ -118,7 +118,7 @@
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Proceed" />
+                        android:text="@string/button_train_announcement" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -156,14 +156,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Train Reports"
+                    android:text="@string/txt_train_reports"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Daily reports"
+                    android:text="@string/body_train_reports"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:layout_marginBottom="10dp"
                     />
@@ -179,7 +179,7 @@
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Proceed" />
+                        android:text="@string/button_train_reports" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -217,14 +217,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Train Issues"
+                    android:text="@string/txt_train_issues"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Attain a list of issues being reported"
+                    android:text="@string/body_train_issues"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:layout_marginBottom="10dp"
                     />
@@ -240,7 +240,7 @@
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Proceed" />
+                        android:text="@string/button_train_issues" />
                 </LinearLayout>
             </LinearLayout>
 

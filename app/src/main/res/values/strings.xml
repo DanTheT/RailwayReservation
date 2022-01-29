@@ -6,10 +6,26 @@
     <string name="password_empty">Please enter a password</string>
     <string name="password_length">Please enter at least 6 characters</string>
 
-    //imageCD in main admin page
+    //ADMIN MAIN PAGE
     <string name="train_image_CD">Train management image</string>
     <string name="announcement_image_CD">Train announcement image</string>
     <string name="reports_image_CD">Train reports image</string>
+
+    <string name="txt_train_management">Train Management</string>
+    <string name="body_train_management">Manage train information, train schedule, train seats</string>
+    <string name="button_train_management">To management</string>
+
+    <string name="txt_train_announcement">Train Announcement</string>
+    <string name="body_train_announcement">Provide announcements to users</string>
+    <string name="button_train_announcement">To announcement</string>
+
+    <string name="txt_train_reports">Train Reports</string>
+    <string name="body_train_reports">Daily reports on operations</string>
+    <string name="button_train_reports">To reports</string>
+
+    <string name="txt_train_issues">Train Issues</string>
+    <string name="body_train_issues">Attain a list of issues being reported</string>
+    <string name="button_train_issues">To issues</string>
 
     //admin login
     <string name="title_activity_admin_login">Login</string>
@@ -21,10 +37,10 @@
     <string name="reset_password">Reset Password</string>
     <string name="register_acc">Sign Up</string>
     <string name="background_photo_contentDesc">train background photo</string>
-    <string name="btn_train_manage">Train Management</string>
+    <!--<string name="btn_train_manage">Train Management</string>
     <string name="btn_train_announce">Announcement Management</string>
     <string name="btn_train_reporting">Reports</string>
-    <string name="btn_train_issueManage">Issues Management</string>
+    <string name="btn_train_issueManage">Issues Management</string> -->
 
     //admin register
     <string name="admin_register_title">Registration</string>
