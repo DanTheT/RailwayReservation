@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.NavigationFrag
 import com.example.railwayreservation.admin.trainInfo.addTrain.AddTrainInfoFragment
-import com.example.railwayreservation.admin.trainInfo.checkTrain.CheckTrainInfoFragment
 import com.example.railwayreservation.admin.trainInfo.deleteTrain.DeleteTrainInfoFragment
 import com.example.railwayreservation.admin.trainInfo.updateTrain.UpdateTrainInfoFragment
 import com.example.railwayreservation.databinding.FragmentTrainInfoManageBinding
@@ -44,12 +43,12 @@ class TrainInfoManageFragment : Fragment() {
             val toDeletePage = activity as NavigationFrag
             toDeletePage.navFrag(DeleteTrainInfoFragment(), addToStack = false)
         }
-
+/*
         binding.checkInfoBtn.setOnClickListener {
             val toCheckPage = activity as NavigationFrag
             toCheckPage.navFrag(CheckTrainInfoFragment(), addToStack = false)
         }
-
+*/
         return binding.root
     }
 

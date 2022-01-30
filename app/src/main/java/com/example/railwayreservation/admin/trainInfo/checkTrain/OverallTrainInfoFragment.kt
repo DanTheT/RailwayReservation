@@ -1,23 +1,27 @@
 package com.example.railwayreservation.admin.trainInfo.checkTrain
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.databinding.FragmentCheckTrainInfoBinding
+import com.example.railwayreservation.databinding.FragmentOverallTrainInfoBinding
 import com.google.firebase.database.*
+import kotlin.contracts.contract
 
-class CheckTrainInfoFragment : Fragment() {
+class OverallTrainInfoFragment : Fragment() {
 
-    private var _binding: FragmentCheckTrainInfoBinding? = null
+    private var _binding: FragmentOverallTrainInfoBinding? = null
     private val binding get() = _binding!!
     private lateinit var trainInfoRecyclerView: RecyclerView
-    private lateinit var trainArrayList: ArrayList<TrainInfoRecycle>
+    private lateinit var trainArrayList: ArrayList<BriefInfoData>
     private lateinit var trainInfoDatabase: DatabaseReference
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,40 +32,44 @@ class CheckTrainInfoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentOverallTrainInfoBinding.inflate(inflater, container, false)
 
-        _binding = FragmentCheckTrainInfoBinding.inflate(inflater, container, false)
-
-        trainInfoRecyclerView = binding.displayInfoRecycleView
+        trainInfoRecyclerView = binding.displayTrainInfo
         trainInfoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        trainArrayList = arrayListOf<TrainInfoRecycle>()
+        trainInfoRecyclerView.setHasFixedSize(true)
+
+        trainArrayList = arrayListOf<BriefInfoData>()
+        retrieveTrainInfo()
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        retrieveTrainInfo()
+
+        navController = Navigation.findNavController(view)
+        binding.overallTrainInfoMainTopAppBar.setNavigationOnClickListener {
+            navController.navigate(R.id.action_overallTrainInfoFragment_to_trainManageFragment)
+        }
     }
 
     private fun retrieveTrainInfo(){
-        trainInfoDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo")
+        trainInfoDatabase = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
         trainInfoDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
                     for(trainInfo in snapshot.children){
-                        val info = trainInfo.getValue(TrainInfoRecycle::class.java)
+                        val info = trainInfo.getValue(BriefInfoData::class.java)
                         trainArrayList.add(info!!)
                     }
-                    trainInfoRecyclerView.adapter = CheckTrainInfoAdapter(trainArrayList)
+                    trainInfoRecyclerView.adapter = TrainInfoAdapter(trainArrayList)
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
 
             }
-
         })
-
     }
 
     override fun onDestroyView() {

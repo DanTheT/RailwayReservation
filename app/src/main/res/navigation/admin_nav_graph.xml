@@ -33,5 +33,37 @@
         <action
             android:id="@+id/action_adminMainFragment_to_adminLoginFragment"
             app:destination="@id/adminLoginFragment" />
+        <action
+            android:id="@+id/action_adminMainFragment_to_trainManageFragment2"
+            app:destination="@id/trainManageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainManageFragment"
+        android:name="com.example.railwayreservation.admin.trainManage.TrainManageFragment"
+        android:label="fragment_train_manage"
+        tools:layout="@layout/fragment_train_manage" >
+        <action
+            android:id="@+id/action_trainManageFragment_to_adminMainFragment"
+            app:destination="@id/adminMainFragment" />
+        <action
+            android:id="@+id/action_trainManageFragment_to_overallTrainScheduleFragment"
+            app:destination="@id/overallTrainScheduleFragment" />
+        <action
+            android:id="@+id/action_trainManageFragment_to_overallTrainInfoFragment"
+            app:destination="@id/overallTrainInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overallTrainScheduleFragment"
+        android:name="com.example.railwayreservation.admin.trainSchedule.OverallTrainScheduleFragment"
+        android:label="fragment_overall_train_schedule"
+        tools:layout="@layout/fragment_overall_train_schedule" />
+    <fragment
+        android:id="@+id/overallTrainInfoFragment"
+        android:name="com.example.railwayreservation.admin.trainInfo.checkTrain.OverallTrainInfoFragment"
+        android:label="fragment_overall_train_info"
+        tools:layout="@layout/fragment_overall_train_info" >
+        <action
+            android:id="@+id/action_overallTrainInfoFragment_to_trainManageFragment"
+            app:destination="@id/trainManageFragment" />
     </fragment>
 </navigation>

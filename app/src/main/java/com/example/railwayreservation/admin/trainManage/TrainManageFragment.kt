@@ -5,16 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.NavigationFrag
-import com.example.railwayreservation.admin.trainInfo.infoManage.TrainInfoManageFragment
-import com.example.railwayreservation.admin.trainSchedule.ScheduleManageFragment
 import com.example.railwayreservation.admin.trainSeats.SeatsManageFragment
 import com.example.railwayreservation.databinding.FragmentTrainManageBinding
 
-class TrainManageFragment : Fragment() {
+class TrainManageFragment : Fragment(), View.OnClickListener {
 
     private lateinit var _binding: FragmentTrainManageBinding
     private val binding get() = _binding!!
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,20 +36,28 @@ class TrainManageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+        view.findViewById<Button>(R.id.train_schedule_btn).setOnClickListener(this)
 
         binding.trainInfoBtn.setOnClickListener {
-            val infoManagePage = activity as NavigationFrag
-            infoManagePage.navFrag(TrainInfoManageFragment(), false)
+            findNavController().navigate(R.id.action_trainManageFragment_to_overallTrainInfoFragment)
         }
 
-        binding.trainScheduleBtn.setOnClickListener {
-            val scheduleManagePage = activity as NavigationFrag
-            scheduleManagePage.navFrag(ScheduleManageFragment(), addToStack = false)
+        binding.trainManageTopAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_trainManageFragment_to_adminMainFragment)
         }
 
         binding.trainSeatsBtn.setOnClickListener {
             val seatsManagePage = activity as NavigationFrag
             seatsManagePage.navFrag(SeatsManageFragment(), addToStack = false)
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when(v!!.id){
+            R.id.train_schedule_btn -> {
+                findNavController().navigate(R.id.action_trainManageFragment_to_overallTrainScheduleFragment)
+            }
         }
     }
 }
