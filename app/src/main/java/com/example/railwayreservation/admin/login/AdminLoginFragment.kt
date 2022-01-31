@@ -7,12 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.AdminMainFragment
 import com.example.railwayreservation.databinding.FragmentAdminLoginBinding
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -21,7 +19,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class AdminLoginFragment : Fragment(), View.OnClickListener {
-
     private var _binding: FragmentAdminLoginBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth: FirebaseAuth
@@ -31,10 +28,6 @@ class AdminLoginFragment : Fragment(), View.OnClickListener {
     private lateinit var emailLayout: TextInputLayout
     private lateinit var adminPassword: TextInputEditText
     private lateinit var passwordLayout: TextInputLayout
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

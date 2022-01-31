@@ -1,5 +1,6 @@
 package com.example.railwayreservation.admin.trainInfo.checkTrain
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,9 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainInfo.addTrain.TrainInfoChangesActivity
 import com.example.railwayreservation.databinding.FragmentOverallTrainInfoBinding
 import com.google.firebase.database.*
-import kotlin.contracts.contract
 
 class OverallTrainInfoFragment : Fragment() {
 
@@ -22,11 +23,6 @@ class OverallTrainInfoFragment : Fragment() {
     private lateinit var trainArrayList: ArrayList<BriefInfoData>
     private lateinit var trainInfoDatabase: DatabaseReference
     private lateinit var navController: NavController
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +36,6 @@ class OverallTrainInfoFragment : Fragment() {
 
         trainArrayList = arrayListOf<BriefInfoData>()
         retrieveTrainInfo()
-
         return binding.root
     }
 
@@ -50,6 +45,13 @@ class OverallTrainInfoFragment : Fragment() {
         navController = Navigation.findNavController(view)
         binding.overallTrainInfoMainTopAppBar.setNavigationOnClickListener {
             navController.navigate(R.id.action_overallTrainInfoFragment_to_trainManageFragment)
+        }
+
+        binding.floatingActionButton.setOnClickListener {
+            val intent = Intent(context, TrainInfoChangesActivity::class.java).apply {
+
+            }
+            startActivity(intent)
         }
     }
 

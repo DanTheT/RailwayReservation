@@ -50,7 +50,7 @@ class AddTrainInfoFragment : Fragment() {
         val spinner: Spinner = binding.addCoachNumSpinner
         ArrayAdapter.createFromResource(
             requireContext(),
-            R.array.numOfTrainCar,
+            R.array.numOfTrainCoaches,
             android.R.layout.simple_spinner_item
         ).also {
                 adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

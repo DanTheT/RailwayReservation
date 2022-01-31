@@ -56,17 +56,18 @@
     <string name="title_admin">Admin</string>
 
     //Train Info
-    <string name="type_text">Train Type: </string>
+    <string name="train_name_text">Train Name</string>
     <string name="add_type_hint">E.g. XXX Train</string>
     <string name="type_spinner_desc">Select train type</string>
     <string name="lane_text">Train Lane: </string>
     <string name="add_lane_hint">E.g. Angsana Line</string>
     <string name="lane_spinner_desc">Select train lane</string>
-    <string name="stationStart_text">Train Station - Start: </string>
+    <string name="stationStart_text">Start Train Station</string>
     <string name="add_stationStart_hint">E.g. Station SXXX</string>
-    <string name="stationEnd_text">Train Station - End: </string>
+    <string name="stationEnd_text">End Train Station</string>
     <string name="trainInfoFrag_trainTypeSpinner">Select what train want to make reserve</string>
     <string name="trainInfoFrag_trainNoText">Train Number: </string>
+    <string name="addSuffixTrainTxt"> Train</string>
 
     //Add Train Info
     <string name="add_stationEnd_hint">E.g. Station EXXX</string>
@@ -80,13 +81,13 @@
     <string name="numOfCoachSpinnerCD">The train has how many car/coach</string>
     <string name="addTrainInfoStartStationCD">Start from where</string>
     <string name="addTrainInfoEndStationCD">End at where</string>
-    <string name="addTrainNoText">Train No: </string>
+    <string name="addTrainNoText">Train Number</string>
     <string name="addTrainNoHint">E.g. 10</string>
 
-    <string-array name="numOfTrainCar">
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
+    <string-array name="numOfTrainCoaches">
+        <item>3 Coaches</item>
+        <item>4 Coaches</item>
+        <item>5 Coaches</item>
     </string-array>
 
     <string-array name="trainType_items">

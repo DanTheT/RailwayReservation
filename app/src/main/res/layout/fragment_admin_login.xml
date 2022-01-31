@@ -25,6 +25,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
+        app:errorContentDescription="@string/valid_email"
         android:hint="@string/prompt_email"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
