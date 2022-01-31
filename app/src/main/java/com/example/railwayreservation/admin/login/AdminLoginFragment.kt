@@ -17,6 +17,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlin.coroutines.coroutineContext
 
 class AdminLoginFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentAdminLoginBinding? = null
@@ -49,7 +50,6 @@ class AdminLoginFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         val isCurrentUser = firebaseAuth.currentUser
-        val username = adminEmail.text.toString()
 
         navController = Navigation.findNavController(view)
         view.findViewById<Button>(R.id.signInBtn).setOnClickListener(this)
@@ -58,7 +58,7 @@ class AdminLoginFragment : Fragment(), View.OnClickListener {
         if (isCurrentUser != null) {
             Toast.makeText(
                 context,
-                "Welcome Back, ${username.substringBefore('@')}",
+                "Welcome Back",
                 Toast.LENGTH_SHORT
             ).show()
             navController.navigate(R.id.action_adminLoginFragment_to_adminMainFragment)

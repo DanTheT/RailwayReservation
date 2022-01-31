@@ -12,7 +12,7 @@
         android:padding="5dp">
 
         <ImageView
-            android:layout_width="160dp"
+            android:layout_width="130dp"
             android:layout_height="160dp"
             android:scaleType="centerCrop"
             android:src="@drawable/train" />
@@ -23,33 +23,120 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/trainInfoName"
-                style="@style/TextAppearance.MaterialComponents.Headline6"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Train Name" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/trainInfoLine"
-                style="@style/TextAppearance.MaterialComponents.Body2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Train Line" />
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Train Name " />
 
-            <TextView
-                android:id="@+id/trainInfoStartStation"
-                style="@style/TextAppearance.MaterialComponents.Body2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Start Station" />
+                <TextView
+                    android:id="@+id/trainInfoName"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Train Name" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/trainInfoLastStation"
-                style="@style/TextAppearance.MaterialComponents.Body2"
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Last Station" />
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Train Line " />
+
+                <TextView
+                    android:id="@+id/trainInfoLine"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Train Line" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Station " />
+
+                <TextView
+                    android:id="@+id/trainInfoStartStation"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Train Station" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Station " />
+
+                <TextView
+                    android:id="@+id/trainInfoLastStation"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Train Station" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coaches " />
+
+                <TextView
+                    android:id="@+id/trainInfoCoachNum"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No of Coach" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Number " />
+
+                <TextView
+                    android:id="@+id/trainInfoTrainNum"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Train Number" />
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -48,11 +48,6 @@ class AdminRegisterFragment : Fragment() {
 
         firebaseAuth = Firebase.auth
 
-        binding.backToLoginBtn.setOnClickListener {
-            val registerNavigation = activity as NavigationFrag
-            registerNavigation.navFrag(AdminLoginFragment(), false)
-        }
-
         binding.registerAdminBtn.setOnClickListener {
             checkEmptyInput()
         }

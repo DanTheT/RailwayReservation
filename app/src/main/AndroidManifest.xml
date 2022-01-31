@@ -14,9 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
         <activity
-            android:name=".admin.trainInfo.addTrain.TrainInfoChangesActivity"
-            android:exported="false" />
-        <activity
             android:name=".passenger.PurchaseHistory"
             android:exported="false" />
 

@@ -14,6 +14,8 @@ class TrainInfoAdapter(private val trainList: ArrayList<BriefInfoData>): Recycle
         val trainLineInfo: TextView = trainView.findViewById(R.id.trainInfoLine)
         val trainStartStationInfo: TextView = trainView.findViewById(R.id.trainInfoStartStation)
         val trainEndStationInfo: TextView = trainView.findViewById(R.id.trainInfoLastStation)
+        val trainNumCoach: TextView = trainView.findViewById(R.id.trainInfoCoachNum)
+        val trainNumber: TextView = trainView.findViewById(R.id.trainInfoTrainNum)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrainViewHolder {
@@ -27,6 +29,8 @@ class TrainInfoAdapter(private val trainList: ArrayList<BriefInfoData>): Recycle
         holder.trainLineInfo.text = train.trainLine
         holder.trainStartStationInfo.text = train.startStation
         holder.trainEndStationInfo.text = train.endStation
+        holder.trainNumCoach.text = train.car
+        holder.trainNumber.text = train.trainNum
     }
 
     override fun getItemCount(): Int {

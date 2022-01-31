@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.trainInfo.addTrain.TrainInfoChangesActivity
 import com.example.railwayreservation.databinding.FragmentOverallTrainInfoBinding
 import com.google.firebase.database.*
 
@@ -48,19 +48,16 @@ class OverallTrainInfoFragment : Fragment() {
         }
 
         binding.floatingActionButton.setOnClickListener {
-            val intent = Intent(context, TrainInfoChangesActivity::class.java).apply {
-
-            }
-            startActivity(intent)
+            findNavController().navigate(R.id.action_overallTrainInfoFragment_to_addNewInfoFragment)
         }
     }
 
-    private fun retrieveTrainInfo(){
+    private fun retrieveTrainInfo() {
         trainInfoDatabase = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
         trainInfoDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    for(trainInfo in snapshot.children){
+                if (snapshot.exists()) {
+                    for (trainInfo in snapshot.children) {
                         val info = trainInfo.getValue(BriefInfoData::class.java)
                         trainArrayList.add(info!!)
                     }
