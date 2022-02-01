@@ -24,8 +24,8 @@ class TrainInfoAdapter(private val trainList: ArrayList<BriefInfoData>): Recycle
     }
 
     override fun onBindViewHolder(holder: TrainViewHolder, position: Int) {
-        val train = trainList[position]
-        holder.trainNameInfo.text = train.trainType
+        val train: BriefInfoData = trainList[position]
+        holder.trainNameInfo.text = train.trainName
         holder.trainLineInfo.text = train.trainLine
         holder.trainStartStationInfo.text = train.startStation
         holder.trainEndStationInfo.text = train.endStation

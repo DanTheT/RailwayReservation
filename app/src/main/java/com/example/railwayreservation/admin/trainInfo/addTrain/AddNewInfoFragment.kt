@@ -87,8 +87,6 @@ class AddNewInfoFragment : Fragment() {
         val trainCoach = binding.textFieldNumberCoach.text.toString()
         val trainNumber = binding.textFieldTrainNumber.text.toString()
 
-        Log.d(TAG, trainName + trainLine + trainStart + trainEnd + trainCoach + trainNumber)
-
         trainDatabase = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
         val trainInfo = TrainInfo(
             trainName, trainLine, trainCoach, trainNumber, trainEnd, trainStart
