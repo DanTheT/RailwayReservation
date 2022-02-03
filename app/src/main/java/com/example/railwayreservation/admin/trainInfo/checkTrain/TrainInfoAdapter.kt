@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainInfo.data.BriefInfoData
 
 class TrainInfoAdapter(private val trainList: ArrayList<BriefInfoData>): RecyclerView.Adapter<TrainInfoAdapter.TrainViewHolder>() {
 

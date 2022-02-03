@@ -1,4 +1,4 @@
-package com.example.railwayreservation.admin.trainInfo.checkTrain
+package com.example.railwayreservation.admin.trainInfo.data
 
 data class BriefInfoData(
     val trainName: String = "",

@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
@@ -18,11 +21,7 @@ class OverallTrainScheduleFragment : Fragment() {
     private lateinit var scheduleRecycleView: RecyclerView
     private lateinit var scheduleArrayList: ArrayList<TrainSchedule>
     private lateinit var scheduleDatabase: DatabaseReference
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,18 +32,27 @@ class OverallTrainScheduleFragment : Fragment() {
         scheduleRecycleView= binding.displayScheduleRV
         scheduleRecycleView.layoutManager = LinearLayoutManager(context)
 
-        scheduleArrayList = arrayListOf<TrainSchedule>()
-
+        scheduleArrayList = arrayListOf()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+
+        binding.overallTrainScheduleMainTopAppBar.setOnClickListener {
+            findNavController().navigate(R.id.action_overallTrainScheduleFragment_to_trainManageFragment)
+        }
+
+        binding.fltAddNewSchedule.setOnClickListener {
+            findNavController().navigate(R.id.action_overallTrainScheduleFragment_to_addNewScheduleFragment)
+        }
+
         getScheduleTime()
     }
 
     private fun getScheduleTime(){
-        scheduleDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child("Schedule")
+        scheduleDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo")
         scheduleDatabase.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){

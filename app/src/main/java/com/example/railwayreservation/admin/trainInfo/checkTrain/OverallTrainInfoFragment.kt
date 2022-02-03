@@ -1,6 +1,5 @@
 package com.example.railwayreservation.admin.trainInfo.checkTrain
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainInfo.data.BriefInfoData
 import com.example.railwayreservation.databinding.FragmentOverallTrainInfoBinding
 import com.google.firebase.database.*
 

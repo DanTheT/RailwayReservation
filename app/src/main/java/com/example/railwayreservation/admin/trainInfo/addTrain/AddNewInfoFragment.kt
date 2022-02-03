@@ -1,35 +1,34 @@
 package com.example.railwayreservation.admin.trainInfo.addTrain
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.trainInfo.checkTrain.TrainInfo
+import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 import com.example.railwayreservation.databinding.FragmentAddNewInfoBinding
-import com.example.railwayreservation.databinding.FragmentOverallTrainInfoBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.lang.Exception
 
 class AddNewInfoFragment : Fragment() {
-
-    val TAG = "Add new Info Frag"
 
     private var _binding: FragmentAddNewInfoBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
     private lateinit var trainDatabase: DatabaseReference
+    private lateinit var addViewModel: AddNewInfoViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        addViewModel = ViewModelProvider(this)[AddNewInfoViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -87,19 +86,19 @@ class AddNewInfoFragment : Fragment() {
         val trainCoach = binding.textFieldNumberCoach.text.toString()
         val trainNumber = binding.textFieldTrainNumber.text.toString()
 
-        trainDatabase = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
         val trainInfo = TrainInfo(
             trainName, trainLine, trainCoach, trainNumber, trainEnd, trainStart
         )
 
-        trainDatabase.child(trainName).setValue(trainInfo).addOnSuccessListener {
-            binding.textFieldTrainName.text?.clear()
-            binding.textFieldTrainLine.text?.clear()
-            binding.textFieldTrainNumber.text?.clear()
+        val successMsg = "Successfully added new train $trainName"
+        val errorMsg = "Failed to set data"
 
-            Toast.makeText(context, "Add Successful, New Train $trainName", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener {
-            Toast.makeText(context, "Add Failed", Toast.LENGTH_SHORT).show()
+        try {
+            addViewModel.setDatabaseReference(trainName, trainInfo)
+
+            Toast.makeText(context, successMsg, Toast.LENGTH_SHORT).show()
+        } catch (e: Exception) {
+            Toast.makeText(context, errorMsg, Toast.LENGTH_SHORT).show()
         }
     }
 
