@@ -6,5 +6,6 @@ data class BriefInfoData(
     val startStation: String = "",
     val endStation: String = "",
     val car: String = "",
-    val trainNum: String = ""
+    val trainNum: String = "",
+    val status: String = ""
 )

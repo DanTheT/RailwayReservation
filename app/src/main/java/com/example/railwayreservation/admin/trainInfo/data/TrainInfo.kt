@@ -7,4 +7,5 @@ data class TrainInfo(
     val trainNum: String = "",
     val endStation: String = "",
     val startStation: String = "",
+    val status: String = "",
 )

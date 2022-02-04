@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_marginStart="5dp">
+
+        <TextView
+            android:id="@+id/btmSheetTrainName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"/>
+
+        <TextView
+            android:id="@+id/btmSheetCoaches"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coaches"/>
+
+        <TextView
+            android:id="@+id/btmSheetTrainNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number"/>
+
+        <TextView
+            android:id="@+id/btmSheetTrainStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status"/>
+
+    </LinearLayout>
+
+</LinearLayout>

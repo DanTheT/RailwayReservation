@@ -23,7 +23,6 @@ class AddNewInfoFragment : Fragment() {
     private var _binding: FragmentAddNewInfoBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
-    private lateinit var trainDatabase: DatabaseReference
     private lateinit var addViewModel: AddNewInfoViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,13 +84,14 @@ class AddNewInfoFragment : Fragment() {
         val trainEnd = binding.textFieldEndStation.text.toString()
         val trainCoach = binding.textFieldNumberCoach.text.toString()
         val trainNumber = binding.textFieldTrainNumber.text.toString()
+        val trainStatus = "Active"
 
         val trainInfo = TrainInfo(
-            trainName, trainLine, trainCoach, trainNumber, trainEnd, trainStart
+            trainName, trainLine, trainCoach, trainNumber, trainEnd, trainStart, trainStatus
         )
 
         val successMsg = "Successfully added new train $trainName"
-        val errorMsg = "Failed to set data"
+        val errorMsg = "Failed to set data $trainName"
 
         try {
             addViewModel.setDatabaseReference(trainName, trainInfo)

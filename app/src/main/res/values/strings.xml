@@ -83,6 +83,7 @@
     <string name="addTrainInfoEndStationCD">End at where</string>
     <string name="addTrainNoText">Train Number</string>
     <string name="addTrainNoHint">E.g. 10</string>
+    <string name="addTrainStatusCD">Status</string>
 
     <string-array name="numOfTrainCoaches">
         <item>3 Coaches</item>
@@ -101,6 +102,11 @@
     <string-array name="lane_items">
         <item>Standard Lane</item>
         <item>Express Lane</item>
+    </string-array>
+
+    <string-array name="status_items">
+        <item>Active</item>
+        <item>Deactivate</item>
     </string-array>
 
     //Train Schedule
