@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -81,19 +83,7 @@ class OverallTrainInfoFragment : Fragment(), TrainInfoAdapter.OnItemClick {
 
     @SuppressLint("InflateParams")
     override fun onItemClick(data: BriefInfoData) {
-        val dialog = BottomSheetDialog(requireContext())
-        val view = layoutInflater.inflate(R.layout.fragment_btm_sheet, null)
-        val name = view.findViewById<TextView>(R.id.btmSheetTrainName)
-        val coaches = view.findViewById<TextView>(R.id.btmSheetCoaches)
-        val trainNumber = view.findViewById<TextView>(R.id.btmSheetTrainNumber)
-        val trainStatus = view.findViewById<TextView>(R.id.btmSheetTrainStatus)
-
-        name.text = data.trainName
-        coaches.text = data.car
-        trainNumber.text = data.trainNum
-        trainStatus.text = data.status
-
-        dialog.setContentView(view)
-        dialog.show()
+        val bundle = bundleOf("trainName" to data.trainName)
+        findNavController().navigate(R.id.action_overallTrainInfoFragment_to_bottomSheetFragment, bundle)
     }
 }

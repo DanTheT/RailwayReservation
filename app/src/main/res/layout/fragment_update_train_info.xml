@@ -1,164 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".admin.trainInfo.updateTrain.UpdateTrainInfoFragment">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/updateTrainInfoMain_topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:title="Update new train info" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTrainNameLayout"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/train_name_text"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBarLayout"
+        app:suffixText="@string/addSuffixTrainTxt">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textFieldEditTrainName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTrainLineLayout"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/lane_text"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTrainNameLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textFieldEditTrainLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editStartStationLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/stationStart_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTrainLineLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/textFieldEditStartStation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/endStationLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/stationEnd_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editStartStationLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/textFieldEditEndStation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editNumberCoachLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/numOfCoachText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endStationLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/textFieldEditNumberCoach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTrainNumberLayout"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/addTrainNoText"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNumberCoachLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textFieldEditTrainNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
-        android:id="@+id/back_page_btn"
+        android:id="@+id/updateNewTrainInfoBtn"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/back_info_btn"
-        android:background="@drawable/rounded_corner"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_info_btn" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/train_name_text"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/updateTrainTypeTxt"
-        app:layout_constraintStart_toStartOf="@+id/updateTrainTypeTxt" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lane_text"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/updateTrainLaneTxt"
-        app:layout_constraintStart_toStartOf="@+id/updateTrainLaneTxt" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stationStart_text"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/updateStartStationTxt"
-        app:layout_constraintStart_toStartOf="@+id/updateStartStationTxt" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stationEnd_text"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/updateEndStationTxt"
-        app:layout_constraintStart_toStartOf="@+id/updateEndStationTxt" />
-
-    <Button
-        android:id="@+id/update_info_btn"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/update_info_btn"
-        android:background="@drawable/rounded_corner"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateTrainNumber" />
-
-    <EditText
-        android:id="@+id/updateTrainTypeTxt"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:hint="@string/add_type_hint"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:text="Update"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/updateTrainLaneTxt"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/add_lane_hint"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateTrainTypeTxt" />
-
-    <EditText
-        android:id="@+id/updateStartStationTxt"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/add_stationStart_hint"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateTrainLaneTxt" />
-
-    <EditText
-        android:id="@+id/updateEndStationTxt"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="@string/add_stationEnd_hint"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateStartStationTxt" />
-
-    <TextView
-        android:id="@+id/textView41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No of car/ coach:"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/updateTrainCoachNo"
-        app:layout_constraintStart_toStartOf="@+id/updateTrainCoachNo" />
-
-    <TextView
-        android:id="@+id/textView42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Train Number:"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/updateTrainNumber"
-        app:layout_constraintStart_toStartOf="@+id/updateTrainNumber" />
-
-    <EditText
-        android:id="@+id/updateTrainNumber"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="E.g. 10"
-        android:inputType="number"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateTrainCoachNo" />
-
-    <EditText
-        android:id="@+id/updateTrainCoachNo"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="In range of 1-3"
-        android:inputType="number"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateEndStationTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/editTrainNumberLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
