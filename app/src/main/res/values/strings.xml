@@ -109,6 +109,14 @@
         <item>Deactivate</item>
     </string-array>
 
+    <string-array name="train_name_items">
+        <item>Angsana</item>
+        <item>Balak</item>
+        <item>Chino</item>
+        <item>Dalluman</item>
+        <item>Eve</item>
+    </string-array>
+
     //Train Schedule
     <string name="schedule_page_title">Schedule</string>
     <string name="schedule_train_type_txt">Train Type: </string>
@@ -117,10 +125,12 @@
     //Train Schedule Add
     <string name="add_departureTime">Departure Time: </string>
     <string name="add_arrivalTime">Arrival Time: </string>
+    <string name="add_reachTime">Reach Time</string>
+    <string name="add_nextStation">Next Station</string>
 
     //Train Schedule Update
     <string name="update_departureTime">Departure Time: </string>
-    <string name="update_arrivalTime">Arrival Time: </string>
+    <string name="update_arrivalTime">Arrival Time </string>
 
     //Issues
     <string name="issue_text">Issues: </string>

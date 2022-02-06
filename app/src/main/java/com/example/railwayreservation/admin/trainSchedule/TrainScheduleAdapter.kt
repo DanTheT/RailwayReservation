@@ -10,9 +10,9 @@ import com.example.railwayreservation.R
 class TrainScheduleAdapter(private val scheduleList: ArrayList<TrainSchedule>): RecyclerView.Adapter<TrainScheduleAdapter.TrainScheduleViewHolder>() {
     class TrainScheduleViewHolder(scheduleView: View): RecyclerView.ViewHolder(scheduleView) {
         val fromStation: TextView = scheduleView.findViewById(R.id.admin_scheduleFrom)
-        val toStation: TextView = scheduleView.findViewById(R.id.admin_scheduleTo)
+        val toStation: TextView = scheduleView.findViewById(R.id.admin_scheduleNext)
         val arriveTime: TextView = scheduleView.findViewById(R.id.admin_scheduleArrive)
-        val departTime: TextView = scheduleView.findViewById(R.id.admin_scheduleDepart)
+        val departTime: TextView = scheduleView.findViewById(R.id.admin_scheduleReach)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrainScheduleViewHolder {

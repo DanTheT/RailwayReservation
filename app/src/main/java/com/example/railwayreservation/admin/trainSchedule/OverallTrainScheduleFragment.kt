@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -19,9 +20,10 @@ class OverallTrainScheduleFragment : Fragment() {
     private var _binding: FragmentOverallTrainScheduleBinding? = null
     private val binding get() = _binding!!
     private lateinit var scheduleRecycleView: RecyclerView
-    private lateinit var scheduleArrayList: ArrayList<TrainSchedule>
+    private lateinit var scheduleArrayList: ArrayList<Schedule>
     private lateinit var scheduleDatabase: DatabaseReference
     private lateinit var navController: NavController
+    private lateinit var schedule: Schedule
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +35,9 @@ class OverallTrainScheduleFragment : Fragment() {
         scheduleRecycleView.layoutManager = LinearLayoutManager(context)
 
         scheduleArrayList = arrayListOf()
+
+        insertScheduleTrainName()
+
         return binding.root
     }
 
@@ -48,19 +53,30 @@ class OverallTrainScheduleFragment : Fragment() {
             findNavController().navigate(R.id.action_overallTrainScheduleFragment_to_addNewScheduleFragment)
         }
 
-        getScheduleTime()
+        binding.searchName.setOnClickListener {
+            val name = binding.textFieldSearchName.text.toString()
+            getScheduleTime(name)
+        }
     }
 
-    private fun getScheduleTime(){
-        scheduleDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo")
+    private fun insertScheduleTrainName() {
+        val lists = resources.getStringArray(R.array.train_name_items)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textFieldSearchName.setAdapter(listsAdapter)
+    }
+
+    private fun getScheduleTime(name: String){
+
+        scheduleDatabase = FirebaseDatabase.getInstance().getReference("TrainSchedule").child(name)
         scheduleDatabase.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
                     for(scheduleSnap in snapshot.children){
-                        val schedule = scheduleSnap.getValue(TrainSchedule::class.java)
+                        val schedule = scheduleSnap.getValue(Schedule::class.java)
                         scheduleArrayList.add(schedule!!)
                     }
-                    scheduleRecycleView.adapter = TrainScheduleAdapter(scheduleArrayList)
+                    scheduleRecycleView.adapter = ScheduleAdapter(scheduleArrayList)
                 }
             }
 
