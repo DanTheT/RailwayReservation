@@ -86,7 +86,6 @@
     <string name="addTrainStatusCD">Status</string>
 
     <string-array name="numOfTrainCoaches">
-        <item>3 Coaches</item>
         <item>4 Coaches</item>
         <item>5 Coaches</item>
     </string-array>
@@ -129,13 +128,28 @@
     </string-array>
 
     <string-array name="standard_windowSeats_range">
-        <item>A3 - A15</item>
-        <item>D3 - D15</item>
+        <item>A3 - A13</item>
+        <item>D3 - D13</item>
     </string-array>
 
     <string-array name="standard_alleySeats_range">
-        <item>B3 - B15</item>
-        <item>C3 - C15</item>
+        <item>B3 - B13</item>
+        <item>C3 - C13</item>
+    </string-array>
+
+    <string-array name="four_coaches">
+        <item>Coach 1</item>
+        <item>Coach 2</item>
+        <item>Coach 3</item>
+        <item>Coach 4</item>
+    </string-array>
+
+    <string-array name="five_coaches">
+        <item>Coach 1</item>
+        <item>Coach 2</item>
+        <item>Coach 3</item>
+        <item>Coach 4</item>
+        <item>Coach 5</item>
     </string-array>
 
     //Train Schedule
