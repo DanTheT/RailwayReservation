@@ -33,8 +33,8 @@ class IssueManage : AppCompatActivity() {
         issueDatabase = FirebaseDatabase.getInstance().getReference("Issues")
         issueDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    for(issueSnapshot in snapshot.children){
+                if (snapshot.exists()) {
+                    for (issueSnapshot in snapshot.children) {
                         val issue = issueSnapshot.getValue(IssuesData::class.java)
                         issueArrayList.add(issue!!)
                     }

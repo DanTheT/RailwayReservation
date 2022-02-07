@@ -28,7 +28,7 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        recipient = arguments!!.getString("recipient")
+        recipient = requireArguments().getString("recipient")
     }
 
     override fun onCreateView(

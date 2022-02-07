@@ -6,115 +6,157 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".admin.trainSeats.addSeats.AddSeatsFragment">
 
-    <Button
-        android:id="@+id/backSeatsManageBtn"
-        android:layout_width="355dp"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="480dp"
-        android:background="@drawable/rounded_corner"
-        android:text="Back"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/addTrainSeatsMain_topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:title="Add new train info" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <Button
         android:id="@+id/buttonAddSeats"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="416dp"
-        android:background="@drawable/rounded_corner"
+        android:layout_marginTop="16dp"
         android:text="Add"
-        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/seatTrainPriceLayout" />
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Train name: "
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSeatTrainName"
-        app:layout_constraintStart_toStartOf="@+id/editTextSeatTrainName" />
-
-    <EditText
-        android:id="@+id/editTextSeatTrainName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/seatTrainNameLayout"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:ems="10"
-        android:hint="Place train name: XXX train"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/train_name_text"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/topBarLayout"
+        app:suffixText="@string/addSuffixTrainTxt">
 
-    <TextView
-        android:id="@+id/textView37"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSeatTrainName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/seatsCategoryLayout"
+        android:layout_width="355dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
         android:layout_height="wrap_content"
-        android:text="Number of seats: "
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seatTrainNameLayout">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
+       <AutoCompleteTextView
+           android:id="@+id/editTextSeatCategory"
+           android:layout_width="match_parent"
+           android:inputType="none"
+           android:hint="select seat category"
+           android:layout_height="wrap_content">
+       </AutoCompleteTextView>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonCheckCategory"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Place number of seats"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:text="Check"
+        app:layout_constraintTop_toBottomOf="@+id/seatsCategoryLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSeatTrainName" />
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Seat number: "
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSeatNumber"
-        app:layout_constraintStart_toStartOf="@+id/editTextSeatNumber" />
-
-    <EditText
-        android:id="@+id/editTextSeatNumber"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/seatsSelectionLayout"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Place seat number: seatA*"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCheckCategory">
 
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Seat Price: "
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextSeatPrice"
-        app:layout_constraintStart_toStartOf="@+id/editTextSeatPrice" />
+        <AutoCompleteTextView
+            android:id="@+id/editTextSeatSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:hint="Select seats range" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextSeatPrice"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/seatsSelectionStandardWLayout"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="Specify pricing"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSeatNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/seatsSelectionLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/editTextSeatSelectionStandardWindow"
+            android:layout_width="match_parent"
+            android:inputType="none"
+            android:layout_height="wrap_content"
+            android:hint="Select seats range"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/seatsSelectionStandardALayout"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seatsSelectionStandardWLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/editTextSeatSelectionStandardAlley"
+            android:layout_width="match_parent"
+            android:inputType="none"
+            android:layout_height="wrap_content"
+            android:hint="Select seats range"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/seatTrainPriceLayout"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Pricing"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seatsSelectionStandardALayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSeatTrainPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

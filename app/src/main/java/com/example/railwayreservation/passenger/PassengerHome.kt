@@ -5,15 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.NavigationFrag
-import com.example.railwayreservation.admin.trainInfo.TrainInfo
-import com.example.railwayreservation.admin.trainInfo.addTrain.AddTrainInfoFragment
 import com.example.railwayreservation.passengerTrain.TrainMainActivity
-import com.example.railwayreservation.passengerTrain.trainInfo.TrainInfoFragment
 import com.example.railwayreservation.reportIssue.ReportIssue
 import com.google.firebase.auth.FirebaseAuth
 

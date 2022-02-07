@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav_graph"
+    app:startDestination="@id/adminLoginFragment">
+    <fragment
+        android:id="@+id/adminLoginFragment"
+        android:name="com.example.railwayreservation.admin.login.AdminLoginFragment"
+        android:label="fragment_admin_login"
+        tools:layout="@layout/fragment_admin_login" >
+        <action
+            android:id="@+id/action_adminLoginFragment_to_adminRegisterFragment"
+            app:destination="@id/adminRegisterFragment" />
+        <action
+            android:id="@+id/action_adminLoginFragment_to_adminMainFragment"
+            app:destination="@id/adminMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminRegisterFragment"
+        android:name="com.example.railwayreservation.admin.register.AdminRegisterFragment"
+        android:label="fragment_admin_register"
+        tools:layout="@layout/fragment_admin_register" >
+        <action
+            android:id="@+id/action_adminRegisterFragment_to_adminLoginFragment"
+            app:destination="@id/adminLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminMainFragment"
+        android:name="com.example.railwayreservation.admin.AdminMainFragment"
+        android:label="fragment_admin_main"
+        tools:layout="@layout/fragment_admin_main" >
+        <action
+            android:id="@+id/action_adminMainFragment_to_trainManageFragment"
+            app:destination="@id/trainManageFragment" />
+        <action
+            android:id="@+id/action_adminMainFragment_to_adminLoginFragment"
+            app:destination="@id/adminLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainManageFragment"
+        android:name="com.example.railwayreservation.admin.trainManage.TrainManageFragment"
+        android:label="fragment_train_manage"
+        tools:layout="@layout/fragment_train_manage" >
+        <action
+            android:id="@+id/action_trainManageFragment_to_overallTrainInfoFragment"
+            app:destination="@id/overallTrainInfoFragment" />
+        <action
+            android:id="@+id/action_trainManageFragment_to_overallTrainScheduleFragment"
+            app:destination="@id/overallTrainScheduleFragment" />
+        <action
+            android:id="@+id/action_trainManageFragment_to_overallTrainSeatsFragment"
+            app:destination="@id/overallTrainSeatsFragment" />
+        <action
+            android:id="@+id/action_trainManageFragment_to_adminMainFragment"
+            app:destination="@id/adminMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overallTrainScheduleFragment"
+        android:name="com.example.railwayreservation.admin.trainSchedule.OverallTrainScheduleFragment"
+        android:label="fragment_overall_train_schedule"
+        tools:layout="@layout/fragment_overall_train_schedule" >
+        <action
+            android:id="@+id/action_overallTrainScheduleFragment_to_addNewScheduleFragment"
+            app:destination="@id/addNewScheduleFragment" />
+        <action
+            android:id="@+id/action_overallTrainScheduleFragment_to_trainManageFragment"
+            app:destination="@id/trainManageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overallTrainInfoFragment"
+        android:name="com.example.railwayreservation.admin.trainInfo.checkTrain.OverallTrainInfoFragment"
+        android:label="fragment_overall_train_info"
+        tools:layout="@layout/fragment_overall_train_info" >
+        <action
+            android:id="@+id/action_overallTrainInfoFragment_to_addNewInfoFragment"
+            app:destination="@id/addNewInfoFragment" />
+        <action
+            android:id="@+id/action_overallTrainInfoFragment_to_trainManageFragment"
+            app:destination="@id/trainManageFragment" />
+        <action
+            android:id="@+id/action_overallTrainInfoFragment_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewInfoFragment"
+        android:name="com.example.railwayreservation.admin.trainInfo.addTrain.AddNewInfoFragment"
+        android:label="fragment_add_new_info"
+        tools:layout="@layout/fragment_add_new_info" >
+        <action
+            android:id="@+id/action_addNewInfoFragment_to_overallTrainInfoFragment"
+            app:destination="@id/overallTrainInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewScheduleFragment"
+        android:name="com.example.railwayreservation.admin.trainSchedule.AddNewScheduleFragment"
+        android:label="fragment_add_new_schedule"
+        tools:layout="@layout/fragment_add_new_schedule" >
+        <action
+            android:id="@+id/action_addNewScheduleFragment_to_overallTrainScheduleFragment"
+            app:destination="@id/overallTrainScheduleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overallTrainSeatsFragment"
+        android:name="com.example.railwayreservation.admin.trainSeats.OverallTrainSeatsFragment"
+        android:label="fragment_overall_train_seats"
+        tools:layout="@layout/fragment_overall_train_seats" >
+        <action
+            android:id="@+id/action_overallTrainSeatsFragment_to_trainManageFragment"
+            app:destination="@id/trainManageFragment" />
+        <action
+            android:id="@+id/action_overallTrainSeatsFragment_to_addSeatsFragment"
+            app:destination="@id/addSeatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTrainInfoFragment"
+        android:name="com.example.railwayreservation.admin.trainInfo.updateTrain.UpdateTrainInfoFragment"
+        android:label="fragment_update_train_info"
+        tools:layout="@layout/fragment_update_train_info" >
+        <action
+            android:id="@+id/action_updateTrainInfoFragment_to_overallTrainInfoFragment"
+            app:destination="@id/overallTrainInfoFragment" />
+
+        <argument android:defaultValue="None"
+            android:name="trainName"/>
+    </fragment>
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.example.railwayreservation.admin.trainInfo.checkTrain.BottomSheetFragment"
+        android:label="fragment_bottom_sheet"
+        tools:layout="@layout/fragment_bottom_sheet" >
+        <action
+            android:id="@+id/action_bottomSheetFragment_to_updateTrainInfoFragment"
+            app:destination="@id/updateTrainInfoFragment" />
+
+        <argument android:defaultValue="None"
+            android:name="trainName"/>
+    </dialog>
+    <fragment
+        android:id="@+id/addSeatsFragment"
+        android:name="com.example.railwayreservation.admin.trainSeats.addSeats.AddSeatsFragment"
+        android:label="fragment_add_seats"
+        tools:layout="@layout/fragment_add_seats" >
+        <action
+            android:id="@+id/action_addSeatsFragment_to_overallTrainSeatsFragment"
+            app:destination="@id/overallTrainSeatsFragment" />
+    </fragment>
+</navigation>

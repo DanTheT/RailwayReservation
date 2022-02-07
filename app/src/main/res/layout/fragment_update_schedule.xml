@@ -39,7 +39,7 @@
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/type_text"
+        android:text="@string/train_name_text"
         app:layout_constraintBottom_toTopOf="@+id/update_train_type_schedule"
         app:layout_constraintStart_toStartOf="@+id/update_train_type_schedule" />
 

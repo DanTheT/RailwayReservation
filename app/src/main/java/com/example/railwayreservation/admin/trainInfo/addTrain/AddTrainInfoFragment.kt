@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.trainInfo.TrainInfo
+import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 import com.example.railwayreservation.databinding.FragmentAddTrainInfoBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -50,7 +50,7 @@ class AddTrainInfoFragment : Fragment() {
         val spinner: Spinner = binding.addCoachNumSpinner
         ArrayAdapter.createFromResource(
             requireContext(),
-            R.array.numOfTrainCar,
+            R.array.numOfTrainCoaches,
             android.R.layout.simple_spinner_item
         ).also {
                 adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -83,7 +83,7 @@ class AddTrainInfoFragment : Fragment() {
     }
 
     private fun addInfo(){
-        val trainType = binding.addTrainTypeTxt.text.toString()
+        val trainName = binding.addTrainTypeTxt.text.toString()
         val trainLane = binding.addTrainLaneTxt.text.toString()
         val noOfCar = binding.addCoachNumSpinner.selectedItem.toString()
         val trainNum = binding.addTrainNoTxt.text.toString()
@@ -92,15 +92,15 @@ class AddTrainInfoFragment : Fragment() {
 
         trainDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo")
         val trainInfos = TrainInfo(
-            trainLane, noOfCar, trainNum, startStation, endStation
+            trainName, trainLane, noOfCar, trainNum, startStation, endStation
         )
 
-        trainDatabase.child(trainType).setValue(trainInfos).addOnSuccessListener {
+        trainDatabase.child(trainName).setValue(trainInfos).addOnSuccessListener {
             binding.addTrainTypeTxt.text.clear()
             binding.addTrainLaneTxt.text.clear()
             binding.addTrainNoTxt.text.clear()
 
-            Toast.makeText(context, "Add Successful, New Train $trainType", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Add Successful, New Train $trainName", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(context, "Add Failed", Toast.LENGTH_SHORT).show()
         }

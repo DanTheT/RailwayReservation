@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import android.widget.Toolbar
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.announcement.SendAnnouncementActivity
 import com.example.railwayreservation.admin.login.AdminLoginFragment
-import com.example.railwayreservation.admin.trainManage.TrainManage
 import com.example.railwayreservation.databinding.FragmentAdminMainBinding
 import com.example.railwayreservation.reportIssue.IssueManage
 import com.example.railwayreservation.reportIssue.ReportIssue
@@ -21,6 +23,7 @@ class AdminMainFragment : Fragment() {
 
     private lateinit var _binding: FragmentAdminMainBinding
     private val binding get() = _binding!!
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,18 +31,27 @@ class AdminMainFragment : Fragment() {
     ): View? {
         _binding = FragmentAdminMainBinding.inflate(inflater, container, false)
 
-        binding.trainSignOutBtn.setOnClickListener {
-            Firebase.auth.signOut()
-            val loginNavigation = activity as NavigationFrag
-            loginNavigation.navFrag(AdminLoginFragment(), addToStack = false)
-            Toast.makeText(context, "Sign Out", Toast.LENGTH_SHORT).show()
-        }
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+
+        binding.topAppBar.setOnMenuItemClickListener {
+                when(it.itemId){
+                    R.id.signOut -> {
+                        Firebase.auth.signOut()
+                        navController.navigate(R.id.action_adminMainFragment_to_adminLoginFragment)
+                        Toast.makeText(context, "Sign out successfully", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    else -> {
+                        false
+                    }
+                }
+        }
 
         binding.trainAnnounceBtn.setOnClickListener {
             val intent = Intent(context, SendAnnouncementActivity::class.java).apply {
@@ -49,10 +61,7 @@ class AdminMainFragment : Fragment() {
         }
 
         binding.trainManageBtn.setOnClickListener {
-            val intent = Intent(context, TrainManage::class.java).apply {
-
-            }
-            startActivity(intent)
+            navController.navigate(R.id.action_adminMainFragment_to_trainManageFragment)
         }
 
         binding.trainIssuesBtn.setOnClickListener {

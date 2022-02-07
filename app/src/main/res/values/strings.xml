@@ -1,6 +1,32 @@
 <resources>
     <string name="app_name">RailwayReservation</string>
 
+    <string name="email_empty">Please enter your email</string>
+    <string name="valid_email">Please enter a valid email address</string>
+    <string name="password_empty">Please enter a password</string>
+    <string name="password_length">Please enter at least 6 characters</string>
+
+    //ADMIN MAIN PAGE
+    <string name="train_image_CD">Train management image</string>
+    <string name="announcement_image_CD">Train announcement image</string>
+    <string name="reports_image_CD">Train reports image</string>
+
+    <string name="txt_train_management">Train Management</string>
+    <string name="body_train_management">Manage train information, train schedule, train seats</string>
+    <string name="button_train_management">To management</string>
+
+    <string name="txt_train_announcement">Train Announcement</string>
+    <string name="body_train_announcement">Provide announcements to users</string>
+    <string name="button_train_announcement">To announcement</string>
+
+    <string name="txt_train_reports">Train Reports</string>
+    <string name="body_train_reports">Daily reports on operations</string>
+    <string name="button_train_reports">To reports</string>
+
+    <string name="txt_train_issues">Train Issues</string>
+    <string name="body_train_issues">Attain a list of issues being reported</string>
+    <string name="button_train_issues">To issues</string>
+
     //admin login
     <string name="title_activity_admin_login">Login</string>
     <string name="admin_login_title">Admin Login</string>
@@ -9,12 +35,12 @@
     <string name="action_sign_in">Sign in</string>
     <string name="login_failed">"Login failed"</string>
     <string name="reset_password">Reset Password</string>
-    <string name="register_acc">New? Register</string>
+    <string name="register_acc">Sign Up</string>
     <string name="background_photo_contentDesc">train background photo</string>
-    <string name="btn_train_manage">Train Management</string>
+    <!--<string name="btn_train_manage">Train Management</string>
     <string name="btn_train_announce">Announcement Management</string>
     <string name="btn_train_reporting">Reports</string>
-    <string name="btn_train_issueManage">Issues Management</string>
+    <string name="btn_train_issueManage">Issues Management</string> -->
 
     //admin register
     <string name="admin_register_title">Registration</string>
@@ -30,17 +56,18 @@
     <string name="title_admin">Admin</string>
 
     //Train Info
-    <string name="type_text">Train Type: </string>
+    <string name="train_name_text">Train Name</string>
     <string name="add_type_hint">E.g. XXX Train</string>
     <string name="type_spinner_desc">Select train type</string>
     <string name="lane_text">Train Lane: </string>
     <string name="add_lane_hint">E.g. Angsana Line</string>
     <string name="lane_spinner_desc">Select train lane</string>
-    <string name="stationStart_text">Train Station - Start: </string>
+    <string name="stationStart_text">Start Train Station</string>
     <string name="add_stationStart_hint">E.g. Station SXXX</string>
-    <string name="stationEnd_text">Train Station - End: </string>
+    <string name="stationEnd_text">End Train Station</string>
     <string name="trainInfoFrag_trainTypeSpinner">Select what train want to make reserve</string>
     <string name="trainInfoFrag_trainNoText">Train Number: </string>
+    <string name="addSuffixTrainTxt"> Train</string>
 
     //Add Train Info
     <string name="add_stationEnd_hint">E.g. Station EXXX</string>
@@ -54,13 +81,14 @@
     <string name="numOfCoachSpinnerCD">The train has how many car/coach</string>
     <string name="addTrainInfoStartStationCD">Start from where</string>
     <string name="addTrainInfoEndStationCD">End at where</string>
-    <string name="addTrainNoText">Train No: </string>
+    <string name="addTrainNoText">Train Number</string>
     <string name="addTrainNoHint">E.g. 10</string>
+    <string name="addTrainStatusCD">Status</string>
 
-    <string-array name="numOfTrainCar">
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
+    <string-array name="numOfTrainCoaches">
+        <item>3 Coaches</item>
+        <item>4 Coaches</item>
+        <item>5 Coaches</item>
     </string-array>
 
     <string-array name="trainType_items">
@@ -76,6 +104,40 @@
         <item>Express Lane</item>
     </string-array>
 
+    <string-array name="status_items">
+        <item>Active</item>
+        <item>Deactivate</item>
+    </string-array>
+
+    <string-array name="train_name_items">
+        <item>Angsana</item>
+        <item>Balak</item>
+        <item>Chino</item>
+        <item>Dalluman</item>
+        <item>Eve</item>
+    </string-array>
+
+    <string-array name="seat_category">
+        <item>VIP seats</item>
+        <item>Standard seats - At Window</item>
+        <item>Standard seats - At Alley</item>
+    </string-array>
+
+    <string-array name="vip_seats_range">
+        <item>A1 - D1</item>
+        <item>A2 - D2</item>
+    </string-array>
+
+    <string-array name="standard_windowSeats_range">
+        <item>A3 - A15</item>
+        <item>D3 - D15</item>
+    </string-array>
+
+    <string-array name="standard_alleySeats_range">
+        <item>B3 - B15</item>
+        <item>C3 - C15</item>
+    </string-array>
+
     //Train Schedule
     <string name="schedule_page_title">Schedule</string>
     <string name="schedule_train_type_txt">Train Type: </string>
@@ -84,10 +146,12 @@
     //Train Schedule Add
     <string name="add_departureTime">Departure Time: </string>
     <string name="add_arrivalTime">Arrival Time: </string>
+    <string name="add_reachTime">Reach Time</string>
+    <string name="add_nextStation">Next Station</string>
 
     //Train Schedule Update
     <string name="update_departureTime">Departure Time: </string>
-    <string name="update_arrivalTime">Arrival Time: </string>
+    <string name="update_arrivalTime">Arrival Time </string>
 
     //Issues
     <string name="issue_text">Issues: </string>

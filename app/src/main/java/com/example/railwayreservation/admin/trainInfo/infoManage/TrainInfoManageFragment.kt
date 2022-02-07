@@ -5,12 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.NavigationFrag
 import com.example.railwayreservation.admin.trainInfo.addTrain.AddTrainInfoFragment
-import com.example.railwayreservation.admin.trainInfo.checkTrain.CheckTrainInfoFragment
 import com.example.railwayreservation.admin.trainInfo.deleteTrain.DeleteTrainInfoFragment
-import com.example.railwayreservation.admin.trainInfo.updateTrain.UpdateTrainInfoFragment
 import com.example.railwayreservation.databinding.FragmentTrainInfoManageBinding
 
 
@@ -35,21 +32,23 @@ class TrainInfoManageFragment : Fragment() {
             toAddPage.navFrag(AddTrainInfoFragment(), false)
         }
 
-        binding.updateBtn.setOnClickListener {
+        /*binding.updateBtn.setOnClickListener {
             val toUpdatePage = activity as NavigationFrag
             toUpdatePage.navFrag(UpdateTrainInfoFragment(), addToStack = false)
         }
+
+         */
 
         binding.deleteBtn.setOnClickListener {
             val toDeletePage = activity as NavigationFrag
             toDeletePage.navFrag(DeleteTrainInfoFragment(), addToStack = false)
         }
-
+/*
         binding.checkInfoBtn.setOnClickListener {
             val toCheckPage = activity as NavigationFrag
             toCheckPage.navFrag(CheckTrainInfoFragment(), addToStack = false)
         }
-
+*/
         return binding.root
     }
 

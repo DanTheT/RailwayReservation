@@ -65,16 +65,12 @@
             android:exported="false" />
         <activity
             android:name=".passengerTrain.TrainMainActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".reportIssue.IssueManage"
             android:exported="false" />
         <activity
             android:name=".reportIssue.ReportIssue"
-            android:exported="false" />
-        <activity
-            android:name=".admin.trainManage.TrainManage"
             android:exported="false" />
         <activity
             android:name=".admin.AdminLogin"
