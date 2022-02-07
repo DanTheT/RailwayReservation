@@ -48,8 +48,7 @@ class TrainManageFragment : Fragment(), View.OnClickListener {
         }
 
         binding.trainSeatsBtn.setOnClickListener {
-            val seatsManagePage = activity as NavigationFrag
-            seatsManagePage.navFrag(SeatsManageFragment(), addToStack = false)
+            findNavController().navigate(R.id.action_trainManageFragment_to_overallTrainSeatsFragment)
         }
     }
 

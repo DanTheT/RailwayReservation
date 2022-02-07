@@ -9,6 +9,7 @@ import com.example.railwayreservation.R
 
 class ScheduleAdapter(private val scheduleList: ArrayList<Schedule>): RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
     class ScheduleViewHolder(scheduleView: View): RecyclerView.ViewHolder(scheduleView) {
+        val trainName: TextView = scheduleView.findViewById(R.id.admin_trainName)
         val fromStation: TextView = scheduleView.findViewById(R.id.admin_scheduleFrom)
         val nextStation: TextView = scheduleView.findViewById(R.id.admin_scheduleNext)
         val arriveTime: TextView = scheduleView.findViewById(R.id.admin_scheduleArrive)
@@ -22,6 +23,7 @@ class ScheduleAdapter(private val scheduleList: ArrayList<Schedule>): RecyclerVi
 
     override fun onBindViewHolder(holder: ScheduleViewHolder, position: Int) {
         val schedule: Schedule = scheduleList[position]
+        holder.trainName.text = schedule.trainName
         holder.fromStation.text = schedule.fromStation
         holder.nextStation.text = schedule.nextStation
         holder.arriveTime.text = schedule.arriveTime

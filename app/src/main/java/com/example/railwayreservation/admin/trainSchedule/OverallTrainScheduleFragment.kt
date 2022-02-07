@@ -23,7 +23,6 @@ class OverallTrainScheduleFragment : Fragment() {
     private lateinit var scheduleArrayList: ArrayList<Schedule>
     private lateinit var scheduleDatabase: DatabaseReference
     private lateinit var navController: NavController
-    private lateinit var schedule: Schedule
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +30,7 @@ class OverallTrainScheduleFragment : Fragment() {
     ): View? {
         _binding = FragmentOverallTrainScheduleBinding.inflate(inflater, container, false)
 
-        scheduleRecycleView= binding.displayScheduleRV
+        scheduleRecycleView = binding.displayScheduleRV
         scheduleRecycleView.layoutManager = LinearLayoutManager(context)
 
         scheduleArrayList = arrayListOf()
@@ -57,6 +56,17 @@ class OverallTrainScheduleFragment : Fragment() {
             val name = binding.textFieldSearchName.text.toString()
             getScheduleTime(name)
         }
+
+        binding.clearRecycler.setOnClickListener {
+            try {
+                if (scheduleRecycleView.isShown) {
+                    scheduleArrayList.clear()
+                    scheduleRecycleView.adapter?.notifyDataSetChanged()
+                }
+            }catch (e: Exception) {
+                e.message
+            }
+        }
     }
 
     private fun insertScheduleTrainName() {
@@ -66,13 +76,13 @@ class OverallTrainScheduleFragment : Fragment() {
         binding.textFieldSearchName.setAdapter(listsAdapter)
     }
 
-    private fun getScheduleTime(name: String){
+    private fun getScheduleTime(name: String) {
 
         scheduleDatabase = FirebaseDatabase.getInstance().getReference("TrainSchedule").child(name)
-        scheduleDatabase.addValueEventListener(object : ValueEventListener{
+        scheduleDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    for(scheduleSnap in snapshot.children){
+                if (snapshot.exists()) {
+                    for (scheduleSnap in snapshot.children) {
                         val schedule = scheduleSnap.getValue(Schedule::class.java)
                         scheduleArrayList.add(schedule!!)
                     }

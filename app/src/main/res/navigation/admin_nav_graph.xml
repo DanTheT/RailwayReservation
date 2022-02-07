@@ -49,7 +49,7 @@
             android:id="@+id/action_trainManageFragment_to_overallTrainScheduleFragment"
             app:destination="@id/overallTrainScheduleFragment" />
         <action
-            android:id="@+id/action_trainManageFragment_to_overallTrainSeatsFragment2"
+            android:id="@+id/action_trainManageFragment_to_overallTrainSeatsFragment"
             app:destination="@id/overallTrainSeatsFragment" />
         <action
             android:id="@+id/action_trainManageFragment_to_adminMainFragment"
@@ -108,6 +108,9 @@
         <action
             android:id="@+id/action_overallTrainSeatsFragment_to_trainManageFragment"
             app:destination="@id/trainManageFragment" />
+        <action
+            android:id="@+id/action_overallTrainSeatsFragment_to_addSeatsFragment"
+            app:destination="@id/addSeatsFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateTrainInfoFragment"
@@ -133,4 +136,13 @@
         <argument android:defaultValue="None"
             android:name="trainName"/>
     </dialog>
+    <fragment
+        android:id="@+id/addSeatsFragment"
+        android:name="com.example.railwayreservation.admin.trainSeats.addSeats.AddSeatsFragment"
+        android:label="fragment_add_seats"
+        tools:layout="@layout/fragment_add_seats" >
+        <action
+            android:id="@+id/action_addSeatsFragment_to_overallTrainSeatsFragment"
+            app:destination="@id/overallTrainSeatsFragment" />
+    </fragment>
 </navigation>

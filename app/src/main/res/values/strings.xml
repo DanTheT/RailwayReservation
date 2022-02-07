@@ -117,6 +117,27 @@
         <item>Eve</item>
     </string-array>
 
+    <string-array name="seat_category">
+        <item>VIP seats</item>
+        <item>Standard seats - At Window</item>
+        <item>Standard seats - At Alley</item>
+    </string-array>
+
+    <string-array name="vip_seats_range">
+        <item>A1 - D1</item>
+        <item>A2 - D2</item>
+    </string-array>
+
+    <string-array name="standard_windowSeats_range">
+        <item>A3 - A15</item>
+        <item>D3 - D15</item>
+    </string-array>
+
+    <string-array name="standard_alleySeats_range">
+        <item>B3 - B15</item>
+        <item>C3 - C15</item>
+    </string-array>
+
     //Train Schedule
     <string name="schedule_page_title">Schedule</string>
     <string name="schedule_train_type_txt">Train Type: </string>
