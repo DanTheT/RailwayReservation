@@ -32,34 +32,35 @@
         android:id="@+id/scheduleTrainNameLayout"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_marginTop="8dp"
-        android:hint="@string/train_name_text"
-        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout"
         app:suffixText="@string/addSuffixTrainTxt">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <AutoCompleteTextView
             android:id="@+id/textScheduleTrainName"
+            android:hint="@string/train_name_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:inputType="none"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/scheduleFromStationLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="@string/stationStart_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scheduleTrainNameLayout">
 
         <AutoCompleteTextView
             android:id="@+id/textScheduleStartStation"
+            android:hint="@string/stationStart_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="none"
@@ -68,17 +69,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/scheduleArriveTimeLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="@string/add_arrivalTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scheduleFromStationLayout">
 
         <AutoCompleteTextView
             android:id="@+id/textScheduleArriveTime"
+            android:hint="@string/add_arrivalTime"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="none"
@@ -87,17 +88,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/scheduleNextStationLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="@string/add_nextStation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scheduleArriveTimeLayout">
 
         <AutoCompleteTextView
             android:id="@+id/textScheduleNextStation"
+            android:hint="@string/add_nextStation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="none"
@@ -106,17 +107,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/scheduleReachTimeLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="@string/add_reachTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scheduleNextStationLayout">
 
         <AutoCompleteTextView
             android:id="@+id/textScheduleReachTime"
+            android:hint="@string/add_reachTime"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="none"

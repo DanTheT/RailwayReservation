@@ -1,6 +1,7 @@
 package com.example.railwayreservation.admin.trainSeats.addSeats
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,7 @@ class AddSeatsFragment : Fragment() {
     private lateinit var seatsDatabase: DatabaseReference
     private lateinit var navController: NavController
     private lateinit var addViewModel: AddSeatsViewModel
+    val TAG = "Add seats fragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +58,8 @@ class AddSeatsFragment : Fragment() {
             findNavController().navigate(R.id.action_addSeatsFragment_to_overallTrainSeatsFragment)
         }
 
+
+
         binding.buttonCheckCategory.setOnClickListener {
             val trainName = binding.editTextSeatTrainName.text.toString()
 
@@ -74,19 +78,14 @@ class AddSeatsFragment : Fragment() {
 
             when(binding.editTextSeatCategory.text.toString()) {
                 "VIP seats" -> {
-                    insertSeatsRange()
-                    binding.editTextSeatSelectionStandardWindow.text = null
-                    binding.editTextSeatSelectionStandardAlley.text = null
+                    insertSeatsRangeVip()
                 }
+
                 "Standard seats - At Window" -> {
-                    insertSeatsRange2()
-                    binding.editTextSeatSelection.text = null
-                    binding.editTextSeatSelectionStandardAlley.text = null
+                    insertSeatsRangeWindow()
                 }
                 else -> {
-                    insertSeatsRange3()
-                    binding.editTextSeatSelection.text = null
-                    binding.editTextSeatSelectionStandardWindow.text = null
+                    insertSeatsRangeAlley()
                 }
             }
         }
@@ -94,8 +93,18 @@ class AddSeatsFragment : Fragment() {
         binding.buttonAddSeats.setOnClickListener {
             try {
                 insertSeatData()
+                Toast.makeText(requireContext(), "New seats added", Toast.LENGTH_SHORT).show()
             }catch (e: Exception){
-                e.message
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+                e.message?.let { it1 -> Log.d(TAG, it1) }
+            }
+        }
+    }
+
+    private fun pricingFocus() {
+        binding.editTextSeatTrainPrice.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                binding.seatTrainPriceLayout.helperText = null
             }
         }
     }
@@ -107,31 +116,25 @@ class AddSeatsFragment : Fragment() {
         binding.editTextSeatCategory.setAdapter(listsAdapter)
     }
 
-    private fun insertSeatsRange() {
+    private fun insertSeatsRangeVip() {
         val lists = resources.getStringArray(R.array.vip_seats_range)
 
         val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
         binding.editTextSeatSelection.setAdapter(listsAdapter)
-        binding.editTextSeatSelectionStandardWindow.setAdapter(null)
-        binding.editTextSeatSelectionStandardAlley.setAdapter(null)
     }
 
-    private fun insertSeatsRange2() {
+    private fun insertSeatsRangeWindow() {
         val lists = resources.getStringArray(R.array.standard_windowSeats_range)
 
         val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.editTextSeatSelectionStandardWindow.setAdapter(listsAdapter)
-        binding.editTextSeatSelection.setAdapter(null)
-        binding.editTextSeatSelectionStandardAlley.setAdapter(null)
+        binding.editTextSeatSelection.setAdapter(listsAdapter)
     }
 
-    private fun insertSeatsRange3() {
+    private fun insertSeatsRangeAlley() {
         val lists = resources.getStringArray(R.array.standard_alleySeats_range)
 
         val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.editTextSeatSelectionStandardAlley.setAdapter(listsAdapter)
-        binding.editTextSeatSelection.setAdapter(null)
-        binding.editTextSeatSelectionStandardWindow.setAdapter(null)
+        binding.editTextSeatSelection.setAdapter(listsAdapter)
     }
 
     private fun insertSeatsCoachesFour() {
@@ -182,7 +185,7 @@ class AddSeatsFragment : Fragment() {
         }
 
         // for window standard
-        when (binding.editTextSeatSelectionStandardWindow.text.toString()) {
+        when (binding.editTextSeatSelection.text.toString()) {
             "A3 - A13" -> {
                 val arrayList = arrayListOf<String>("A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13")
 
@@ -206,7 +209,7 @@ class AddSeatsFragment : Fragment() {
         }
 
         //for standard alley seats
-        when (binding.editTextSeatSelectionStandardAlley.text.toString()) {
+        when (binding.editTextSeatSelection.text.toString()) {
             "B3 - B13" -> {
                 val arrayList = arrayListOf<String>("B3", "B4", "B5", "B6", "B7", "B8", "B9", "B10", "B11", "B12", "B13")
 
