@@ -30,11 +30,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterNameTextLayout"
-        android:layout_width="match_parent"
+        android:layout_width="355dp"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_marginTop="50dp"
         android:hint="@string/register_name"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -46,10 +48,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterEmailTextLayout"
-        android:layout_width="match_parent"
+        android:layout_width="355dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterNameTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -62,11 +66,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterPassTextLayout"
-        android:layout_width="match_parent"
+        android:layout_width="355dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:endIconMode="password_toggle"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterEmailTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -79,11 +85,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterConfirmPassTextLayout"
-        android:layout_width="match_parent"
+        android:layout_width="355dp"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_marginTop="16dp"
         app:endIconMode="password_toggle"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterPassTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -96,10 +104,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/enterPhoneTextLayout"
-        android:layout_width="match_parent"
+        android:layout_width="355dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterConfirmPassTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText

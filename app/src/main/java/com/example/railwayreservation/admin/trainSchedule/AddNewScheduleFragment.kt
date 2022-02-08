@@ -12,6 +12,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentAddNewScheduleBinding
+import com.google.firebase.database.*
 
 class AddNewScheduleFragment : Fragment() {
 
@@ -31,6 +32,7 @@ class AddNewScheduleFragment : Fragment() {
     ): View? {
         _binding = FragmentAddNewScheduleBinding.inflate(inflater, container, false)
 
+        insertTrainNames()
         insertScheduleStartStation()
         insertScheduleNextStation()
         insertScheduleArriveTime()
@@ -50,6 +52,13 @@ class AddNewScheduleFragment : Fragment() {
         binding.addNewScheduleBtn.setOnClickListener {
             insertNewSchedule()
         }
+    }
+
+    private fun insertTrainNames() {
+        val trainName = resources.getStringArray(R.array.train_name_items)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, trainName)
+        binding.textScheduleTrainName.setAdapter(listsAdapter)
     }
 
     private fun insertScheduleStartStation() {

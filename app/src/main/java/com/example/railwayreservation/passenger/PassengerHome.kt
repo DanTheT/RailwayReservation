@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import com.example.railwayreservation.R
+import com.example.railwayreservation.databinding.ActivityPassengerHomeBinding
 import com.example.railwayreservation.passengerTrain.TrainMainActivity
 import com.example.railwayreservation.reportIssue.ReportIssue
+import com.google.android.material.appbar.AppBarLayout
 import com.google.firebase.auth.FirebaseAuth
 
 class PassengerHome : AppCompatActivity() {
+    private lateinit var binding: ActivityPassengerHomeBinding
 
     private lateinit var auth: FirebaseAuth
 
@@ -20,11 +23,13 @@ class PassengerHome : AppCompatActivity() {
     private lateinit var  btnTicket: ImageButton
     private lateinit var  btnAccount: ImageButton
     private lateinit var  btnMembership: ImageButton
-    private lateinit var btnIssues: Button
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityPassengerHomeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
         auth = FirebaseAuth.getInstance()
 
         if(auth.currentUser == null){
@@ -32,7 +37,6 @@ class PassengerHome : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        setContentView(R.layout.activity_passenger_home)
 
 //go to reservation screen
         btnReservation = findViewById(R.id.btnReservation)
@@ -71,9 +75,16 @@ class PassengerHome : AppCompatActivity() {
             startActivity(Intent(this, PassengerMembership::class.java))
         }
 
-        btnIssues = findViewById(R.id.btnToIssues)
-        btnIssues.setOnClickListener{
-            startActivity(Intent(this, ReportIssue::class.java))
+        binding.topAppBarPassenger.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menuIssues -> {
+                    startActivity(Intent(this, ReportIssue::class.java))
+                    true
+                }
+                else -> {
+                    false
+                }
+            }
         }
     }
 }
