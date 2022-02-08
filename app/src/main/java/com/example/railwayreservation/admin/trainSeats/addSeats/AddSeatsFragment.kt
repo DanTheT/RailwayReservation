@@ -6,18 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.NavigationFrag
 import com.example.railwayreservation.admin.trainSeats.SeatsData
-import com.example.railwayreservation.admin.trainSeats.SeatsManageFragment
 import com.example.railwayreservation.databinding.FragmentAddSeatsBinding
 import com.google.firebase.database.*
 
@@ -42,9 +38,8 @@ class AddSeatsFragment : Fragment() {
         _binding = FragmentAddSeatsBinding.inflate(inflater, container, false)
 
         insertSeatsCategory()
-        //insertSeatsRange()
-        //insertSeatsRange2()
-        //insertSeatsRange3()
+
+        pricingFocus()
 
         return binding.root
     }

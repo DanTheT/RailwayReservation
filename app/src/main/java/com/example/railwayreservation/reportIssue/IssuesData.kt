@@ -1,7 +1,9 @@
 package com.example.railwayreservation.reportIssue
 
 data class IssuesData(
-    val issueId: String? = "",
-    val receivedIssue: String? = "",
-    val carId: String? = "",
+    val issueCategory: String? = "",
+    val issueDescription: String? = "",
+    val issueDate: String? = "",
+    val issueTime: String? = "",
+    val issueResolve: String? = ""
 )

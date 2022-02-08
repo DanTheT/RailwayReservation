@@ -6,71 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".reportIssue.ReportIssue">
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/issue_text"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/issue_spinner"
-        app:layout_constraintStart_toStartOf="@+id/issue_spinner" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/issue_describe"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/describe_text"
-        app:layout_constraintStart_toStartOf="@+id/describe_text" />
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/issue_coach"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/coachId_text"
-        app:layout_constraintStart_toStartOf="@+id/coachId_text" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/reportIssueMain_topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:title="Train Info"
+                app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
-    <Spinner
-        android:id="@+id/issue_spinner"
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reportIssueCategoryLayout"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
+        android:hint="Category"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_marginTop="150dp"
-        android:contentDescription="@string/issue_spinnerHint"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/topBarLayout">
 
-    <EditText
-        android:id="@+id/describe_text"
+        <AutoCompleteTextView
+            android:id="@+id/reportIssueSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reportIssueDescLayout"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/issue_spinner"
-        android:hint="@string/issue_describeHint"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/reportIssueCategoryLayout">
 
-    <EditText
-        android:id="@+id/coachId_text"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:hint="@string/issue_coachHint"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/describe_text" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reportIssueDesc"
+            android:layout_width="match_parent"
+            android:hint="Describe issue"
+            android:inputType="textMultiLine"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/report_btn"
@@ -82,5 +76,5 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coachId_text" />
+        app:layout_constraintTop_toBottomOf="@+id/reportIssueDescLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
