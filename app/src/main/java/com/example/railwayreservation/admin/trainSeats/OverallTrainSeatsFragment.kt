@@ -1,11 +1,10 @@
 package com.example.railwayreservation.admin.trainSeats
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.appcompat.widget.SearchView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -14,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentOverallTrainSeatsBinding
 import com.google.firebase.database.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class OverallTrainSeatsFragment : Fragment() {
 
@@ -40,7 +41,7 @@ class OverallTrainSeatsFragment : Fragment() {
                 val name = binding.textFieldSearchSeatName.text.toString()
                 getSeatsData(name)
             }
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             e.message
         }
 
@@ -50,7 +51,7 @@ class OverallTrainSeatsFragment : Fragment() {
                     seatsArrayList.clear()
                     seatsRecycleView.adapter?.notifyDataSetChanged()
                 }
-            }catch (e: Exception) {
+            } catch (e: Exception) {
                 e.message
             }
         }
@@ -81,22 +82,23 @@ class OverallTrainSeatsFragment : Fragment() {
     private fun getSeatsData(trainName: String) {
         seatsDb = FirebaseDatabase.getInstance().getReference("TrainSeats")
         for (i in 1..4) {
-            seatsDb.child(trainName).child("Coach $i").addValueEventListener(object : ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.exists()) {
-                        for (seatSnap in snapshot.children) {
-                            val seats = seatSnap.getValue(SeatsData::class.java)
-                            seatsArrayList.add(seats!!)
+            seatsDb.child(trainName).child("Coach $i")
+                .addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        if (snapshot.exists()) {
+                            for (seatSnap in snapshot.children) {
+                                val seats = seatSnap.getValue(SeatsData::class.java)
+                                seatsArrayList.add(seats!!)
+                            }
+                            seatsRecycleView.adapter = SeatsAdapter(seatsArrayList)
                         }
-                        seatsRecycleView.adapter = SeatsAdapter(seatsArrayList)
                     }
-                }
 
-                override fun onCancelled(error: DatabaseError) {
+                    override fun onCancelled(error: DatabaseError) {
 
-                }
+                    }
 
-            })
+                })
         }
     }
 
