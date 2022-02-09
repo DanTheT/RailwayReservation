@@ -95,9 +95,10 @@ class AddNewScheduleFragment : Fragment() {
         val arriveTime = binding.textScheduleArriveTime.text.toString()
         val nextStation = binding.textScheduleNextStation.text.toString()
         val reachTime = binding.textScheduleReachTime.text.toString()
+        val status = "Available"
 
         val scheduleInfo = Schedule (
-            trainName, startStation, arriveTime, nextStation, reachTime
+            trainName, startStation, arriveTime, nextStation, reachTime, status
                 )
 
         scheduleViewModel.insertNewSchedule(trainName, arriveTime, scheduleInfo)

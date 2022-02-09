@@ -2,6 +2,7 @@ package com.example.railwayreservation.reportIssue
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
@@ -20,17 +21,41 @@ class IssueManage : AppCompatActivity() {
         binding = ActivityIssueManageBinding.inflate(layoutInflater)
         val view = binding.root
 
+        insertIssueCategory()
+
         issueRecycleView = binding.displayIssuesRecyclerView
         issueRecycleView.layoutManager = LinearLayoutManager(this)
 
         issueArrayList = arrayListOf<IssuesData>()
-        fetchIssueData()
+
+        binding.searchCategory.setOnClickListener {
+            val selectCategory = binding.textFieldSearchCategory.text.toString()
+            fetchIssueData(selectCategory)
+        }
+
+        binding.clearRecyclerCategory.setOnClickListener {
+            try {
+                if (issueRecycleView.isShown) {
+                    issueArrayList.clear()
+                    issueRecycleView.adapter?.notifyDataSetChanged()
+                }
+            }catch (e: Exception) {
+                e.message
+            }
+        }
 
         setContentView(view)
     }
 
-    private fun fetchIssueData() {
-        issueDatabase = FirebaseDatabase.getInstance().getReference("Issues")
+    private fun insertIssueCategory() {
+        val lists = resources.getStringArray(R.array.report_category_items)
+
+        val listAdapter = ArrayAdapter(baseContext, R.layout.list_for_dropdown, lists)
+        binding.textFieldSearchCategory.setAdapter(listAdapter)
+    }
+
+    private fun fetchIssueData(category: String) {
+        issueDatabase = FirebaseDatabase.getInstance().getReference("Issues").child(category)
         issueDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {

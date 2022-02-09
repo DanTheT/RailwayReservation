@@ -41,7 +41,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/scheduleSearchNameLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

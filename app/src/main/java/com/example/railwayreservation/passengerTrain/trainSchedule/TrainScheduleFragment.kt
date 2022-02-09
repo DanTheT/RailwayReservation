@@ -68,8 +68,8 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
         }
     }
 
-    private fun retrieveScheduleTime(trainType: String){
-        lineDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainType).child("Schedule")
+    private fun retrieveScheduleTime(trainName: String){
+        lineDatabase = FirebaseDatabase.getInstance().getReference("TrainSchedule").child(trainName)
         lineDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){

@@ -5,5 +5,6 @@ data class Schedule(
     val fromStation: String = "",
     val arriveTime:  String = "",
     val nextStation: String = "",
-    val reachTime: String = ""
+    val reachTime: String = "",
+    val status: String = ""
 )

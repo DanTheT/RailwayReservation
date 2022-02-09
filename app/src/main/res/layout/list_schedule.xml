@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="48dp"
-    android:layout_marginTop="16dp"
+    android:layout_marginBottom="300dp"
+    android:layout_marginTop="8dp"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
+    app:cardBackgroundColor="@color/primary_light_blue"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -111,7 +112,7 @@
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Departure Time: "
+                android:text="Reach Time: "
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materialTextView3" />
 
@@ -120,6 +121,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="depart"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/materialTextView"
+                app:layout_constraintTop_toTopOf="@+id/materialTextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextViewStatus"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView3" />
+
+            <TextView
+                android:id="@+id/admin_scheduleStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="status"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/materialTextView"
