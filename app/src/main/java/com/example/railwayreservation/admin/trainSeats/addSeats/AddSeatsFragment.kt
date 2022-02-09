@@ -162,7 +162,7 @@ class AddSeatsFragment : Fragment() {
 
                 for (i in 0..3) {
                     val seats = SeatsData (
-                        available, arrayList[i], reserved, seatPrice
+                        available, trainCoach, arrayList[i], reserved, seatPrice
                     )
                     seatsDatabase.child(trainName).child(trainCoach).child(arrayList[i]).setValue(seats)
                 }
@@ -172,7 +172,7 @@ class AddSeatsFragment : Fragment() {
 
                 for (i in 0..3) {
                     val seats = SeatsData (
-                        available, arrayList[i], reserved, seatPrice
+                        available, trainCoach, arrayList[i], reserved, seatPrice
                     )
                     seatsDatabase.child(trainName).child(trainCoach).child(arrayList[i]).setValue(seats)
                 }
@@ -186,7 +186,7 @@ class AddSeatsFragment : Fragment() {
 
                 for (i in 0..10) {
                     val seats = SeatsData (
-                        available, arrayList[i], reserved, seatPrice
+                        available, trainCoach, arrayList[i], reserved, seatPrice
                     )
                     seatsDatabase.child(trainName).child(trainCoach).child(arrayList[i]).setValue(seats)
                 }
@@ -196,7 +196,7 @@ class AddSeatsFragment : Fragment() {
 
                 for (i in 0..10) {
                     val seats = SeatsData (
-                        available, arrayList[i], reserved, seatPrice
+                        available, trainCoach, arrayList[i], reserved, seatPrice
                     )
                     seatsDatabase.child(trainName).child(trainCoach).child(arrayList[i]).setValue(seats)
                 }
@@ -210,7 +210,7 @@ class AddSeatsFragment : Fragment() {
 
                 for (i in 0..10) {
                     val seats = SeatsData (
-                        available, arrayList[i], reserved, seatPrice
+                        available, trainCoach, arrayList[i], reserved, seatPrice
                     )
                     seatsDatabase.child(trainName).child(trainCoach).child(arrayList[i]).setValue(seats)
                 }
@@ -220,7 +220,7 @@ class AddSeatsFragment : Fragment() {
 
                 for (i in 0..10) {
                     val seats = SeatsData (
-                        available, arrayList[i], reserved, seatPrice
+                        available, trainCoach, arrayList[i], reserved, seatPrice
                     )
                     seatsDatabase.child(trainName).child(trainCoach).child(arrayList[i]).setValue(seats)
                 }
