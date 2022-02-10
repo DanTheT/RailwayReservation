@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.announcement.SendAnnouncementActivity
 import com.example.railwayreservation.databinding.FragmentAdminMainBinding
-import com.example.railwayreservation.reportIssue.IssueManage
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -62,10 +62,7 @@ class AdminMainFragment : Fragment() {
         }
 
         binding.trainIssuesBtn.setOnClickListener {
-            val intent = Intent(context, IssueManage::class.java).apply {
-
-            }
-            startActivity(intent)
+            findNavController().navigate(R.id.action_adminMainFragment_to_issuesManageFragment)
         }
     }
 }

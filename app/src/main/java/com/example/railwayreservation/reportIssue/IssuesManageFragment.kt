@@ -1,30 +1,43 @@
 package com.example.railwayreservation.reportIssue
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.databinding.ActivityIssueManageBinding
+import com.example.railwayreservation.databinding.FragmentIssuesManageBinding
 import com.google.firebase.database.*
 
-class IssueManage : AppCompatActivity() {
+class IssuesManageFragment : Fragment() {
 
-    private lateinit var binding: ActivityIssueManageBinding
+    private var _binding: FragmentIssuesManageBinding? = null
+    private val binding get() = _binding!!
     private lateinit var issueRecycleView: RecyclerView
     private lateinit var issueArrayList: ArrayList<IssuesData>
     private lateinit var issueDatabase: DatabaseReference
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityIssueManageBinding.inflate(layoutInflater)
-        val view = binding.root
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentIssuesManageBinding.inflate(inflater, container, false)
 
         insertIssueCategory()
 
         issueRecycleView = binding.displayIssuesRecyclerView
-        issueRecycleView.layoutManager = LinearLayoutManager(this)
+        issueRecycleView.layoutManager = LinearLayoutManager(requireContext())
 
         issueArrayList = arrayListOf<IssuesData>()
 
@@ -44,13 +57,22 @@ class IssueManage : AppCompatActivity() {
             }
         }
 
-        setContentView(view)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+
+        binding.issueManageMainTopAppBar.setOnClickListener {
+            findNavController().navigate(R.id.action_issuesManageFragment_to_adminMainFragment)
+        }
     }
 
     private fun insertIssueCategory() {
         val lists = resources.getStringArray(R.array.report_category_items)
 
-        val listAdapter = ArrayAdapter(baseContext, R.layout.list_for_dropdown, lists)
+        val listAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
         binding.textFieldSearchCategory.setAdapter(listAdapter)
     }
 

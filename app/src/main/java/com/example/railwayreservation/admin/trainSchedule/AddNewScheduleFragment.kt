@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -50,7 +51,18 @@ class AddNewScheduleFragment : Fragment() {
         }
 
         binding.addNewScheduleBtn.setOnClickListener {
-            insertNewSchedule()
+            val arriveTime = binding.textScheduleArriveTime.text.toString()
+            val reachTime = binding.textScheduleReachTime.text.toString()
+
+            try {
+                if (reachTime > arriveTime) {
+                    insertNewSchedule()
+                } else {
+                    Toast.makeText(requireContext(), "$reachTime cannot less / equal $arriveTime", Toast.LENGTH_LONG).show()
+                }
+            }catch (e: Exception) {
+
+            }
         }
     }
 

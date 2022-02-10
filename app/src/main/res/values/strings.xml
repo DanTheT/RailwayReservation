@@ -205,6 +205,16 @@
         <item>1130</item>
         <item>1200</item>
         <item>1230</item>
+        <item>1300</item>
+        <item>1330</item>
+        <item>1400</item>
+        <item>1430</item>
+        <item>1500</item>
+        <item>1530</item>
+        <item>1600</item>
+        <item>1630</item>
+        <item>1700</item>
+        <item>1730</item>
     </string-array>
 
     <string-array name="station_names">

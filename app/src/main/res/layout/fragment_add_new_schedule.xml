@@ -14,12 +14,14 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/addScheduleMain_topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                app:titleTextColor="@color/white"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:title="Train Info"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>
@@ -131,6 +133,7 @@
         android:layout_marginTop="8dp"
         android:text="Add Schedule"
         app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/primary_blue"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scheduleReachTimeLayout" />
