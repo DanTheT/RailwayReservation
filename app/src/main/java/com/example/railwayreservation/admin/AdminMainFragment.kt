@@ -7,28 +7,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.announcement.SendAnnouncementActivity
-import com.example.railwayreservation.admin.login.AdminLoginFragment
 import com.example.railwayreservation.databinding.FragmentAdminMainBinding
 import com.example.railwayreservation.reportIssue.IssueManage
-import com.example.railwayreservation.reportIssue.ReportIssue
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class AdminMainFragment : Fragment() {
 
     private lateinit var _binding: FragmentAdminMainBinding
-    private val binding get() = _binding!!
+    private val binding get() = _binding
     private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAdminMainBinding.inflate(inflater, container, false)
 
         return binding.root

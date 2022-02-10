@@ -6,6 +6,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".passengerTrain.trainSchedule.TrainScheduleFragment">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/passengerTrainScheduleMain_topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:title="Schedule"
+                app:layout_scrollFlags="scroll|enterAlways|snap"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     <TextView
         android:id="@+id/trainTypeText"
         android:layout_width="wrap_content"
@@ -25,46 +47,14 @@
         android:text="@string/schedule_train_type_txt"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/schedule_end_station_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="50dp"
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainTypeText" />
-
-    <TextView
-        android:id="@+id/schedule_start_station_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="26dp"
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="26dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="26dp"
-        android:contentDescription="@string/arrow_towards_image"
-        android:src="@drawable/ic_double_arrow_24"
-        app:layout_constraintEnd_toStartOf="@+id/schedule_end_station_text"
-        app:layout_constraintStart_toEndOf="@+id/schedule_start_station_text"
-        app:layout_constraintTop_toBottomOf="@+id/trainTypeText" />
+        app:layout_constraintTop_toBottomOf="@id/topBarLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/passenger_schedule_recycler"
         android:layout_width="409dp"
-        android:layout_height="627dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:layout_marginBottom="?attr/actionBarSize"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

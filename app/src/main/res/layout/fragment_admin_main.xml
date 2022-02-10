@@ -38,7 +38,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/primary_dark_blue">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,12 +64,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_train_management"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="@string/body_train_management"
                     android:textAppearance="?attr/textAppearanceBody2"
                     />
@@ -81,9 +86,10 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/train_manage_btn"
-                        style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/primary_light_blue"
                         android:text="@string/button_train_management" />
                 </LinearLayout>
             </LinearLayout>
@@ -98,7 +104,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/train_manage_card"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/primary_dark_blue">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -121,6 +129,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:text="@string/txt_train_announcement"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:layout_marginTop="8dp"/>
@@ -128,6 +138,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="@string/body_train_announcement"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:layout_marginBottom="10dp"
@@ -145,6 +156,8 @@
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/primary_light_blue"
                         android:text="@string/button_train_announcement" />
                 </LinearLayout>
             </LinearLayout>
@@ -160,7 +173,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/train_announcement"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/primary_dark_blue">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -183,6 +198,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:text="@string/txt_train_reports"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:layout_marginTop="8dp"/>
@@ -190,6 +207,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="@string/body_train_reports"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:layout_marginBottom="10dp"
@@ -207,6 +225,8 @@
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/primary_light_blue"
                         android:text="@string/button_train_reports" />
                 </LinearLayout>
             </LinearLayout>
@@ -222,7 +242,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/train_reports"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/primary_dark_blue">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -245,6 +267,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:text="@string/txt_train_issues"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     android:layout_marginTop="8dp"/>
@@ -252,6 +276,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="@string/body_train_issues"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:layout_marginBottom="10dp"
@@ -269,6 +294,8 @@
                         style="?attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:backgroundTint="@color/primary_light_blue"
                         android:text="@string/button_train_issues" />
                 </LinearLayout>
             </LinearLayout>

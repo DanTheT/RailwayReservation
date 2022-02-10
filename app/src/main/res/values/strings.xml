@@ -160,7 +160,7 @@
 
     //Train Schedule
     <string name="schedule_page_title">Schedule</string>
-    <string name="schedule_train_type_txt">Train Type: </string>
+    <string name="schedule_train_type_txt">Train Name: </string>
     <string name="arrow_towards_image">This image to show from station towards next station</string>
 
     //Train Schedule Add

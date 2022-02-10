@@ -50,22 +50,8 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
         navController = Navigation.findNavController(view)
         val message = "$recipient"
         view.findViewById<TextView>(R.id.trainTypeText).text = message
-        getSelectedData(message)
         retrieveScheduleTime(message)
 
-    }
-
-    private fun getSelectedData(trainType: String){
-        lineDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo")
-        lineDatabase.child(trainType).get().addOnSuccessListener {
-            if (it.exists()){
-                val startStation = it.child("startStation").value
-                binding.scheduleStartStationText.text = startStation.toString()
-
-                val endStation = it.child("endStation").value
-                binding.scheduleEndStationText.text = endStation.toString()
-            }
-        }
     }
 
     private fun retrieveScheduleTime(trainName: String){
