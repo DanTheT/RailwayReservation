@@ -17,12 +17,14 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                app:titleTextColor="@color/white"
                 app:title="Admin Main Page"
                 app:menu="@menu/top_app_bar"
                 />
@@ -40,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout"
         android:layout_marginTop="8dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/primary_dark_blue">
+        app:cardBackgroundColor="@color/primary_blue">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,7 +108,7 @@
         app:layout_constraintTop_toBottomOf="@id/train_manage_card"
         android:layout_marginTop="8dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/primary_dark_blue">
+        app:cardBackgroundColor="@color/primary_blue">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -175,7 +177,7 @@
         app:layout_constraintTop_toBottomOf="@id/train_announcement"
         android:layout_marginTop="8dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/primary_dark_blue">
+        app:cardBackgroundColor="@color/primary_blue">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -244,7 +246,7 @@
         app:layout_constraintTop_toBottomOf="@id/train_reports"
         android:layout_marginTop="8dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/primary_dark_blue">
+        app:cardBackgroundColor="@color/primary_blue">
 
         <LinearLayout
             android:layout_width="match_parent"
