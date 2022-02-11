@@ -8,9 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
-import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.NavigationFrag
-import com.example.railwayreservation.admin.login.AdminLoginFragment
 import com.example.railwayreservation.databinding.FragmentAdminRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -29,15 +26,10 @@ class AdminRegisterFragment : Fragment() {
     private lateinit var adminConfirmPassword: EditText
     private lateinit var adminPhone: EditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAdminRegisterBinding.inflate(inflater, container, false)
 
         adminName = binding.enterNameTxt
