@@ -58,49 +58,107 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchTrainNameLayout" />
 
+
     <TextView
-        android:id="@+id/train_line_textview"
-        android:layout_width="355dp"
+        android:id="@+id/trainLineTV"
         style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="20dp"
         android:minHeight="48dp"
+        android:text="Train Line :"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/train_line_textview"
         app:layout_constraintTop_toBottomOf="@+id/search_button" />
 
     <TextView
-        android:id="@+id/train_start_textview"
-        android:layout_width="355dp"
+        android:id="@+id/train_line_textview"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="4dp"
         android:minHeight="48dp"
         android:textSize="16sp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/train_line_textview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="362dp" />
+        app:layout_constraintTop_toBottomOf="@+id/search_button" />
+
+
+    <TextView
+        android:id="@+id/trainStartTV"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="20dp"
+        android:minHeight="48dp"
+        android:text="Train Start :"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/train_start_textview"
+        app:layout_constraintTop_toBottomOf="@+id/trainLineTV" />
+
+    <TextView
+        android:id="@+id/train_start_textview"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="4dp"
+        android:minHeight="48dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/train_line_textview" />
+
+    <TextView
+        android:id="@+id/trainEndTV"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="20dp"
+        android:minHeight="48dp"
+        android:text="Train End :"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/train_end_textview"
+        app:layout_constraintTop_toBottomOf="@+id/trainStartTV" />
 
     <TextView
         android:id="@+id/train_end_textview"
-        android:layout_width="355dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="4dp"
         android:minHeight="48dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/train_start_textview" />
+
+
+    <TextView
+        android:id="@+id/trainStatusTV"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="10dp"
+        android:minHeight="48dp"
+        android:text="Train Status :"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/train_status_textview"
+        app:layout_constraintTop_toBottomOf="@+id/trainEndTV" />
 
     <TextView
         android:id="@+id/train_status_textview"
-        android:layout_width="355dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="4dp"
         android:minHeight="48dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/train_end_textview" />
 
@@ -113,4 +171,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/train_status_textview" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
