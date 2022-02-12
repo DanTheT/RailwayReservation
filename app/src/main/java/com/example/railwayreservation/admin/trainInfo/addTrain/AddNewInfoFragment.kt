@@ -34,8 +34,8 @@ class AddNewInfoFragment : Fragment() {
     ): View {
         _binding = FragmentAddNewInfoBinding.inflate(inflater, container, false)
 
-        insertTrainStartStation()
-        insertTrainEndStation()
+        //insertTrainStartStation()
+        //insertTrainEndStation()
         insertTrainCoaches()
 
         nameFocus()
@@ -50,6 +50,26 @@ class AddNewInfoFragment : Fragment() {
 
         binding.addTrainInfoMainTopAppBar.setOnClickListener {
             findNavController().navigate(R.id.action_addNewInfoFragment_to_overallTrainInfoFragment)
+        }
+
+        binding.buttonGetStation.setOnClickListener {
+            when (binding.textFieldTrainName.text.toString()) {
+                "Angsana" -> {
+                    insertTrainStartStation()
+                    insertTrainEndStation()
+                }
+                "Balak" -> {
+                    insertTrainStartStationB()
+                    insertTrainEndStationB()
+                }
+                "Chino" -> {
+                    insertTrainStartStationC()
+                    insertTrainEndStationC()
+                }else -> {
+                    insertTrainStartStationOther()
+                    insertTrainEndStationOther()
+                }
+            }
         }
 
         binding.addNewTrainInfoBtn.setOnClickListener {
@@ -80,8 +100,50 @@ class AddNewInfoFragment : Fragment() {
         binding.textFieldStartStation.setAdapter(listsAdapter)
     }
 
+    private fun insertTrainStartStationB() {
+        val lists = resources.getStringArray(R.array.station_for_balak)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textFieldStartStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainStartStationC() {
+        val lists = resources.getStringArray(R.array.station_for_chino)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textFieldStartStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainStartStationOther() {
+        val lists = resources.getStringArray(R.array.station_for_other)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textFieldStartStation.setAdapter(listsAdapter)
+    }
+
     private fun insertTrainEndStation() {
         val lists = resources.getStringArray(R.array.station_names)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textFieldEndStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainEndStationB() {
+        val lists = resources.getStringArray(R.array.station_for_balak)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textFieldEndStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainEndStationC() {
+        val lists = resources.getStringArray(R.array.station_for_chino)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textFieldEndStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainEndStationOther() {
+        val lists = resources.getStringArray(R.array.station_for_other)
 
         val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
         binding.textFieldEndStation.setAdapter(listsAdapter)

@@ -15,7 +15,8 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/addTrainInfoMain_topAppBar"
@@ -23,6 +24,8 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:navigationIconTint="@color/white"
+                app:titleTextColor="@color/white"
                 app:title="Add new train info" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -48,7 +51,7 @@
             android:id="@+id/textFieldTrainName"
             android:lines="1"
             android:layout_width="match_parent"
-            android:inputType="textPersonName"
+            android:inputType="textCapWords"
             android:layout_height="wrap_content"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -58,9 +61,8 @@
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="55dp"
         android:hint="@string/lane_text"
-        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trainNameLayout">
@@ -156,8 +158,20 @@
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
+        android:backgroundTint="@color/primary_blue"
         android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trainNumberLayout" />
+
+    <Button
+        android:id="@+id/button_getStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get"
+        android:backgroundTint="@color/primary_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainNameLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,8 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/updateTrainInfoMain_topAppBar"
@@ -23,6 +24,8 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:titleTextColor="@color/white"
+                app:navigationIconTint="@color/white"
                 app:title="Update new train info" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -34,6 +37,7 @@
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:hint="@string/train_name_text"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,37 +49,20 @@
             android:id="@+id/textFieldEditTrainName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTrainLineLayout"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/lane_text"
-        app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTrainNameLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textFieldEditTrainLine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editStartStationLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:hint="@string/stationStart_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTrainLineLayout">
+        app:layout_constraintTop_toBottomOf="@+id/button_getStationUpdate"
+        tools:layout_editor_absoluteY="239dp">
 
         <AutoCompleteTextView
             android:id="@+id/textFieldEditStartStation"
@@ -87,7 +74,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/endStationLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -106,7 +93,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editNumberCoachLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -127,6 +114,7 @@
         android:id="@+id/editTrainNumberLayout"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_marginTop="8dp"
         android:hint="@string/addTrainNoText"
         app:errorEnabled="true"
@@ -144,7 +132,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTrainStatusLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:hint="Status"
@@ -168,7 +156,19 @@
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         android:text="Update"
+        android:backgroundTint="@color/primary_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTrainStatusLayout" />
+
+    <Button
+        android:id="@+id/button_getStationUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get"
+        android:backgroundTint="@color/primary_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTrainNameLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

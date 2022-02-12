@@ -231,6 +231,36 @@
         <item>Jesper Station </item>
     </string-array>
 
+    <string-array name="station_for_balak">
+        <item>Balak Station</item>
+        <item>Asper Station</item>
+        <item>Cander Station</item>
+        <item>Dello Station</item>
+        <item>Enpear Station</item>
+        <item>Fenfir Station</item>
+        <item>Godux Station</item>
+    </string-array>
+
+    <string-array name="station_for_chino">
+        <item>Chino Station</item>
+        <item>Dexter Station</item>
+        <item>Elluc Station</item>
+        <item>Feig Station</item>
+        <item>Gallo Station</item>
+        <item>Helium Station</item>
+        <item>Iglor Station</item>
+    </string-array>
+
+    <string-array name="station_for_other">
+        <item>Axxe Station</item>
+        <item>Aitom Station</item>
+        <item>Bander Station</item>
+        <item>Cappo Station</item>
+        <item>Dendum Station</item>
+        <item>Exxete Station</item>
+        <item>Frank Station</item>
+    </string-array>
+
     //Delete page
     <string-array name="train_type_items">
         <item>Angsana Train</item>
