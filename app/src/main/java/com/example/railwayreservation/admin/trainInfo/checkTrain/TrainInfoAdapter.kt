@@ -3,13 +3,12 @@ package com.example.railwayreservation.admin.trainInfo.checkTrain
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.trainInfo.data.BriefInfoData
+import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 
-class TrainInfoAdapter(private val trainList: ArrayList<BriefInfoData>, private val itemClick: OnItemClick): RecyclerView.Adapter<TrainInfoAdapter.TrainViewHolder>() {
+class TrainInfoAdapter(private val trainList: ArrayList<TrainInfo>, private val itemClick: OnItemClick): RecyclerView.Adapter<TrainInfoAdapter.TrainViewHolder>() {
 
     class TrainViewHolder(trainView: View): RecyclerView.ViewHolder(trainView) {
         val trainNameInfo: TextView = trainView.findViewById(R.id.trainInfoName)
@@ -27,7 +26,7 @@ class TrainInfoAdapter(private val trainList: ArrayList<BriefInfoData>, private 
     }
 
     override fun onBindViewHolder(holder: TrainViewHolder, position: Int) {
-        val train: BriefInfoData = trainList[position]
+        val train: TrainInfo = trainList[position]
         holder.trainNameInfo.text = train.trainName
         holder.trainLineInfo.text = train.trainLine
         holder.trainStartStationInfo.text = train.startStation
@@ -46,6 +45,6 @@ class TrainInfoAdapter(private val trainList: ArrayList<BriefInfoData>, private 
     }
 
     interface OnItemClick {
-        fun onItemClick(data: BriefInfoData)
+        fun onItemClick(data: TrainInfo)
     }
 }

@@ -70,9 +70,6 @@
             android:name=".passengerTrain.TrainMainActivity"
             android:exported="true" />
         <activity
-            android:name=".reportIssue.IssueManage"
-            android:exported="false" />
-        <activity
             android:name=".reportIssue.ReportIssue"
             android:exported="false" />
         <activity

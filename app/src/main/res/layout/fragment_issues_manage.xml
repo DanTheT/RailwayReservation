@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/frameLayout3"
+    android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.trainSeats.OverallTrainSeatsFragment">
+    tools:context=".reportIssue.IssuesManageFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/topBarLayout"
@@ -18,29 +18,29 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/overallTrainSeatMain_topAppBar"
+                android:id="@+id/issueManageMain_topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:title="Train Seats" />
+                app:title="Issue manage" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/searchTrainSeatNameLayout"
+        android:id="@+id/issueCategoryLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Train Name"
+        android:hint="Issue Category"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout">
 
         <AutoCompleteTextView
-            android:id="@+id/textFieldSearchSeatName"
+            android:id="@+id/textFieldSearchCategory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="none"
@@ -48,43 +48,33 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/searchSeatName"
+        android:id="@+id/searchCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
-        app:layout_constraintEnd_toStartOf="@+id/clearRecyclerSeatName"
+        app:layout_constraintEnd_toStartOf="@+id/clearRecyclerCategory"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchTrainSeatNameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/issueCategoryLayout" />
 
     <Button
-        android:id="@+id/clearRecyclerSeatName"
+        android:id="@+id/clearRecyclerCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="72dp"
         android:text="Clear"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchTrainSeatNameLayout" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fltAddNewSeats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:contentDescription="add new seats"
-        android:src="@drawable/ic_add_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="75dp"
-        android:focusable="true" />
+        app:layout_constraintTop_toBottomOf="@+id/issueCategoryLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/displayOverallSeatsRV"
-        android:layout_width="409dp"
+        android:id="@+id/displayIssuesRecyclerView"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchSeatName" />
+        app:layout_constraintTop_toBottomOf="@+id/searchCategory"
+        app:layout_constraintVertical_bias="0.952" />
 </androidx.constraintlayout.widget.ConstraintLayout>

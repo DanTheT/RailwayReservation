@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainSchedule.data.Schedule
+import com.example.railwayreservation.admin.trainSchedule.data.ScheduleAdapter
 import com.example.railwayreservation.databinding.FragmentOverallTrainScheduleBinding
 import com.google.firebase.database.*
 
@@ -27,7 +29,7 @@ class OverallTrainScheduleFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentOverallTrainScheduleBinding.inflate(inflater, container, false)
 
         scheduleRecycleView = binding.displayScheduleRV

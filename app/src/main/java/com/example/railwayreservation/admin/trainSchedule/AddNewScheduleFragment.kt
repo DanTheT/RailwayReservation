@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainSchedule.data.Schedule
 import com.example.railwayreservation.databinding.FragmentAddNewScheduleBinding
-import com.google.firebase.database.*
 
 class AddNewScheduleFragment : Fragment() {
 
@@ -50,7 +51,18 @@ class AddNewScheduleFragment : Fragment() {
         }
 
         binding.addNewScheduleBtn.setOnClickListener {
-            insertNewSchedule()
+            val arriveTime = binding.textScheduleArriveTime.text.toString()
+            val reachTime = binding.textScheduleReachTime.text.toString()
+
+            try {
+                if (reachTime > arriveTime) {
+                    insertNewSchedule()
+                } else {
+                    Toast.makeText(requireContext(), "$reachTime cannot less / equal $arriveTime", Toast.LENGTH_LONG).show()
+                }
+            }catch (e: Exception) {
+
+            }
         }
     }
 
@@ -95,9 +107,10 @@ class AddNewScheduleFragment : Fragment() {
         val arriveTime = binding.textScheduleArriveTime.text.toString()
         val nextStation = binding.textScheduleNextStation.text.toString()
         val reachTime = binding.textScheduleReachTime.text.toString()
+        val status = "Available"
 
         val scheduleInfo = Schedule (
-            trainName, startStation, arriveTime, nextStation, reachTime
+            trainName, startStation, arriveTime, nextStation, reachTime, status
                 )
 
         scheduleViewModel.insertNewSchedule(trainName, arriveTime, scheduleInfo)

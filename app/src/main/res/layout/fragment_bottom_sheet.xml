@@ -21,66 +21,8 @@
             android:id="@+id/btmSheetTrainName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:text="Name"
-            style="@style/TextAppearance.MaterialComponents.Body1"/>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Coaches: "
-            style="@style/TextAppearance.MaterialComponents.Headline5"/>
-
-        <TextView
-            android:id="@+id/btmSheetCoaches"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Coaches"
-            style="@style/TextAppearance.MaterialComponents.Body1"/>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Number: "
-            style="@style/TextAppearance.MaterialComponents.Headline5"/>
-
-        <TextView
-            android:id="@+id/btmSheetTrainNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Number"
-            style="@style/TextAppearance.MaterialComponents.Body1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Status: "
-            style="@style/TextAppearance.MaterialComponents.Headline5"/>
-
-        <TextView
-            android:id="@+id/btmSheetTrainStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Status"
             style="@style/TextAppearance.MaterialComponents.Body1"/>
     </LinearLayout>
 

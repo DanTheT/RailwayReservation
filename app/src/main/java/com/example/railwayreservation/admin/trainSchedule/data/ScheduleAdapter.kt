@@ -1,4 +1,4 @@
-package com.example.railwayreservation.admin.trainSchedule
+package com.example.railwayreservation.admin.trainSchedule.data
 
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +14,7 @@ class ScheduleAdapter(private val scheduleList: ArrayList<Schedule>): RecyclerVi
         val nextStation: TextView = scheduleView.findViewById(R.id.admin_scheduleNext)
         val arriveTime: TextView = scheduleView.findViewById(R.id.admin_scheduleArrive)
         val reachTime: TextView = scheduleView.findViewById(R.id.admin_scheduleReach)
+        val status: TextView = scheduleView.findViewById(R.id.admin_scheduleStatus)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleViewHolder {
@@ -28,6 +29,7 @@ class ScheduleAdapter(private val scheduleList: ArrayList<Schedule>): RecyclerVi
         holder.nextStation.text = schedule.nextStation
         holder.arriveTime.text = schedule.arriveTime
         holder.reachTime.text = schedule.reachTime
+        holder.status.text = schedule.status
     }
 
     override fun getItemCount(): Int {

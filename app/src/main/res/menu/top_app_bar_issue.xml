@@ -6,6 +6,7 @@
         android:id="@+id/menuIssues"
         android:title="Having issue?"
         android:icon="@drawable/ic_question_mark_24"
+        android:iconTint="@color/white"
         android:contentDescription="Report regarding issues"
         app:showAsAction="ifRoom"/>
 </menu>

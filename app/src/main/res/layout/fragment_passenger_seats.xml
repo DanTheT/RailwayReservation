@@ -14,370 +14,56 @@
         android:layout_marginBottom="9dp"
         android:text="TextView"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectSeatCoach"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginTop="60dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/seat_trainType">
 
-        <ImageView
-            android:id="@+id/seat_A1"
-            android:layout_width="48dp"
+        <AutoCompleteTextView
+            android:hint="Coach"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:minHeight="48dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/seat_B3"
-            android:layout_width="48dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectSeatCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectSeatCoach">
+
+        <AutoCompleteTextView
+            android:hint="Seat Category"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider5"
-            app:layout_constraintStart_toEndOf="@+id/divider"
-            app:layout_constraintTop_toBottomOf="@+id/seat_B2" />
+            android:minHeight="48dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/seat_A4"
-            android:layout_width="48dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectSeatCategory">
+
+        <AutoCompleteTextView
+            android:hint="Seats"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seat_A3" />
+            android:minHeight="48dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/seat_B4"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider5"
-            app:layout_constraintStart_toEndOf="@+id/divider"
-            app:layout_constraintTop_toBottomOf="@+id/seat_B3" />
 
-        <ImageView
-            android:id="@+id/seat_A5"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seat_A4" />
-
-        <ImageView
-            android:id="@+id/seat_B5"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider5"
-            app:layout_constraintStart_toEndOf="@+id/divider"
-            app:layout_constraintTop_toBottomOf="@+id/seat_B4" />
-
-        <ImageView
-            android:id="@+id/seat_A6"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seat_A5" />
-
-        <ImageView
-            android:id="@+id/seat_B6"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider5"
-            app:layout_constraintStart_toEndOf="@+id/divider"
-            app:layout_constraintTop_toBottomOf="@+id/seat_B5" />
-
-        <ImageView
-            android:id="@+id/seat_A7"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seat_A6" />
-
-        <ImageView
-            android:id="@+id/seat_B7"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider5"
-            app:layout_constraintStart_toEndOf="@+id/divider"
-            app:layout_constraintTop_toBottomOf="@+id/seat_B6" />
-
-        <ImageView
-            android:id="@+id/seat_A2"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seat_A1" />
-
-        <ImageView
-            android:id="@+id/seat_B2"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider5"
-            app:layout_constraintStart_toEndOf="@+id/divider"
-            app:layout_constraintTop_toBottomOf="@+id/seat_B1" />
-
-        <ImageView
-            android:id="@+id/seat_A3"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/seat_A2" />
-
-        <ImageView
-            android:id="@+id/seat_B1"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider5"
-            app:layout_constraintStart_toEndOf="@+id/divider"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:id="@+id/divider5"
-            android:layout_width="50dp"
-            android:layout_height="450dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.523"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="1dp"
-            android:layout_height="450dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintEnd_toStartOf="@+id/divider5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/seat_C1"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider2"
-            app:layout_constraintStart_toEndOf="@+id/divider5"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/seat_D2"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/divider2"
-            app:layout_constraintTop_toBottomOf="@+id/seat_D1" />
-
-        <ImageView
-            android:id="@+id/seat_D3"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/divider2"
-            app:layout_constraintTop_toBottomOf="@+id/seat_D2" />
-
-        <ImageView
-            android:id="@+id/seat_D4"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/divider2"
-            app:layout_constraintTop_toBottomOf="@+id/seat_D3" />
-
-        <ImageView
-            android:id="@+id/seat_D5"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/divider2"
-            app:layout_constraintTop_toBottomOf="@+id/seat_D4" />
-
-        <ImageView
-            android:id="@+id/seat_D6"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/divider2"
-            app:layout_constraintTop_toBottomOf="@+id/seat_D5" />
-
-        <ImageView
-            android:id="@+id/seat_D7"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/divider2"
-            app:layout_constraintTop_toBottomOf="@+id/seat_D6" />
-
-        <ImageView
-            android:id="@+id/seat_D1"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/divider2"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/seat_C2"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider2"
-            app:layout_constraintStart_toEndOf="@+id/divider5"
-            app:layout_constraintTop_toBottomOf="@+id/seat_C1" />
-
-        <ImageView
-            android:id="@+id/seat_C3"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider2"
-            app:layout_constraintStart_toEndOf="@+id/divider5"
-            app:layout_constraintTop_toBottomOf="@+id/seat_C2" />
-
-        <ImageView
-            android:id="@+id/seat_C4"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider2"
-            app:layout_constraintStart_toEndOf="@+id/divider5"
-            app:layout_constraintTop_toBottomOf="@+id/seat_C3" />
-
-        <ImageView
-            android:id="@+id/seat_C5"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider2"
-            app:layout_constraintStart_toEndOf="@+id/divider5"
-            app:layout_constraintTop_toBottomOf="@+id/seat_C4" />
-
-        <ImageView
-            android:id="@+id/seat_C6"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider2"
-            app:layout_constraintStart_toEndOf="@+id/divider5"
-            app:layout_constraintTop_toBottomOf="@+id/seat_C5" />
-
-        <ImageView
-            android:id="@+id/seat_C7"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_square_24"
-            app:layout_constraintEnd_toStartOf="@+id/divider2"
-            app:layout_constraintStart_toEndOf="@+id/divider5"
-            app:layout_constraintTop_toBottomOf="@+id/seat_C6" />
-
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="1dp"
-            android:layout_height="450dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.467"
-            app:layout_constraintStart_toEndOf="@+id/divider5"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

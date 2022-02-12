@@ -10,25 +10,18 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.NavigationFrag
-import com.example.railwayreservation.admin.trainSeats.SeatsManageFragment
 import com.example.railwayreservation.databinding.FragmentTrainManageBinding
 
 class TrainManageFragment : Fragment(), View.OnClickListener {
 
     private lateinit var _binding: FragmentTrainManageBinding
-    private val binding get() = _binding!!
+    private val binding get() = _binding
     private lateinit var navController: NavController
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTrainManageBinding.inflate(inflater, container, false)
 
         return binding.root

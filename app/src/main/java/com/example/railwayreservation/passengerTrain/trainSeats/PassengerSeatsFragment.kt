@@ -23,7 +23,7 @@ class PassengerSeatsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        recipient = arguments!!.getString("recipient")
+        //recipient = arguments!!.getString("recipient")
 
     }
 
@@ -50,43 +50,7 @@ class PassengerSeatsFragment : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     for (seatsSnapshot in snapshot.children) {
-                        val seats = seatsSnapshot.getValue(PassengerSeatsData::class.java)
-
-                        when (seats?.available) {
-                            "Yes" -> binding.seatA1.setBackgroundColor(Color.rgb(0, 255, 0))
-                            else -> {
-                                binding.seatA1.setBackgroundColor(Color.rgb(255, 0, 0))
-                            }
                         }
-
-                        when (seats?.available) {
-                            "Yes" -> binding.seatA2.setBackgroundColor(Color.rgb(0, 255, 0))
-                            else -> {
-                                binding.seatA2.setBackgroundColor(Color.rgb(255, 0, 0))
-                            }
-                        }
-
-                        when (seats?.available) {
-                            "Yes" -> binding.seatA3.setBackgroundColor(Color.rgb(0, 255, 0))
-                            else -> {
-                                binding.seatA3.setBackgroundColor(Color.rgb(255, 0, 0))
-                            }
-                        }
-
-                        when (seats?.available) {
-                            "Yes" -> binding.seatA4.setBackgroundColor(Color.rgb(0, 255, 0))
-                            else -> {
-                                binding.seatA4.setBackgroundColor(Color.rgb(255, 0, 0))
-                            }
-                        }
-
-                        when (seats?.available) {
-                            "Yes" -> binding.seatA5.setBackgroundColor(Color.rgb(0, 255, 0))
-                            else -> {
-                                binding.seatA5.setBackgroundColor(Color.rgb(255, 0, 0))
-                            }
-                        }
-                    }
                 }
             }
             override fun onCancelled(error: DatabaseError) {

@@ -1,8 +1,10 @@
 package com.example.railwayreservation.passengerTrain.trainSchedule
 
 data class ScheduleData(
-    val fromStation: String? = "",
-    val nextStation: String? = "",
-    val arrivalTime: String? = "",
-    val departureTime: String? = "",
+    val trainName: String = "",
+    val fromStation: String = "",
+    val arriveTime:  String = "",
+    val nextStation: String = "",
+    val reachTime: String = "",
+    val status: String = ""
 )

@@ -15,13 +15,16 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/overallTrainScheduleMain_topAppBar"
                 android:layout_width="match_parent"
+                app:titleTextColor="@color/white"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:navigationIconTint="@color/white"
                 app:title="Train Schedule" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -37,11 +40,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchName"
+        android:layout_marginBottom="?attr/actionBarSize"
         app:layout_constraintVertical_bias="0.308" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/scheduleSearchNameLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -64,6 +68,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="add new schedule"
+        android:backgroundTint="@color/primary_blue"
         android:src="@drawable/ic_add_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,6 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
+        android:backgroundTint="@color/primary_blue"
         app:layout_constraintEnd_toStartOf="@+id/clearRecycler"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scheduleSearchNameLayout" />
@@ -86,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="72dp"
+        android:backgroundTint="@color/primary_blue"
         android:text="Clear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scheduleSearchNameLayout" />

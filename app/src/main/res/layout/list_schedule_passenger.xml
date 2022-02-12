@@ -4,22 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/primary_light_blue"
     android:layout_margin="15dp"
-    >
+    app:cardElevation="8dp"
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp"
-
-        >
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/schedule_fromStation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="From station"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,54 +27,51 @@
             android:id="@+id/schedule_toStation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:text="To station"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            app:layout_constraintStart_toEndOf="@+id/schedule_fromStation"
-            app:layout_constraintTop_toTopOf="@+id/schedule_fromStation"
-            app:srcCompat="@drawable/ic_double_arrow_24"
-            android:contentDescription="To next station" />
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/schedule_fromStation" />
 
         <TextView
             android:id="@+id/schedule_arriveTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
             android:text="Arrival"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/schedule_fromStation" />
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/schedule_fromStation"
+            app:layout_constraintTop_toTopOf="@+id/schedule_fromStation" />
 
         <TextView
-            android:id="@+id/schedule_departTime"
+            android:id="@+id/schedule_reachTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reach"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/schedule_arriveTime"
+            app:layout_constraintTop_toTopOf="@+id/schedule_toStation" />
+
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="112dp"
-            android:text="Depart"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/schedule_toStation" />
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/schedule_toStation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/schedule_fromStation"
+            app:srcCompat="@drawable/ic_arrow_down_24" />
 
-        <Button
-            android:id="@+id/btnReserve"
+        <TextView
+            android:id="@+id/schedule_trainName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="193dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginEnd="40dp"
-            android:text="Reserve Now"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/schedule_departTime" />
+            android:layout_marginStart="8dp"
+            android:text="Name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/schedule_arriveTime"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
