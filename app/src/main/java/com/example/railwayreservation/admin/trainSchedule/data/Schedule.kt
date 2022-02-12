@@ -1,4 +1,4 @@
-package com.example.railwayreservation.admin.trainSchedule
+package com.example.railwayreservation.admin.trainSchedule.data
 
 data class Schedule(
     val trainName: String = "",

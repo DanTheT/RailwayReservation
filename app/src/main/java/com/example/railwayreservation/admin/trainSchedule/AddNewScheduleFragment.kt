@@ -12,8 +12,8 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainSchedule.data.Schedule
 import com.example.railwayreservation.databinding.FragmentAddNewScheduleBinding
-import com.google.firebase.database.*
 
 class AddNewScheduleFragment : Fragment() {
 

@@ -24,6 +24,7 @@
                 app:titleTextColor="@color/white"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:navigationIconTint="@color/white"
                 app:title="Train Schedule" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -67,6 +68,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="add new schedule"
+        android:backgroundTint="@color/primary_blue"
         android:src="@drawable/ic_add_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,4 +1,4 @@
-package com.example.railwayreservation.admin.trainSchedule
+package com.example.railwayreservation.admin.trainSchedule.data
 
 import android.view.LayoutInflater
 import android.view.View

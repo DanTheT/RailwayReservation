@@ -41,7 +41,7 @@ class PassengerHome : AppCompatActivity() {
 //go to reservation screen
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
-            startActivity(Intent(this,TrainMainActivity::class.java))
+            startActivity(Intent(this,PassengerReservation::class.java))
 
             }
 

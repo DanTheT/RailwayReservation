@@ -1,6 +1,7 @@
 package com.example.railwayreservation.admin.trainSchedule
 
 import androidx.lifecycle.ViewModel
+import com.example.railwayreservation.admin.trainSchedule.data.Schedule
 import com.google.firebase.database.*
 
 class AddScheduleViewModel: ViewModel() {

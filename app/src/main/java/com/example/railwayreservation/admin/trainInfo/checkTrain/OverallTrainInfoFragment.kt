@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -15,9 +13,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.trainInfo.data.BriefInfoData
+import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 import com.example.railwayreservation.databinding.FragmentOverallTrainInfoBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.*
 
 class OverallTrainInfoFragment : Fragment(), TrainInfoAdapter.OnItemClick {
@@ -25,7 +22,7 @@ class OverallTrainInfoFragment : Fragment(), TrainInfoAdapter.OnItemClick {
     private var _binding: FragmentOverallTrainInfoBinding? = null
     private val binding get() = _binding!!
     private lateinit var trainInfoRecyclerView: RecyclerView
-    private lateinit var trainArrayList: ArrayList<BriefInfoData>
+    private lateinit var trainArrayList: ArrayList<TrainInfo>
     private lateinit var trainInfoDatabase: DatabaseReference
     private lateinit var navController: NavController
 
@@ -39,7 +36,7 @@ class OverallTrainInfoFragment : Fragment(), TrainInfoAdapter.OnItemClick {
         trainInfoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         trainInfoRecyclerView.setHasFixedSize(true)
 
-        trainArrayList = arrayListOf<BriefInfoData>()
+        trainArrayList = arrayListOf()
         retrieveTrainInfo()
         return binding.root
     }
@@ -63,7 +60,7 @@ class OverallTrainInfoFragment : Fragment(), TrainInfoAdapter.OnItemClick {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     for (trainInfo in snapshot.children) {
-                        val info = trainInfo.getValue(BriefInfoData::class.java)
+                        val info = trainInfo.getValue(TrainInfo::class.java)
                         trainArrayList.add(info!!)
                     }
                     trainInfoRecyclerView.adapter = TrainInfoAdapter(trainArrayList, this@OverallTrainInfoFragment)
@@ -82,7 +79,7 @@ class OverallTrainInfoFragment : Fragment(), TrainInfoAdapter.OnItemClick {
     }
 
     @SuppressLint("InflateParams")
-    override fun onItemClick(data: BriefInfoData) {
+    override fun onItemClick(data: TrainInfo) {
         val bundle = bundleOf("trainName" to data.trainName)
         findNavController().navigate(R.id.action_overallTrainInfoFragment_to_bottomSheetFragment, bundle)
     }

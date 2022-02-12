@@ -14,14 +14,16 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBarPassenger"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:menu="@menu/top_app_bar_issue"/>
+                app:navigationIconTint="@color/white"
+                app:menu="@menu/top_app_bar_issue" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
