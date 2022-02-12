@@ -6,28 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".passenger.PassengerHome">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/topBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--        android:id="@+id/topBarLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/primary_dark_blue">
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBarPassenger"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:navigationIconTint="@color/white"
-                app:menu="@menu/top_app_bar_issue" />
+<!--            <com.google.android.material.appbar.MaterialToolbar-->
+<!--                android:id="@+id/passengerHome_topAppBar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                app:titleTextColor="@color/white"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--                app:layout_scrollFlags="scroll|enterAlways|snap"-->
+<!--                app:navigationIcon="@drawable/ic_arrow_back_24"-->
+<!--                app:title="Home" />-->
 
-        </com.google.android.material.appbar.AppBarLayout>
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
     <ImageButton
         android:id="@+id/btnReservation"
