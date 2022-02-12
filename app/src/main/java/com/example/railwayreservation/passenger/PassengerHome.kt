@@ -82,8 +82,8 @@ class PassengerHome : AppCompatActivity() {
             startActivity(Intent(this, PassengerMembership::class.java))
         }
 
-        binding.topAppBarPassenger.setOnMenuItemClickListener {
-            when (it.itemId) {
+        binding.passengerHomeTopAppBar.setOnClickListener {
+            when (it.id) {
                 R.id.menuIssues -> {
                     startActivity(Intent(this, ReportIssue::class.java))
                     true
