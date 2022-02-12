@@ -38,6 +38,13 @@ class PassengerHome : AppCompatActivity() {
             finish()
         }
 
+//        //to change title of activity
+//        val actionBar = supportActionBar
+//        actionBar!!.title = "Home"
+//
+//        //to set back button
+//        actionBar.setDisplayHomeAsUpEnabled(true)
+
 //go to reservation screen
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
@@ -87,5 +94,13 @@ class PassengerHome : AppCompatActivity() {
             }
         }
     }
+
+//    //to set back button
+//    override fun onSupportNavigateUp(): Boolean {
+//        onBackPressed()
+//        return true
+//    }
+
 }
+
 
