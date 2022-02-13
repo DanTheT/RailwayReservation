@@ -34,8 +34,6 @@ class AddNewScheduleFragment : Fragment() {
         _binding = FragmentAddNewScheduleBinding.inflate(inflater, container, false)
 
         insertTrainNames()
-        insertScheduleStartStation()
-        insertScheduleNextStation()
         insertScheduleArriveTime()
         insertScheduleReachTime()
 
@@ -50,6 +48,27 @@ class AddNewScheduleFragment : Fragment() {
             findNavController().navigate(R.id.action_addNewScheduleFragment_to_overallTrainScheduleFragment)
         }
 
+        binding.buttonAddGetStation.setOnClickListener {
+            when (binding.textScheduleTrainName.text.toString()) {
+                "Angsana" -> {
+                    insertScheduleStartStation()
+                    insertScheduleNextStation()
+                }
+                "Balak" -> {
+                    insertTrainStartStationB()
+                    insertTrainNextStationB()
+                }
+                "Chino" -> {
+                    insertTrainStartStationC()
+                    insertTrainNextStationC()
+                }
+                else -> {
+                    insertTrainStartStationOther()
+                    insertTrainNextStationOther()
+                }
+            }
+        }
+
         binding.addNewScheduleBtn.setOnClickListener {
             val arriveTime = binding.textScheduleArriveTime.text.toString()
             val reachTime = binding.textScheduleReachTime.text.toString()
@@ -57,10 +76,15 @@ class AddNewScheduleFragment : Fragment() {
             try {
                 if (reachTime > arriveTime) {
                     insertNewSchedule()
+                    Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(requireContext(), "$reachTime cannot less / equal $arriveTime", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "$reachTime cannot less / equal the $arriveTime",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
-            }catch (e: Exception) {
+            } catch (e: Exception) {
                 e.message
             }
         }
@@ -80,8 +104,50 @@ class AddNewScheduleFragment : Fragment() {
         binding.textScheduleStartStation.setAdapter(listsAdapter)
     }
 
+    private fun insertTrainStartStationB() {
+        val lists = resources.getStringArray(R.array.station_for_balak)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textScheduleStartStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainStartStationC() {
+        val lists = resources.getStringArray(R.array.station_for_chino)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textScheduleStartStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainStartStationOther() {
+        val lists = resources.getStringArray(R.array.station_for_other)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textScheduleStartStation.setAdapter(listsAdapter)
+    }
+
     private fun insertScheduleNextStation() {
         val lists = resources.getStringArray(R.array.station_names)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textScheduleNextStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainNextStationB() {
+        val lists = resources.getStringArray(R.array.station_for_balak)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textScheduleNextStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainNextStationC() {
+        val lists = resources.getStringArray(R.array.station_for_chino)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textScheduleNextStation.setAdapter(listsAdapter)
+    }
+
+    private fun insertTrainNextStationOther() {
+        val lists = resources.getStringArray(R.array.station_for_other)
 
         val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
         binding.textScheduleNextStation.setAdapter(listsAdapter)
@@ -109,9 +175,9 @@ class AddNewScheduleFragment : Fragment() {
         val reachTime = binding.textScheduleReachTime.text.toString()
         val status = "Available"
 
-        val scheduleInfo = Schedule (
+        val scheduleInfo = Schedule(
             trainName, startStation, arriveTime, nextStation, reachTime, status
-                )
+        )
 
         scheduleViewModel.insertNewSchedule(trainName, arriveTime, scheduleInfo)
     }

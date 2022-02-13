@@ -49,7 +49,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_getUpdateSchedule">
@@ -120,6 +120,26 @@
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/updateTrainStatusLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:hint="Status"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleUpdateReachTimeLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/textFieldUpdateTrainStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:minHeight="48dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/button_getUpdateSchedule"
         android:layout_width="wrap_content"
@@ -142,5 +162,5 @@
         android:backgroundTint="@color/primary_blue"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleUpdateReachTimeLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/updateTrainStatusLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

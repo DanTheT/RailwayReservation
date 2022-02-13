@@ -249,6 +249,8 @@
         <item>Gallo Station</item>
         <item>Helium Station</item>
         <item>Iglor Station</item>
+        <item>Sonja Station</item>
+        <item>Nadine Station</item>
     </string-array>
 
     <string-array name="station_for_other">
