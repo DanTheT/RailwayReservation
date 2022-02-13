@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -17,7 +18,7 @@ import com.example.railwayreservation.admin.trainSchedule.data.ScheduleAdapter
 import com.example.railwayreservation.databinding.FragmentOverallTrainScheduleBinding
 import com.google.firebase.database.*
 
-class OverallTrainScheduleFragment : Fragment() {
+class OverallTrainScheduleFragment : Fragment(), ScheduleAdapter.OnItemClick {
 
     private var _binding: FragmentOverallTrainScheduleBinding? = null
     private val binding get() = _binding!!
@@ -60,9 +61,11 @@ class OverallTrainScheduleFragment : Fragment() {
         }
 
         binding.clearRecycler.setOnClickListener {
+            val selectName = binding.textFieldSearchName.text
             try {
                 if (scheduleRecycleView.isShown) {
                     scheduleArrayList.clear()
+                    selectName.clear()
                     scheduleRecycleView.adapter?.notifyDataSetChanged()
                 }
             }catch (e: Exception) {
@@ -88,7 +91,7 @@ class OverallTrainScheduleFragment : Fragment() {
                         val schedule = scheduleSnap.getValue(Schedule::class.java)
                         scheduleArrayList.add(schedule!!)
                     }
-                    scheduleRecycleView.adapter = ScheduleAdapter(scheduleArrayList)
+                    scheduleRecycleView.adapter = ScheduleAdapter(scheduleArrayList, this@OverallTrainScheduleFragment)
                 }
             }
 
@@ -102,5 +105,10 @@ class OverallTrainScheduleFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClick(data: Schedule) {
+        val bundle = bundleOf("trainName" to data.trainName)
+        findNavController().navigate(R.id.action_overallTrainScheduleFragment_to_scheduleBtmSheetFragment, bundle)
     }
 }

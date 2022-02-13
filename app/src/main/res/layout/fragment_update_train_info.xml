@@ -26,7 +26,7 @@
                 app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:titleTextColor="@color/white"
                 app:navigationIconTint="@color/white"
-                app:title="Update new train info" />
+                app:title="Update train info" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
