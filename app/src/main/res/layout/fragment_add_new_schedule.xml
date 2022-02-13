@@ -23,7 +23,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:titleTextColor="@color/white"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:title="Train Info"
+                app:title="Add Schedule"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
         </com.google.android.material.appbar.AppBarLayout>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.trainInfo.checkTrain.BottomSheetFragment"
+    tools:context=".admin.trainSchedule.ScheduleBtmSheetFragment"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,7 +18,7 @@
             style="@style/TextAppearance.MaterialComponents.Headline4"/>
 
         <TextView
-            android:id="@+id/btmSheetTrainName"
+            android:id="@+id/btmSheetTrainNameSchedule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -33,11 +33,12 @@
         android:layout_gravity="center">
 
         <Button
-            android:id="@+id/updateTrainInfoBtn"
+            android:id="@+id/updateTrainScheduleBtn"
             android:layout_width="match_parent"
             android:backgroundTint="@color/primary_blue"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="UPDATE"/>
     </LinearLayout>
+
 </LinearLayout>

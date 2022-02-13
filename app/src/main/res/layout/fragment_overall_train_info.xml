@@ -14,14 +14,17 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/overallTrainInfoMain_topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:navigationIconTint="@color/white"
                 app:title="Train Info"
+                app:titleTextColor="@color/white"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -46,6 +49,7 @@
         android:layout_marginEnd="16dp"
         android:layout_gravity="end|bottom"
         android:clickable="true"
+        android:backgroundTint="@color/primary_blue"
         android:contentDescription="add new train"
         android:focusable="true"
         android:src="@drawable/ic_add_24"

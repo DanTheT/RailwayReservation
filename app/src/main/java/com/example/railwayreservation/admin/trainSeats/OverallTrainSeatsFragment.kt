@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -16,7 +18,7 @@ import com.google.firebase.database.*
 import java.util.*
 import kotlin.collections.ArrayList
 
-class OverallTrainSeatsFragment : Fragment() {
+class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
 
     private var _binding: FragmentOverallTrainSeatsBinding? = null
     private val binding get() = _binding!!
@@ -90,7 +92,7 @@ class OverallTrainSeatsFragment : Fragment() {
                                 val seats = seatSnap.getValue(SeatsData::class.java)
                                 seatsArrayList.add(seats!!)
                             }
-                            seatsRecycleView.adapter = SeatsAdapter(seatsArrayList)
+                            seatsRecycleView.adapter = SeatsAdapter(seatsArrayList, this@OverallTrainSeatsFragment)
                         }
                     }
 
@@ -105,5 +107,10 @@ class OverallTrainSeatsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClick(data: SeatsData) {
+        val bundle = bundleOf("coachNumber" to data.coachNum)
+        Toast.makeText(requireContext(), "Clicked on ${data.coachNum}", Toast.LENGTH_SHORT).show()
     }
 }

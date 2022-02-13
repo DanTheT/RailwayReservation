@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
 
-class ScheduleAdapter(private val scheduleList: ArrayList<Schedule>): RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
+class ScheduleAdapter(private val scheduleList: ArrayList<Schedule>, private val itemClick: OnItemClick): RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
     class ScheduleViewHolder(scheduleView: View): RecyclerView.ViewHolder(scheduleView) {
         val trainName: TextView = scheduleView.findViewById(R.id.admin_trainName)
         val fromStation: TextView = scheduleView.findViewById(R.id.admin_scheduleFrom)
@@ -30,9 +30,17 @@ class ScheduleAdapter(private val scheduleList: ArrayList<Schedule>): RecyclerVi
         holder.arriveTime.text = schedule.arriveTime
         holder.reachTime.text = schedule.reachTime
         holder.status.text = schedule.status
+
+        holder.itemView.setOnClickListener {
+            itemClick.onItemClick(schedule)
+        }
     }
 
     override fun getItemCount(): Int {
         return scheduleList.size
+    }
+
+    interface OnItemClick {
+        fun onItemClick(data: Schedule)
     }
 }

@@ -6,28 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".passenger.PassengerHome">
 
-<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
-<!--        android:id="@+id/topBarLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
 
-<!--        <com.google.android.material.appbar.AppBarLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
-<!--            <com.google.android.material.appbar.MaterialToolbar-->
-<!--                android:id="@+id/passengerHome_topAppBar"-->
-<!--                android:layout_width="match_parent"-->
-<!--                app:titleTextColor="@color/white"-->
-<!--                android:layout_height="?attr/actionBarSize"-->
-<!--                app:layout_scrollFlags="scroll|enterAlways|snap"-->
-<!--                app:navigationIcon="@drawable/ic_arrow_back_24"-->
-<!--                app:title="Home" />-->
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/passengerHomeTopAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:navigationIconTint="@color/white"
+                app:menu="@menu/top_app_bar_issue" />
 
-<!--        </com.google.android.material.appbar.AppBarLayout>-->
+        </com.google.android.material.appbar.AppBarLayout>
 
-<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <ImageButton
         android:id="@+id/btnReservation"
@@ -36,11 +36,10 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="100dp"
         android:background="@null"
+        android:contentDescription="something1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/reservation"
-        android:contentDescription="something1"
-        />
+        app:srcCompat="@drawable/reservation" />
 
     <ImageButton
         android:id="@+id/btnCancellation"
@@ -49,11 +48,10 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="70dp"
         android:background="@null"
+        android:contentDescription="something1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cancellation"
-        android:contentDescription="something1"
-        />
+        app:srcCompat="@drawable/cancellation" />
 
     <ImageButton
         android:id="@+id/btnPayment"
@@ -62,11 +60,10 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="80dp"
         android:background="@null"
+        android:contentDescription="something1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnReservation"
-        app:srcCompat="@drawable/payment"
-        android:contentDescription="something1"
-        />
+        app:srcCompat="@drawable/payment" />
 
     <ImageButton
         android:id="@+id/btnTicket"
@@ -75,11 +72,10 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="70dp"
         android:background="@null"
+        android:contentDescription="something1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCancellation"
-        app:srcCompat="@drawable/tickets"
-        android:contentDescription="something1"
-        />
+        app:srcCompat="@drawable/tickets" />
 
     <ImageButton
         android:id="@+id/btnAccount"
@@ -88,11 +84,10 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="80dp"
         android:background="@null"
+        android:contentDescription="something1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPayment"
-        app:srcCompat="@drawable/account"
-        android:contentDescription="something1"
-        />
+        app:srcCompat="@drawable/account" />
 
     <ImageButton
         android:id="@+id/btnMembership"
@@ -101,11 +96,10 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="70dp"
         android:background="@null"
+        android:contentDescription="something1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnTicket"
-        app:srcCompat="@drawable/membership"
-        android:contentDescription="something1"
-        />
+        app:srcCompat="@drawable/membership" />
 
     <TextView
         android:id="@+id/textView5"

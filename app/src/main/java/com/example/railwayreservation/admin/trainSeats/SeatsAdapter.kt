@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
 
-class SeatsAdapter(private val seatsList: ArrayList<SeatsData>): RecyclerView.Adapter<SeatsAdapter.SeatsViewHolder>() {
+class SeatsAdapter(private val seatsList: ArrayList<SeatsData>, private val itemClick: OnItemClick): RecyclerView.Adapter<SeatsAdapter.SeatsViewHolder>() {
     class SeatsViewHolder(seatsView: View): RecyclerView.ViewHolder(seatsView) {
         val seatAvailable: TextView = seatsView.findViewById(R.id.textViewAvailable)
         val seatCoachNum: TextView = seatsView.findViewById(R.id.textViewName)
@@ -28,9 +28,17 @@ class SeatsAdapter(private val seatsList: ArrayList<SeatsData>): RecyclerView.Ad
         holder.seatNumber.text = seats.seatNo
         holder.seatReserved.text = seats.reserved
         holder.seatFare.text = seats.seatPrice
+
+        holder.itemView.setOnClickListener {
+            itemClick.onItemClick(seats)
+        }
     }
 
     override fun getItemCount(): Int {
         return seatsList.size
+    }
+
+    interface OnItemClick {
+        fun onItemClick(data: SeatsData)
     }
 }

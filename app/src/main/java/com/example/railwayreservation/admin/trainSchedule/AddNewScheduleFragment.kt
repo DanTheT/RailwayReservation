@@ -61,7 +61,7 @@ class AddNewScheduleFragment : Fragment() {
                     Toast.makeText(requireContext(), "$reachTime cannot less / equal $arriveTime", Toast.LENGTH_LONG).show()
                 }
             }catch (e: Exception) {
-
+                e.message
             }
         }
     }
