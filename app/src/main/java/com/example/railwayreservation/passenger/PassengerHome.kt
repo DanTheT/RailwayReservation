@@ -38,6 +38,8 @@ class PassengerHome : AppCompatActivity() {
             finish()
         }
 
+
+
 //        //to change title of activity
 //        val actionBar = supportActionBar
 //        actionBar!!.title = "Home"
@@ -48,14 +50,14 @@ class PassengerHome : AppCompatActivity() {
 //go to reservation screen
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
-            startActivity(Intent(this,PassengerReservation::class.java))
+            startActivity(Intent(this,ReserveTrain::class.java))
 
             }
 
         //go to cancellation screen
         btnCancellation = findViewById(R.id.btnCancellation)
         btnCancellation.setOnClickListener {
-            startActivity(Intent(this, PassengerCancellation::class.java))
+            startActivity(Intent(this, PassengerDatePicker::class.java))
         }
 
         //go to payment screen
@@ -82,17 +84,17 @@ class PassengerHome : AppCompatActivity() {
             startActivity(Intent(this, PassengerMembership::class.java))
         }
 
-        binding.topAppBarPassenger.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.menuIssues -> {
-                    startActivity(Intent(this, ReportIssue::class.java))
-                    true
-                }
-                else -> {
-                    false
-                }
-            }
-        }
+//        binding.topAppBarPassenger.setOnMenuItemClickListener {
+//            when (it.itemId) {
+//                R.id.menuIssues -> {
+//                    startActivity(Intent(this, ReportIssue::class.java))
+//                    true
+//                }
+//                else -> {
+//                    false
+//                }
+//            }
+//        }
     }
 
 //    //to set back button

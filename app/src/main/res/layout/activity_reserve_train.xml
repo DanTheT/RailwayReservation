@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".passengerTrain.trainInfo.TrainInfoFragment">
+    tools:context=".passenger.ReserveTrain">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/topBarLayout"
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="5dp"
         android:minHeight="48dp"
         android:text="Train Line :"
         android:textSize="16sp"
@@ -91,9 +91,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="37dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="5dp"
         android:minHeight="48dp"
-        android:text="Status Start :"
+        android:text="Station Start :"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/train_start_textview"
         app:layout_constraintTop_toBottomOf="@+id/trainLineTV" />
@@ -116,9 +116,9 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="37dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="5dp"
         android:minHeight="48dp"
-        android:text="Train End :"
+        android:text="Station End :"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/train_end_textview"
         app:layout_constraintTop_toBottomOf="@+id/trainStartTV" />
@@ -142,7 +142,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="5dp"
         android:minHeight="48dp"
         android:text="Train Status :"
         android:textSize="16sp"

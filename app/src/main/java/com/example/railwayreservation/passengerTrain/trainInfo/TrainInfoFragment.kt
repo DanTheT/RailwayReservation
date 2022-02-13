@@ -50,6 +50,7 @@ class TrainInfoFragment : Fragment() {
         binding.selectionBtn.setOnClickListener {
             val bundle = bundleOf("recipient" to trainNameSelect)
             navController.navigate(R.id.action_trainInfoFragment_to_trainScheduleFragment, bundle)
+
         }
     }
 

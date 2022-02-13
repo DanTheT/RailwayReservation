@@ -19,7 +19,7 @@ class PassengerDatePicker : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_passenger_cancellation)
+        setContentView(R.layout.activity_passenger_date_picker)
 
         datePicker = findViewById(R.id.date_picker)
         dateTV = findViewById(R.id.dateTV)
@@ -38,4 +38,6 @@ class PassengerDatePicker : AppCompatActivity() {
         btnPickDate.setOnClickListener(View.OnClickListener {
             dateTV.text=("   Your Selected Date : " + datePicker.getDayOfMonth() + "/" + (datePicker.getMonth() + 1) + "/" + datePicker.getYear()) })
     }
+
+    
 }

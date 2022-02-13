@@ -11,10 +11,10 @@ class PassengerScheduleAdapter(private val scheduleList: ArrayList<ScheduleData>
 
     class ScheduleViewHolder(scheduleView: View): RecyclerView.ViewHolder(scheduleView) {
         val receivedName: TextView = scheduleView.findViewById(R.id.schedule_trainName)
-        val receivedStartStation: TextView = scheduleView.findViewById(R.id.schedule_fromStation)
+        val receivedFromStation: TextView = scheduleView.findViewById(R.id.schedule_fromStation)
         val receivedArriveTime: TextView = scheduleView.findViewById(R.id.schedule_arriveTime)
-        val receivedEndStation: TextView = scheduleView.findViewById(R.id.schedule_toStation)
-        val receivedDepartTime: TextView = scheduleView.findViewById(R.id.schedule_departTime)
+        val receivedNextStation: TextView = scheduleView.findViewById(R.id.schedule_nextStation)
+        val receivedReachTime: TextView = scheduleView.findViewById(R.id.schedule_reachTime)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleViewHolder {
@@ -25,10 +25,10 @@ class PassengerScheduleAdapter(private val scheduleList: ArrayList<ScheduleData>
     override fun onBindViewHolder(holder: ScheduleViewHolder, position: Int) {
         val schedule: ScheduleData = scheduleList[position]
         holder.receivedName.text = schedule.trainName
-        holder.receivedStartStation.text = schedule.fromStation
+        holder.receivedFromStation.text = schedule.fromStation
         holder.receivedArriveTime.text = schedule.arriveTime
-        holder.receivedEndStation.text = schedule.nextStation
-        holder.receivedDepartTime.text = schedule.reachTime
+        holder.receivedNextStation.text = schedule.nextStation
+        holder.receivedReachTime.text = schedule.reachTime
 
         holder.itemView.setOnClickListener {
             itemClick.onItemSelectClick(schedule)
