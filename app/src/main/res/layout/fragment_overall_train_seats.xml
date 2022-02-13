@@ -15,14 +15,17 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/overallTrainSeatMain_topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:title="Train Seats" />
+                app:navigationIconTint="@color/white"
+                app:title="Train Seats"
+                app:titleTextColor="@color/white"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -52,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
+        android:backgroundTint="@color/primary_blue"
         app:layout_constraintEnd_toStartOf="@+id/clearRecyclerSeatName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchTrainSeatNameLayout" />
@@ -63,6 +67,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="72dp"
         android:text="Clear"
+        android:backgroundTint="@color/primary_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchTrainSeatNameLayout" />
 
@@ -71,6 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:backgroundTint="@color/primary_blue"
         android:contentDescription="add new seats"
         android:src="@drawable/ic_add_24"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,6 +89,7 @@
         android:id="@+id/displayOverallSeatsRV"
         android:layout_width="409dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="?attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

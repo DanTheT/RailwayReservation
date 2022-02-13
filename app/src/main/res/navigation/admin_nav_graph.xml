@@ -117,6 +117,9 @@
         <action
             android:id="@+id/action_overallTrainSeatsFragment_to_addSeatsFragment"
             app:destination="@id/addSeatsFragment" />
+        <action
+            android:id="@+id/action_overallTrainSeatsFragment_to_btmSheetSeatsFragment"
+            app:destination="@id/btmSheetSeatsFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateTrainInfoFragment"
@@ -126,9 +129,9 @@
         <action
             android:id="@+id/action_updateTrainInfoFragment_to_overallTrainInfoFragment"
             app:destination="@id/overallTrainInfoFragment" />
-
-        <argument android:defaultValue="None"
-            android:name="trainName"/>
+        <argument
+            android:name="nameNumber"
+            app:argType="com.example.railwayreservation.admin.trainInfo.data.ParcelizeInfo" />
     </fragment>
     <dialog
         android:id="@+id/bottomSheetFragment"
@@ -138,9 +141,9 @@
         <action
             android:id="@+id/action_bottomSheetFragment_to_updateTrainInfoFragment"
             app:destination="@id/updateTrainInfoFragment" />
-
-        <argument android:defaultValue="None"
-            android:name="trainName"/>
+        <argument
+            android:name="nameAndNumber"
+            app:argType="com.example.railwayreservation.admin.trainInfo.data.ParcelizeInfo" />
     </dialog>
     <fragment
         android:id="@+id/addSeatsFragment"
@@ -183,5 +186,29 @@
 
         <argument android:defaultValue="None"
             android:name="trainName"/>
+    </fragment>
+    <dialog
+        android:id="@+id/btmSheetSeatsFragment"
+        android:name="com.example.railwayreservation.admin.trainSeats.BtmSheetSeatsFragment"
+        android:label="fragment_btm_sheet_seats"
+        tools:layout="@layout/fragment_btm_sheet_seats" >
+
+        <argument android:defaultValue="None"
+            android:name="coachNumber"/>
+        <action
+            android:id="@+id/action_btmSheetSeatsFragment_to_updateSeatsFragment"
+            app:destination="@id/updateSeatsFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/updateSeatsFragment"
+        android:name="com.example.railwayreservation.admin.trainSeats.UpdateSeatsFragment"
+        android:label="fragment_update_seats"
+        tools:layout="@layout/fragment_update_seats" >
+        <action
+            android:id="@+id/action_updateSeatsFragment_to_overallTrainSeatsFragment"
+            app:destination="@id/overallTrainSeatsFragment" />
+
+        <argument android:defaultValue="None"
+            android:name="coachNumber"/>
     </fragment>
 </navigation>

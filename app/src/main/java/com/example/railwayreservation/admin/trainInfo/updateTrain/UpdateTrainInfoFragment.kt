@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 import com.example.railwayreservation.databinding.FragmentUpdateTrainInfoBinding
@@ -21,12 +22,11 @@ class UpdateTrainInfoFragment : Fragment() {
     private var _binding: FragmentUpdateTrainInfoBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
-    var trainName: String? = null
+    private val args by navArgs<UpdateTrainInfoFragmentArgs>()
     private lateinit var updateViewModel: UpdateTrainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        trainName = requireArguments().getString("trainName")
         updateViewModel = ViewModelProvider(this)[UpdateTrainViewModel::class.java]
     }
 
@@ -36,8 +36,10 @@ class UpdateTrainInfoFragment : Fragment() {
     ): View {
         _binding = FragmentUpdateTrainInfoBinding.inflate(inflater, container, false)
 
-        //insertTrainStartStation()
-        //insertTrainEndStation()
+        binding.textFieldEditTrainName.text = args.nameNumber.trainName
+
+        binding.textFieldEditTrainStatus.setText(args.nameNumber.status)
+
         insertTrainCoaches()
         insertTrainStatus()
 
@@ -72,10 +74,8 @@ class UpdateTrainInfoFragment : Fragment() {
             }
         }
 
-        val trainName = "$trainName"
-        binding.textFieldEditTrainName.setText(trainName)
-
         binding.updateNewTrainInfoBtn.setOnClickListener {
+            val trainName = binding.textFieldEditTrainName.text.toString()
             val startStation = binding.textFieldEditStartStation.text.toString()
             val endStation = binding.textFieldEditEndStation.text.toString()
             val car = binding.textFieldEditNumberCoach.text.toString()
