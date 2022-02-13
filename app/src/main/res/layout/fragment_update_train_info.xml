@@ -32,26 +32,17 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTrainNameLayout"
+    <TextView
+        android:id="@+id/textFieldEditTrainName"
         android:layout_width="355dp"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:hint="@string/train_name_text"
-        app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBarLayout"
-        app:suffixText="@string/addSuffixTrainTxt">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textFieldEditTrainName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapWords"
-            android:minHeight="48dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editStartStationLayout"
@@ -112,17 +103,16 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTrainNumberLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_marginTop="8dp"
-        android:hint="@string/addTrainNoText"
-        app:errorEnabled="true"
+        android:hint="Train number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNumberCoachLayout">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <AutoCompleteTextView
             android:id="@+id/textFieldEditTrainNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -170,5 +160,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTrainNameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textFieldEditTrainName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

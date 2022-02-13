@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainInfo.data.ParcelizeInfo
 import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 import com.example.railwayreservation.databinding.FragmentOverallTrainInfoBinding
 import com.google.firebase.database.*
@@ -80,7 +81,13 @@ class OverallTrainInfoFragment : Fragment(), TrainInfoAdapter.OnItemClick {
 
     @SuppressLint("InflateParams")
     override fun onItemClick(data: TrainInfo) {
-        val bundle = bundleOf("trainName" to data.trainName)
-        findNavController().navigate(R.id.action_overallTrainInfoFragment_to_bottomSheetFragment, bundle)
+        val name: String = data.trainName
+        val status: String = data.status
+        val info = ParcelizeInfo (
+            name, status
+                )
+
+        val action = OverallTrainInfoFragmentDirections.actionOverallTrainInfoFragmentToBottomSheetFragment(info)
+        findNavController().navigate(action)
     }
 }

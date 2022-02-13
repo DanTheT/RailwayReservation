@@ -111,6 +111,7 @@ class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
 
     override fun onItemClick(data: SeatsData) {
         val bundle = bundleOf("coachNumber" to data.coachNum)
+        findNavController().navigate(R.id.action_overallTrainSeatsFragment_to_btmSheetSeatsFragment, bundle)
         Toast.makeText(requireContext(), "Clicked on ${data.coachNum}", Toast.LENGTH_SHORT).show()
     }
 }

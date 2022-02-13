@@ -25,6 +25,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:navigationIconTint="@color/white"
+                app:menu="@menu/top_app_bar_search"
                 app:title="Train Schedule" />
 
         </com.google.android.material.appbar.AppBarLayout>

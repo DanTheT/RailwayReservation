@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainInfo.data.ParcelizeInfo
 import com.example.railwayreservation.databinding.FragmentBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -14,11 +16,10 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
     private var _binding: FragmentBottomSheetBinding? = null
     private val binding get() = _binding!!
-    var trainName: String? = null
+    private val args by navArgs<BottomSheetFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        trainName = requireArguments().getString("trainName")
     }
 
     override fun onCreateView(
@@ -27,13 +28,21 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     ): View {
         _binding = FragmentBottomSheetBinding.inflate(inflater, container, false)
 
-        val trainName = "$trainName"
-        binding.btmSheetTrainName.text = trainName
+        binding.btmSheetTrainName.text = args.nameAndNumber.trainName
+        binding.btmSheetTrainStatus.text = args.nameAndNumber.status
 
-        val bundle = bundleOf("trainName" to trainName)
         binding.updateTrainInfoBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_bottomSheetFragment_to_updateTrainInfoFragment,bundle)
+            val trainName = binding.btmSheetTrainName.text.toString()
+            val status = binding.btmSheetTrainStatus.text.toString()
+
+            val info = ParcelizeInfo(
+                trainName, status
+            )
+
+            val action = BottomSheetFragmentDirections.actionBottomSheetFragmentToUpdateTrainInfoFragment(info)
+            findNavController().navigate(action)
         }
+
         return binding.root
     }
 }

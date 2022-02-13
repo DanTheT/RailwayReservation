@@ -27,10 +27,12 @@
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_admin_register.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.264" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_bottom_sheet_schedule.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_btm_sheet_seats.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_check_train_info.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_delete_schedule.xml" value="0.264" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_delete_train_info.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_overall_train_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_overall_train_schedule.xml" value="0.15172101449275363" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_overall_train_seats.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_passenger_seats.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_schedule_btm_sheet.xml" value="0.25416666666666665" />
@@ -41,7 +43,7 @@
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_train_manage.xml" value="0.264" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_train_schedule.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_update_schedule.xml" value="0.264" />
-        <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_update_seats.xml" value="0.536" />
+        <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_update_seats.xml" value="0.264" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/fragment_update_train_info.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_for_dropdown.xml" value="0.18795289855072464" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_info.xml" value="0.1539855072463768" />

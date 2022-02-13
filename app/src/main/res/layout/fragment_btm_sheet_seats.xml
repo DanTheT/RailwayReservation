@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.trainInfo.checkTrain.BottomSheetFragment"
+    tools:context=".admin.trainSeats.BtmSheetSeatsFragment"
     android:orientation="vertical">
 
     <LinearLayout
@@ -14,31 +15,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name: "
+            android:text="Coach: "
             style="@style/TextAppearance.MaterialComponents.Headline4"/>
 
         <TextView
-            android:id="@+id/btmSheetTrainName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Name"
-            style="@style/TextAppearance.MaterialComponents.Headline5"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Number: "
-            style="@style/TextAppearance.MaterialComponents.Headline4"/>
-
-        <TextView
-            android:id="@+id/btmSheetTrainStatus"
+            android:id="@+id/btmSheetCoachNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -53,7 +34,7 @@
         android:layout_gravity="center">
 
         <Button
-            android:id="@+id/updateTrainInfoBtn"
+            android:id="@+id/updateTrainSeat"
             android:layout_width="match_parent"
             android:backgroundTint="@color/primary_blue"
             android:textColor="@color/white"
