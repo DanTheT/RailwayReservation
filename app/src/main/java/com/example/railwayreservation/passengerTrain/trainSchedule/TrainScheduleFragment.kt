@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
@@ -24,11 +25,12 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
     private lateinit var scheduleRecycleView: RecyclerView
     private lateinit var scheduleArrayList: ArrayList<ScheduleData>
     private lateinit var navController: NavController
-    var recipient: String? = null
+    private val args by navArgs<TrainScheduleFragmentArgs>()
+    //var recipient: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        recipient = requireArguments().getString("recipient")
+        //recipient = requireArguments().getString("recipient")
     }
 
     override fun onCreateView(
@@ -40,7 +42,9 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
         scheduleRecycleView= binding.passengerScheduleRecycler
         scheduleRecycleView.layoutManager = LinearLayoutManager(requireContext())
 
-        scheduleArrayList = arrayListOf<ScheduleData>()
+        scheduleArrayList = arrayListOf()
+
+        binding.trainTypeText.text = args.name.trainName
 
         return binding.root
     }
@@ -48,10 +52,14 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        val message = "$recipient"
-        view.findViewById<TextView>(R.id.trainTypeText).text = message
-        retrieveScheduleTime(message)
-
+       // val message = "$recipient"
+       // view.findViewById<TextView>(R.id.trainTypeText).text = message
+        //retrieveScheduleTime(message)
+        try {
+            retrieveScheduleTime(binding.trainTypeText.text.toString())
+        }catch (e: Exception) {
+            Toast.makeText(requireContext(), "${e.message}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun retrieveScheduleTime(trainName: String){
@@ -76,8 +84,8 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
 
     override fun onItemSelectClick(data: ScheduleData) {
         Toast.makeText(requireContext(), "Clicked item ${data.fromStation}", Toast.LENGTH_LONG).show()
-        val bundle = bundleOf("recipient" to recipient.toString())
-        navController.navigate(R.id.action_trainScheduleFragment_to_passengerSeatsFragment, bundle)
+        //val bundle = bundleOf("recipient" to recipient.toString())
+        //navController.navigate(R.id.action_trainScheduleFragment_to_passengerSeatsFragment, bundle)
     }
 
     override fun onDestroyView() {

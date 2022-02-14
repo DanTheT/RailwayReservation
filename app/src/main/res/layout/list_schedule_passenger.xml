@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="From station"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="To station"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/schedule_fromStation" />
@@ -38,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Arrival"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/schedule_fromStation"
             app:layout_constraintTop_toTopOf="@+id/schedule_fromStation" />
@@ -47,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reach"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/schedule_arriveTime"
             app:layout_constraintTop_toTopOf="@+id/schedule_toStation" />
@@ -64,11 +68,13 @@
             app:srcCompat="@drawable/ic_arrow_down_24" />
 
         <TextView
-            android:id="@+id/schedule_trainName"
+            android:id="@+id/schedule_trainStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Name"
+            android:text="Status"
+            android:textAlignment="center"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/schedule_arriveTime"
             app:layout_constraintTop_toTopOf="parent" />
