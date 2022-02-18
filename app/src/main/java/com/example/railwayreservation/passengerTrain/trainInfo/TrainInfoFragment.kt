@@ -10,6 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentTrainInfoBinding
 import com.google.firebase.database.DatabaseReference
@@ -29,7 +30,7 @@ class TrainInfoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTrainInfoBinding.inflate(inflater, container, false)
 
         preloadTrainType()
@@ -46,11 +47,17 @@ class TrainInfoFragment : Fragment() {
             checkTrainLine(selectTrain)
         }
 
-        val trainNameSelect = binding.trainTypeSpinner.text.toString()
+        //val trainNameSelect = binding.trainTypeSpinner.text.toString()
         binding.selectionBtn.setOnClickListener {
-            val bundle = bundleOf("recipient" to trainNameSelect)
-            navController.navigate(R.id.action_trainInfoFragment_to_trainScheduleFragment, bundle)
+            val name: String = binding.trainTypeSpinner.text.toString()
 
+            val trainN = TrainName (
+                name
+                    )
+            val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
+            findNavController().navigate(action)
+            //val bundle = bundleOf("recipient" to trainNameSelect)
+            //navController.navigate(R.id.action_trainInfoFragment_to_trainScheduleFragment, bundle)
         }
     }
 

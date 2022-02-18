@@ -14,7 +14,8 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/passengerSeats_topAppBar"
@@ -23,6 +24,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:navigationIconTint="@color/white"
                 app:title="Select Seats" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -31,24 +33,46 @@
 
     <TextView
         android:id="@+id/seat_trainType"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginBottom="9dp"
         android:text="TextView"
-        android:textSize="16sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/topBarLayout" />
+
+    <TextView
+        android:id="@+id/seat_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/seat_trainType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="destination"/>
+
+    <Button
+        android:id="@+id/selectSeatGetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/primary_blue"
+        android:text="Get"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seat_destination" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/selectSeatCoach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seat_trainType">
+        app:layout_constraintTop_toBottomOf="@id/selectSeatGetBtn">
 
         <AutoCompleteTextView
             android:hint="Coach"
@@ -62,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/selectSeatCoach">
 
@@ -77,7 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/selectSeatCategory">
 

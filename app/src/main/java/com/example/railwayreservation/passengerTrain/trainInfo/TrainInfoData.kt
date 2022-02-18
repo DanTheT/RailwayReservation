@@ -1,8 +1,15 @@
 package com.example.railwayreservation.passengerTrain.trainInfo
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class TrainInfoData(
-    val trainType: String = "",
+    val trainName: String = "",
+    val trainLine: String = "",
     val startStation: String = "",
     val endStation: String = "",
-    val trainLine: String = ""
-)
+    val car: String = "",
+    val trainNum: String = "",
+    val status: String = ""
+): Parcelable

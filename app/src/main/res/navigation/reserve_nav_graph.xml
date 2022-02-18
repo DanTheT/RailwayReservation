@@ -22,19 +22,14 @@
         <action
             android:id="@+id/action_trainScheduleFragment_to_passengerSeatsFragment"
             app:destination="@id/passengerSeatsFragment" />
-
         <argument
-            android:name="recipient"
-            android:defaultValue="None"/>
+            android:name="name"
+            app:argType="com.example.railwayreservation.passengerTrain.trainInfo.TrainName" />
     </fragment>
     <fragment
         android:id="@+id/passengerSeatsFragment"
         android:name="com.example.railwayreservation.passengerTrain.trainSeats.PassengerSeatsFragment"
         android:label="fragment_passenger_seats"
         tools:layout="@layout/fragment_passenger_seats">
-
-        <argument
-            android:name="recipient"
-            android:defaultValue="None"/>
     </fragment>
 </navigation>

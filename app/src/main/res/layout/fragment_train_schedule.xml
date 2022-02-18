@@ -14,14 +14,17 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/passengerTrainScheduleMain_topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:navigationIconTint="@color/white"
                 app:title="Schedule"
+                app:titleTextColor="@color/white"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -56,5 +59,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="?attr/actionBarSize"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
