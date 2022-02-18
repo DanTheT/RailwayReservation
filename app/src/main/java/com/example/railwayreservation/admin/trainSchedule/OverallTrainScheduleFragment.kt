@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -57,7 +58,17 @@ class OverallTrainScheduleFragment : Fragment(), ScheduleAdapter.OnItemClick {
 
         binding.searchName.setOnClickListener {
             val name = binding.textFieldSearchName.text.toString()
-            getScheduleTime(name)
+
+            try {
+                if (binding.textFieldSearchName.text.isEmpty()) {
+                    Toast.makeText(requireContext(), "No selected train name", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    getScheduleTime(name)
+                }
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.clearRecycler.setOnClickListener {
@@ -68,8 +79,8 @@ class OverallTrainScheduleFragment : Fragment(), ScheduleAdapter.OnItemClick {
                     selectName.clear()
                     scheduleRecycleView.adapter?.notifyDataSetChanged()
                 }
-            }catch (e: Exception) {
-                e.message
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -91,7 +102,8 @@ class OverallTrainScheduleFragment : Fragment(), ScheduleAdapter.OnItemClick {
                         val schedule = scheduleSnap.getValue(Schedule::class.java)
                         scheduleArrayList.add(schedule!!)
                     }
-                    scheduleRecycleView.adapter = ScheduleAdapter(scheduleArrayList, this@OverallTrainScheduleFragment)
+                    scheduleRecycleView.adapter =
+                        ScheduleAdapter(scheduleArrayList, this@OverallTrainScheduleFragment)
                 }
             }
 
@@ -109,6 +121,9 @@ class OverallTrainScheduleFragment : Fragment(), ScheduleAdapter.OnItemClick {
 
     override fun onItemClick(data: Schedule) {
         val bundle = bundleOf("trainName" to data.trainName)
-        findNavController().navigate(R.id.action_overallTrainScheduleFragment_to_scheduleBtmSheetFragment, bundle)
+        findNavController().navigate(
+            R.id.action_overallTrainScheduleFragment_to_scheduleBtmSheetFragment,
+            bundle
+        )
     }
 }

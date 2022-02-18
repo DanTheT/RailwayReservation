@@ -30,7 +30,7 @@ class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentOverallTrainSeatsBinding.inflate(inflater, container, false)
         seatsRecycleView = binding.displayOverallSeatsRV
         seatsRecycleView.layoutManager = LinearLayoutManager(context)
@@ -38,23 +38,31 @@ class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
 
         insertTrainName()
 
-        try {
-            binding.searchSeatName.setOnClickListener {
-                val name = binding.textFieldSearchSeatName.text.toString()
-                getSeatsData(name)
+        binding.searchSeatName.setOnClickListener {
+            val name = binding.textFieldSearchSeatName.text.toString()
+
+            try {
+                if (binding.textFieldSearchSeatName.text.isEmpty()) {
+                    Toast.makeText(requireContext(), "No selected train", Toast.LENGTH_SHORT).show()
+                } else {
+                    getSeatsData(name)
+                }
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
-        } catch (e: Exception) {
-            e.message
         }
 
         binding.clearRecyclerSeatName.setOnClickListener {
             try {
                 if (seatsRecycleView.isShown) {
                     seatsArrayList.clear()
+                    binding.textFieldSearchSeatName.text.clear()
                     seatsRecycleView.adapter?.notifyDataSetChanged()
+                } else {
+                    Toast.makeText(requireContext(), "Nothing shown on screen", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                e.message
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -92,7 +100,8 @@ class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
                                 val seats = seatSnap.getValue(SeatsData::class.java)
                                 seatsArrayList.add(seats!!)
                             }
-                            seatsRecycleView.adapter = SeatsAdapter(seatsArrayList, this@OverallTrainSeatsFragment)
+                            seatsRecycleView.adapter =
+                                SeatsAdapter(seatsArrayList, this@OverallTrainSeatsFragment)
                         }
                     }
 
@@ -111,7 +120,10 @@ class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
 
     override fun onItemClick(data: SeatsData) {
         val bundle = bundleOf("coachNumber" to data.coachNum)
-        findNavController().navigate(R.id.action_overallTrainSeatsFragment_to_btmSheetSeatsFragment, bundle)
+        findNavController().navigate(
+            R.id.action_overallTrainSeatsFragment_to_btmSheetSeatsFragment,
+            bundle
+        )
         Toast.makeText(requireContext(), "Clicked on ${data.coachNum}", Toast.LENGTH_SHORT).show()
     }
 }

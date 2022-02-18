@@ -43,6 +43,7 @@
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:hint="@string/train_name_text"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
