@@ -12,7 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
+//import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 import com.example.railwayreservation.databinding.FragmentAddNewInfoBinding
 import java.lang.Exception
 
@@ -165,15 +165,15 @@ class AddNewInfoFragment : Fragment() {
         val trainNumber = binding.textFieldTrainNumber.text.toString()
         val trainStatus = "Active"
 
-        val trainInfo = TrainInfo(
-            trainName, trainLine, trainCoach, trainNumber, trainEnd, trainStart, trainStatus
-        )
+//        val trainInfo = TrainInfo(
+//            trainName, trainLine, trainCoach, trainNumber, trainEnd, trainStart, trainStatus
+//        )
 
         val successMsg = "Successfully added new train $trainName"
         val errorMsg = "Failed to set data $trainName"
 
         try {
-            addViewModel.setDatabaseReference(trainName, trainInfo)
+//            addViewModel.setDatabaseReference(trainName, trainInfo)
 
             Toast.makeText(context, successMsg, Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {

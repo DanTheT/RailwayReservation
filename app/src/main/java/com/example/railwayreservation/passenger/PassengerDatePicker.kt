@@ -27,9 +27,14 @@ class PassengerDatePicker : AppCompatActivity() {
 
         // disable dates before today
         val today = Calendar.getInstance()
-        val now = today.timeInMillis
-        datePicker.setMinDate(now)
+        val twoDaysLater = today.clone() as Calendar
+        twoDaysLater.add(Calendar.DATE, 2)
+//        val now = today.timeInMillis
+//        datePicker.setMinDate(now)
+        datePicker.minDate = twoDaysLater.timeInMillis
 
+
+        //disable dates after half year later
         val halfYearLater = today.clone() as Calendar
         halfYearLater.add(Calendar.DATE, 183)
         datePicker.maxDate = halfYearLater.timeInMillis
