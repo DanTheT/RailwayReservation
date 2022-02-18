@@ -13,7 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
-//import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
+import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 import com.example.railwayreservation.databinding.FragmentUpdateTrainInfoBinding
 import kotlin.Exception
 
@@ -22,7 +22,8 @@ class UpdateTrainInfoFragment : Fragment() {
     private var _binding: FragmentUpdateTrainInfoBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
-//    private val args by navArgs<UpdateTrainInfoFragmentArgs>()
+
+    private val args by navArgs<UpdateTrainInfoFragmentArgs>()
     private lateinit var updateViewModel: UpdateTrainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,9 +37,8 @@ class UpdateTrainInfoFragment : Fragment() {
     ): View {
         _binding = FragmentUpdateTrainInfoBinding.inflate(inflater, container, false)
 
-//        binding.textFieldEditTrainName.text = args.nameNumber.trainName
-//
-//        binding.textFieldEditTrainStatus.setText(args.nameNumber.status)
+        binding.textFieldEditTrainName.text = args.nameNumber.trainName
+        binding.textFieldEditTrainStatus.setText(args.nameNumber.status)
 
         insertTrainCoaches()
         insertTrainStatus()
@@ -67,10 +67,11 @@ class UpdateTrainInfoFragment : Fragment() {
                 "Chino" -> {
                     insertTrainStartStationC()
                     insertTrainEndStationC()
-                }else -> {
-                insertTrainStartStationOther()
-                insertTrainEndStationOther()
-            }
+                }
+                else -> {
+                    insertTrainStartStationOther()
+                    insertTrainEndStationOther()
+                }
             }
         }
 
@@ -82,13 +83,17 @@ class UpdateTrainInfoFragment : Fragment() {
             val trainNum = binding.textFieldEditTrainNumber.text.toString()
             val status = binding.textFieldEditTrainStatus.text.toString()
 
-//            val trainInfo = TrainInfo (
-//                trainName, trainName, car, trainNum ,endStation, startStation, status
-//                    )
+            val trainInfo = TrainInfo(
+                trainName, trainName, car, trainNum, endStation, startStation, status
+            )
             try {
-//                updateViewModel.updateTrain(trainName, trainInfo)
-                Toast.makeText(requireContext(), "Successfully update $trainName", Toast.LENGTH_SHORT).show()
-            }catch (e: Exception) {
+                updateViewModel.updateTrain(trainName, trainInfo)
+                Toast.makeText(
+                    requireContext(),
+                    "Successfully update $trainName",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } catch (e: Exception) {
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
         }

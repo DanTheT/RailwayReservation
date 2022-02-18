@@ -4,7 +4,4 @@ import androidx.lifecycle.ViewModel
 
 class AdminLoginViewModel: ViewModel() {
 
-    fun checkEmptyInputs(email: String, password: String){
-
-    }
 }

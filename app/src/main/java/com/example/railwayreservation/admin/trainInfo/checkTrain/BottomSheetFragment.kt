@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.trainInfo.data.ParcelizeInfo
 import com.example.railwayreservation.databinding.FragmentBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -17,10 +15,6 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     private var _binding: FragmentBottomSheetBinding? = null
     private val binding get() = _binding!!
     private val args by navArgs<BottomSheetFragmentArgs>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

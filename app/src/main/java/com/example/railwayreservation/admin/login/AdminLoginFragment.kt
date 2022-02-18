@@ -17,7 +17,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlin.coroutines.coroutineContext
 
 class AdminLoginFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentAdminLoginBinding? = null
@@ -33,7 +32,7 @@ class AdminLoginFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAdminLoginBinding.inflate(inflater, container, false)
 
         emailLayout = binding.emailTxtLayout
