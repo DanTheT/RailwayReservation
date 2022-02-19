@@ -31,5 +31,8 @@
         android:name="com.example.railwayreservation.passengerTrain.trainSeats.PassengerSeatsFragment"
         android:label="fragment_passenger_seats"
         tools:layout="@layout/fragment_passenger_seats">
+        <argument
+            android:name="trainNameDest"
+            app:argType="com.example.railwayreservation.passengerTrain.trainInfo.ParcelizedNameDest" />
     </fragment>
 </navigation>

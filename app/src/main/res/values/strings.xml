@@ -37,10 +37,6 @@
     <string name="reset_password">Reset Password</string>
     <string name="register_acc">Sign Up</string>
     <string name="background_photo_contentDesc">train background photo</string>
-    <!--<string name="btn_train_manage">Train Management</string>
-    <string name="btn_train_announce">Announcement Management</string>
-    <string name="btn_train_reporting">Reports</string>
-    <string name="btn_train_issueManage">Issues Management</string> -->
 
     //admin register
     <string name="admin_register_title">Registration</string>

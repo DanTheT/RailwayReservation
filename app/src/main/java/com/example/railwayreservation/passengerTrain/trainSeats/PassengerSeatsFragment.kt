@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.NavController
+import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentPassengerSeatsBinding
 import com.google.firebase.database.*
@@ -20,18 +21,20 @@ class PassengerSeatsFragment : Fragment() {
     private lateinit var navController: NavController
     private lateinit var seatsDatabase: DatabaseReference
     private lateinit var seatsArrayList: ArrayList<PassengerSeatsData>
+    private val args by navArgs<PassengerSeatsFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //recipient = arguments!!.getString("recipient")
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPassengerSeatsBinding.inflate(inflater, container, false)
+
+        binding.seatTrainType.text = args.trainNameDest.trainName
+        binding.seatDestination.text = "${args.trainNameDest.fromStation} ${args.trainNameDest.nextStation}"
 
         return binding.root
     }
