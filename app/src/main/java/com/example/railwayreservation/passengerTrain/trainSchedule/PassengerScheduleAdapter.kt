@@ -14,7 +14,7 @@ class PassengerScheduleAdapter(private val scheduleList: ArrayList<ScheduleData>
         val receivedStartStation: TextView = scheduleView.findViewById(R.id.schedule_fromStation)
         val receivedArriveTime: TextView = scheduleView.findViewById(R.id.schedule_arriveTime)
         val receivedEndStation: TextView = scheduleView.findViewById(R.id.schedule_toStation)
-        val receivedDepartTime: TextView = scheduleView.findViewById(R.id.schedule_departTime)
+        val receivedDepartTime: TextView = scheduleView.findViewById(R.id.schedule_reachTime)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleViewHolder {

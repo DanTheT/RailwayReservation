@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
@@ -34,28 +35,34 @@ class PassengerSeatsFragment : Fragment() {
         _binding = FragmentPassengerSeatsBinding.inflate(inflater, container, false)
 
         binding.seatTrainType.text = args.trainNameDest.trainName
-        binding.seatDestination.text = "${args.trainNameDest.fromStation} ${args.trainNameDest.nextStation}"
+        binding.seatDestination.text = args.trainNameDest.fromStation
+        binding.seatDestination2.text = args.trainNameDest.nextStation
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val message = "$recipient"
-        view.findViewById<TextView>(R.id.seat_trainType).text = message
-        getSelectedSeatData(message)
+
+        try {
+            getSelectedSeatData(binding.seatTrainType.text.toString())
+        }catch (e: Exception) {
+            Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+        }
     }
 
-    private fun getSelectedSeatData(trainType: String){
-        seatsDatabase = FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainType).child("Seats")
+    private fun getSelectedSeatData(trainType: String) {
+        seatsDatabase =
+            FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainType).child("Seats")
 
         seatsDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     for (seatsSnapshot in snapshot.children) {
-                        }
+                    }
                 }
             }
+
             override fun onCancelled(error: DatabaseError) {
 
             }
