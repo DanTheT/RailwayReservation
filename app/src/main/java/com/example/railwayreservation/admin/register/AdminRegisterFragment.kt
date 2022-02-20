@@ -48,7 +48,7 @@ class AdminRegisterFragment : Fragment() {
     }
 
     private fun checkEmptyInput() {
-        when{
+        when {
             TextUtils.isEmpty(adminName.text.toString().trim()) -> {
                 adminName.error = "Please enter a name"
             }
@@ -69,18 +69,16 @@ class AdminRegisterFragment : Fragment() {
                     adminEmail.text.toString().isNotEmpty() &&
                     adminPassword.text.toString().isNotEmpty() &&
                     adminConfirmPassword.text.toString().isNotEmpty() &&
-                    adminPhone.text.toString().isNotEmpty() ->
-            {
-                if(adminEmail.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))){
-                    if(adminPassword.text.toString().length >= 6){
-                        if(adminPassword.text.toString() == adminConfirmPassword.text.toString()){
+                    adminPhone.text.toString().isNotEmpty() -> {
+                if (adminEmail.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))) {
+                    if (adminPassword.text.toString().length >= 6) {
+                        if (adminPassword.text.toString() == adminConfirmPassword.text.toString()) {
                             registerToFirebase()
-                            //Toast.makeText(context, "Register Successfully", Toast.LENGTH_SHORT).show()
                         }
-                    }else{
+                    } else {
                         adminPassword.error = "Please enter at least 6 characters"
                     }
-                }else{
+                } else {
                     adminEmail.error = "Enter a valid email address"
                 }
             }
@@ -88,12 +86,15 @@ class AdminRegisterFragment : Fragment() {
     }
 
     private fun registerToFirebase() {
-        firebaseAuth.createUserWithEmailAndPassword(adminEmail.text.toString(), adminPassword.text.toString()).addOnCompleteListener{
-                task -> if (task.isSuccessful){
-            Toast.makeText(context, "Register Successfully", Toast.LENGTH_SHORT).show()
-        }else{
-            Toast.makeText(context, "Register Failed", Toast.LENGTH_SHORT).show()
-        }
+        firebaseAuth.createUserWithEmailAndPassword(
+            adminEmail.text.toString(),
+            adminPassword.text.toString()
+        ).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(context, "Register Successfully", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Register Failed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

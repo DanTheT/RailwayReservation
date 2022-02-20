@@ -6,9 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
+import com.example.railwayreservation.databinding.OpReportsFragmentBinding
 
 class OpReportsFragment : Fragment() {
+
+    private var _binding: OpReportsFragmentBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var navController: NavController
 
     companion object {
         fun newInstance() = OpReportsFragment()
@@ -25,11 +33,18 @@ class OpReportsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.op_reports_fragment, container, false)
+        _binding = OpReportsFragmentBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+
+        binding.overallReportOperationTopAppBar.setOnClickListener {
+            findNavController().navigate(R.id.action_adminRegisterFragment_to_adminLoginFragment)
+        }
     }
 
 }
