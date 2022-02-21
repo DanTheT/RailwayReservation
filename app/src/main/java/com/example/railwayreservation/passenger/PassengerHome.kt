@@ -23,6 +23,8 @@ class PassengerHome : AppCompatActivity() {
     private lateinit var  btnTicket: ImageButton
     private lateinit var  btnAccount: ImageButton
     private lateinit var  btnMembership: ImageButton
+    private lateinit var  btnPH: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,9 +50,9 @@ class PassengerHome : AppCompatActivity() {
 //go to reservation screen
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
-            //startActivity(Intent(this,PassengerDatePicker::class.java))
+            startActivity(Intent(this,PassengerDatePicker::class.java))
             // u can comment the below line code
-            startActivity(Intent(this, TrainMainActivity::class.java))
+//            startActivity(Intent(this, TrainMainActivity::class.java))
             }
 
         //go to cancellation screen
@@ -82,6 +84,7 @@ class PassengerHome : AppCompatActivity() {
         btnMembership.setOnClickListener{
             startActivity(Intent(this, PassengerMembership::class.java))
         }
+
 
         binding.passengerHomeTopAppBar.setOnClickListener {
             when (it.id) {

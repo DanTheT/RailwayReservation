@@ -13,17 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
+
         <activity
-            android:name=".passenger.MakeReservation"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.SchedulelistActivity"
+            android:name=".passenger.transactions.ViewPH"
             android:exported="false" />
         <activity
             android:name=".passenger.PassengerDatePicker"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.PurchaseHistory"
             android:exported="false" />
 
         <service

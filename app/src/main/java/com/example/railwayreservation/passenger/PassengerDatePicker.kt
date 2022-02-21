@@ -1,6 +1,7 @@
 package com.example.railwayreservation.passenger
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.passengerTrain.TrainMainActivity
 import java.util.*
 
 class PassengerDatePicker : AppCompatActivity() {
@@ -15,6 +17,7 @@ class PassengerDatePicker : AppCompatActivity() {
     private lateinit var datePicker: DatePicker
     private lateinit var btnPickDate: Button
     private lateinit var dateTV: TextView
+    private lateinit var btnProceed: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -24,6 +27,7 @@ class PassengerDatePicker : AppCompatActivity() {
         datePicker = findViewById(R.id.date_picker)
         dateTV = findViewById(R.id.dateTV)
         btnPickDate = findViewById(R.id.btnPickDate)
+        btnProceed = findViewById(R.id.btnProceed)
 
         // disable dates before today
         val today = Calendar.getInstance()
@@ -39,10 +43,16 @@ class PassengerDatePicker : AppCompatActivity() {
         halfYearLater.add(Calendar.DATE, 183)
         datePicker.maxDate = halfYearLater.timeInMillis
 
+        btnProceed.setOnClickListener {
+            startActivity(Intent(this, TrainMainActivity::class.java))
+        }
+
 
         btnPickDate.setOnClickListener(View.OnClickListener {
             dateTV.text=("   Your Selected Date : " + datePicker.getDayOfMonth() + "/" + (datePicker.getMonth() + 1) + "/" + datePicker.getYear()) })
     }
 
-    
+
+
+
 }

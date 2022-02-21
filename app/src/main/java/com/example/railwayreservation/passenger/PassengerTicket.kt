@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.railwayreservation.R
+import com.example.railwayreservation.passenger.transactions.ViewPH
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.zxing.BarcodeFormat
@@ -18,11 +19,11 @@ import com.google.zxing.qrcode.QRCodeWriter
 
 class PassengerTicket : AppCompatActivity() {
 
-    private lateinit var ivQRCode : ImageView
-    private lateinit var etData : EditText
-    private lateinit var  btnGenerate : Button
+    private lateinit var ivQRCode: ImageView
+    private lateinit var etData: EditText
+    private lateinit var btnGenerate: Button
 
-    private lateinit var btnViewPayHistory : Button
+    private lateinit var btnViewPayHistory: Button
 
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseDatabase
@@ -39,8 +40,8 @@ class PassengerTicket : AppCompatActivity() {
         btnGenerate = findViewById(R.id.btnGenerate)
         btnViewPayHistory = findViewById(R.id.btnViewPayHistory)
 
-        btnViewPayHistory.setOnClickListener{
-            startActivity(Intent(this,PurchaseHistory::class.java))
+        btnViewPayHistory.setOnClickListener {
+            startActivity(Intent(this, ViewPH::class.java))
 
         }
 
@@ -49,7 +50,7 @@ class PassengerTicket : AppCompatActivity() {
             val data = etData.text.toString().trim()
 
             if (data.isEmpty()) {
-                Toast.makeText(this, "Enter your data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Enter your transaction ID", Toast.LENGTH_SHORT).show()
             } else {
 
                 val writer = QRCodeWriter()
@@ -75,6 +76,7 @@ class PassengerTicket : AppCompatActivity() {
             }
         }
     }
-
-
 }
+
+
+

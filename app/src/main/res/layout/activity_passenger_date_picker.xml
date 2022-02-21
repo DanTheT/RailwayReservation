@@ -64,10 +64,10 @@
         tools:layout_editor_absoluteY="604dp" />
 
     <Button
-        android:id="@+id/btnPickSeats"
+        android:id="@+id/btnProceed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Proceed to select Seats"
+        android:text="Proceed to select train"
         tools:layout_editor_absoluteX="123dp"
         tools:layout_editor_absoluteY="533dp" />
 
