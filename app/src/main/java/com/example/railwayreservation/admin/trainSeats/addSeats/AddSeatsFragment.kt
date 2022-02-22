@@ -13,7 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.trainSeats.SeatsData
+import com.example.railwayreservation.admin.trainSeats.data.SeatsData
 import com.example.railwayreservation.databinding.FragmentAddSeatsBinding
 import com.google.firebase.database.*
 
@@ -34,7 +34,7 @@ class AddSeatsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAddSeatsBinding.inflate(inflater, container, false)
 
         insertSeatsCategory()

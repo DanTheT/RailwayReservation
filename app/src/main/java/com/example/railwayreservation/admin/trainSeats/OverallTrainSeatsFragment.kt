@@ -5,7 +5,6 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -13,9 +12,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainSeats.data.SeatsAdapter
+import com.example.railwayreservation.admin.trainSeats.data.SeatsData
 import com.example.railwayreservation.databinding.FragmentOverallTrainSeatsBinding
 import com.google.firebase.database.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
