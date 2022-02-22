@@ -18,7 +18,6 @@ import com.example.railwayreservation.databinding.FragmentUpdateScheduleBinding
 
 class UpdateScheduleFragment : Fragment() {
 
-    var trainName: String? = null
     private var _binding: FragmentUpdateScheduleBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
