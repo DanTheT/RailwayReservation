@@ -75,10 +75,11 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
 
     override fun onItemSelectClick(data: ScheduleData) {
         val railName: String = data.trainName
-        val railDestination = "${data.fromStation} ${data.nextStation}"
+        val railStart: String = data.fromStation
+        val railDestination = data.nextStation
 
         val nameAndDest = ParcelizedNameDest (
-            railName, railDestination
+            railName, railStart, railDestination
                 )
 
         try {
