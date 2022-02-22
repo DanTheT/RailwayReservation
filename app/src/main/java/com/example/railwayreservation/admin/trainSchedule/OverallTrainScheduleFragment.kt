@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainSchedule.data.ParcelizedSchedule
 import com.example.railwayreservation.admin.trainSchedule.data.Schedule
 import com.example.railwayreservation.admin.trainSchedule.data.ScheduleAdapter
 import com.example.railwayreservation.databinding.FragmentOverallTrainScheduleBinding
@@ -120,10 +121,11 @@ class OverallTrainScheduleFragment : Fragment(), ScheduleAdapter.OnItemClick {
     }
 
     override fun onItemClick(data: Schedule) {
-        val bundle = bundleOf("trainName" to data.trainName)
-        findNavController().navigate(
-            R.id.action_overallTrainScheduleFragment_to_scheduleBtmSheetFragment,
-            bundle
-        )
+        val name: String = data.trainName
+        val schedule = ParcelizedSchedule (
+            name
+                )
+        val action = OverallTrainScheduleFragmentDirections.actionOverallTrainScheduleFragmentToScheduleBtmSheetFragment(schedule)
+        findNavController().navigate(action)
     }
 }

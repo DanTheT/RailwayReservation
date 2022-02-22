@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Button
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -22,10 +20,6 @@ class TrainInfoFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var trainInfoDb: DatabaseReference
     private lateinit var navController: NavController
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +41,6 @@ class TrainInfoFragment : Fragment() {
             checkTrainLine(selectTrain)
         }
 
-        //val trainNameSelect = binding.trainTypeSpinner.text.toString()
         binding.selectionBtn.setOnClickListener {
             val name: String = binding.trainTypeSpinner.text.toString()
 
@@ -56,8 +49,6 @@ class TrainInfoFragment : Fragment() {
                     )
             val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
             findNavController().navigate(action)
-            //val bundle = bundleOf("recipient" to trainNameSelect)
-            //navController.navigate(R.id.action_trainInfoFragment_to_trainScheduleFragment, bundle)
         }
     }
 
