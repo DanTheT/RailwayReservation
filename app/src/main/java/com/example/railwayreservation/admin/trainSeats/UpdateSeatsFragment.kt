@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentUpdateSeatsBinding
 
@@ -16,11 +17,10 @@ class UpdateSeatsFragment : Fragment() {
     private var _binding: FragmentUpdateSeatsBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
-    var coachNumber: String? = null
+    private val args by navArgs<UpdateSeatsFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        coachNumber = requireArguments().getString("coachNumber")
     }
 
     override fun onCreateView(
@@ -29,8 +29,7 @@ class UpdateSeatsFragment : Fragment() {
     ): View {
         _binding = FragmentUpdateSeatsBinding.inflate(inflater, container, false)
 
-        val coachNum = "$coachNumber"
-        binding.textViewCoach.text = coachNum
+        binding.textViewCoach.text = args.receiveCoachNUm.coachNum
 
         return binding.root
     }

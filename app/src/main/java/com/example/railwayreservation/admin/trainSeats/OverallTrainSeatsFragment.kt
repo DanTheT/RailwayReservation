@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainSeats.data.ParcelizedSeat
 import com.example.railwayreservation.admin.trainSeats.data.SeatsAdapter
 import com.example.railwayreservation.admin.trainSeats.data.SeatsData
 import com.example.railwayreservation.databinding.FragmentOverallTrainSeatsBinding
@@ -59,7 +60,8 @@ class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
                     binding.textFieldSearchSeatName.text.clear()
                     seatsRecycleView.adapter?.notifyDataSetChanged()
                 } else {
-                    Toast.makeText(requireContext(), "Nothing shown on screen", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Nothing shown on screen", Toast.LENGTH_SHORT)
+                        .show()
                 }
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
@@ -119,11 +121,16 @@ class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
     }
 
     override fun onItemClick(data: SeatsData) {
-        val bundle = bundleOf("coachNumber" to data.coachNum)
-        findNavController().navigate(
-            R.id.action_overallTrainSeatsFragment_to_btmSheetSeatsFragment,
-            bundle
+        val coachNo: String = data.coachNum
+
+        val seatParcel = ParcelizedSeat(
+            coachNo
         )
+        val action =
+            OverallTrainSeatsFragmentDirections.actionOverallTrainSeatsFragmentToBtmSheetSeatsFragment(
+                seatParcel
+            )
+        findNavController().navigate(action)
         Toast.makeText(requireContext(), "Clicked on ${data.coachNum}", Toast.LENGTH_SHORT).show()
     }
 }
