@@ -70,4 +70,36 @@ class PassengerSeatsFragment : Fragment() {
         binding.selectSeatCoach.setAdapter(listsAdapter)
     }
 
+//    private fun insertSeatsCategory() {
+//        val lists = resources.getStringArray(R.array.seat_category)
+//
+//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+//        binding.selectSeatCategory.setAdapter(listsAdapter)
+//
+//    }
+//
+//    private fun insertVIPSeats() {
+//        val lists = resources.getStringArray(R.array.vip_seats)
+//
+//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+//        binding.selectSeats.setAdapter(listsAdapter)
+//
+//    }
+//
+//    private fun insertStandardWindowSeats() {
+//        val lists = resources.getStringArray(R.array.standard_windowSeats)
+//
+//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+//        binding.selectSeatCategory.setAdapter(listsAdapter)
+//
+//    }
+//
+//    private fun insertStandardAlleySeats() {
+//        val lists = resources.getStringArray(R.array.standard_alleySeats)
+//
+//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+//        binding.selectSeatCategory.setAdapter(listsAdapter)
+//
+//    }
+
 }

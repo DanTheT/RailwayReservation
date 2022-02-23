@@ -100,6 +100,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectSeats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
@@ -122,6 +123,18 @@
         android:layout_marginEnd="104dp"
         android:text="destination"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seat_trainType" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="27dp"
+        android:text="to"
+        app:layout_constraintEnd_toStartOf="@+id/seat_destination2"
+        app:layout_constraintStart_toEndOf="@+id/seat_destination"
         app:layout_constraintTop_toBottomOf="@+id/seat_trainType" />
 
 

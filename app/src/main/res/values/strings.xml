@@ -122,14 +122,75 @@
         <item>A2 - D2</item>
     </string-array>
 
+    <string-array name="vip_seats">
+        <item>A1</item>
+        <item>B1</item>
+        <item>C1</item>
+        <item>D1</item>
+        <item>A2</item>
+        <item>B2</item>
+        <item>C2</item>
+        <item>D2</item>
+    </string-array>
+
     <string-array name="standard_windowSeats_range">
         <item>A3 - A13</item>
         <item>D3 - D13</item>
     </string-array>
 
+    <string-array name="standard_windowSeats">
+        <item>A3</item>
+        <item>D3</item>
+        <item>A4</item>
+        <item>D4</item>
+        <item>A5</item>
+        <item>D5</item>
+        <item>A6</item>
+        <item>D6</item>
+        <item>A7</item>
+        <item>D7</item>
+        <item>A8</item>
+        <item>D8</item>
+        <item>A9</item>
+        <item>D9</item>
+        <item>A10</item>
+        <item>D10</item>
+        <item>A11</item>
+        <item>D11</item>
+        <item>A12</item>
+        <item>D12</item>
+        <item>A13</item>
+        <item>D13</item>
+    </string-array>
+
     <string-array name="standard_alleySeats_range">
         <item>B3 - B13</item>
         <item>C3 - C13</item>
+    </string-array>
+
+    <string-array name="standard_alleySeats">
+        <item>B3</item>
+        <item>C3</item>
+        <item>B4</item>
+        <item>C4</item>
+        <item>B5</item>
+        <item>C5</item>
+        <item>B6</item>
+        <item>C6</item>
+        <item>B7</item>
+        <item>C7</item>
+        <item>B8</item>
+        <item>C8</item>
+        <item>B9</item>
+        <item>C9</item>
+        <item>B10</item>
+        <item>C10</item>
+        <item>B11</item>
+        <item>C11</item>
+        <item>B12</item>
+        <item>C12</item>
+        <item>B13</item>
+        <item>C13</item>
     </string-array>
 
     <string-array name="four_coaches">
@@ -281,13 +342,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add">Add</string>
 
-    //Passengers
-    <string-array name="trainName">
-        <item>Angsana</item>
-        <item>Balak</item>
-        <item>Chino</item>
-        <item>Dalluman</item>
-    </string-array>
 
 
 </resources>

@@ -19,7 +19,8 @@
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primary_dark_blue">
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/myMembership_topAppBar"
@@ -28,7 +29,8 @@
                     android:layout_height="?attr/actionBarSize"
                     app:layout_scrollFlags="scroll|enterAlways|snap"
                     app:navigationIcon="@drawable/ic_arrow_back_24"
-                    app:title="My Membership" />
+                    app:title="My Membership"
+                    app:navigationIconTint="@color/white"/>
 
             </com.google.android.material.appbar.AppBarLayout>
 
@@ -48,6 +50,8 @@
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
             android:text="My Membership"
+            android:textColor="@color/black"
+            android:background="#eff1f8"
             android:textSize="18sp" />
 
 
@@ -105,16 +109,6 @@
 
         </LinearLayout>
 
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingLeft="20dp"
-            android:gravity="center_vertical"
-            android:text="My Account"
-            android:textSize="18sp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,7 +121,7 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="Points Allocated"
+                android:text="Points Collected"
                 android:textColor="#000"
                 android:textSize="18sp" />
 
@@ -150,21 +144,64 @@
             android:gravity="center"
             android:text="Apply new membership"
             android:textAllCaps="false"
-            android:textColor="#000"
+            android:textColor="#673AB7"
             android:textSize="18sp"
             app:backgroundTint="#fff" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="My Benefits"
+            android:textColor="@color/black"
+            android:background="#eff1f8"
+            android:textSize="18sp" />
+
         <Button
-            android:id="@+id/btnMyBenefits"
+            android:id="@+id/btn200points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff"
             android:gravity="center"
-            android:text="My Benefits"
+            android:text="Claim Now!-> 200points = 20%Discount"
             android:textAllCaps="false"
-            android:textColor="#000"
+            android:textColor="#673AB7"
             android:textSize="18sp"
             app:backgroundTint="#fff" />
+
+        <Button
+            android:id="@+id/btn400points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="Claim Now!-> 400points = 40%Discount"
+            android:textAllCaps="false"
+            android:textColor="#673AB7"
+            android:textSize="18sp"
+            app:backgroundTint="#fff" />
+
+        <Button
+            android:id="@+id/btn800points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="Claim Now!-> 800points = 80%Discount"
+            android:textAllCaps="false"
+            android:textColor="#673AB7"
+            android:textSize="18sp"
+            app:backgroundTint="#fff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Hint: Claim ticket discounts by collecting points!"
+            android:textColor="@color/primary_dark_red"
+            android:textSize="16sp" />
     </LinearLayout>
 
 

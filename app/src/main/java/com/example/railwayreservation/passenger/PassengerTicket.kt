@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.railwayreservation.R
 import com.example.railwayreservation.passenger.transactions.ViewPH
 import com.google.firebase.auth.FirebaseAuth
@@ -16,6 +18,10 @@ import com.google.firebase.database.*
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.WriterException
 import com.google.zxing.qrcode.QRCodeWriter
+import android.graphics.drawable.ColorDrawable
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBar
+
 
 class PassengerTicket : AppCompatActivity() {
 
@@ -24,21 +30,31 @@ class PassengerTicket : AppCompatActivity() {
     private lateinit var btnGenerate: Button
 
     private lateinit var btnViewPayHistory: Button
+    private lateinit var btnViewCurrentHistory: Button
+
 
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseDatabase
     private lateinit var myRef: DatabaseReference
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_passenger_ticket)
 
+//        //actionbar
+//        val actionbar = supportActionBar
+//        //set actionbar title
+//        actionbar!!.title = "My Ticket"
+//        //set back button
+//        actionbar.setDisplayHomeAsUpEnabled(true)
 
 
         ivQRCode = findViewById(R.id.ivQRCode)
         etData = findViewById(R.id.etData)
         btnGenerate = findViewById(R.id.btnGenerate)
         btnViewPayHistory = findViewById(R.id.btnViewPayHistory)
+        btnViewCurrentHistory = findViewById(R.id.btnViewCurrentHistory)
 
         btnViewPayHistory.setOnClickListener {
             startActivity(Intent(this, ViewPH::class.java))
@@ -50,7 +66,7 @@ class PassengerTicket : AppCompatActivity() {
             val data = etData.text.toString().trim()
 
             if (data.isEmpty()) {
-                Toast.makeText(this, "Enter your transaction ID", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter your transaction ID", Toast.LENGTH_SHORT).show()
             } else {
 
                 val writer = QRCodeWriter()
@@ -76,7 +92,13 @@ class PassengerTicket : AppCompatActivity() {
             }
         }
     }
+
+//    override fun onSupportNavigateUp(): Boolean {
+//        onBackPressed()
+//        return true
+//    }
 }
+
 
 
 

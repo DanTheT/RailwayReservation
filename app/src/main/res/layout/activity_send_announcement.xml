@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".admin.announcement.SendAnnouncementActivity">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/announcement_topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:title="Announcement"
+                app:titleTextColor="@color/white"
+                app:navigationIconTint="@color/white"
+                app:layout_scrollFlags="scroll|enterAlways|snap"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"

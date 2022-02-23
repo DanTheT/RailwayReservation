@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -38,18 +39,43 @@ class TrainInfoFragment : Fragment() {
 
         binding.searchButton.setOnClickListener {
             val selectTrain = binding.trainTypeSpinner.text.toString()
-            checkTrainLine(selectTrain)
+
+            try {
+                if (binding.trainTypeSpinner.text.isEmpty()) {
+                    Toast.makeText(requireContext(), "No selected train name", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    checkTrainLine(selectTrain)
+                }
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            }
         }
+
 
         binding.selectionBtn.setOnClickListener {
             val name: String = binding.trainTypeSpinner.text.toString()
 
-            val trainN = TrainName (
-                name
+            try {
+                if (binding.trainTypeSpinner.text.isEmpty()) {
+                    Toast.makeText(requireContext(), "No selected train name", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+
+                    val trainN = TrainName (
+                        name
                     )
-            val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
-            findNavController().navigate(action)
+                    val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
+                    findNavController().navigate(action)
+
+                }
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            }
         }
+
+
+
     }
 
     private fun checkTrainLine(trainName: String){

@@ -60,7 +60,7 @@
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_issue_manage.xml" value="0.29030797101449274" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_main.xml" value="0.16271442986881937" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_make_reservation.xml" value="0.21467391304347827" />
-        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_account.xml" value="0.16271442986881937" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_account.xml" value="0.25" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_cancellation.xml" value="0.16271442986881937" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_chg_pw.xml" value="0.2504528985507246" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_date_picker.xml" value="0.24583333333333332" />
@@ -127,7 +127,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

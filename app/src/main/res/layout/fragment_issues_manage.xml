@@ -15,14 +15,17 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/issueManageMain_topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:title="Issue manage" />
+                app:title="Issue manage"
+                app:titleTextColor="@color/white"
+                app:navigationIconTint="@color/white"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 

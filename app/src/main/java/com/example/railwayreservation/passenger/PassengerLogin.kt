@@ -140,6 +140,8 @@ class PassengerLogin : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
 
         if (currentUser != null) {
+            Toast.makeText(this, "Welcome to Raiden Railway!", Toast.LENGTH_SHORT).show()
+
             if (currentUser.isEmailVerified) {
                 startActivity(Intent(this, PassengerHome::class.java))
                 finish()}

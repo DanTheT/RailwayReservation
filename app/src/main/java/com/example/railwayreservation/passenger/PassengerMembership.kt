@@ -20,7 +20,11 @@ class PassengerMembership : AppCompatActivity() {
 
 
     private lateinit var btnApplyMembership: Button
-    private lateinit var btnMyBenefits: Button
+    private lateinit var btn200points: Button
+    private lateinit var btn400points: Button
+    private lateinit var btn800points: Button
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +39,14 @@ class PassengerMembership : AppCompatActivity() {
         pointsTV = findViewById(R.id.pointsView)
 
         btnApplyMembership = findViewById(R.id.btnApplyMembership)
-        btnMyBenefits = findViewById(R.id.btnMyBenefits)
+        btn200points = findViewById(R.id.btn200points)
+        btn400points = findViewById(R.id.btn400points)
+        btn800points = findViewById(R.id.btn800points)
 
-        btnApplyMembership.isEnabled = false
-        btnMyBenefits.isEnabled = false
+//        btnApplyMembership.isEnabled = false
+//        btn200points.isEnabled = false
+//        btn400points.isEnabled = false
+//        btn800points.isEnabled = false
 
 
         loadProfile()

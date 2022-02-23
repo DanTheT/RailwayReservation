@@ -23,7 +23,10 @@
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:navigationIconTint="@color/white"
-                app:menu="@menu/top_app_bar_issue" />
+                app:menu="@menu/top_app_bar_issue"
+                app:title="Home"
+                app:titleTextColor="@color/white"
+                />
 
         </com.google.android.material.appbar.AppBarLayout>
 

@@ -72,6 +72,7 @@
         android:layout_marginEnd="20dp"
         android:minHeight="48dp"
         android:text="Train Line :"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/train_line_textview"
         app:layout_constraintTop_toBottomOf="@+id/search_button" />
@@ -84,7 +85,8 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="4dp"
         android:minHeight="48dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_button" />
 
@@ -98,6 +100,7 @@
         android:layout_marginEnd="20dp"
         android:minHeight="48dp"
         android:text="Start Station :"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/train_start_textview"
         app:layout_constraintTop_toBottomOf="@+id/trainLineTV" />
@@ -109,7 +112,8 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="4dp"
         android:minHeight="48dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/train_line_textview" />
 
@@ -123,6 +127,7 @@
         android:layout_marginEnd="20dp"
         android:minHeight="48dp"
         android:text="End Station :"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/train_end_textview"
         app:layout_constraintTop_toBottomOf="@+id/trainStartTV" />
@@ -134,7 +139,8 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="4dp"
         android:minHeight="48dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/train_start_textview" />
 
@@ -149,7 +155,8 @@
         android:layout_marginEnd="10dp"
         android:minHeight="48dp"
         android:text="Train Status :"
-        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/train_status_textview"
         app:layout_constraintTop_toBottomOf="@+id/trainEndTV" />
 
@@ -160,7 +167,8 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="4dp"
         android:minHeight="48dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

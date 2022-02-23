@@ -16,7 +16,8 @@ tools:context=".passenger.PassengerCancellation">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/myCancellation_topAppBar"
@@ -25,7 +26,9 @@ tools:context=".passenger.PassengerCancellation">
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:title="My Cancellation" />
+                app:title="My Cancellation"
+                app:navigationIconTint="@color/white"
+                />
 
         </com.google.android.material.appbar.AppBarLayout>
 

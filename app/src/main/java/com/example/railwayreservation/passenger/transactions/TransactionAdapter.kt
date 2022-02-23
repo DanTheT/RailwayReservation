@@ -54,14 +54,6 @@ class TransactionAdapter(val myContext: Context, val layoutResId: Int, val trans
     }
 }
 
-//        val btnCopy = view.findViewById<TextView>(R.id.btnCopy)
-//        btnCopy.setOnClickListener(View.OnClickListener() {
-//        fun Context.copyToClipboard(text: CharSequence){
-//            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-//            val clip = ClipData.newPlainText("label",transID.text)
-//            clipboard.setPrimaryClip(clip)
-//            Toast.makeText(this, "Copied to clipboard", Toast.LENGTH_SHORT).show()
-//        }
 
 
 

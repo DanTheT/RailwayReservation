@@ -21,7 +21,8 @@
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primary_dark_blue">
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/myAccount_topAppBar"
@@ -30,6 +31,7 @@
                     android:layout_height="?attr/actionBarSize"
                     app:layout_scrollFlags="scroll|enterAlways|snap"
                     app:navigationIcon="@drawable/ic_arrow_back_24"
+                    app:navigationIconTint="@color/white"
                     app:title="My Account" />
 
             </com.google.android.material.appbar.AppBarLayout>
@@ -50,6 +52,8 @@
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
             android:text="My Profile"
+            android:textColor="@color/black"
+
             android:textSize="18sp" />
 
         <LinearLayout
@@ -135,6 +139,7 @@
             android:paddingLeft="20dp"
             android:gravity="center_vertical"
             android:text="My Account"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <Button
@@ -145,7 +150,7 @@
             android:gravity="center"
             android:text="Change password"
             android:textAllCaps="false"
-            android:textColor="#000"
+            android:textColor="#673AB7"
             android:textSize="18sp"
             app:backgroundTint="#fff" />
 
@@ -157,7 +162,7 @@
             android:gravity="center"
             android:text="Logout"
             android:textAllCaps="false"
-            android:textColor="#000"
+            android:textColor="#673AB7"
             android:textSize="18sp"
             app:backgroundTint="#fff" />
     </LinearLayout>

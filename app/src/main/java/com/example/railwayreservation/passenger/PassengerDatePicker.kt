@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.railwayreservation.R
 import com.example.railwayreservation.passengerTrain.TrainMainActivity
 import java.util.*
@@ -44,15 +46,20 @@ class PassengerDatePicker : AppCompatActivity() {
         datePicker.maxDate = halfYearLater.timeInMillis
 
         btnProceed.setOnClickListener {
-            startActivity(Intent(this, TrainMainActivity::class.java))
+
+            if (dateTV.text.isEmpty()) {
+                Toast.makeText(this, "No selected date.", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                startActivity(Intent(this, TrainMainActivity::class.java))
+            }
+
+
+
+            btnPickDate.setOnClickListener(View.OnClickListener {
+                dateTV.text =
+                    ("   Your Selected Date : " + datePicker.getDayOfMonth() + "/" + (datePicker.getMonth() + 1) + "/" + datePicker.getYear())
+            })
         }
-
-
-        btnPickDate.setOnClickListener(View.OnClickListener {
-            dateTV.text=("   Your Selected Date : " + datePicker.getDayOfMonth() + "/" + (datePicker.getMonth() + 1) + "/" + datePicker.getYear()) })
     }
-
-
-
-
 }
