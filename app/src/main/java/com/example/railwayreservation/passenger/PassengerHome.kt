@@ -23,7 +23,6 @@ class PassengerHome : AppCompatActivity() {
     private lateinit var  btnTicket: ImageButton
     private lateinit var  btnAccount: ImageButton
     private lateinit var  btnMembership: ImageButton
-    private lateinit var  btnPH: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
