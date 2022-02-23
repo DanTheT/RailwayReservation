@@ -7,19 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.trainSeats.data.ParcelizedSeat
 import com.example.railwayreservation.databinding.FragmentBtmSheetSeatsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-
 
 class BtmSheetSeatsFragment : BottomSheetDialogFragment() {
     private var _binding: FragmentBtmSheetSeatsBinding? = null
     private val binding get() = _binding!!
-    var coachNumber: String? = null
+    private val args by navArgs<BtmSheetSeatsFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        coachNumber = requireArguments().getString("coachNumber")
     }
 
     override fun onCreateView(
@@ -28,18 +28,23 @@ class BtmSheetSeatsFragment : BottomSheetDialogFragment() {
     ): View {
         _binding = FragmentBtmSheetSeatsBinding.inflate(inflater, container, false)
 
-        val coachNum = "$coachNumber"
-        binding.btmSheetCoachNumber.text = coachNum
-
-        val bundle = bundleOf("coachNumber" to coachNum)
-        binding.updateTrainSeat.setOnClickListener {
-            findNavController().navigate(R.id.action_btmSheetSeatsFragment_to_updateSeatsFragment, bundle)
-        }
+        binding.btmSheetCoachNumber.text = args.coachNumber.coachNum
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val coachNo = binding.btmSheetCoachNumber.text.toString()
+
+        val seatParcel = ParcelizedSeat(
+            coachNo
+        )
+        val action = BtmSheetSeatsFragmentDirections.actionBtmSheetSeatsFragmentToUpdateSeatsFragment(seatParcel)
+
+        binding.updateTrainSeat.setOnClickListener {
+            findNavController().navigate(action)
+        }
     }
 }
