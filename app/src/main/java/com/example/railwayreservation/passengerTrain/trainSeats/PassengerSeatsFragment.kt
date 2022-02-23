@@ -1,12 +1,11 @@
 package com.example.railwayreservation.passengerTrain.trainSeats
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.navArgs
@@ -18,15 +17,10 @@ class PassengerSeatsFragment : Fragment() {
 
     private var _binding: FragmentPassengerSeatsBinding? = null
     private val binding get() = _binding!!
-    private var recipient: String? = null
     private lateinit var navController: NavController
     private lateinit var seatsDatabase: DatabaseReference
     private lateinit var seatsArrayList: ArrayList<PassengerSeatsData>
     private val args by navArgs<PassengerSeatsFragmentArgs>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,28 +38,36 @@ class PassengerSeatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        try {
-            getSelectedSeatData(binding.seatTrainType.text.toString())
-        }catch (e: Exception) {
-            Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
-        }
-    }
+        binding.selectSeatGetBtn.setOnClickListener {
+            val getNameTrain = binding.seatTrainType.text.toString()
 
-    private fun getSelectedSeatData(trainType: String) {
-        seatsDatabase =
-            FirebaseDatabase.getInstance().getReference("TrainInfo").child(trainType).child("Seats")
+            seatsDatabase = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
+            seatsDatabase.child(getNameTrain).child("car").get().addOnSuccessListener {
 
-        seatsDatabase.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
-                    for (seatsSnapshot in snapshot.children) {
+                when(it.value.toString()) {
+                    "4 Coaches" -> {
+                        insertSeatsCoachesFour()
+                    }
+                    "5 Coaches" -> {
+                        insertSeatsCoachesFive()
                     }
                 }
             }
-
-            override fun onCancelled(error: DatabaseError) {
-
-            }
-        })
+        }
     }
+
+    private fun insertSeatsCoachesFive() {
+        val lists = resources.getStringArray(R.array.four_coaches)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.selectSeatCoach.setAdapter(listsAdapter)
+    }
+
+    private fun insertSeatsCoachesFour() {
+        val lists = resources.getStringArray(R.array.four_coaches)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.selectSeatCoach.setAdapter(listsAdapter)
+    }
+
 }

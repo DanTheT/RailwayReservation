@@ -1,4 +1,4 @@
-package com.example.railwayreservation.admin.trainInfo.checkTrain
+package com.example.railwayreservation.admin.trainInfo.data
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 
 class TrainInfoAdapter(private val trainList: ArrayList<TrainInfo>, private val itemClick: OnItemClick): RecyclerView.Adapter<TrainInfoAdapter.TrainViewHolder>() {
 

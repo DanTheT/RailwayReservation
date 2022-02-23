@@ -11,22 +11,21 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.trainSchedule.data.Schedule
 import com.example.railwayreservation.databinding.FragmentUpdateScheduleBinding
 
 class UpdateScheduleFragment : Fragment() {
 
-    var trainName: String? = null
     private var _binding: FragmentUpdateScheduleBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
     private lateinit var scheduleViewModel: UpdateScheduleViewModel
+    private val args by navArgs<UpdateScheduleFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        trainName = requireArguments().getString("trainName")
         scheduleViewModel = ViewModelProvider(this)[UpdateScheduleViewModel::class.java]
     }
 
@@ -36,12 +35,11 @@ class UpdateScheduleFragment : Fragment() {
     ): View {
         _binding = FragmentUpdateScheduleBinding.inflate(inflater, container, false)
 
+        binding.updateTrainScheduleText.text = args.receivedName.trainName
+
         insertScheduleArriveTime()
         insertScheduleReachTime()
         insertScheduleStatus()
-
-        val trainName = "$trainName"
-        binding.updateTrainScheduleText.text = trainName
 
         binding.buttonGetUpdateSchedule.setOnClickListener {
             when (binding.updateTrainScheduleText.text.toString()) {

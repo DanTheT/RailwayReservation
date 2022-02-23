@@ -169,11 +169,12 @@
         android:label="fragment_schedule_btm_sheet"
         tools:layout="@layout/fragment_schedule_btm_sheet" >
 
-        <argument android:defaultValue="None"
-            android:name="trainName"/>
         <action
             android:id="@+id/action_scheduleBtmSheetFragment_to_updateScheduleFragment"
             app:destination="@id/updateScheduleFragment" />
+        <argument
+            android:name="name"
+            app:argType="com.example.railwayreservation.admin.trainSchedule.data.ParcelizedSchedule" />
     </dialog>
     <fragment
         android:id="@+id/updateScheduleFragment"
@@ -183,9 +184,10 @@
         <action
             android:id="@+id/action_updateScheduleFragment_to_overallTrainScheduleFragment"
             app:destination="@id/overallTrainScheduleFragment" />
+        <argument
+            android:name="receivedName"
+            app:argType="com.example.railwayreservation.admin.trainSchedule.data.ParcelizedSchedule" />
 
-        <argument android:defaultValue="None"
-            android:name="trainName"/>
     </fragment>
     <dialog
         android:id="@+id/btmSheetSeatsFragment"

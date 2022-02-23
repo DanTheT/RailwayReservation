@@ -51,7 +51,7 @@ class PassengerHome : AppCompatActivity() {
         btnReservation.setOnClickListener {
             startActivity(Intent(this,PassengerDatePicker::class.java))
             // u can comment the below line code
-//            startActivity(Intent(this, TrainMainActivity::class.java))
+            // startActivity(Intent(this, TrainMainActivity::class.java))
             }
 
         //go to cancellation screen
@@ -85,8 +85,8 @@ class PassengerHome : AppCompatActivity() {
         }
 
 
-        binding.passengerHomeTopAppBar.setOnClickListener {
-            when (it.id) {
+        binding.passengerHomeTopAppBar.setOnMenuItemClickListener {
+            when (it.itemId) {
                 R.id.menuIssues -> {
                     startActivity(Intent(this, ReportIssue::class.java))
                     true

@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@id/seat_destination" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/selectSeatCoach"
+        android:id="@+id/selectSeatCoachLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
@@ -76,6 +76,7 @@
         app:layout_constraintTop_toBottomOf="@id/selectSeatGetBtn">
 
         <AutoCompleteTextView
+            android:id="@+id/selectSeatCoach"
             android:hint="Coach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,7 +90,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/selectSeatCoach">
+        app:layout_constraintTop_toBottomOf="@id/selectSeatCoachLayout">
 
         <AutoCompleteTextView
             android:hint="Seat Category"

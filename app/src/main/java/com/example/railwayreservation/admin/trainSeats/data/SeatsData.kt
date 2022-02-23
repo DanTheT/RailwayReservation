@@ -1,4 +1,4 @@
-package com.example.railwayreservation.admin.trainSeats
+package com.example.railwayreservation.admin.trainSeats.data
 
 data class SeatsData(
     val available: String = "",
