@@ -22,6 +22,8 @@ class BtmSheetSeatsFragment : BottomSheetDialogFragment() {
         _binding = FragmentBtmSheetSeatsBinding.inflate(inflater, container, false)
 
         binding.btmSheetCoachNumber.text = args.coachNumber.coachNum
+        binding.btmSheetTrainNameSeats.text = args.coachNumber.trainName
+        binding.btmSheetSeatNum.text = args.coachNumber.seatNo
 
         return binding.root
     }
@@ -30,9 +32,11 @@ class BtmSheetSeatsFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val coachNo = binding.btmSheetCoachNumber.text.toString()
+        val trainName = binding.btmSheetTrainNameSeats.text.toString()
+        val seatNo = binding.btmSheetSeatNum.text.toString()
 
         val seatParcel = ParcelizedSeat(
-            coachNo
+            coachNo, trainName, seatNo
         )
         val action = BtmSheetSeatsFragmentDirections.actionBtmSheetSeatsFragmentToUpdateSeatsFragment(seatParcel)
 

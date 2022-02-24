@@ -121,9 +121,11 @@ class OverallTrainSeatsFragment : Fragment(), SeatsAdapter.OnItemClick {
 
     override fun onItemClick(data: SeatsData) {
         val coachNo: String = data.coachNum
+        val trainName: String = binding.textFieldSearchSeatName.text.toString()
+        val seatNo: String = data.seatNo
 
         val seatParcel = ParcelizedSeat(
-            coachNo
+            coachNo, trainName, seatNo
         )
         val action =
             OverallTrainSeatsFragmentDirections.actionOverallTrainSeatsFragmentToBtmSheetSeatsFragment(

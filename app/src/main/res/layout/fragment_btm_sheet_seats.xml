@@ -30,6 +30,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+            style="@style/TextAppearance.MaterialComponents.Headline4"/>
+
+        <TextView
+            android:id="@+id/btmSheetTrainNameSeats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Name"
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seat No: "
+            style="@style/TextAppearance.MaterialComponents.Headline4"/>
+
+        <TextView
+            android:id="@+id/btmSheetSeatNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="SNumber"
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center">
 

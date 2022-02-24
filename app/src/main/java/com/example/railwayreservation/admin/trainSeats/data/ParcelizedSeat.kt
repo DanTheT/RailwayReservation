@@ -5,5 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ParcelizedSeat(
-    val coachNum: String
+    val coachNum: String,
+    val trainName: String,
+    val seatNo: String,
 ): Parcelable

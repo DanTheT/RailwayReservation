@@ -33,6 +33,8 @@ class DeleteSeatsFragment : Fragment() {
         _binding = FragmentDeleteSeatsBinding.inflate(inflater, container, false)
 
         binding.textViewCoach.text = args.receiveCoachNUm.coachNum
+        binding.textViewNameTrainSeat.text = args.receiveCoachNUm.trainName
+        binding.textViewSeatNoChange.text = args.receiveCoachNUm.seatNo
 
         return binding.root
     }
