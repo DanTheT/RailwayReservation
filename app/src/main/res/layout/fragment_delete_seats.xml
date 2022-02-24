@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.trainSeats.UpdateSeatsFragment">
+    tools:context=".admin.trainSeats.DeleteSeatsFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/topBarLayout"
@@ -24,7 +24,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:navigationIconTint="@color/white"
-                app:title="Update Seats"
+                app:title="Change Seats Status"
                 app:titleTextColor="@color/white"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>
 

@@ -10,14 +10,17 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
-import com.example.railwayreservation.databinding.FragmentUpdateSeatsBinding
+import com.example.railwayreservation.databinding.FragmentDeleteSeatsBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
-class UpdateSeatsFragment : Fragment() {
+class DeleteSeatsFragment : Fragment() {
 
-    private var _binding: FragmentUpdateSeatsBinding? = null
+    private var _binding: FragmentDeleteSeatsBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
-    private val args by navArgs<UpdateSeatsFragmentArgs>()
+    private lateinit var seatsDatabase: DatabaseReference
+    private val args by navArgs<DeleteSeatsFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +30,7 @@ class UpdateSeatsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentUpdateSeatsBinding.inflate(inflater, container, false)
+        _binding = FragmentDeleteSeatsBinding.inflate(inflater, container, false)
 
         binding.textViewCoach.text = args.receiveCoachNUm.coachNum
 
@@ -41,5 +44,9 @@ class UpdateSeatsFragment : Fragment() {
         binding.updateTrainSeatMainTopAppBar.setOnClickListener {
             findNavController().navigate(R.id.action_updateSeatsFragment_to_overallTrainSeatsFragment)
         }
+    }
+
+    private fun changeSeatStatus() {
+
     }
 }
