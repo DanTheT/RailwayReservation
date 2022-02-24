@@ -35,112 +35,113 @@ class ViewPH : AppCompatActivity() {
         setContentView(R.layout.activity_view_ph)
 
 
-//        transactionList = mutableListOf()
-//
-//        val myRef = FirebaseDatabase.getInstance().getReference("Transactions")
-//
-//        transactionListView = findViewById(R.id.transactionListView)
-//
-//        myRef.addValueEventListener(object : ValueEventListener {
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                if (snapshot!!.exists()) {
-//
-//                    for (h in snapshot.children) {
-//                        val transaction = h.getValue(Transaction::class.java)
-//                        transactionList.add((transaction!!))
-//                    }
-//                }
-//
-//                val adapter =
-//                    TransactionAdapter(this@ViewPH, R.layout.transaction, transactionList)
-//                transactionListView.adapter = adapter
-//
-//
-//            }
-//
-//        })
-//
-//    }
-//}
-
-
-        etReservationDate = findViewById(R.id.etReservationDate)
-        etTrainName = findViewById(R.id.etTrainName)
-        etCoach = findViewById(R.id.etCoach)
-        etSeatCat = findViewById(R.id.etSeatCat)
-        etSeats = findViewById(R.id.etSeats)
-        etFrom = findViewById(R.id.etFrom)
-        etTo = findViewById(R.id.etTo)
-        etArrival = findViewById(R.id.etArrival)
-        etReach = findViewById(R.id.etReach)
-//        etStatus = findViewById(R.id.etStatus)
-        btnSave = findViewById(R.id.btnSave)
-        btnClear = findViewById(R.id.btnClear)
-
-        btnSave.setOnClickListener {
-
-            saveHistory()
-        }
-
-        btnClear.setOnClickListener {
-            etReservationDate.text.clear()
-            etTrainName.text.clear()
-            etCoach.text.clear()
-            etSeatCat.text.clear()
-            etSeats.text.clear()
-            etFrom.text.clear()
-            etTo.text.clear()
-            etArrival.text.clear()
-            etReach.text.clear()
-
-        }
-
-    }
-
-    private fun saveHistory() {
-
-        val reservationDate = etReservationDate.text.toString().trim()
-        val trainName = etTrainName.text.toString().trim()
-        val coach = etCoach.text.toString().trim()
-        val seatCat = etSeatCat.text.toString().trim()
-        val seats = etSeats.text.toString().trim()
-        val fromStation = etFrom.text.toString().trim()
-        val nextStation = etTo.text.toString().trim()
-        val arriveTime = etArrival.text.toString().trim()
-        val reachTime = etReach.text.toString().trim()
-
+        //view purchase historu
+        transactionList = mutableListOf()
 
         val myRef = FirebaseDatabase.getInstance().getReference("Transactions")
 
-        val transactionID = myRef.push().key.toString()
+        transactionListView = findViewById(R.id.transactionListView)
 
-        val ph = Transaction(
-            transactionID,
-            reservationDate,
-            trainName,
-            coach,
-            seatCat,
-            seats,
-            fromStation,
-            nextStation,
-            arriveTime,
-            reachTime
-        )
+        myRef.addValueEventListener(object : ValueEventListener {
 
-        myRef.child(transactionID).setValue(ph).addOnCompleteListener {
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot!!.exists()) {
+
+                    for (h in snapshot.children) {
+                        val transaction = h.getValue(Transaction::class.java)
+                        transactionList.add((transaction!!))
+                    }
+                }
+
+                val adapter =
+                    TransactionAdapter(this@ViewPH, R.layout.transaction, transactionList)
+                transactionListView.adapter = adapter
 
 
-            Toast.makeText(applicationContext, "Details saved successfully", Toast.LENGTH_LONG)
-                .show()
+            }
 
-        }
+        })
+
     }
 }
+
+//          //save sample records
+//        etReservationDate = findViewById(R.id.etReservationDate)
+//        etTrainName = findViewById(R.id.etTrainName)
+//        etCoach = findViewById(R.id.etCoach)
+//        etSeatCat = findViewById(R.id.etSeatCat)
+//        etSeats = findViewById(R.id.etSeats)
+//        etFrom = findViewById(R.id.etFrom)
+//        etTo = findViewById(R.id.etTo)
+//        etArrival = findViewById(R.id.etArrival)
+//        etReach = findViewById(R.id.etReach)
+////        etStatus = findViewById(R.id.etStatus)
+//        btnSave = findViewById(R.id.btnSave)
+//        btnClear = findViewById(R.id.btnClear)
+//
+//        btnSave.setOnClickListener {
+//
+//            saveHistory()
+//        }
+//
+//        btnClear.setOnClickListener {
+//            etReservationDate.text.clear()
+//            etTrainName.text.clear()
+//            etCoach.text.clear()
+//            etSeatCat.text.clear()
+//            etSeats.text.clear()
+//            etFrom.text.clear()
+//            etTo.text.clear()
+//            etArrival.text.clear()
+//            etReach.text.clear()
+//
+//        }
+//
+//    }
+//
+//    private fun saveHistory() {
+//
+//        val reservationDate = etReservationDate.text.toString().trim()
+//        val trainName = etTrainName.text.toString().trim()
+//        val coach = etCoach.text.toString().trim()
+//        val seatCat = etSeatCat.text.toString().trim()
+//        val seats = etSeats.text.toString().trim()
+//        val fromStation = etFrom.text.toString().trim()
+//        val nextStation = etTo.text.toString().trim()
+//        val arriveTime = etArrival.text.toString().trim()
+//        val reachTime = etReach.text.toString().trim()
+//
+//
+//        val myRef = FirebaseDatabase.getInstance().getReference("Transactions")
+//
+//        val transactionID = myRef.push().key.toString()
+//
+//        val ph = Transaction(
+//            transactionID,
+//            reservationDate,
+//            trainName,
+//            coach,
+//            seatCat,
+//            seats,
+//            fromStation,
+//            nextStation,
+//            arriveTime,
+//            reachTime
+//        )
+//
+//        myRef.child(transactionID).setValue(ph).addOnCompleteListener {
+//
+//
+//            Toast.makeText(applicationContext, "Details saved successfully", Toast.LENGTH_LONG)
+//                .show()
+//
+//        }
+//    }
+//}
 
 
 
