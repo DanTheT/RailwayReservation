@@ -1,14 +1,11 @@
 package com.example.railwayreservation.admin.trainSeats
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.trainSeats.data.ParcelizedSeat
 import com.example.railwayreservation.databinding.FragmentBtmSheetSeatsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -17,10 +14,6 @@ class BtmSheetSeatsFragment : BottomSheetDialogFragment() {
     private var _binding: FragmentBtmSheetSeatsBinding? = null
     private val binding get() = _binding!!
     private val args by navArgs<BtmSheetSeatsFragmentArgs>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

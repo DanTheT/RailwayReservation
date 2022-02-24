@@ -5,7 +5,6 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
