@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -22,10 +24,6 @@ class DeleteSeatsFragment : Fragment() {
     private lateinit var seatsDatabase: DatabaseReference
     private val args by navArgs<DeleteSeatsFragmentArgs>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,6 +34,7 @@ class DeleteSeatsFragment : Fragment() {
         binding.textViewNameTrainSeat.text = args.receiveCoachNUm.trainName
         binding.textViewSeatNoChange.text = args.receiveCoachNUm.seatNo
 
+        insertSeatsStatus()
         return binding.root
     }
 
@@ -46,9 +45,30 @@ class DeleteSeatsFragment : Fragment() {
         binding.updateTrainSeatMainTopAppBar.setOnClickListener {
             findNavController().navigate(R.id.action_updateSeatsFragment_to_overallTrainSeatsFragment)
         }
+
+        binding.buttonChangeStatus.setOnClickListener {
+            try {
+                changeStatus()
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
-    private fun changeSeatStatus() {
+    private fun insertSeatsStatus() {
+        val lists = resources.getStringArray(R.array.seatStatus)
 
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.textViewStatus.setAdapter(listsAdapter)
+    }
+
+    private fun changeStatus() {
+        val coach = binding.textViewCoach.text.toString()
+        val tName = binding.textViewNameTrainSeat.text.toString()
+        val tSeatNo = binding.textViewSeatNoChange.text.toString()
+        val getStatus = binding.textViewStatus.text.toString()
+
+        seatsDatabase = FirebaseDatabase.getInstance().getReference("TrainSeats")
+        seatsDatabase.child(tName).child(coach).child(tSeatNo).child("available").setValue(getStatus)
     }
 }

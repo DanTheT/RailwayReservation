@@ -36,19 +36,19 @@
         android:id="@+id/textViewCoach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="TextViewC"
         style="@style/TextAppearance.MaterialComponents.Headline5"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topBarLayout"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="78dp"/>
 
     <TextView
         android:id="@+id/textViewNameTrainSeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="TextViewS"
         style="@style/TextAppearance.MaterialComponents.Headline5"
         tools:layout_editor_absoluteX="172dp"
         tools:layout_editor_absoluteY="150dp"
@@ -61,7 +61,7 @@
         android:id="@+id/textViewSeatNoChange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="TextViewN"
         style="@style/TextAppearance.MaterialComponents.Headline5"
         tools:layout_editor_absoluteX="173dp"
         tools:layout_editor_absoluteY="230dp"
@@ -69,5 +69,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textViewStatusLayout"
+        android:layout_width="355dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSeatNoChange">
+
+        <AutoCompleteTextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="match_parent"
+            android:inputType="none"
+            android:hint="Status"
+            android:layout_height="wrap_content">
+        </AutoCompleteTextView>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonChangeStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="270dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatusLayout"
+        android:layout_marginTop="24dp"
+        android:text="Change"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="412dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

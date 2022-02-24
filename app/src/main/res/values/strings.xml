@@ -226,6 +226,11 @@
         <item>Schedule Issues</item>
     </string-array>
 
+    <string-array name="seatStatus">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
     //Train Schedule
     <string name="schedule_page_title">Schedule</string>
     <string name="schedule_train_type_txt">Train Name: </string>
