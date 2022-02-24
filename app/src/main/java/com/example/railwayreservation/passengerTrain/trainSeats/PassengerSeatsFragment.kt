@@ -1,5 +1,6 @@
 package com.example.railwayreservation.passengerTrain.trainSeats
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentPassengerSeatsBinding
+import com.example.railwayreservation.passenger.PassengerDatePicker
 import com.google.firebase.database.*
 
 class PassengerSeatsFragment : Fragment() {
@@ -53,6 +55,13 @@ class PassengerSeatsFragment : Fragment() {
                     }
                 }
             }
+        }
+
+        binding.confirmSeat.setOnClickListener {
+            //proceed to passenger reservation
+            //pass data from date pick , train name, schedule and seat data to there to confirm
+            //then save to firebase call "Reservation" can ?
+
         }
     }
 
@@ -101,5 +110,11 @@ class PassengerSeatsFragment : Fragment() {
 //        binding.selectSeatCategory.setAdapter(listsAdapter)
 //
 //    }
+
+//        val lists = resources.getStringArray(R.array.vip_seats_price)
+//        val lists = resources.getStringArray(R.array.standard_windowSeats_price)
+//        val lists = resources.getStringArray(R.array.standard_alleySeats_price)
+
+
 
 }

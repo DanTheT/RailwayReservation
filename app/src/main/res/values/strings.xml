@@ -133,6 +133,10 @@
         <item>D2</item>
     </string-array>
 
+    <string-array name="vip_seats_price">
+        <item>RM10</item>
+    </string-array>
+
     <string-array name="standard_windowSeats_range">
         <item>A3 - A13</item>
         <item>D3 - D13</item>
@@ -163,6 +167,10 @@
         <item>D13</item>
     </string-array>
 
+    <string-array name="standard_windowSeats_price">
+        <item>RM13</item>
+    </string-array>
+
     <string-array name="standard_alleySeats_range">
         <item>B3 - B13</item>
         <item>C3 - C13</item>
@@ -191,6 +199,10 @@
         <item>C12</item>
         <item>B13</item>
         <item>C13</item>
+    </string-array>
+
+    <string-array name="standard_alleySeats_price">
+        <item>RM15</item>
     </string-array>
 
     <string-array name="four_coaches">
