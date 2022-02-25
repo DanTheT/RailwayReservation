@@ -95,4 +95,15 @@
         android:text="Send"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_annonceMsg" />
+
+    <Button
+        android:id="@+id/btnRefund"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="36dp"
+        android:text="Refunds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_sendAnnouncement" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

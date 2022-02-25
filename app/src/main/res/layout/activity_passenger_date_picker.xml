@@ -25,7 +25,6 @@
                 app:titleTextColor="@color/white"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:title="Select Reservation Date"
                 app:navigationIconTint="@color/white"
                 />
@@ -61,10 +60,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#000"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:gravity="center"
         tools:layout_editor_absoluteX="218dp"
         tools:layout_editor_absoluteY="604dp" />
+
+<!--    <Button-->
+<!--        android:id="@+id/btnSave"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Save date"-->
+<!--        tools:layout_editor_absoluteX="123dp"-->
+<!--        tools:layout_editor_absoluteY="533dp" />-->
 
     <Button
         android:id="@+id/btnProceed"

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".passenger.PassengerReservation">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -23,7 +24,6 @@
                 app:titleTextColor="@color/white"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:title="Reservation"
                 app:navigationIconTint="@color/white"/>
 
@@ -31,5 +31,27 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    <TextView
+        android:id="@+id/confirmPaymentTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm Payment:" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    <TextView-->
+<!--        android:id="@+id/reservationDateTV"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/black"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/trainNameTV"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/black"/>-->
+
+
+
+
+</LinearLayout>

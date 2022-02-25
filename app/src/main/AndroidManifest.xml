@@ -13,7 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
-
+        <activity
+            android:name=".admin.refund.MakeRefund"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.cancellation.MakeCancellation"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.reservation.MakeReservation"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.SeatPlanImage"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.TrainRouteImage"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerFAQ"
+            android:exported="false" />
         <activity
             android:name=".passenger.transactions.ViewPH"
             android:exported="false" />

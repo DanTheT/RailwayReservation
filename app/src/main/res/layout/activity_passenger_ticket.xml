@@ -23,7 +23,6 @@
                 app:titleTextColor="@color/white"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:title="My Ticket"
                 app:navigationIconTint="@color/white"/>
 

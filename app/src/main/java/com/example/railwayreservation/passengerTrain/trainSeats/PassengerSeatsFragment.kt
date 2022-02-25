@@ -13,6 +13,8 @@ import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentPassengerSeatsBinding
 import com.example.railwayreservation.passenger.PassengerDatePicker
+import com.example.railwayreservation.passenger.PassengerPayment
+import com.example.railwayreservation.passenger.PassengerReservation
 import com.google.firebase.database.*
 
 class PassengerSeatsFragment : Fragment() {
@@ -40,6 +42,8 @@ class PassengerSeatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         binding.selectSeatGetBtn.setOnClickListener {
             val getNameTrain = binding.seatTrainType.text.toString()
 
@@ -54,16 +58,43 @@ class PassengerSeatsFragment : Fragment() {
                         insertSeatsCoachesFive()
                     }
                 }
+
+                insertSeatsCategory()
+                insertSeatsRange()
+//                "VIP seats" -> {
+//                        insertVIPSeats()
+//                    }
+//                    "Standard seats - At Window" -> {
+//                        insertStandardWindowSeats()
+//                    }
+//
+//                    "Standard seats - At Alley" -> {
+//                        insertStandardAlleySeats()
+//                    }
+//                }
             }
-        }
-
-        binding.confirmSeat.setOnClickListener {
-            //proceed to passenger reservation
-            //pass data from date pick , train name, schedule and seat data to there to confirm
-            //then save to firebase call "Reservation" can ?
 
         }
-    }
+
+        binding.confirmPayment.setOnClickListener {
+
+//            try {
+//                if (binding.seatTrainType.text.isEmpty()) {
+//                    Toast.makeText(requireContext(), "No selected coach, category and seats", Toast.LENGTH_SHORT)
+//                        .show()
+//                } else {
+//
+//                }
+//            } catch (e: Exception) {
+//                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+//            }
+
+            startActivity(Intent(context,PassengerPayment::class.java))
+
+        }
+
+        }
+
 
     private fun insertSeatsCoachesFive() {
         val lists = resources.getStringArray(R.array.four_coaches)
@@ -79,19 +110,28 @@ class PassengerSeatsFragment : Fragment() {
         binding.selectSeatCoach.setAdapter(listsAdapter)
     }
 
-//    private fun insertSeatsCategory() {
-//        val lists = resources.getStringArray(R.array.seat_category)
-//
-//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeatCategory.setAdapter(listsAdapter)
-//
-//    }
-//
+    private fun insertSeatsCategory() {
+        val lists = resources.getStringArray(R.array.seat_category)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.selectSeatCategory.setAdapter(listsAdapter)
+
+    }
+
+    private fun insertSeatsRange() {
+        val lists = resources.getStringArray(R.array.seats_range)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.selectSeatRange.setAdapter(listsAdapter)
+
+    }
+
+
 //    private fun insertVIPSeats() {
 //        val lists = resources.getStringArray(R.array.vip_seats)
 //
 //        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeats.setAdapter(listsAdapter)
+//        binding.selectSeatCategory.setAdapter(listsAdapter)
 //
 //    }
 //

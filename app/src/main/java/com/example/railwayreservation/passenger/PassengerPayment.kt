@@ -11,7 +11,7 @@ class PassengerPayment : AppCompatActivity() {
 
     private lateinit var btnMakePayment: Button
     private lateinit var btnViewWallet: Button
-    private lateinit var btnBackPay: Button
+    private lateinit var btnDone: Button
 
 
 
@@ -33,8 +33,8 @@ class PassengerPayment : AppCompatActivity() {
             startActivity(viewWalletURL)
         }
 
-        btnBackPay = findViewById(R.id.btnBackPay)
-        btnBackPay.setOnClickListener {
+        btnDone = findViewById(R.id.btnDone)
+        btnDone.setOnClickListener {
             startActivity(Intent(this,PassengerHome::class.java))
         }
 

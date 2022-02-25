@@ -62,7 +62,7 @@ class PassengerChgPw : AppCompatActivity() {
                                     user!!.updatePassword(new)
                                         .addOnCompleteListener { task ->
                                             if (task.isSuccessful) {
-                                                Toast.makeText(this, "Password Changes Successfully", Toast.LENGTH_LONG)
+                                                Toast.makeText(this, "Password Changed Successfully", Toast.LENGTH_LONG)
                                                     .show()
                                                 auth.signOut()
                                                 startActivity(Intent(this, PassengerLogin::class.java))
@@ -80,7 +80,7 @@ class PassengerChgPw : AppCompatActivity() {
 
                     }
                 }else{
-                    Toast.makeText(this, "Password not matching !", Toast.LENGTH_LONG)
+                    Toast.makeText(this, "New and confirm password not matching !", Toast.LENGTH_LONG)
                         .show()
                 }
             }

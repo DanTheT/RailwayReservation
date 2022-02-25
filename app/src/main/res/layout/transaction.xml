@@ -277,17 +277,6 @@
 
     </LinearLayout>
 
-<!--    <Button-->
-<!--        android:id="@+id/btnCopy"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:backgroundTint="@color/primary_blue"-->
-<!--        android:paddingRight="10dp"-->
-<!--        android:text="Copy Transaction ID"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textStyle="bold" />-->
 
 </LinearLayout>
 

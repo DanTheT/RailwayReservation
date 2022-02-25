@@ -1,10 +1,13 @@
 package com.example.railwayreservation.admin.announcement
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import com.example.railwayreservation.admin.refund.MakeRefund
 import com.example.railwayreservation.databinding.ActivitySendAnnouncementBinding
+import com.example.railwayreservation.passenger.PassengerAccount
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +26,11 @@ class SendAnnouncementActivity : AppCompatActivity() {
         binding = ActivitySendAnnouncementBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.btnRefund.setOnClickListener {
+            startActivity(Intent(this, MakeRefund::class.java))
+
+        }
 
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
 

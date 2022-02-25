@@ -21,6 +21,7 @@ import com.google.zxing.qrcode.QRCodeWriter
 import android.graphics.drawable.ColorDrawable
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
+import com.example.railwayreservation.passenger.reservation.MakeReservation
 
 
 class PassengerTicket : AppCompatActivity() {
@@ -61,12 +62,17 @@ class PassengerTicket : AppCompatActivity() {
 
         }
 
+        btnViewCurrentHistory.setOnClickListener {
+            startActivity(Intent(this, MakeReservation::class.java))
+
+        }
+
         btnGenerate.setOnClickListener {
 
             val data = etData.text.toString().trim()
 
             if (data.isEmpty()) {
-                Toast.makeText(this, "Please enter your transaction ID", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please copy and enter your transaction ID", Toast.LENGTH_SHORT).show()
             } else {
 
                 val writer = QRCodeWriter()

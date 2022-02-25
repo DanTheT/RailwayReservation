@@ -22,6 +22,8 @@ class PassengerAccount : AppCompatActivity() {
 
     private lateinit var btnLogout: Button
     private lateinit var btnChangePw: Button
+    private lateinit var btnFAQ: Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +48,13 @@ class PassengerAccount : AppCompatActivity() {
             startActivity(Intent(this, PassengerScreen::class.java))
             finish()
         }
+
+        btnFAQ = findViewById(R.id.btnFAQ)
+        btnFAQ.setOnClickListener {
+            startActivity(Intent(this, PassengerFAQ::class.java))
+
+        }
+
         nameTV = findViewById(R.id.NameView)
         emailTV = findViewById(R.id.EmailView)
         phoneTV = findViewById(R.id.PhoneView)
