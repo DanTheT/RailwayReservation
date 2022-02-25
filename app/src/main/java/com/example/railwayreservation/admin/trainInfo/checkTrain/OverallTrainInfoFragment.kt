@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -30,15 +31,20 @@ class OverallTrainInfoFragment : Fragment(), TrainInfoAdapter.OnItemClick {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentOverallTrainInfoBinding.inflate(inflater, container, false)
 
-        trainInfoRecyclerView = binding.displayTrainInfo
-        trainInfoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        trainInfoRecyclerView.setHasFixedSize(true)
+        try {
+            trainInfoRecyclerView = binding.displayTrainInfo
+            trainInfoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+            trainInfoRecyclerView.setHasFixedSize(true)
 
-        trainArrayList = arrayListOf()
-        retrieveTrainInfo()
+            trainArrayList = arrayListOf()
+
+            retrieveTrainInfo()
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Nothing to fetch", Toast.LENGTH_SHORT).show()
+        }
         return binding.root
     }
 

@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".admin.login.AdminLoginFragment">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/adminLogin_appBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:navigationIconTint="@color/white"
+                app:titleTextColor="@color/white"
+                app:title="Login" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -16,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/topBarLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_txt_layout"
@@ -29,6 +54,7 @@
         app:errorContentDescription="@string/valid_email"
         android:hint="@string/prompt_email"
         app:errorEnabled="true"
+        app:helperTextTextColor="@color/primary_red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -50,7 +76,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:hint="@string/prompt_password"
-        app:errorEnabled="true"
+        app:helperTextTextColor="@color/primary_red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_txt_layout"
@@ -69,7 +95,7 @@
         android:layout_width="356dp"
         android:layout_height="55dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
         android:text="@string/action_sign_in"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +108,7 @@
         android:layout_width="356dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
         android:text="@string/register_acc"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

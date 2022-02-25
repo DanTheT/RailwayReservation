@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentAdminRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -47,6 +49,14 @@ class AdminRegisterFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.adminRegisterMainTopAppBar.setOnClickListener {
+            findNavController().navigate(R.id.action_adminRegisterFragment_to_adminLoginFragment)
+        }
+    }
+
     private fun checkEmptyInput() {
         when {
             TextUtils.isEmpty(adminName.text.toString().trim()) -> {
@@ -74,9 +84,11 @@ class AdminRegisterFragment : Fragment() {
                     if (adminPassword.text.toString().length >= 6) {
                         if (adminPassword.text.toString() == adminConfirmPassword.text.toString()) {
                             registerToFirebase()
+                        } else {
+                            binding.enterConfirmPassTextLayout.helperText = "Password not same, please try again"
                         }
                     } else {
-                        adminPassword.error = "Please enter at least 6 characters"
+                        binding.enterPassTextLayout.helperText = "Please enter at least 6 characters"
                     }
                 } else {
                     adminEmail.error = "Enter a valid email address"

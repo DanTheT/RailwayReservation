@@ -1,7 +1,6 @@
 package com.example.railwayreservation.admin.trainSeats.addSeats
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +23,6 @@ class AddSeatsFragment : Fragment() {
     private lateinit var seatsDatabase: DatabaseReference
     private lateinit var navController: NavController
     private lateinit var addViewModel: AddSeatsViewModel
-    val TAG = "Add seats fragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,8 +50,6 @@ class AddSeatsFragment : Fragment() {
         binding.addTrainSeatsMainTopAppBar.setOnClickListener {
             findNavController().navigate(R.id.action_addSeatsFragment_to_overallTrainSeatsFragment)
         }
-
-
 
         binding.buttonCheckCategory.setOnClickListener {
             val trainName = binding.editTextSeatTrainName.text.toString()
@@ -86,12 +82,40 @@ class AddSeatsFragment : Fragment() {
         }
 
         binding.buttonAddSeats.setOnClickListener {
+            val selectedCoachCat = binding.editTextSeatCategory.text.toString()
+            val insertedSeatPrice = binding.editTextSeatTrainPrice.text.toString()
             try {
-                insertSeatData()
-                Toast.makeText(requireContext(), "New seats added", Toast.LENGTH_SHORT).show()
+                when (selectedCoachCat) {
+                    "VIP seats" -> {
+                        if (insertedSeatPrice == "10") {
+                            binding.seatTrainPriceLayout.helperText = null
+                            insertSeatData()
+                            Toast.makeText(requireContext(), "New seats added", Toast.LENGTH_SHORT).show()
+                        } else {
+                            binding.seatTrainPriceLayout.helperText = "Price should be '10' "
+                        }
+                    }
+                    "Standard seats - At Window" -> {
+                        if (insertedSeatPrice == "13") {
+                            binding.seatTrainPriceLayout.helperText = null
+                            insertSeatData()
+                            Toast.makeText(requireContext(), "New seats added", Toast.LENGTH_SHORT).show()
+                        } else {
+                            binding.seatTrainNameLayout.helperText = "Price should be '13' "
+                        }
+                    }
+                    else -> {
+                        if (insertedSeatPrice == "15") {
+                            binding.seatTrainPriceLayout.helperText = null
+                            insertSeatData()
+                            Toast.makeText(requireContext(), "New seats added", Toast.LENGTH_SHORT).show()
+                        } else {
+                            binding.seatTrainNameLayout.helperText = "Price should be '15' "
+                        }
+                    }
+                }
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
-                e.message?.let { it1 -> Log.d(TAG, it1) }
             }
         }
     }
@@ -158,7 +182,7 @@ class AddSeatsFragment : Fragment() {
         // for vip seats
         when (binding.editTextSeatSelection.text.toString()) {
             "A1 - D1" -> {
-                val arrayList = arrayListOf<String>("A1", "B1", "C1", "D1")
+                val arrayList = arrayListOf("A1", "B1", "C1", "D1")
 
                 for (i in 0..3) {
                     val seats = SeatsData(
@@ -169,7 +193,7 @@ class AddSeatsFragment : Fragment() {
                 }
             }
             "A2 - D2" -> {
-                val arrayList = arrayListOf<String>("A2", "B2", "C2", "D2")
+                val arrayList = arrayListOf("A2", "B2", "C2", "D2")
 
                 for (i in 0..3) {
                     val seats = SeatsData(
@@ -184,7 +208,7 @@ class AddSeatsFragment : Fragment() {
         // for window standard
         when (binding.editTextSeatSelection.text.toString()) {
             "A3 - A13" -> {
-                val arrayList = arrayListOf<String>(
+                val arrayList = arrayListOf(
                     "A3",
                     "A4",
                     "A5",
@@ -207,7 +231,7 @@ class AddSeatsFragment : Fragment() {
                 }
             }
             "D3 - D13" -> {
-                val arrayList = arrayListOf<String>(
+                val arrayList = arrayListOf(
                     "D3",
                     "D4",
                     "D5",
@@ -234,7 +258,7 @@ class AddSeatsFragment : Fragment() {
         //for standard alley seats
         when (binding.editTextSeatSelection.text.toString()) {
             "B3 - B13" -> {
-                val arrayList = arrayListOf<String>(
+                val arrayList = arrayListOf(
                     "B3",
                     "B4",
                     "B5",
@@ -257,7 +281,7 @@ class AddSeatsFragment : Fragment() {
                 }
             }
             "C3 - C13" -> {
-                val arrayList = arrayListOf<String>(
+                val arrayList = arrayListOf(
                     "C3",
                     "C4",
                     "C5",
@@ -278,22 +302,6 @@ class AddSeatsFragment : Fragment() {
                     seatsDatabase.child(trainName).child(trainCoach).child(arrayList[i])
                         .setValue(seats)
                 }
-            }
-        }
-    }
-
-    private fun checkPricing() {
-        val selectedCoachCat = binding.editTextSeatCategory.text.toString()
-        val insertedSeatPrice = binding.editTextSeatTrainPrice.text.toString()
-
-        when (selectedCoachCat) {
-            "VIP seats" -> {
-                if (insertedSeatPrice == "10") {
-                    binding.seatTrainPriceLayout.helperText = null
-                } else {
-                    binding.seatTrainPriceLayout.helperText = "Price should be '10' "
-                }
-                TODO()
             }
         }
     }
