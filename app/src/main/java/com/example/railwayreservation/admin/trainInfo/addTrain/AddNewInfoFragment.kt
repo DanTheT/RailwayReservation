@@ -34,8 +34,6 @@ class AddNewInfoFragment : Fragment() {
     ): View {
         _binding = FragmentAddNewInfoBinding.inflate(inflater, container, false)
 
-        //insertTrainStartStation()
-        //insertTrainEndStation()
         insertTrainCoaches()
 
         nameFocus()
@@ -53,28 +51,42 @@ class AddNewInfoFragment : Fragment() {
         }
 
         binding.buttonGetStation.setOnClickListener {
-            when (binding.textFieldTrainName.text.toString()) {
-                "Angsana" -> {
-                    insertTrainStartStation()
-                    insertTrainEndStation()
+            if (binding.textFieldTrainName.text.toString().isNotEmpty()) {
+                when (binding.textFieldTrainName.text.toString()) {
+                    "Angsana" -> {
+                        insertTrainStartStation()
+                        insertTrainEndStation()
+                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT).show()
+                    }
+                    "Balak" -> {
+                        insertTrainStartStationB()
+                        insertTrainEndStationB()
+                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT).show()
+                    }
+                    "Chino" -> {
+                        insertTrainStartStationC()
+                        insertTrainEndStationC()
+                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT).show()
+                    }
+                    else -> {
+                        insertTrainStartStationOther()
+                        insertTrainEndStationOther()
+                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT).show()
+                    }
                 }
-                "Balak" -> {
-                    insertTrainStartStationB()
-                    insertTrainEndStationB()
-                }
-                "Chino" -> {
-                    insertTrainStartStationC()
-                    insertTrainEndStationC()
-                }
-                else -> {
-                    insertTrainStartStationOther()
-                    insertTrainEndStationOther()
-                }
+                binding.trainNameLayout.helperText = null
+            } else {
+                Toast.makeText(requireContext(), "No name to fetch", Toast.LENGTH_SHORT).show()
             }
         }
 
         binding.addNewTrainInfoBtn.setOnClickListener {
-            addInfo()
+            if (binding.textFieldTrainLine.text.toString() == binding.textFieldTrainName.text.toString()) {
+                binding.trainNumberLayout.helperText = null
+                addInfo()
+            } else {
+                binding.trainLineLayout.helperText = "Line name should be same with train name"
+            }
         }
     }
 

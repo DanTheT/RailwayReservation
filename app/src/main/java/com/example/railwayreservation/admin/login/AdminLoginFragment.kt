@@ -1,5 +1,6 @@
 package com.example.railwayreservation.admin.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.example.railwayreservation.MainActivity
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentAdminLoginBinding
 import com.google.android.material.textfield.TextInputEditText
@@ -52,6 +54,13 @@ class AdminLoginFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
+        binding.adminLoginAppBar.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity::class.java).apply {
+
+            }
+            startActivity(intent)
+        }
+
         if (isCurrentUser != null) {
             Toast.makeText(
                 context,
@@ -61,10 +70,44 @@ class AdminLoginFragment : Fragment() {
             navController.navigate(R.id.action_adminLoginFragment_to_adminMainFragment)
         }
 
+        emailFocus()
+        passFocus()
+
         binding.signInBtn.setOnClickListener {
             try {
-                signInFromFirebase()
-                findNavController().navigate(R.id.action_adminLoginFragment_to_adminMainFragment)
+                //signInFromFirebase()
+                when {
+                    adminEmail.text.toString().isNotEmpty() &&
+                            adminPassword.text.toString().isNotEmpty() -> {
+
+                        if (adminEmail.text.toString()
+                                .matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))
+                        ) {
+                            if (adminPassword.text.toString().length >= 6) {
+                                signInFromFirebase()
+                                findNavController().navigate(R.id.action_adminLoginFragment_to_adminMainFragment)
+                            } else {
+                                binding.passwordTxtLayout.helperText =
+                                    getString(R.string.password_length)
+                            }
+                        } else {
+                            binding.emailTxtLayout.helperText = getString(R.string.valid_email)
+                        }
+                    }
+
+                    adminEmail.text.toString().isEmpty() -> {
+                        binding.emailTxtLayout.helperText = getString(R.string.email_empty)
+                    }
+
+                    adminPassword.text.toString().isEmpty() -> {
+                        binding.passwordTxtLayout.helperText = getString(R.string.password_empty)
+                    }
+                    else -> {
+                        binding.emailTxtLayout.helperText = getString(R.string.email_empty)
+
+                        binding.passwordTxtLayout.helperText = getString(R.string.password_empty)
+                    }
+                }
             } catch (e: Exception) {
                 e.message
             }
@@ -75,27 +118,42 @@ class AdminLoginFragment : Fragment() {
         }
     }
 
+    private fun emailFocus() {
+        binding.inputEmailTxt.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                checkEmptyInput()
+            }
+        }
+    }
+
+    private fun passFocus() {
+        binding.inputPasswordTxt.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                checkInputPass()
+            }
+        }
+    }
+
     private fun checkEmptyInput() {
         when {
             TextUtils.isEmpty(adminEmail.text.toString().trim()) -> {
-                adminEmail.error = getString(R.string.email_empty)
+                binding.emailTxtLayout.helperText = getString(R.string.email_empty)
             }
+
+            binding.inputEmailTxt.text?.isNotEmpty() == true -> {
+                binding.emailTxtLayout.helperText = null
+            }
+        }
+    }
+
+    private fun checkInputPass() {
+        when {
             TextUtils.isEmpty(adminPassword.text.toString().trim()) -> {
-                adminPassword.error = getString(R.string.password_empty)
+                binding.passwordTxtLayout.helperText = getString(R.string.password_empty)
             }
 
-            adminEmail.text.toString().isNotEmpty() &&
-                    adminPassword.text.toString().isNotEmpty() -> {
-
-                if (adminEmail.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))) {
-                    if (adminPassword.text.toString().length >= 6) {
-                        signInFromFirebase()
-                    } else {
-                        adminPassword.error = getString(R.string.password_length)
-                    }
-                } else {
-                    adminEmail.error = getString(R.string.valid_email)
-                }
+            binding.inputPasswordTxt.text?.isNotEmpty() == true -> {
+                binding.passwordTxtLayout.helperText = null
             }
         }
     }
