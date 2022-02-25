@@ -7,6 +7,9 @@ import android.widget.Button
 import android.widget.ImageButton
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.ActivityPassengerHomeBinding
+import com.example.railwayreservation.databinding.ReservationBinding
+import com.example.railwayreservation.passenger.cancellation.MakeCancellation
+import com.example.railwayreservation.passenger.reservation.MakeReservation
 import com.example.railwayreservation.passengerTrain.TrainMainActivity
 import com.example.railwayreservation.reportIssue.ReportIssue
 import com.google.android.material.appbar.AppBarLayout
@@ -50,14 +53,16 @@ class PassengerHome : AppCompatActivity() {
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
             startActivity(Intent(this,PassengerDatePicker::class.java))
-            // u can comment the below line code
+
+//            startActivity(Intent(this,MakeReservation::class.java))
+
             // startActivity(Intent(this, TrainMainActivity::class.java))
             }
 
         //go to cancellation screen
         btnCancellation = findViewById(R.id.btnCancellation)
         btnCancellation.setOnClickListener {
-            startActivity(Intent(this, PassengerCancellation::class.java))
+            startActivity(Intent(this, MakeCancellation::class.java))
         }
 
         //go to payment screen

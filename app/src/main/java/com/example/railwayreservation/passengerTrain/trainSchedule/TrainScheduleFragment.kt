@@ -89,7 +89,7 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
             Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
         }
 
-        Toast.makeText(requireContext(), "Clicked item ${data.fromStation}", Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(), "You have selected from ${data.fromStation} to ${data.nextStation} ", Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroyView() {

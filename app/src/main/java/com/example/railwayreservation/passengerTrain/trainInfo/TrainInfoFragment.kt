@@ -1,5 +1,6 @@
 package com.example.railwayreservation.passengerTrain.trainInfo
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentTrainInfoBinding
+import com.example.railwayreservation.passenger.PassengerReservation
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -58,13 +60,17 @@ class TrainInfoFragment : Fragment() {
 
             try {
                 if (binding.trainTypeSpinner.text.isEmpty()) {
-                    Toast.makeText(requireContext(), "No selected train name", Toast.LENGTH_SHORT)
+                    Toast.makeText(requireContext(), "Please select a train name", Toast.LENGTH_SHORT)
                         .show()
                 } else {
 
                     val trainN = TrainName (
                         name
+
                     )
+                    val intent = Intent(context, PassengerReservation::class.java)
+                    intent.putExtra("Train Name : ", name)
+
                     val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
                     findNavController().navigate(action)
 

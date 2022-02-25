@@ -21,7 +21,6 @@
                 android:id="@+id/reportIssueMain_topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:title="Report Issue"
                 app:titleTextColor="@color/white"
                 app:navigationIconTint="@color/white"

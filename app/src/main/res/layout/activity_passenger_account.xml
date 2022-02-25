@@ -30,7 +30,6 @@
                     app:titleTextColor="@color/white"
                     android:layout_height="?attr/actionBarSize"
                     app:layout_scrollFlags="scroll|enterAlways|snap"
-                    app:navigationIcon="@drawable/ic_arrow_back_24"
                     app:navigationIconTint="@color/white"
                     app:title="My Account" />
 
@@ -141,6 +140,18 @@
             android:text="My Account"
             android:textColor="@color/black"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnFAQ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="FAQs"
+            android:textAllCaps="false"
+            android:textColor="#673AB7"
+            android:textSize="18sp"
+            app:backgroundTint="#fff" />
 
         <Button
             android:id="@+id/btnChangePw"

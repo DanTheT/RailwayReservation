@@ -7,18 +7,18 @@
     tools:context=".passengerTrain.trainSeats.PassengerSeatsFragment">
 
     <Button
-        android:id="@+id/confirmSeat"
+        android:id="@+id/confirmPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="175dp"
         android:backgroundTint="@color/primary_blue"
-        android:text="Confirm Seat Selection"
+        android:text="Confirm Payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectSeats" />
+        app:layout_constraintTop_toBottomOf="@+id/selectSeatsLayout" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/topBarLayout"
@@ -98,7 +98,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/selectSeatCategory"
+        android:id="@+id/editTextSeatCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
@@ -107,6 +107,7 @@
         app:layout_constraintTop_toBottomOf="@id/selectSeatCoachLayout">
 
         <AutoCompleteTextView
+            android:id="@+id/selectSeatCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Seat Category"
@@ -114,7 +115,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/selectSeats"
+        android:id="@+id/selectSeatsLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -122,9 +123,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seatPrice">
+        app:layout_constraintTop_toBottomOf="@+id/selectSeatRangeLayout">
 
         <AutoCompleteTextView
+            android:id="@+id/selectSeats"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Seats"
@@ -154,7 +156,7 @@
         app:layout_constraintTop_toBottomOf="@+id/seat_trainType" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/seatPrice"
+        android:id="@+id/selectSeatRangeLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -162,15 +164,15 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="16dp"
-        android:enabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectSeatCategory">
+        app:layout_constraintTop_toBottomOf="@+id/editTextSeatCategory">
 
         <AutoCompleteTextView
+            android:id="@+id/selectSeatRange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Seat Price"
+            android:hint="Seat Range"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
 

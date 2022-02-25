@@ -77,11 +77,11 @@ class PassengerLogin : AppCompatActivity() {
         auth.sendPasswordResetEmail(email.text.toString())
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Reset link sent to your email", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Reset password link is sent to your email", Toast.LENGTH_SHORT).show()
                     finish()
                 }
                 else {
-                    Toast.makeText(this, "Unable to send reset mail", Toast.LENGTH_LONG)
+                    Toast.makeText(this, "Unable to send reset password link to your email. The email you typed is not registered.", Toast.LENGTH_LONG)
                         .show()
                 }
             }

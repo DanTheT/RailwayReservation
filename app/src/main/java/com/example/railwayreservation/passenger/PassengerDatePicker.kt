@@ -20,6 +20,8 @@ class PassengerDatePicker : AppCompatActivity() {
     private lateinit var btnPickDate: Button
     private lateinit var dateTV: TextView
     private lateinit var btnProceed: Button
+    private lateinit var btnSave: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -30,6 +32,8 @@ class PassengerDatePicker : AppCompatActivity() {
         dateTV = findViewById(R.id.dateTV)
         btnPickDate = findViewById(R.id.btnPickDate)
         btnProceed = findViewById(R.id.btnProceed)
+//        btnSave = findViewById(R.id.btnSave)
+
 
         // disable dates before today
         val today = Calendar.getInstance()
@@ -45,21 +49,37 @@ class PassengerDatePicker : AppCompatActivity() {
         halfYearLater.add(Calendar.DATE, 183)
         datePicker.maxDate = halfYearLater.timeInMillis
 
+        btnPickDate.setOnClickListener(View.OnClickListener {
+            dateTV.text =
+                ("Your selected date : " + datePicker.getDayOfMonth() + "/" + (datePicker.getMonth() + 1) + "/" + datePicker.getYear())
+        })
+
+//        btnSave.setOnClickListener {
+//            val date = dateTV.text.toString()
+//
+//            if (dateTV.text.isEmpty()) {
+//                Toast.makeText(this, "No date is selected.", Toast.LENGTH_SHORT)
+//                    .show()
+//            } else {
+//                val intent = Intent(this, PassengerReservation::class.java)
+//                intent.putExtra("Reservation Date:", date)
+//            }
+//        }
+
         btnProceed.setOnClickListener {
 
+            val date = dateTV.text.toString()
+
+
             if (dateTV.text.isEmpty()) {
-                Toast.makeText(this, "No selected date.", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "No date is selected.", Toast.LENGTH_SHORT)
                     .show()
             } else {
+                val intent = Intent(this, PassengerReservation::class.java)
+                intent.putExtra("Reservation Date", date)
                 startActivity(Intent(this, TrainMainActivity::class.java))
             }
 
-
-
-            btnPickDate.setOnClickListener(View.OnClickListener {
-                dateTV.text =
-                    ("   Your Selected Date : " + datePicker.getDayOfMonth() + "/" + (datePicker.getMonth() + 1) + "/" + datePicker.getYear())
-            })
         }
     }
 }

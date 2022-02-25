@@ -34,14 +34,16 @@
                 android:text="Transaction ID :"
                 android:textColor="#000"
                 android:textSize="18sp" />
+
             <EditText
                 android:id="@+id/tvTransID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#8fc1ff"
+                android:minHeight="48dp"
                 android:text="Transaction ID"
-                android:textColor="#000"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000" />
         </LinearLayout>
 
         <LinearLayout
@@ -169,6 +171,31 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#73b2ff"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Seat Price : "
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvSeatPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#8fc1ff"
+            android:text="Seat Price"
+            android:textColor="#000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -270,13 +297,57 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
 
+        <Button
+            android:id="@+id/btnApprove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Approve" />
+
+        <Button
+            android:id="@+id/btnReject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reject" />
+
+        <Button
+            android:id="@+id/btnMakeRefund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make Refund"
+            android:visibility="gone"/>
+
+
     </LinearLayout>
 
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        >-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/requestTV"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Status for request : "-->
+<!--        android:textColor="#000"-->
+<!--        android:textSize="18sp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/statusTV"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="-"-->
+<!--        android:textColor="#000"-->
+<!--        android:textSize="18sp" />-->
+
+
+<!--    </LinearLayout>-->
 
 </LinearLayout>
 
