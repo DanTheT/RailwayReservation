@@ -9,16 +9,9 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.example.railwayreservation.databinding.ActivitySendAnnouncementBinding
-import com.google.firebase.messaging.FirebaseMessaging
-import com.google.gson.Gson
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.util.*
 
 class SendAnnouncementActivity : AppCompatActivity() {
