@@ -19,7 +19,6 @@ class ScheduleBtmSheetFragment : BottomSheetDialogFragment() {
     private var _binding: FragmentScheduleBtmSheetBinding? = null
     private val binding get() = _binding!!
     private val args by navArgs<ScheduleBtmSheetFragmentArgs>()
-    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,21 +32,20 @@ class ScheduleBtmSheetFragment : BottomSheetDialogFragment() {
 
         binding.btmSheetTrainNameSchedule.text = args.name.trainName
 
-        binding.updateTrainScheduleBtn.setOnClickListener {
-            val receiveName = binding.btmSheetTrainNameSchedule.text.toString()
-
-            val schedule = ParcelizedSchedule (
-                receiveName
-                    )
-            val action = ScheduleBtmSheetFragmentDirections.actionScheduleBtmSheetFragmentToUpdateScheduleFragment(schedule)
-            findNavController().navigate(action)
-        }
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
+
+        binding.updateTrainScheduleBtn.setOnClickListener {
+            val receiveName = binding.btmSheetTrainNameSchedule.text.toString()
+
+            val schedule = ParcelizedSchedule (
+                receiveName
+            )
+            val action = ScheduleBtmSheetFragmentDirections.actionScheduleBtmSheetFragmentToUpdateScheduleFragment(schedule)
+            findNavController().navigate(action)
+        }
     }
 }

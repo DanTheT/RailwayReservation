@@ -35,6 +35,7 @@ class AddSeatsFragment : Fragment() {
     ): View {
         _binding = FragmentAddSeatsBinding.inflate(inflater, container, false)
 
+        insertNameTrain()
         insertSeatsCategory()
 
         pricingFocus()
@@ -130,6 +131,13 @@ class AddSeatsFragment : Fragment() {
 
     private fun insertSeatsCategory() {
         val lists = resources.getStringArray(R.array.seat_category)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.editTextSeatCategory.setAdapter(listsAdapter)
+    }
+
+    private fun insertNameTrain() {
+        val lists = resources.getStringArray(R.array.train_name_items)
 
         val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
         binding.editTextSeatCategory.setAdapter(listsAdapter)

@@ -59,18 +59,26 @@ class UpdateTrainInfoFragment : Fragment() {
                 "Angsana" -> {
                     insertTrainStartStation()
                     insertTrainEndStation()
+                    Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT)
+                        .show()
                 }
                 "Balak" -> {
                     insertTrainStartStationB()
                     insertTrainEndStationB()
+                    Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT)
+                        .show()
                 }
                 "Chino" -> {
                     insertTrainStartStationC()
                     insertTrainEndStationC()
+                    Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT)
+                        .show()
                 }
                 else -> {
                     insertTrainStartStationOther()
                     insertTrainEndStationOther()
+                    Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
         }
@@ -86,15 +94,37 @@ class UpdateTrainInfoFragment : Fragment() {
             val trainInfo = TrainInfo(
                 trainName, trainName, car, trainNum, endStation, startStation, status
             )
-            try {
-                updateViewModel.updateTrain(trainName, trainInfo)
-                Toast.makeText(
-                    requireContext(),
-                    "Successfully update $trainName",
-                    Toast.LENGTH_SHORT
-                ).show()
-            } catch (e: Exception) {
-                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            when {
+                startStation.isNotEmpty() && endStation.isNotEmpty() && car.isNotEmpty() && trainNum.isNotEmpty() -> {
+                    try {
+                        updateViewModel.updateTrain(trainName, trainInfo)
+                        Toast.makeText(
+                            requireContext(),
+                            "Successfully update $trainName",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } catch (e: Exception) {
+                        Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+                startStation.isEmpty() -> {
+                    binding.editStartStationLayout.helperText = "Please select a station"
+                }
+                endStation.isEmpty() -> {
+                    binding.endStationLayout.helperText = "Please select a station"
+                }
+                car.isEmpty() -> {
+                    binding.editNumberCoachLayout.helperText = "Please select a coach"
+                }
+                trainNum.isEmpty() -> {
+                    binding.editTrainNumberLayout.helperText = "Enter a number"
+                }
+                else -> {
+                    binding.editStartStationLayout.helperText = "Please select a station"
+                    binding.endStationLayout.helperText = "Please select a station"
+                    binding.editNumberCoachLayout.helperText = "Please select a coach"
+                    binding.editTrainNumberLayout.helperText = "Enter a number"
+                }
             }
         }
     }

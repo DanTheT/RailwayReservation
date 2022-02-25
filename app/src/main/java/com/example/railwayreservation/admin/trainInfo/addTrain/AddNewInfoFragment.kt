@@ -85,7 +85,6 @@ class AddNewInfoFragment : Fragment() {
         }
 
         binding.addNewTrainInfoBtn.setOnClickListener {
-
             if (binding.textFieldTrainLine.text.toString() == binding.textFieldTrainName.text.toString()) {
                 binding.trainNumberLayout.helperText = null
                 try {
