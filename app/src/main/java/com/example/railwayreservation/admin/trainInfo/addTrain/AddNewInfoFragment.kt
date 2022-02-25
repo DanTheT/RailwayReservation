@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
 import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 import com.example.railwayreservation.databinding.FragmentAddNewInfoBinding
-import java.lang.Exception
+import kotlin.Exception
 
 class AddNewInfoFragment : Fragment() {
 
@@ -56,22 +56,26 @@ class AddNewInfoFragment : Fragment() {
                     "Angsana" -> {
                         insertTrainStartStation()
                         insertTrainEndStation()
-                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT)
+                            .show()
                     }
                     "Balak" -> {
                         insertTrainStartStationB()
                         insertTrainEndStationB()
-                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT)
+                            .show()
                     }
                     "Chino" -> {
                         insertTrainStartStationC()
                         insertTrainEndStationC()
-                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT)
+                            .show()
                     }
                     else -> {
                         insertTrainStartStationOther()
                         insertTrainEndStationOther()
-                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Get specific details", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
                 binding.trainNameLayout.helperText = null
@@ -81,12 +85,21 @@ class AddNewInfoFragment : Fragment() {
         }
 
         binding.addNewTrainInfoBtn.setOnClickListener {
+
             if (binding.textFieldTrainLine.text.toString() == binding.textFieldTrainName.text.toString()) {
                 binding.trainNumberLayout.helperText = null
-                addInfo()
+                try {
+                    addInfo()
+                    binding.textFieldTrainName.text?.clear()
+                    binding.textFieldTrainLine.text?.clear()
+                    binding.textFieldTrainNumber.text?.clear()
+                } catch (e: Exception) {
+                    Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+                }
             } else {
                 binding.trainLineLayout.helperText = "Line name should be same with train name"
             }
+
         }
     }
 
