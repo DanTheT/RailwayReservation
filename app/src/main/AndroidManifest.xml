@@ -41,6 +41,11 @@
             android:name=".passenger.PassengerReservation"
             android:exported="false" />
         <activity
+            android:name=".passenger.reservation.MakeReservation"
+            android:exported="false" /><activity
+        android:name=".passenger.cancellation.MakeCancellation"
+        android:exported="false" />
+        <activity
             android:name=".passenger.PassengerPayment"
             android:exported="false" />
         <activity
@@ -53,7 +58,16 @@
             android:name=".passenger.PassengerHome"
             android:exported="false" />
         <activity
+            android:name=".passenger.TrainRouteImage"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.SeatPlanImage"
+            android:exported="false" />
+        <activity
             android:name=".passenger.PassengerCancellation"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerFAQ"
             android:exported="false" />
         <activity
             android:name=".passenger.PassengerAccount"

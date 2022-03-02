@@ -25,7 +25,7 @@ class PassengerHome : AppCompatActivity() {
     private lateinit var  btnPayment: ImageButton
     private lateinit var  btnTicket: ImageButton
     private lateinit var  btnAccount: ImageButton
-    private lateinit var  btnMembership: ImageButton
+    private lateinit var  btnReport: ImageButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,9 +84,9 @@ class PassengerHome : AppCompatActivity() {
         }
 
         //go to membership screen
-        btnMembership = findViewById(R.id.btnMembership)
-        btnMembership.setOnClickListener{
-            startActivity(Intent(this, PassengerMembership::class.java))
+        btnReport = findViewById(R.id.btnReport)
+        btnReport.setOnClickListener{
+            startActivity(Intent(this, ReportIssue::class.java))
         }
 
 
