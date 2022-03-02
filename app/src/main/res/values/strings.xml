@@ -298,49 +298,49 @@
     </string-array>
 
     <string-array name="station_names">
-        <item>Angsana Station</item>
-        <item>Avion Station</item>
-        <item>Balak Station</item>
-        <item>Chino Station</item>
-        <item>Dalluman Station</item>
-        <item>Edward Station</item>
-        <item>Federick Station</item>
-        <item>Golum Station</item>
-        <item>Helumin Station</item>
-        <item>Indigo Station</item>
-        <item>Jesper Station </item>
+        <item>Angsana</item>
+        <item>Avion </item>
+        <item>Balak </item>
+        <item>Chino </item>
+        <item>Dalluman </item>
+        <item>Edward </item>
+        <item>Federick </item>
+        <item>Golum </item>
+        <item>Helumin </item>
+        <item>Indigo </item>
+        <item>Jesper </item>
     </string-array>
 
     <string-array name="station_for_balak">
-        <item>Balak Station</item>
-        <item>Asper Station</item>
-        <item>Cander Station</item>
-        <item>Dello Station</item>
-        <item>Enpear Station</item>
-        <item>Fenfir Station</item>
-        <item>Godux Station</item>
+        <item>Balak </item>
+        <item>Asper </item>
+        <item>Cander </item>
+        <item>Dello </item>
+        <item>Enpear </item>
+        <item>Fenfir </item>
+        <item>Godux </item>
     </string-array>
 
     <string-array name="station_for_chino">
-        <item>Chino Station</item>
-        <item>Dexter Station</item>
-        <item>Elluc Station</item>
-        <item>Feig Station</item>
-        <item>Gallo Station</item>
-        <item>Helium Station</item>
-        <item>Iglor Station</item>
-        <item>Sonja Station</item>
-        <item>Nadine Station</item>
+        <item>Chino </item>
+        <item>Dexter </item>
+        <item>Elluc </item>
+        <item>Feig </item>
+        <item>Gallo </item>
+        <item>Helium </item>
+        <item>Iglor </item>
+        <item>Sonja </item>
+        <item>Nadine </item>
     </string-array>
 
     <string-array name="station_for_other">
-        <item>Axxe Station</item>
-        <item>Aitom Station</item>
-        <item>Bander Station</item>
-        <item>Cappo Station</item>
-        <item>Dendum Station</item>
-        <item>Exxete Station</item>
-        <item>Frank Station</item>
+        <item>Axxe </item>
+        <item>Aitom </item>
+        <item>Bander </item>
+        <item>Cappo </item>
+        <item>Dendum </item>
+        <item>Exxete </item>
+        <item>Frank </item>
     </string-array>
 
     //Delete page
