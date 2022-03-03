@@ -36,11 +36,13 @@ class UpdateScheduleFragment : Fragment() {
         _binding = FragmentUpdateScheduleBinding.inflate(inflater, container, false)
 
         binding.updateTrainScheduleText.text = args.receivedName.trainName
+        binding.textScheduleStartStationUpdate.text = args.receivedName.fromStation
+        binding.textScheduleNextStationUpdate.text = args.receivedName.nextStation
 
         insertScheduleArriveTime()
         insertScheduleReachTime()
         insertScheduleStatus()
-
+/*
         binding.buttonGetUpdateSchedule.setOnClickListener {
             when (binding.updateTrainScheduleText.text.toString()) {
                 "Angsana" -> {
@@ -61,6 +63,8 @@ class UpdateScheduleFragment : Fragment() {
                 }
             }
         }
+
+ */
 
         return binding.root
     }
@@ -98,62 +102,6 @@ class UpdateScheduleFragment : Fragment() {
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    private fun insertTrainStartStation() {
-        val lists = resources.getStringArray(R.array.station_names)
-
-        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.textScheduleStartStationUpdate.setAdapter(listsAdapter)
-    }
-
-    private fun insertTrainStartStationB() {
-        val lists = resources.getStringArray(R.array.station_for_balak)
-
-        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.textScheduleStartStationUpdate.setAdapter(listsAdapter)
-    }
-
-    private fun insertTrainStartStationC() {
-        val lists = resources.getStringArray(R.array.station_for_chino)
-
-        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.textScheduleStartStationUpdate.setAdapter(listsAdapter)
-    }
-
-    private fun insertTrainStartStationOther() {
-        val lists = resources.getStringArray(R.array.station_for_other)
-
-        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.textScheduleStartStationUpdate.setAdapter(listsAdapter)
-    }
-
-    private fun insertTrainNextStation() {
-        val lists = resources.getStringArray(R.array.station_names)
-
-        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.textScheduleNextStationUpdate.setAdapter(listsAdapter)
-    }
-
-    private fun insertTrainNextStationB() {
-        val lists = resources.getStringArray(R.array.station_for_balak)
-
-        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.textScheduleNextStationUpdate.setAdapter(listsAdapter)
-    }
-
-    private fun insertTrainNextStationC() {
-        val lists = resources.getStringArray(R.array.station_for_chino)
-
-        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.textScheduleNextStationUpdate.setAdapter(listsAdapter)
-    }
-
-    private fun insertTrainNextStationOther() {
-        val lists = resources.getStringArray(R.array.station_for_other)
-
-        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.textScheduleNextStationUpdate.setAdapter(listsAdapter)
     }
 
     private fun insertScheduleArriveTime() {

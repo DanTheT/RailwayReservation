@@ -31,6 +31,8 @@ class ScheduleBtmSheetFragment : BottomSheetDialogFragment() {
         _binding = FragmentScheduleBtmSheetBinding.inflate(inflater, container, false)
 
         binding.btmSheetTrainNameSchedule.text = args.name.trainName
+        binding.btmSheetTrainOrigin.text = args.name.fromStation
+        binding.btmSheetTrainDest.text = args.name.nextStation
 
         return binding.root
     }
@@ -40,9 +42,11 @@ class ScheduleBtmSheetFragment : BottomSheetDialogFragment() {
 
         binding.updateTrainScheduleBtn.setOnClickListener {
             val receiveName = binding.btmSheetTrainNameSchedule.text.toString()
+            val receiveOri = binding.btmSheetTrainOrigin.text.toString()
+            val receiveDest = binding.btmSheetTrainDest.text.toString()
 
             val schedule = ParcelizedSchedule (
-                receiveName
+                receiveName, receiveOri, receiveDest
             )
             val action = ScheduleBtmSheetFragmentDirections.actionScheduleBtmSheetFragmentToUpdateScheduleFragment(schedule)
             findNavController().navigate(action)
