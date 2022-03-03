@@ -15,6 +15,8 @@ class IssueAdapter(private val issueList: ArrayList<IssuesData>): RecyclerView.A
         val receivedIssueCategory: TextView = issueView.findViewById(R.id.issueCategory)
         val receivedIssueDesc: TextView = issueView.findViewById(R.id.received_issue_txt)
         val receivedIssueSolve: TextView = issueView.findViewById(R.id.issueResolved)
+        val receivedIssueTrainName: TextView = issueView.findViewById(R.id.issueTrainSelect)
+        val receivedIssueTrainCoach: TextView = issueView.findViewById(R.id.issueCoachSelect)
     }
 
     override fun onCreateViewHolder(
@@ -32,6 +34,8 @@ class IssueAdapter(private val issueList: ArrayList<IssuesData>): RecyclerView.A
         holder.receivedIssueCategory.text = issue.issueCategory
         holder.receivedIssueDesc.text = issue.issueDescription
         holder.receivedIssueSolve.text = issue.issueResolve
+        holder.receivedIssueTrainName.text = issue.trainId
+        holder.receivedIssueTrainCoach.text = issue.coachPick
     }
 
     override fun getItemCount(): Int {
