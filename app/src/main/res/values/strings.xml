@@ -366,5 +366,47 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add">Add</string>
 
+    //origin
+    <string-array name="origin_items">
+        <item>Angsana</item>
+        <item>Avion </item>
+        <item>Balak </item>
+        <item>Chino </item>
+        <item>Dalluman </item>
+        <item>Edward </item>
+        <item>Federick </item>
+        <item>Golum </item>
+        <item>Helumin </item>
+        <item>Indigo </item>
+        <item>Jesper </item>
+        <item>Balak </item>
+        <item>Asper </item>
+        <item>Cander </item>
+        <item>Dello </item>
+        <item>Enpear </item>
+        <item>Fenfir </item>
+    </string-array>
+
+    //destination
+    <string-array name="destination_items">
+        <item>Godux </item>
+        <item>Chino </item>
+        <item>Dexter </item>
+        <item>Elluc </item>
+        <item>Feig </item>
+        <item>Gallo </item>
+        <item>Helium </item>
+        <item>Iglor </item>
+        <item>Sonja </item>
+        <item>Nadine </item>
+        <item>Axxe </item>
+        <item>Aitom </item>
+        <item>Bander </item>
+        <item>Cappo </item>
+        <item>Dendum </item>
+        <item>Exxete </item>
+        <item>Frank </item>
+    </string-array>
+
 
 </resources>

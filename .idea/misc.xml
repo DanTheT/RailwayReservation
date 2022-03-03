@@ -47,7 +47,7 @@
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_for_dropdown.xml" value="0.18795289855072464" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_info.xml" value="0.4" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_issues.xml" value="0.12335359675785208" />
-        <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_schedule.xml" value="0.264" />
+        <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_schedule.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_schedule_passenger.xml" value="0.264" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_seats_admin.xml" value="0.1" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/op_reports_fragment.xml" value="0.25416666666666665" />
@@ -55,7 +55,10 @@
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/menu/top_app_bar.xml" value="0.1" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/menu/top_app_bar_issue.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dan/AndroidStudioProjects/RailwayReservation/app/src/main/res/menu/top_app_bar_search.xml" value="0.1" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/drawable-v24/button_bg.xml" value="0.35625" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/drawable-v24/ic_add_circle.xml" value="0.35625" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.35625" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/drawable-v24/ic_remove_circle.xml" value="0.35625" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/drawable/ic_baseline_seat_24.xml" value="0.35625" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/drawable/ic_baseline_train_24.xml" value="0.35625" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/drawable/ic_double_arrow_24.xml" value="0.35625" />
@@ -138,6 +141,7 @@
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_purchase_history.xml" value="0.20606884057971014" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_schedule.xml" value="0.29030797101449274" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_schedule_passenger.xml" value="0.25" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_seatcat.xml" value="0.23596014492753623" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/list_seats_admin.xml" value="0.23233695652173914" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/op_reports_fragment.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/purchase_history.xml" value="0.33" />

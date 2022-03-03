@@ -52,11 +52,11 @@ class PassengerHome : AppCompatActivity() {
 //go to reservation screen
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
-            startActivity(Intent(this,PassengerDatePicker::class.java))
+//            startActivity(Intent(this,PassengerDatePicker::class.java))
 
 //            startActivity(Intent(this,MakeReservation::class.java))
 
-            // startActivity(Intent(this, TrainMainActivity::class.java))
+             startActivity(Intent(this, TrainMainActivity::class.java))
             }
 
         //go to cancellation screen

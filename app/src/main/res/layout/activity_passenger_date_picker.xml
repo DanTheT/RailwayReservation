@@ -33,19 +33,19 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+
     <DatePicker
         android:id="@+id/date_picker"
-        android:layout_width="357dp"
-        android:layout_height="415dp"
+        android:layout_width="360dp"
+        android:layout_height="414dp"
         android:layout_margin="12dp"
-        android:gravity="center"
         android:layout_marginStart="40dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="40dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout" />
-
 
     <Button
         android:id="@+id/btnPickDate"
@@ -65,14 +65,6 @@
         tools:layout_editor_absoluteX="218dp"
         tools:layout_editor_absoluteY="604dp" />
 
-<!--    <Button-->
-<!--        android:id="@+id/btnSave"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Save date"-->
-<!--        tools:layout_editor_absoluteX="123dp"-->
-<!--        tools:layout_editor_absoluteY="533dp" />-->
-
     <Button
         android:id="@+id/btnProceed"
         android:layout_width="match_parent"
@@ -82,4 +74,3 @@
         tools:layout_editor_absoluteY="533dp" />
 
 </LinearLayout>
-

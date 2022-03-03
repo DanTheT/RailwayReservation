@@ -16,6 +16,7 @@ import com.example.railwayreservation.databinding.FragmentTrainInfoBinding
 import com.example.railwayreservation.passenger.PassengerReservation
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.util.*
 
 class TrainInfoFragment : Fragment() {
 
@@ -30,37 +31,64 @@ class TrainInfoFragment : Fragment() {
     ): View {
         _binding = FragmentTrainInfoBinding.inflate(inflater, container, false)
 
-        preloadTrainType()
+        preloadOrigin()
+        preloadDestination()
 
         return binding.root
     }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
 
-        binding.searchButton.setOnClickListener {
-            val selectTrain = binding.trainTypeSpinner.text.toString()
 
-            try {
-                if (binding.trainTypeSpinner.text.isEmpty()) {
-                    Toast.makeText(requireContext(), "No selected train name", Toast.LENGTH_SHORT)
-                        .show()
-                } else {
-                    checkTrainLine(selectTrain)
-                }
-            } catch (e: Exception) {
-                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
-            }
-        }
+
+//        binding.searchButton.setOnClickListener {
+//            val selectTrain = binding.trainTypeSpinner.text.toString()
+//
+//            try {
+//                if (binding.trainTypeSpinner.text.isEmpty()) {
+//                    Toast.makeText(requireContext(), "No selected train name", Toast.LENGTH_SHORT)
+//                        .show()
+//                } else {
+//                    checkTrainLine(selectTrain)
+//                }
+//            } catch (e: Exception) {
+//                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+//            }
+//        }
+
+        // disable dates before today
+        val today = Calendar.getInstance()
+        val twoDaysLater = today.clone() as Calendar
+        twoDaysLater.add(Calendar.DATE, 1)
+//        val now = today.timeInMillis
+//        datePicker.setMinDate(now)
+        binding.datePicker.minDate = twoDaysLater.timeInMillis
+
+
+        //disable dates after one month later
+        val halfYearLater = today.clone() as Calendar
+        halfYearLater.add(Calendar.DATE, 30)
+        binding.datePicker.maxDate = halfYearLater.timeInMillis
+
+        binding.btnPickDate.setOnClickListener(View.OnClickListener {
+            binding.dateTV.text =
+                ("Your selected date : " + binding.datePicker.getDayOfMonth() + "/" + (binding.datePicker.getMonth() + 1) + "/" + binding.datePicker.getYear())
+        })
 
 
         binding.selectionBtn.setOnClickListener {
-            val name: String = binding.trainTypeSpinner.text.toString()
+            val name: String = binding.originSpinner.text.toString()
+            val destination: String = binding.destinationSpinner.text.toString()
+
 
             try {
-                if (binding.trainTypeSpinner.text.isEmpty()) {
-                    Toast.makeText(requireContext(), "Please select a train name", Toast.LENGTH_SHORT)
+                if (binding.originSpinner.text.isEmpty() ) {
+//                    || binding.destinationSpinner.text.isEmpty()
+                    Toast.makeText(requireContext(), "Please select an origin/destination", Toast.LENGTH_SHORT)
                         .show()
                 } else {
 
@@ -69,7 +97,7 @@ class TrainInfoFragment : Fragment() {
 
                     )
                     val intent = Intent(context, PassengerReservation::class.java)
-                    intent.putExtra("Train Name : ", name)
+                    intent.putExtra("Origin : ", name)
 
                     val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
                     findNavController().navigate(action)
@@ -84,29 +112,37 @@ class TrainInfoFragment : Fragment() {
 
     }
 
-    private fun checkTrainLine(trainName: String){
-        trainInfoDb = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
-        trainInfoDb.child(trainName).get().addOnSuccessListener {
-            if(it.exists()){
-                val trainLine = it.child("trainLine").value
-                val startStation = it.child("startStation").value
-                val endStation = it.child("endStation").value
-                val trainStatus = it.child("status").value
+//    private fun checkTrainLine(trainName: String){
+//        trainInfoDb = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
+//        trainInfoDb.child(trainName).get().addOnSuccessListener {
+//            if(it.exists()){
+//                val trainLine = it.child("trainLine").value
+//                val startStation = it.child("startStation").value
+//                val endStation = it.child("endStation").value
+//                val trainStatus = it.child("status").value
+//
+//                binding.trainLineTextview.text = trainLine.toString()
+//                binding.trainStartTextview.text = startStation.toString()
+//                binding.trainEndTextview.text = endStation.toString()
+//                binding.trainStatusTextview.text = trainStatus.toString()
+//            }
+//        }
+//
+//    }
 
-                binding.trainLineTextview.text = trainLine.toString()
-                binding.trainStartTextview.text = startStation.toString()
-                binding.trainEndTextview.text = endStation.toString()
-                binding.trainStatusTextview.text = trainStatus.toString()
-            }
-        }
 
-    }
-
-    private fun preloadTrainType(){
+    private fun preloadOrigin(){
         val lists = resources.getStringArray(R.array.train_name_items)
 
         val listAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.trainTypeSpinner.setAdapter(listAdapter)
+        binding.originSpinner.setAdapter(listAdapter)
+    }
+
+    private fun preloadDestination() {
+        val lists = resources.getStringArray(R.array.destination_items)
+
+        val listAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.destinationSpinner.setAdapter(listAdapter)
     }
 
     override fun onDestroyView() {

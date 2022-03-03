@@ -33,42 +33,44 @@ class MakeReservation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_make_reservation)
-
-
-            //view reservation
-            reservationList = mutableListOf()
-
-            val myRef = FirebaseDatabase.getInstance().getReference("Reservations")
-
-            reservationListView = findViewById(R.id.reservationListView)
-
-            myRef.addValueEventListener(object : ValueEventListener {
-
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot!!.exists()) {
-
-                        for (h in snapshot.children) {
-                            val reservation = h.getValue(Reservation::class.java)
-                            reservationList.add((reservation!!))
-
-                        }
-                    }
-
-                    val adapter =
-                        ReservationAdapter(this@MakeReservation, R.layout.reservation, reservationList)
-                    reservationListView.adapter = adapter
-
-
-                }
-
-            })
-
-        }
     }
+}
+
+
+//            //view reservation
+//            reservationList = mutableListOf()
+//
+//            val myRef = FirebaseDatabase.getInstance().getReference("Reservations")
+//
+//            reservationListView = findViewById(R.id.reservationListView)
+//
+//            myRef.addValueEventListener(object : ValueEventListener {
+//
+//                override fun onCancelled(error: DatabaseError) {
+//                    TODO("Not yet implemented")
+//                }
+//
+//                override fun onDataChange(snapshot: DataSnapshot) {
+//                    if (snapshot!!.exists()) {
+//
+//                        for (h in snapshot.children) {
+//                            val reservation = h.getValue(Reservation::class.java)
+//                            reservationList.add((reservation!!))
+//
+//                        }
+//                    }
+//
+//                    val adapter =
+//                        ReservationAdapter(this@MakeReservation, R.layout.reservation, reservationList)
+//                    reservationListView.adapter = adapter
+//
+//
+//                }
+//
+//            })
+//
+//        }
+//    }
 
 
 //            //save reservation records
