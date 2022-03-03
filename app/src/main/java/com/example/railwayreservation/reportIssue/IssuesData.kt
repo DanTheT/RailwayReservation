@@ -5,5 +5,7 @@ data class IssuesData(
     val issueDescription: String? = "",
     val issueDate: String? = "",
     val issueTime: String? = "",
-    val issueResolve: String? = ""
+    val issueResolve: String? = "",
+    var trainId: String? = "-",
+    var coachPick: String? = "-",
 )

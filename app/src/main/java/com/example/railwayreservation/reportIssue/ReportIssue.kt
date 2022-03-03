@@ -20,7 +20,6 @@ class ReportIssue : AppCompatActivity() {
 
     private lateinit var binding: ActivityReportIssueBinding
     private lateinit var issueDatabase: DatabaseReference
-    val TAG = "report tag"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,11 +27,19 @@ class ReportIssue : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        binding.reportIssueMainTopAppBar.setOnClickListener {
+            startActivity(Intent(baseContext, PassengerHome::class.java))
+        }
+
         insertCategory()
+        insertTrainName()
+        insertCoachNum()
 
         binding.reportBtn.setOnClickListener {
             val issueCategory = binding.reportIssueSpinner.text.toString()
             val issueDesc = binding.reportIssueDesc.text.toString()
+            val issueTrain = binding.reportIssueTrainChoose.text.toString()
+            val issueCoach = binding.reportIssueCoachChoose.text.toString()
             val issueProg = "In Progress"
 
             val getDateTime = LocalDateTime.now()
@@ -47,7 +54,7 @@ class ReportIssue : AppCompatActivity() {
             val formatTime = DateTimeFormatter.ofPattern("HH:mm")
             val timeFormatted = getTime.format(formatTime)
 
-            val issues = IssuesData(issueCategory, issueDesc, dateFormatted, timeFormatted, issueProg)
+            val issues = IssuesData(issueCategory, issueDesc, dateFormatted, timeFormatted, issueProg, issueTrain, issueCoach)
 
             issueDatabase = FirebaseDatabase.getInstance().getReference("Issues")
             if (issueCategory.isNotEmpty() && issueDesc.isNotEmpty()) {
@@ -73,6 +80,19 @@ class ReportIssue : AppCompatActivity() {
 
         val listAdapter = ArrayAdapter(baseContext, R.layout.list_for_dropdown, lists)
         binding.reportIssueSpinner.setAdapter(listAdapter)
+    }
 
+    private fun insertTrainName() {
+        val lists = resources.getStringArray(R.array.train_name_items)
+
+        val listAdapter = ArrayAdapter(baseContext, R.layout.list_for_dropdown, lists)
+        binding.reportIssueTrainChoose.setAdapter(listAdapter)
+    }
+
+    private fun insertCoachNum() {
+        val lists = resources.getStringArray(R.array.five_coaches)
+
+        val listAdapter = ArrayAdapter(baseContext, R.layout.list_for_dropdown, lists)
+        binding.reportIssueCoachChoose.setAdapter(listAdapter)
     }
 }

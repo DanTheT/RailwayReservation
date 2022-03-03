@@ -24,6 +24,7 @@
                 app:title="Report Issue"
                 app:titleTextColor="@color/white"
                 app:navigationIconTint="@color/white"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:hint="Category"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout">
@@ -44,7 +45,7 @@
         <AutoCompleteTextView
             android:id="@+id/reportIssueSpinner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="51dp"
             android:inputType="none"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -54,10 +55,10 @@
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reportIssueCategoryLayout">
+        app:layout_constraintTop_toBottomOf="@+id/reportIssueCoachLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/reportIssueDesc"
@@ -66,6 +67,42 @@
             android:inputType="textMultiLine"
             android:layout_height="wrap_content"
             android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reportIssueTrainLayout"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportIssueCategoryLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/reportIssueTrainChoose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:hint="Select / Type train name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reportIssueCoachLayout"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportIssueTrainLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/reportIssueCoachChoose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:hint="Select coach" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
