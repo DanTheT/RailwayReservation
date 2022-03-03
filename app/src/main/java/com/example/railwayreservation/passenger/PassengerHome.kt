@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import com.example.railwayreservation.R
+import com.example.railwayreservation.admin.refund.Refund
 import com.example.railwayreservation.databinding.ActivityPassengerHomeBinding
 import com.example.railwayreservation.databinding.ReservationBinding
 import com.example.railwayreservation.passenger.cancellation.MakeCancellation
@@ -52,11 +53,11 @@ class PassengerHome : AppCompatActivity() {
 //go to reservation screen
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
-//            startActivity(Intent(this,PassengerDatePicker::class.java))
+            startActivity(Intent(this,RefundPolicy::class.java))
 
 //            startActivity(Intent(this,MakeReservation::class.java))
 
-             startActivity(Intent(this, TrainMainActivity::class.java))
+//             startActivity(Intent(this, TrainMainActivity::class.java))
             }
 
         //go to cancellation screen

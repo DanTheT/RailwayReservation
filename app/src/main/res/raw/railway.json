@@ -1,0 +1,61 @@
+[
+  {
+    "name":"Angsana",
+
+    "category": [
+      {
+        "name": "Adult",
+        "price": 15.00
+      },
+      {
+        "name": "Children (Age 12 and below)",
+        "price": 13.00
+      },
+      {
+        "name": "Senior (Age 60 and above)",
+        "price": 10.00
+      }
+
+    ]
+  },
+
+  {
+    "name":"Balak",
+
+    "category": [
+      {
+        "name": "Adult",
+        "price": 15.00
+      },
+      {
+        "name": "Children (Age 12 and below)",
+        "price": 13.00
+      },
+      {
+        "name": "Senior (Age 60 and above)",
+        "price": 10.00
+      }
+
+    ]
+  },
+  {
+    "name":"Chino",
+
+    "category": [
+      {
+        "name": "Adult",
+        "price": 15.00
+      },
+      {
+        "name": "Children (Age 12 and below)",
+        "price": 13.00
+      },
+      {
+        "name": "Senior (Age 60 and above)",
+        "price": 10.00
+      }
+
+    ]
+  }
+]
+

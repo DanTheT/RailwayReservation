@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +14,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
-        <receiver android:name=".admin.announcement.Notify"
-            android:enabled="true"/>
+        <activity
+            android:name=".passenger.ConfirmPayment"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.TicketMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PlaceYourOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.TicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PlaceTicket"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.TicketCategory"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.RefundPolicy"
+            android:exported="false" />
+
+        <receiver
+            android:name=".admin.announcement.Notify"
+            android:enabled="true" />
+
         <activity
             android:name=".passenger.transactions.ViewPH"
             android:exported="false" />
@@ -42,9 +66,10 @@
             android:exported="false" />
         <activity
             android:name=".passenger.reservation.MakeReservation"
-            android:exported="false" /><activity
-        android:name=".passenger.cancellation.MakeCancellation"
-        android:exported="false" />
+            android:exported="false" />
+        <activity
+            android:name=".passenger.cancellation.MakeCancellation"
+            android:exported="false" />
         <activity
             android:name=".passenger.PassengerPayment"
             android:exported="false" />

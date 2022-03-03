@@ -92,6 +92,7 @@ class TrainInfoFragment : Fragment() {
                         .show()
                 } else {
 
+
                     val trainN = TrainName (
                         name
 
@@ -139,7 +140,7 @@ class TrainInfoFragment : Fragment() {
     }
 
     private fun preloadDestination() {
-        val lists = resources.getStringArray(R.array.destination_items)
+        val lists = resources.getStringArray(R.array.train_name_items)
 
         val listAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
         binding.destinationSpinner.setAdapter(listAdapter)

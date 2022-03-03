@@ -64,20 +64,20 @@ class PassengerDatePicker : AppCompatActivity() {
 //            }
 //        }
 
-//        btnProceed.setOnClickListener {
-//
-//            val date = dateTV.text.toString()
-//
-//
-//            if (dateTV.text.isEmpty()) {
-//                Toast.makeText(this, "No date is selected.", Toast.LENGTH_SHORT)
-//                    .show()
-//            } else {
-//                val intent = Intent(this, PassengerReservation::class.java)
-//                intent.putExtra("Reservation Date", date)
-//                startActivity(Intent(this, TrainMainActivity::class.java))
-//            }
-//
-//        }
+        btnProceed.setOnClickListener {
+
+            val date = dateTV.text.toString()
+
+
+            if (dateTV.text.isEmpty()) {
+                Toast.makeText(this, "No date is selected.", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                val intent = Intent(this, PassengerReservation::class.java)
+                intent.putExtra("Reservation Date", date)
+                startActivity(Intent(this, TicketActivity::class.java))
+            }
+
+        }
     }
 }
