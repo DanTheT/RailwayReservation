@@ -36,37 +36,19 @@ class ReportIssue : AppCompatActivity() {
         insertCoachNum()
 
         binding.reportBtn.setOnClickListener {
-            val issueCategory = binding.reportIssueSpinner.text.toString()
-            val issueDesc = binding.reportIssueDesc.text.toString()
-            val issueTrain = binding.reportIssueTrainChoose.text.toString()
-            val issueCoach = binding.reportIssueCoachChoose.text.toString()
-            val issueProg = "In Progress"
-
-            val getDateTime = LocalDateTime.now()
-            val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
-            val dateTimeFormatted = getDateTime.format(formatDateTime)
-
-            val getDate = LocalDate.now()
-            val formatDate = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-            val dateFormatted = getDate.format(formatDate)
-
-            val getTime = LocalTime.now()
-            val formatTime = DateTimeFormatter.ofPattern("HH:mm")
-            val timeFormatted = getTime.format(formatTime)
-
-            val issues = IssuesData(issueCategory, issueDesc, dateFormatted, timeFormatted, issueProg, issueTrain, issueCoach)
-
-            issueDatabase = FirebaseDatabase.getInstance().getReference("Issues")
-            if (issueCategory.isNotEmpty() && issueDesc.isNotEmpty()) {
-                try {
-                    issueDatabase.child(issueCategory).child(dateTimeFormatted).setValue(issues).addOnSuccessListener {
-                        Toast.makeText(baseContext, "Report success for $issueCategory at $timeFormatted", Toast.LENGTH_SHORT).show()
-                    }
-                }catch (e: Exception) {
-                    Toast.makeText(baseContext, e.message, Toast.LENGTH_SHORT).show()
+            when(binding.reportIssueSpinner.text.toString()) {
+                "Train Issues" -> {
+                    sendTrainIssue()
                 }
-            } else {
-                Toast.makeText(baseContext, "Please check category is chosen & provide a bit of desc", Toast.LENGTH_SHORT).show()
+                "Schedule Issues" -> {
+                    sendScheduleIssue()
+                }
+                "Station Issues" -> {
+                    sendStationIssue()
+                }
+                else -> {
+                    Toast.makeText(baseContext, "Please choose a category & provide description about the matter", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
@@ -94,5 +76,107 @@ class ReportIssue : AppCompatActivity() {
 
         val listAdapter = ArrayAdapter(baseContext, R.layout.list_for_dropdown, lists)
         binding.reportIssueCoachChoose.setAdapter(listAdapter)
+    }
+
+    private fun sendTrainIssue() {
+        val issueCategory = binding.reportIssueSpinner.text.toString()
+        val issueDesc = binding.reportIssueDesc.text.toString()
+        val issueTrain = binding.reportIssueTrainChoose.text.toString()
+        val issueCoach = binding.reportIssueCoachChoose.text.toString()
+        val issueProg = "In Progress"
+
+        val getDateTime = LocalDateTime.now()
+        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+        val dateTimeFormatted = getDateTime.format(formatDateTime)
+
+        val getDate = LocalDate.now()
+        val formatDate = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        val dateFormatted = getDate.format(formatDate)
+
+        val getTime = LocalTime.now()
+        val formatTime = DateTimeFormatter.ofPattern("HH:mm")
+        val timeFormatted = getTime.format(formatTime)
+
+        val issues = IssuesData(issueCategory, issueDesc, dateFormatted, timeFormatted, issueProg, issueTrain, issueCoach)
+
+        issueDatabase = FirebaseDatabase.getInstance().getReference("Issues")
+        if (issueCategory.isNotEmpty() && issueDesc.isNotEmpty()) {
+            try {
+                issueDatabase.child(issueCategory).child(dateTimeFormatted).setValue(issues).addOnSuccessListener {
+                    Toast.makeText(baseContext, "Report success for $issueCategory at $timeFormatted", Toast.LENGTH_SHORT).show()
+                }
+            }catch (e: Exception) {
+                Toast.makeText(baseContext, e.message, Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(baseContext, "Please check category is chosen & provide a bit of desc", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun sendScheduleIssue() {
+        val issueCategory = binding.reportIssueSpinner.text.toString()
+        val issueDesc = binding.reportIssueDesc.text.toString()
+        val issueTrain = binding.reportIssueTrainChoose.text.toString()
+        val issueProg = "In Progress"
+
+        val getDateTime = LocalDateTime.now()
+        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+        val dateTimeFormatted = getDateTime.format(formatDateTime)
+
+        val getDate = LocalDate.now()
+        val formatDate = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        val dateFormatted = getDate.format(formatDate)
+
+        val getTime = LocalTime.now()
+        val formatTime = DateTimeFormatter.ofPattern("HH:mm")
+        val timeFormatted = getTime.format(formatTime)
+
+        val issues = IssuesData(issueCategory, issueDesc, dateFormatted, timeFormatted, issueProg, issueTrain)
+
+        issueDatabase = FirebaseDatabase.getInstance().getReference("Issues")
+        if (issueCategory.isNotEmpty() && issueDesc.isNotEmpty()) {
+            try {
+                issueDatabase.child(issueCategory).child(dateTimeFormatted).setValue(issues).addOnSuccessListener {
+                    Toast.makeText(baseContext, "Report success for $issueCategory at $timeFormatted", Toast.LENGTH_SHORT).show()
+                }
+            }catch (e: Exception) {
+                Toast.makeText(baseContext, e.message, Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(baseContext, "Please check category is chosen & provide a bit of desc", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun sendStationIssue() {
+        val issueCategory = binding.reportIssueSpinner.text.toString()
+        val issueDesc = binding.reportIssueDesc.text.toString()
+        val issueProg = "In Progress"
+
+        val getDateTime = LocalDateTime.now()
+        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+        val dateTimeFormatted = getDateTime.format(formatDateTime)
+
+        val getDate = LocalDate.now()
+        val formatDate = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+        val dateFormatted = getDate.format(formatDate)
+
+        val getTime = LocalTime.now()
+        val formatTime = DateTimeFormatter.ofPattern("HH:mm")
+        val timeFormatted = getTime.format(formatTime)
+
+        val issues = IssuesData(issueCategory, issueDesc, dateFormatted, timeFormatted, issueProg)
+
+        issueDatabase = FirebaseDatabase.getInstance().getReference("Issues")
+        if (issueCategory.isNotEmpty() && issueDesc.isNotEmpty()) {
+            try {
+                issueDatabase.child(issueCategory).child(dateTimeFormatted).setValue(issues).addOnSuccessListener {
+                    Toast.makeText(baseContext, "Report success for $issueCategory at $timeFormatted", Toast.LENGTH_SHORT).show()
+                }
+            }catch (e: Exception) {
+                Toast.makeText(baseContext, e.message, Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(baseContext, "Please check category is chosen & provide a bit of desc", Toast.LENGTH_SHORT).show()
+        }
     }
 }
