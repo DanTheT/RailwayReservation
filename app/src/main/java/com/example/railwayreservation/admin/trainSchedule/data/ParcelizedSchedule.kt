@@ -7,5 +7,8 @@ import kotlinx.parcelize.Parcelize
 data class ParcelizedSchedule(
     val trainName: String = "",
     val fromStation: String = "",
+    val arriveTime:  String = "",
     val nextStation: String = "",
+    val reachTime: String = "",
+    val status: String = ""
 ): Parcelable

@@ -123,9 +123,12 @@ class OverallTrainScheduleFragment : Fragment(), ScheduleAdapter.OnItemClick {
     override fun onItemClick(data: Schedule) {
         val name: String = data.trainName
         val oriPlace: String = data.fromStation
+        val arriveTime: String = data.arriveTime
         val destPlace: String = data.nextStation
+        val reachTime: String = data.reachTime
+        val currentStatus: String = data.status
         val schedule = ParcelizedSchedule (
-            name, oriPlace, destPlace
+            name, oriPlace, arriveTime, destPlace, reachTime, currentStatus
                 )
         val action = OverallTrainScheduleFragmentDirections.actionOverallTrainScheduleFragmentToScheduleBtmSheetFragment(schedule)
         findNavController().navigate(action)

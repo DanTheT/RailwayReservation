@@ -38,9 +38,10 @@ class UpdateScheduleFragment : Fragment() {
         binding.updateTrainScheduleText.text = args.receivedName.trainName
         binding.textScheduleStartStationUpdate.text = args.receivedName.fromStation
         binding.textScheduleNextStationUpdate.text = args.receivedName.nextStation
+        binding.textScheduleArriveTimeUpdate.text = args.receivedName.arriveTime
+        binding.textScheduleReachTimeUpdate.text = args.receivedName.reachTime
+        binding.textScheduleStartStationUpdate.text = args.receivedName.status
 
-        insertScheduleArriveTime()
-        insertScheduleReachTime()
         insertScheduleStatus()
 /*
         binding.buttonGetUpdateSchedule.setOnClickListener {
@@ -102,20 +103,6 @@ class UpdateScheduleFragment : Fragment() {
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    private fun insertScheduleArriveTime() {
-        val timeLists = resources.getStringArray(R.array.schedule_time)
-
-        val timeAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, timeLists)
-        binding.textScheduleArriveTimeUpdate.setAdapter(timeAdapter)
-    }
-
-    private fun insertScheduleReachTime() {
-        val timeLists = resources.getStringArray(R.array.schedule_time)
-
-        val timeAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, timeLists)
-        binding.textScheduleReachTimeUpdate.setAdapter(timeAdapter)
     }
 
     private fun insertScheduleStatus() {

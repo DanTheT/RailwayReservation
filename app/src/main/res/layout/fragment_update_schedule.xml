@@ -70,24 +70,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateTrainScheduleText" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/scheduleUpdateArriveTimeLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_width="355dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textScheduleStartStationUpdate">
+    <TextView
+        android:id="@+id/txtViewStartTime"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:text="Arrive: "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/textScheduleArriveTimeUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/textScheduleStartStationUpdate" />
 
-        <AutoCompleteTextView
-            android:id="@+id/textScheduleArriveTimeUpdate"
-            android:hint="@string/add_arrivalTime"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="none"
-            android:minHeight="48dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/textScheduleArriveTimeUpdate"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="172dp"
+        android:text="Origin"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textScheduleStartStationUpdate" />
 
     <TextView
         android:id="@+id/txtViewDestination"
@@ -100,7 +105,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/textScheduleNextStationUpdate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleUpdateArriveTimeLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textScheduleArriveTimeUpdate" />
 
     <TextView
         android:id="@+id/textScheduleNextStationUpdate"
@@ -112,26 +117,31 @@
         android:text="Origin"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleUpdateArriveTimeLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textScheduleArriveTimeUpdate" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/scheduleUpdateReachTimeLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_width="355dp"
+    <TextView
+        android:id="@+id/txtViewReachTime"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textScheduleNextStationUpdate">
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="44dp"
+        android:text="Reach: "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/textScheduleReachTimeUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/textScheduleNextStationUpdate" />
 
-        <AutoCompleteTextView
-            android:id="@+id/textScheduleReachTimeUpdate"
-            android:hint="@string/add_reachTime"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="none"
-            android:minHeight="48dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/textScheduleReachTimeUpdate"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="172dp"
+        android:text="Origin"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textScheduleNextStationUpdate" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/updateTrainStatusLayout"
@@ -142,7 +152,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scheduleUpdateReachTimeLayout">
+        app:layout_constraintTop_toBottomOf="@+id/textScheduleReachTimeUpdate">
 
         <AutoCompleteTextView
             android:id="@+id/textFieldUpdateTrainStatus"
