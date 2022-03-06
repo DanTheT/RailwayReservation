@@ -20,6 +20,7 @@ class ReportIssue : AppCompatActivity() {
 
     private lateinit var binding: ActivityReportIssueBinding
     private lateinit var issueDatabase: DatabaseReference
+    val tag = "Report Issue"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,9 @@ class ReportIssue : AppCompatActivity() {
         insertCategory()
         insertTrainName()
         insertCoachNum()
+
+        binding.reportIssueTrainLayout.helperText = "Only for train issue"
+        binding.reportIssueCoachLayout.helperText = "Only for train issue"
 
         binding.reportBtn.setOnClickListener {
             when(binding.reportIssueSpinner.text.toString()) {
@@ -52,8 +56,21 @@ class ReportIssue : AppCompatActivity() {
             }
         }
 
+        changeFocus()
+
         binding.reportIssueMainTopAppBar.setOnClickListener {
             startActivity(Intent(this, PassengerHome::class.java))
+        }
+
+        binding.reportIssueMainTopAppBar.setOnMenuItemClickListener {
+            when(it.itemId) {
+                R.id.descHelper -> {
+                    startActivity(Intent(this, HelperInfo::class.java))
+                    true
+                }else -> {
+                    false
+                }
+            }
         }
     }
 
@@ -76,6 +93,21 @@ class ReportIssue : AppCompatActivity() {
 
         val listAdapter = ArrayAdapter(baseContext, R.layout.list_for_dropdown, lists)
         binding.reportIssueCoachChoose.setAdapter(listAdapter)
+    }
+
+    private fun changeFocus() {
+        binding.reportIssueSpinner.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                when {
+                    binding.reportIssueSpinner.text.isEmpty() -> {
+                        binding.reportIssueCategoryLayout.helperText = "Please select a category"
+                    }
+                    binding.reportIssueSpinner.text.isNotEmpty() -> {
+                        binding.reportIssueCategoryLayout.helperText = null
+                    }
+                }
+            }
+        }
     }
 
     private fun sendTrainIssue() {
@@ -106,9 +138,12 @@ class ReportIssue : AppCompatActivity() {
                     Toast.makeText(baseContext, "Report success for $issueCategory at $timeFormatted", Toast.LENGTH_SHORT).show()
                 }
             }catch (e: Exception) {
-                Toast.makeText(baseContext, e.message, Toast.LENGTH_SHORT).show()
+                Log.d(tag, "${e.message}")
             }
         } else {
+            binding.reportIssueCategoryLayout.helperText = "Please select a category"
+            binding.reportIssueTrainLayout.helperText = "Please select a train"
+            binding.reportIssueCoachLayout.helperText = "Please select a coach"
             Toast.makeText(baseContext, "Please check category is chosen & provide a bit of desc", Toast.LENGTH_SHORT).show()
         }
     }
@@ -140,9 +175,10 @@ class ReportIssue : AppCompatActivity() {
                     Toast.makeText(baseContext, "Report success for $issueCategory at $timeFormatted", Toast.LENGTH_SHORT).show()
                 }
             }catch (e: Exception) {
-                Toast.makeText(baseContext, e.message, Toast.LENGTH_SHORT).show()
+                Log.d(tag, "${e.message}")
             }
         } else {
+            binding.reportIssueCategoryLayout.helperText = "Please select a category"
             Toast.makeText(baseContext, "Please check category is chosen & provide a bit of desc", Toast.LENGTH_SHORT).show()
         }
     }
@@ -173,9 +209,10 @@ class ReportIssue : AppCompatActivity() {
                     Toast.makeText(baseContext, "Report success for $issueCategory at $timeFormatted", Toast.LENGTH_SHORT).show()
                 }
             }catch (e: Exception) {
-                Toast.makeText(baseContext, e.message, Toast.LENGTH_SHORT).show()
+                Log.d(tag, "${e.message}")
             }
         } else {
+            binding.reportIssueCategoryLayout.helperText = "Please select a category"
             Toast.makeText(baseContext, "Please check category is chosen & provide a bit of desc", Toast.LENGTH_SHORT).show()
         }
     }
