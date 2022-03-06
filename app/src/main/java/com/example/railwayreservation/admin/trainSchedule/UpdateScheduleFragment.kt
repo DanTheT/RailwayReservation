@@ -40,7 +40,7 @@ class UpdateScheduleFragment : Fragment() {
         binding.textScheduleNextStationUpdate.text = args.receivedName.nextStation
         binding.textScheduleArriveTimeUpdate.text = args.receivedName.arriveTime
         binding.textScheduleReachTimeUpdate.text = args.receivedName.reachTime
-        binding.textScheduleStartStationUpdate.text = args.receivedName.status
+        binding.textFieldUpdateTrainStatus.setText(args.receivedName.status)
 
         insertScheduleStatus()
 /*

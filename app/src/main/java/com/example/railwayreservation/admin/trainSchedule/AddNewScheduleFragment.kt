@@ -54,22 +54,26 @@ class AddNewScheduleFragment : Fragment() {
                     "Angsana" -> {
                         route1()
                         route1reverse()
-                        Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT)
+                            .show()
                     }
                     "Balak" -> {
                         route2()
                         route2reverse()
-                        Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT)
+                            .show()
                     }
                     "Chino" -> {
                         route3()
                         route3reserve()
-                        Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT)
+                            .show()
                     }
                     else -> {
                         routeOther()
                         routeOtherReserve()
-                        Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Successfully added", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
             } catch (e: Exception) {
@@ -87,6 +91,8 @@ class AddNewScheduleFragment : Fragment() {
 
     private fun route1() {
         val status = "Available"
+        val route1Speed = 11
+        val route1Dist = arrayListOf(4, 5, 5, 4, 3, 5, 4, 5, 5, 4, 3)
         val destinations = arrayListOf(
             "Angsana",
             "Avion",
@@ -102,33 +108,36 @@ class AddNewScheduleFragment : Fragment() {
         )
 
         val times = arrayListOf(
-            "0800",
-            "0830",
-            "0900",
-            "0930",
-            "1000",
-            "1030",
-            "1100",
-            "1130",
-            "1200",
-            "1230",
-            "1300",
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000,
+            1100,
+            1200,
+            1300,
+            1400,
+            1500,
         )
         for (i in 0 until times.size - 1) {
+            val findTime = route1Dist[i] * route1Speed
             val route = Schedule(
                 destinations[0],
                 destinations[i],
-                times[i],
+                times[i].toString(),
                 destinations[i + 1],
-                times[i + 1],
+                (times[i] + findTime).toString(),
                 status
             )
-            scheduleViewModel.insertNewSchedule(destinations[0], times[i], route)
+            scheduleViewModel.insertNewSchedule(destinations[0], times[i].toString(), route)
         }
     }
 
     private fun route2() {
         val status = "Available"
+        val route2Speed = 11
+        val route2Dist = arrayListOf(3, 4, 5, 5, 4, 5, 3, 4, 5, 4, 4)
         val destinations = arrayListOf(
             "Balak",
             "Asper",
@@ -144,33 +153,36 @@ class AddNewScheduleFragment : Fragment() {
         )
 
         val times = arrayListOf(
-            "0800",
-            "0830",
-            "0900",
-            "0930",
-            "1000",
-            "1030",
-            "1100",
-            "1130",
-            "1200",
-            "1230",
-            "1300",
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000,
+            1100,
+            1200,
+            1300,
+            1400,
+            1500,
         )
         for (i in 0 until times.size - 1) {
+            val findTime = route2Dist[i] * route2Speed
             val route = Schedule(
                 destinations[0],
                 destinations[i],
-                times[i],
+                times[i].toString(),
                 destinations[i + 1],
-                times[i + 1],
+                (times[i] + findTime).toString(),
                 status
             )
-            scheduleViewModel.insertNewSchedule(destinations[0], times[i], route)
+            scheduleViewModel.insertNewSchedule(destinations[0], times[i].toString(), route)
         }
     }
 
     private fun route3() {
         val status = "Available"
+        val route3Speed = 11
+        val route3Dist = arrayListOf(3, 3, 4, 5, 4, 4, 3, 4, 5, 5, 4)
         val destinations = arrayListOf(
             "Chino",
             "Dexter",
@@ -186,33 +198,36 @@ class AddNewScheduleFragment : Fragment() {
         )
 
         val times = arrayListOf(
-            "0800",
-            "0830",
-            "0900",
-            "0930",
-            "1000",
-            "1030",
-            "1100",
-            "1130",
-            "1200",
-            "1230",
-            "1300",
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000,
+            1100,
+            1200,
+            1300,
+            1400,
+            1500,
         )
         for (i in 0 until times.size - 1) {
+            val findTime = route3Dist[i] * route3Speed
             val route = Schedule(
                 destinations[0],
                 destinations[i],
-                times[i],
+                times[i].toString(),
                 destinations[i + 1],
-                times[i + 1],
+                (times[i + 1] + findTime).toString(),
                 status
             )
-            scheduleViewModel.insertNewSchedule(destinations[0], times[i], route)
+            scheduleViewModel.insertNewSchedule(destinations[0], times[i].toString(), route)
         }
     }
 
     private fun route3reserve() {
         val status = "Available"
+        val route3Speed = 11
+        val route3Dist = arrayListOf(4, 5, 5, 4, 3, 4, 4, 5, 4, 3, 3)
         val destinations = arrayListOf(
             "Tusker",
             "Manna",
@@ -228,34 +243,37 @@ class AddNewScheduleFragment : Fragment() {
         )
 
         val times = arrayListOf(
-            "1300",
-            "1330",
-            "1400",
-            "1430",
-            "1500",
-            "1530",
-            "1600",
-            "1630",
-            "1700",
-            "1730",
-            "1800",
+            1500,
+            1600,
+            1700,
+            1800,
+            1900,
+            2000,
+            2100,
+            2200,
+            2300,
+            2310,
+            100,
         )
 
         for (i in 0 until times.size - 1) {
+            val findTime = route3Dist[i] * route3Speed
             val route = Schedule(
                 destinations[10],
                 destinations[i],
-                times[i],
+                times[i].toString(),
                 destinations[i + 1],
-                times[i + 1],
+                (times[i + 1] + findTime).toString(),
                 status
             )
-            scheduleViewModel.insertNewSchedule(destinations[10], times[i], route)
+            scheduleViewModel.insertNewSchedule(destinations[10], times[i].toString(), route)
         }
     }
 
     private fun routeOther() {
         val status = "Available"
+        val route4Speed = 11
+        val route4Dist = arrayListOf(3, 5, 5, 5, 4, 3, 3, 4, 3, 5, 4)
         val getName = binding.textScheduleTrainName.text.toString()
         val destinations = arrayListOf(
             "Axxe",
@@ -272,33 +290,36 @@ class AddNewScheduleFragment : Fragment() {
         )
 
         val times = arrayListOf(
-            "0800",
-            "0830",
-            "0900",
-            "0930",
-            "1000",
-            "1030",
-            "1100",
-            "1130",
-            "1200",
-            "1230",
-            "1300",
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000,
+            1100,
+            1200,
+            1300,
+            1400,
+            1500,
         )
         for (i in 0 until times.size - 1) {
+            val findTime = route4Dist[i] * route4Speed
             val route = Schedule(
                 getName,
                 destinations[i],
-                times[i],
+                times[i].toString(),
                 destinations[i + 1],
-                times[i + 1],
+                (times[i + 1] + findTime).toString(),
                 status
             )
-            scheduleViewModel.insertNewSchedule(getName, times[i], route)
+            scheduleViewModel.insertNewSchedule(getName, times[i].toString(), route)
         }
     }
 
     private fun routeOtherReserve() {
         val status = "Available"
+        val route4Speed = 11
+        val route4Dist = arrayListOf(4, 5, 3, 4, 3, 3, 4, 5, 5, 5, 3)
         val getName = binding.textScheduleTrainName.text.toString()
         val destinations = arrayListOf(
             "Jons",
@@ -315,33 +336,36 @@ class AddNewScheduleFragment : Fragment() {
         )
 
         val times = arrayListOf(
-            "1300",
-            "1330",
-            "1400",
-            "1430",
-            "1500",
-            "1530",
-            "1600",
-            "1630",
-            "1700",
-            "1730",
-            "1800",
+            1500,
+            1600,
+            1700,
+            1800,
+            1900,
+            2000,
+            2100,
+            2200,
+            2300,
+            2310,
+            100,
         )
         for (i in 0 until times.size - 1) {
+            val findTime = route4Dist[i] * route4Speed
             val route = Schedule(
                 getName,
                 destinations[i],
-                times[i],
+                times[i].toString(),
                 destinations[i + 1],
-                times[i + 1],
+                (times[i + 1] + findTime).toString(),
                 status
             )
-            scheduleViewModel.insertNewSchedule(getName, times[i], route)
+            scheduleViewModel.insertNewSchedule(getName, times[i].toString(), route)
         }
     }
 
     private fun route1reverse() {
         val status = "Available"
+        val route1Speed = 11
+        val route1DistR = arrayListOf(3, 4, 5, 5, 4, 5, 3, 4, 5, 5, 4)
         val destinations = arrayListOf(
             "Jesper",
             "Indigo",
@@ -357,33 +381,36 @@ class AddNewScheduleFragment : Fragment() {
         )
 
         val times = arrayListOf(
-            "1300",
-            "1330",
-            "1400",
-            "1430",
-            "1500",
-            "1530",
-            "1600",
-            "1630",
-            "1700",
-            "1730",
-            "1800",
+            1500,
+            1600,
+            1700,
+            1800,
+            1900,
+            2000,
+            2100,
+            2200,
+            2300,
+            2310,
+            100,
         )
         for (i in 0 until (times.size - 1)) {
+            val findTime = route1DistR[i] * route1Speed
             val route = Schedule(
                 destinations[10],
                 destinations[i],
-                times[i],
+                times[i].toString(),
                 destinations[i + 1],
-                times[i + 1],
+                (times[i] + findTime).toString(),
                 status
             )
-            scheduleViewModel.insertNewSchedule(destinations[10], times[i], route)
+            scheduleViewModel.insertNewSchedule(destinations[10], times[i].toString(), route)
         }
     }
 
     private fun route2reverse() {
         val status = "Available"
+        val route2Speed = 11
+        val route2Dist = arrayListOf(4, 4, 5, 4, 3, 5, 4, 5, 5, 4)
         val destinations = arrayListOf(
             "Jespert",
             "Indigoer",
@@ -399,28 +426,29 @@ class AddNewScheduleFragment : Fragment() {
         )
 
         val times = arrayListOf(
-            "1300",
-            "1330",
-            "1400",
-            "1430",
-            "1500",
-            "1530",
-            "1600",
-            "1630",
-            "1700",
-            "1730",
-            "1800",
+            1500,
+            1600,
+            1700,
+            1800,
+            1900,
+            2000,
+            2100,
+            2200,
+            2300,
+            2310,
+            100,
         )
         for (i in 0 until times.size - 1) {
+            val findTime = route2Dist[i] * route2Speed
             val route = Schedule(
                 destinations[10],
                 destinations[i],
-                times[i],
+                times[i].toString(),
                 destinations[i + 1],
-                times[i + 1],
+                (times[i + 1] + findTime).toString(),
                 status
             )
-            scheduleViewModel.insertNewSchedule(destinations[10], times[i], route)
+            scheduleViewModel.insertNewSchedule(destinations[10], times[i].toString(), route)
         }
     }
 }
