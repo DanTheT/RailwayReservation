@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentGetUpdatesBinding
@@ -50,16 +51,25 @@ class GetUpdatesFragment : Fragment() {
         binding.buttonForwardUpdate.setOnClickListener {
             try {
                 updateIssueData()
+                Toast.makeText(requireContext(), "Update successfully", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
                 Log.d(tagForUpdates, "${e.message}")
             }
         }
 
         binding.buttonUpdateUpdates.setOnClickListener {
-            try {
-                forwardMessage()
-            }catch (e: Exception) {
-                Log.d(tagForUpdates, "${e.message}")
+            when(binding.spinnerForResolve.text.toString()) {
+                "Completed" -> {
+                    try {
+                        forwardMessage()
+                        Toast.makeText(requireContext(), "Success forward", Toast.LENGTH_SHORT).show()
+                    }catch (e: Exception) {
+                        Log.d(tagForUpdates, "${e.message}")
+                    }
+                }else -> {
+                    binding.getUpdateIssueLayout.helperText = "Select option 'Completed' if issue resolved"
+                    Toast.makeText(requireContext(), "The issue is still in progress", Toast.LENGTH_SHORT).show()
+                }
             }
         }
         return binding.root
