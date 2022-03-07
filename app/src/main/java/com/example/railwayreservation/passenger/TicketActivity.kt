@@ -29,7 +29,7 @@ class TicketActivity : AppCompatActivity(), RestaurantListAdapter.RestaurantList
     }
 
     private fun getRestaurantData(): List<RestaurentModel?>? {
-        val inputStream: InputStream = resources.openRawResource(R.raw.restaurent)
+        val inputStream: InputStream = resources.openRawResource(R.raw.railway)
         val writer: Writer = StringWriter()
         val buffer = CharArray(1024)
         try {
