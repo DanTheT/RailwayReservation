@@ -100,9 +100,9 @@
     </string-array>
 
     <string-array name="seat_category_for_add">
-        <item>Angsana</item>
-        <item>Balak</item>
-        <item>Chino</item>
+        <item>VIP seats</item>
+        <item>Standard seats - At Window</item>
+        <item>Standard seats - At Alley</item>
     </string-array>
 
     <string-array name="status_items">
