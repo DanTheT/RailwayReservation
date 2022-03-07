@@ -15,25 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
         <activity
-            android:name=".passenger.ConfirmPayment"
+            android:name=".reportIssue.updates.MessageUI"
             android:exported="false" />
         <activity
-            android:name=".passenger.TicketMenuActivity"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.PlaceYourOrderActivity"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.TicketActivity"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.PlaceTicket"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.TicketCategory"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.RefundPolicy"
+            android:name=".reportIssue.HelperInfo"
             android:exported="false" />
 
         <receiver
@@ -65,12 +50,6 @@
             android:name=".passenger.PassengerReservation"
             android:exported="false" />
         <activity
-            android:name=".passenger.reservation.MakeReservation"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.cancellation.MakeCancellation"
-            android:exported="false" />
-        <activity
             android:name=".passenger.PassengerPayment"
             android:exported="false" />
         <activity
@@ -83,16 +62,7 @@
             android:name=".passenger.PassengerHome"
             android:exported="false" />
         <activity
-            android:name=".passenger.TrainRouteImage"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.SeatPlanImage"
-            android:exported="false" />
-        <activity
             android:name=".passenger.PassengerCancellation"
-            android:exported="false" />
-        <activity
-            android:name=".passenger.PassengerFAQ"
             android:exported="false" />
         <activity
             android:name=".passenger.PassengerAccount"

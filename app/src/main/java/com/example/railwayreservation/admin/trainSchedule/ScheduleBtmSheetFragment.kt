@@ -33,6 +33,9 @@ class ScheduleBtmSheetFragment : BottomSheetDialogFragment() {
         binding.btmSheetTrainNameSchedule.text = args.name.trainName
         binding.btmSheetTrainOrigin.text = args.name.fromStation
         binding.btmSheetTrainDest.text = args.name.nextStation
+        binding.btmSheetTrainArrive.text = args.name.arriveTime
+        binding.btmSheetReachTime.text = args.name.reachTime
+        binding.btmSheetStatusTime.text = args.name.status
 
         return binding.root
     }
@@ -44,9 +47,12 @@ class ScheduleBtmSheetFragment : BottomSheetDialogFragment() {
             val receiveName = binding.btmSheetTrainNameSchedule.text.toString()
             val receiveOri = binding.btmSheetTrainOrigin.text.toString()
             val receiveDest = binding.btmSheetTrainDest.text.toString()
+            val receiveArrive = binding.btmSheetTrainArrive.text.toString()
+            val receiveReach = binding.btmSheetReachTime.text.toString()
+            val receiveStatus = binding.btmSheetStatusTime.text.toString()
 
             val schedule = ParcelizedSchedule (
-                receiveName, receiveOri, receiveDest
+                receiveName, receiveOri, receiveArrive,receiveDest, receiveReach, receiveStatus
             )
             val action = ScheduleBtmSheetFragmentDirections.actionScheduleBtmSheetFragmentToUpdateScheduleFragment(schedule)
             findNavController().navigate(action)

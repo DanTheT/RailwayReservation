@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name: "
-            style="@style/TextAppearance.MaterialComponents.Headline4"/>
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
 
         <TextView
             android:id="@+id/btmSheetTrainNameSchedule"
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Origin: "
-            style="@style/TextAppearance.MaterialComponents.Headline4"/>
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
 
         <TextView
             android:id="@+id/btmSheetTrainOrigin"
@@ -54,8 +54,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Arrive: "
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
+
+        <TextView
+            android:id="@+id/btmSheetTrainArrive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Dest"
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Dest: "
-            style="@style/TextAppearance.MaterialComponents.Headline4"/>
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
 
         <TextView
             android:id="@+id/btmSheetTrainDest"
@@ -63,6 +83,46 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:text="Dest"
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reach: "
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
+
+        <TextView
+            android:id="@+id/btmSheetReachTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Reach"
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: "
+            style="@style/TextAppearance.MaterialComponents.Headline5"/>
+
+        <TextView
+            android:id="@+id/btmSheetStatusTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Reach"
             style="@style/TextAppearance.MaterialComponents.Headline5"/>
     </LinearLayout>
 

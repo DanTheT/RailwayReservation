@@ -25,6 +25,7 @@
                 app:titleTextColor="@color/white"
                 app:navigationIconTint="@color/white"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:menu="@menu/top_app_bar_help_desc"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -36,6 +37,7 @@
         android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:hint="Category"
+        app:helperTextTextColor="@color/primary_red"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_marginTop="110dp"
         app:layout_constraintEnd_toEndOf="parent"

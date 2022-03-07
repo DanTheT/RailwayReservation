@@ -13,6 +13,7 @@ import com.example.railwayreservation.passenger.cancellation.MakeCancellation
 import com.example.railwayreservation.passenger.reservation.MakeReservation
 import com.example.railwayreservation.passengerTrain.TrainMainActivity
 import com.example.railwayreservation.reportIssue.ReportIssue
+import com.example.railwayreservation.reportIssue.updates.MessageUI
 import com.google.android.material.appbar.AppBarLayout
 import com.google.firebase.auth.FirebaseAuth
 
@@ -95,6 +96,10 @@ class PassengerHome : AppCompatActivity() {
             when (it.itemId) {
                 R.id.menuIssues -> {
                     startActivity(Intent(this, ReportIssue::class.java))
+                    true
+                }
+                R.id.menuIssueMessages -> {
+                    startActivity(Intent(this, MessageUI::class.java))
                     true
                 }
                 else -> {

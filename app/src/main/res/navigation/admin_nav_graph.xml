@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_adminMainFragment_to_issuesManageFragment"
             app:destination="@id/issuesManageFragment" />
+        <action
+            android:id="@+id/action_adminMainFragment_to_opReportsFragment"
+            app:destination="@id/opReportsFragment" />
     </fragment>
     <fragment
         android:id="@+id/trainManageFragment"
@@ -162,6 +165,9 @@
         <action
             android:id="@+id/action_issuesManageFragment_to_adminMainFragment"
             app:destination="@id/adminMainFragment" />
+        <action
+            android:id="@+id/action_issuesManageFragment_to_getUpdatesFragment"
+            app:destination="@id/getUpdatesFragment" />
     </fragment>
     <dialog
         android:id="@+id/scheduleBtmSheetFragment"
@@ -214,5 +220,26 @@
             android:name="receiveCoachNUm"
             app:argType="com.example.railwayreservation.admin.trainSeats.data.ParcelizedSeat" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/opReportsFragment"
+        android:name="com.example.railwayreservation.admin.reports.OpReportsFragment"
+        android:label="op_reports_fragment"
+        tools:layout="@layout/op_reports_fragment" >
+        <action
+            android:id="@+id/action_opReportsFragment_to_adminMainFragment"
+            app:destination="@id/adminMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getUpdatesFragment"
+        android:name="com.example.railwayreservation.reportIssue.updates.GetUpdatesFragment"
+        android:label="fragment_get_updates"
+        tools:layout="@layout/fragment_get_updates" >
+        <action
+            android:id="@+id/action_getUpdatesFragment_to_issuesManageFragment"
+            app:destination="@id/issuesManageFragment" />
+        <argument
+            android:name="getDetails"
+            app:argType="com.example.railwayreservation.reportIssue.updates.ParcelizedIssueData" />
     </fragment>
 </navigation>

@@ -99,9 +99,20 @@
         <item>Express Lane</item>
     </string-array>
 
+    <string-array name="seat_category_for_add">
+        <item>Angsana</item>
+        <item>Balak</item>
+        <item>Chino</item>
+    </string-array>
+
     <string-array name="status_items">
         <item>Active</item>
         <item>Deactivate</item>
+    </string-array>
+
+    <string-array name="status_issue_resolve">
+        <item>In Progress</item>
+        <item>Completed</item>
     </string-array>
 
     <string-array name="train_name_items">

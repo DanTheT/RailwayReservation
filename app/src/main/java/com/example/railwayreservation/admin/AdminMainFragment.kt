@@ -64,5 +64,9 @@ class AdminMainFragment : Fragment() {
         binding.trainIssuesBtn.setOnClickListener {
             findNavController().navigate(R.id.action_adminMainFragment_to_issuesManageFragment)
         }
+
+        binding.trainReportingBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_adminMainFragment_to_opReportsFragment)
+        }
     }
 }
