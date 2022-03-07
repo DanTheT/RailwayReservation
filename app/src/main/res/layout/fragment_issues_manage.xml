@@ -78,6 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="?attr/actionBarSize"
         app:layout_constraintTop_toBottomOf="@+id/searchCategory"
         app:layout_constraintVertical_bias="0.952" />
 </androidx.constraintlayout.widget.ConstraintLayout>

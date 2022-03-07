@@ -51,6 +51,7 @@ class ReportIssue : AppCompatActivity() {
                     sendStationIssue()
                 }
                 else -> {
+                    binding.reportIssueCategoryLayout.helperText = "Please select a category"
                     Toast.makeText(baseContext, "Please choose a category & provide description about the matter", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -118,7 +119,7 @@ class ReportIssue : AppCompatActivity() {
         val issueProg = "In Progress"
 
         val getDateTime = LocalDateTime.now()
-        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")
         val dateTimeFormatted = getDateTime.format(formatDateTime)
 
         val getDate = LocalDate.now()
@@ -155,7 +156,7 @@ class ReportIssue : AppCompatActivity() {
         val issueProg = "In Progress"
 
         val getDateTime = LocalDateTime.now()
-        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")
         val dateTimeFormatted = getDateTime.format(formatDateTime)
 
         val getDate = LocalDate.now()
@@ -189,7 +190,7 @@ class ReportIssue : AppCompatActivity() {
         val issueProg = "In Progress"
 
         val getDateTime = LocalDateTime.now()
-        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+        val formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")
         val dateTimeFormatted = getDateTime.format(formatDateTime)
 
         val getDate = LocalDate.now()

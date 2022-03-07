@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
 
-class IssueAdapter(private val issueList: ArrayList<IssuesData>): RecyclerView.Adapter<IssueAdapter.IssueViewHolder>() {
+class IssueAdapter(private val issueList: ArrayList<IssuesData>, private val itemClick: OnItemClick): RecyclerView.Adapter<IssueAdapter.IssueViewHolder>() {
 
     class IssueViewHolder(issueView: View): RecyclerView.ViewHolder(issueView) {
         val receivedIssueDate: TextView = issueView.findViewById(R.id.issueDateTxt)
@@ -36,9 +36,17 @@ class IssueAdapter(private val issueList: ArrayList<IssuesData>): RecyclerView.A
         holder.receivedIssueSolve.text = issue.issueResolve
         holder.receivedIssueTrainName.text = issue.trainId
         holder.receivedIssueTrainCoach.text = issue.coachPick
+
+        holder.itemView.setOnClickListener {
+            itemClick.onItemClick(issue)
+        }
     }
 
     override fun getItemCount(): Int {
         return issueList.size
+    }
+
+    interface OnItemClick {
+        fun onItemClick(data: IssuesData)
     }
 }

@@ -165,6 +165,9 @@
         <action
             android:id="@+id/action_issuesManageFragment_to_adminMainFragment"
             app:destination="@id/adminMainFragment" />
+        <action
+            android:id="@+id/action_issuesManageFragment_to_getUpdatesFragment"
+            app:destination="@id/getUpdatesFragment" />
     </fragment>
     <dialog
         android:id="@+id/scheduleBtmSheetFragment"
@@ -226,5 +229,17 @@
         <action
             android:id="@+id/action_opReportsFragment_to_adminMainFragment"
             app:destination="@id/adminMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getUpdatesFragment"
+        android:name="com.example.railwayreservation.reportIssue.updates.GetUpdatesFragment"
+        android:label="fragment_get_updates"
+        tools:layout="@layout/fragment_get_updates" >
+        <action
+            android:id="@+id/action_getUpdatesFragment_to_issuesManageFragment"
+            app:destination="@id/issuesManageFragment" />
+        <argument
+            android:name="getDetails"
+            app:argType="com.example.railwayreservation.reportIssue.updates.ParcelizedIssueData" />
     </fragment>
 </navigation>
