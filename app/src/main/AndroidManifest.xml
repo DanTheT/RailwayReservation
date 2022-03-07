@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
         <activity
+            android:name=".reportIssue.updates.MessageUI"
+            android:exported="false" />
+        <activity
             android:name=".reportIssue.HelperInfo"
             android:exported="false" />
 

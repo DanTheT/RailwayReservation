@@ -43,12 +43,15 @@ class ReportIssue : AppCompatActivity() {
             when(binding.reportIssueSpinner.text.toString()) {
                 "Train Issues" -> {
                     sendTrainIssue()
+                    binding.reportIssueDesc.text?.clear()
                 }
                 "Schedule Issues" -> {
                     sendScheduleIssue()
+                    binding.reportIssueDesc.text?.clear()
                 }
                 "Station Issues" -> {
                     sendStationIssue()
+                    binding.reportIssueDesc.text?.clear()
                 }
                 else -> {
                     binding.reportIssueCategoryLayout.helperText = "Please select a category"
