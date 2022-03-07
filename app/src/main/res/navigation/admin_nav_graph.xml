@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_adminMainFragment_to_issuesManageFragment"
             app:destination="@id/issuesManageFragment" />
+        <action
+            android:id="@+id/action_adminMainFragment_to_opReportsFragment"
+            app:destination="@id/opReportsFragment" />
     </fragment>
     <fragment
         android:id="@+id/trainManageFragment"
@@ -214,5 +217,14 @@
             android:name="receiveCoachNUm"
             app:argType="com.example.railwayreservation.admin.trainSeats.data.ParcelizedSeat" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/opReportsFragment"
+        android:name="com.example.railwayreservation.admin.reports.OpReportsFragment"
+        android:label="op_reports_fragment"
+        tools:layout="@layout/op_reports_fragment" >
+        <action
+            android:id="@+id/action_opReportsFragment_to_adminMainFragment"
+            app:destination="@id/adminMainFragment" />
     </fragment>
 </navigation>
