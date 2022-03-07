@@ -130,7 +130,7 @@ class AddSeatsFragment : Fragment() {
     }
 
     private fun insertSeatsCategory() {
-        val lists = resources.getStringArray(R.array.seat_category)
+        val lists = resources.getStringArray(R.array.seat_category_for_add)
 
         val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
         binding.editTextSeatCategory.setAdapter(listsAdapter)
