@@ -23,7 +23,7 @@
                 app:titleTextColor="@color/white"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:title="My Ticket"
+                app:title="My Tickets"
                 app:navigationIconTint="@color/white"/>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -58,7 +58,7 @@
         android:layout_width="356dp"
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
         android:text="Generate QR Code"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +71,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="45dp"
-        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
         android:text="View Current Tickets"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnViewPayHistory"
@@ -85,7 +85,7 @@
         android:layout_width="356dp"
         android:layout_height="48dp"
         android:layout_marginTop="14dp"
-        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
         android:text="View Purchase History"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

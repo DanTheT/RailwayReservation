@@ -1,35 +1,26 @@
 package com.example.railwayreservation.passenger
 
-import PlaceYourOrderAdapter
+import PlaceYourTicketAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.MenuItem
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.passenger.models.RestaurentModel
+import com.example.railwayreservation.passenger.models.CategoryModel
 
-class PlaceYourOrderActivity : AppCompatActivity() {
+class PlaceYourTicketActivity : AppCompatActivity() {
 
-    var placeYourOrderAdapter: PlaceYourOrderAdapter? = null
+    var placeYourTicketAdapter: PlaceYourTicketAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_place_your_order)
+        setContentView(R.layout.activity_place_your_ticket)
 
-        val restaurantModel: RestaurentModel? = intent.getParcelableExtra("RestaurantModel")
-        val actionbar: ActionBar? = supportActionBar
-        actionbar?.setTitle(restaurantModel?.name)
-        actionbar?.setSubtitle(restaurantModel?.address)
-        actionbar?.setDisplayHomeAsUpEnabled(true)
+        val categoryModel: CategoryModel? = intent.getParcelableExtra("CategoryModel")
+
 
         val buttonPlaceYourOrder = findViewById<TextView>(R.id.buttonPlaceYourOrder)
         buttonPlaceYourOrder.setOnClickListener {
@@ -37,21 +28,21 @@ class PlaceYourOrderActivity : AppCompatActivity() {
         }
 
 
-        initRecyclerView(restaurantModel)
-        calculateTotalAmount(restaurantModel)
+        initRecyclerView(categoryModel)
+        calculateTotalAmount(categoryModel)
     }
 
-    private fun initRecyclerView(restaurantModel: RestaurentModel?) {
+    private fun initRecyclerView(categoryModel: CategoryModel?) {
         val cartItemsRecyclerView = findViewById<RecyclerView>(R.id.cartItemsRecyclerView)
         cartItemsRecyclerView.layoutManager = LinearLayoutManager(this)
-        placeYourOrderAdapter = PlaceYourOrderAdapter(restaurantModel?.menus)
-        cartItemsRecyclerView.adapter = placeYourOrderAdapter
+        placeYourTicketAdapter = PlaceYourTicketAdapter(categoryModel?.category)
+        cartItemsRecyclerView.adapter = placeYourTicketAdapter
     }
 
-    private fun calculateTotalAmount(restaurantModel: RestaurentModel?) {
+    private fun calculateTotalAmount(categoryModel: CategoryModel?) {
         var subTotalAmount = 0f
-        for(menu in restaurantModel?.menus!!) {
-            subTotalAmount += menu?.price!! * menu?.totalInCart!!
+        for(category in categoryModel?.category!!) {
+            subTotalAmount += category?.price!! * category?.totalInCart!!
 
         }
 

@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import com.example.railwayreservation.R
-import com.example.railwayreservation.passenger.models.RestaurentModel
+import com.example.railwayreservation.passenger.models.CategoryModel
 
 class ConfirmPayment : AppCompatActivity() {
 
@@ -16,12 +16,6 @@ class ConfirmPayment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirm_payment)
-
-        val restaurantModel: RestaurentModel? = intent.getParcelableExtra("RestaurantModel")
-        val actionbar: ActionBar? = supportActionBar
-        actionbar?.setTitle(restaurantModel?.name)
-        actionbar?.setSubtitle(restaurantModel?.address)
-        actionbar?.setDisplayHomeAsUpEnabled(false)
 
 
         val btnGoPay = findViewById<TextView>(R.id.btnGoPay)

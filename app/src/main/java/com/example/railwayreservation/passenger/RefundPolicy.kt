@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Toast
 import com.example.railwayreservation.R
+import com.example.railwayreservation.passengerTrain.TrainMainActivity
 
 class RefundPolicy : AppCompatActivity() {
 
@@ -23,7 +24,7 @@ class RefundPolicy : AppCompatActivity() {
         btnNext.setOnClickListener {
 
             if (chkAgreement.isChecked)
-                startActivity(Intent(this,PassengerDatePicker::class.java))
+                startActivity(Intent(this,TrainMainActivity::class.java))
             else {
                 Toast.makeText(this, "Please agree to the terms and conditions to proceed further.", Toast.LENGTH_SHORT).show()
             }

@@ -14,43 +14,44 @@
         android:layout_height="match_parent"
         android:padding="8dp">
 
+
         <TextView
             android:id="@+id/schedule_fromStation"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="From station"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/schedule_toStation"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="To station"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/schedule_fromStation" />
 
         <TextView
             android:id="@+id/schedule_arriveTime"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Arrival"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/schedule_fromStation"
             app:layout_constraintTop_toTopOf="@+id/schedule_fromStation" />
 
         <TextView
             android:id="@+id/schedule_reachTime"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reach"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/schedule_arriveTime"
             app:layout_constraintTop_toTopOf="@+id/schedule_toStation" />
@@ -59,9 +60,9 @@
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginStart="32dp"
             app:layout_constraintBottom_toTopOf="@+id/schedule_toStation"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/schedule_fromStation"
@@ -69,12 +70,12 @@
 
         <TextView
             android:id="@+id/schedule_trainStatus"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Status"
             android:textAlignment="center"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/schedule_arriveTime"
             app:layout_constraintTop_toTopOf="parent" />

@@ -1,6 +1,4 @@
 import com.example.railwayreservation.R
-import com.example.railwayreservation.passenger.models.Menus
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,23 +6,24 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.railwayreservation.passenger.models.Category
 
 
-class PlaceYourOrderAdapter(val menuList: List<Menus?>?): RecyclerView.Adapter<PlaceYourOrderAdapter.MyViewHolder>() {
+class PlaceYourTicketAdapter(val categoryList: List<Category?>?): RecyclerView.Adapter<PlaceYourTicketAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): PlaceYourOrderAdapter.MyViewHolder {
-       val view: View = LayoutInflater.from(parent.context).inflate(R.layout.placeyourorder_list_row, parent, false)
+    ): PlaceYourTicketAdapter.MyViewHolder {
+       val view: View = LayoutInflater.from(parent.context).inflate(R.layout.placeyourticket_list_row, parent, false)
         return MyViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: PlaceYourOrderAdapter.MyViewHolder, position: Int) {
-        holder.bind(menuList?.get(position)!!)
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.bind(categoryList?.get(position)!!)
     }
 
     override fun getItemCount(): Int {
-        return if(menuList == null) 0  else menuList.size
+        return if(categoryList == null) 0  else categoryList.size
     }
 
     inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
@@ -33,13 +32,13 @@ class PlaceYourOrderAdapter(val menuList: List<Menus?>?): RecyclerView.Adapter<P
         val menuPrice: TextView = view.findViewById(R.id.menuPrice)
         val menuQty: TextView = view.findViewById(R.id.menuQty)
 
-        fun bind(menu: Menus) {
-            menuName.text = menu?.name!!
-            menuPrice.text = "Price RM" + String.format("%.2f",menu?.price * menu.totalInCart)
-            menuQty.text = "Quantity :" + menu?.totalInCart
+        fun bind(category: Category) {
+            menuName.text = category?.name!!
+            menuPrice.text = "Price RM" + String.format("%.2f",category?.price * category.totalInCart)
+            menuQty.text = "Quantity :" + category?.totalInCart
 
             Glide.with(thumbImage)
-                .load(menu?.url)
+                .load(category?.url)
                 .into(thumbImage)
 
         }

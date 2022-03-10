@@ -92,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:text="Send"
+        android:backgroundTint="@color/primary_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 

@@ -32,7 +32,6 @@ class TrainInfoFragment : Fragment() {
         _binding = FragmentTrainInfoBinding.inflate(inflater, container, false)
 
         preloadOrigin()
-        preloadDestination()
 
         return binding.root
     }
@@ -82,16 +81,16 @@ class TrainInfoFragment : Fragment() {
 
         binding.selectionBtn.setOnClickListener {
             val name: String = binding.originSpinner.text.toString()
-            val destination: String = binding.destinationSpinner.text.toString()
-
 
             try {
                 if (binding.originSpinner.text.isEmpty() ) {
-//                    || binding.destinationSpinner.text.isEmpty()
-                    Toast.makeText(requireContext(), "Please select an origin/destination", Toast.LENGTH_SHORT)
+                    Toast.makeText(requireContext(), "Please select an origin.", Toast.LENGTH_SHORT)
                         .show()
-                } else {
-
+                }
+                   else if(binding.dateTV.text.isEmpty()) {
+                        Toast.makeText(requireContext(), "Please select reservation date.", Toast.LENGTH_SHORT).show()
+                    }
+                 else {
 
                     val trainN = TrainName (
                         name
@@ -139,12 +138,6 @@ class TrainInfoFragment : Fragment() {
         binding.originSpinner.setAdapter(listAdapter)
     }
 
-    private fun preloadDestination() {
-        val lists = resources.getStringArray(R.array.train_name_items)
-
-        val listAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-        binding.destinationSpinner.setAdapter(listAdapter)
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

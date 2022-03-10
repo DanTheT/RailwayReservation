@@ -99,6 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewStatusLayout"
         android:layout_marginTop="24dp"
         android:text="Change"
+        android:backgroundTint="@color/primary_blue"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="412dp" />
 

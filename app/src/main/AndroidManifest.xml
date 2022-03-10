@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
+
         <activity
             android:name=".reportIssue.updates.MessageUI"
             android:exported="false" />
@@ -30,6 +31,24 @@
             android:exported="false" />
         <activity
             android:name=".passenger.PassengerDatePicker"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PassengerFAQ"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.RefundPolicy"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.TicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.TicketMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.PlaceYourTicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.ConfirmPayment"
             android:exported="false" />
         <activity
             android:name=".admin.announcement.SendAnnouncementActivity"

@@ -10,65 +10,57 @@ import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.passenger.adapter.MenuListAdapter
-import com.example.railwayreservation.passenger.models.Menus
-import com.example.railwayreservation.passenger.models.RestaurentModel
-import org.w3c.dom.Text
+import com.example.railwayreservation.passenger.adapter.CategoryListAdapter
+import com.example.railwayreservation.passenger.models.Category
+import com.example.railwayreservation.passenger.models.CategoryModel
 
 class TicketMenuActivity : AppCompatActivity() {
 
-    private var itemsInTheCartList: MutableList<Menus?>? = null
+    private var itemsInTheCartList: MutableList<Category?>? = null
     private var totalItemInCartCount = 0
-    private  var menuList: List<Menus?>? = null
-    private var menuListAdapter: MenuListAdapter? = null
+    private  var categoryList: List<Category?>? = null
+    private var CategoryListAdapter: CategoryListAdapter? = null
     private lateinit var checkoutButton: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ticket_menu)
 
+        val categoryModel = intent?.getParcelableExtra<CategoryModel>("CategoryModel")
 
 
+        categoryList = categoryModel?.category
 
-        val restaurantModel = intent?.getParcelableExtra<RestaurentModel>("RestaurantModel")
-
-        val actionBar: ActionBar? = supportActionBar
-        actionBar?.setTitle(restaurantModel?.name)
-        actionBar?.setSubtitle(restaurantModel?.address)
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-
-        menuList = restaurantModel?.menus
-
-        initRecyclerView(menuList)
+        initRecyclerView(categoryList)
         var checkoutButton = findViewById<TextView>(R.id.checkoutButton)
         checkoutButton.setOnClickListener {
             if(itemsInTheCartList != null && itemsInTheCartList!!.size <= 0) {
                 Toast.makeText(this@TicketMenuActivity, "Please add some tickets", Toast.LENGTH_LONG).show()
             }
             else {
-                restaurantModel?.menus = itemsInTheCartList
-                val intent = Intent(this@TicketMenuActivity, PlaceYourOrderActivity::class.java)
-                intent.putExtra("RestaurantModel", restaurantModel)
+                categoryModel?.category = itemsInTheCartList
+                val intent = Intent(this@TicketMenuActivity, PlaceYourTicketActivity::class.java)
+                intent.putExtra("CategoryModel", categoryModel)
                 startActivityForResult(intent, 1000)
             }
         }
 
     }
-    private fun initRecyclerView(menus: List<Menus?>?) {
-        val menuRecyclerVuew = findViewById<RecyclerView>(R.id.menuRecyclerVuew)
-        menuRecyclerVuew.layoutManager = GridLayoutManager(this, 2)
-        menuListAdapter = MenuListAdapter(menus, this)
-        menuRecyclerVuew.adapter =menuListAdapter
+    private fun initRecyclerView(category: List<Category?>?) {
+        val seatCatRecyclerView = findViewById<RecyclerView>(R.id.seatCatRecyclerView)
+        seatCatRecyclerView.layoutManager = GridLayoutManager(this, 2)
+        CategoryListAdapter = CategoryListAdapter(category, this)
+        seatCatRecyclerView.adapter =CategoryListAdapter
     }
 
-    fun addToCartClickListener(menu: Menus) {
+    fun addToCartClickListener(category: Category) {
 
         checkoutButton = findViewById<TextView>(R.id.checkoutButton)
 
         if(itemsInTheCartList == null) {
             itemsInTheCartList = ArrayList()
         }
-        itemsInTheCartList?.add(menu)
+        itemsInTheCartList?.add(category)
         totalItemInCartCount = 0
         for(menu in itemsInTheCartList!!) {
             totalItemInCartCount = totalItemInCartCount + menu?.totalInCart!!
@@ -77,10 +69,10 @@ class TicketMenuActivity : AppCompatActivity() {
 
     }
 
-    fun updateCartClickListener(menu: Menus) {
-        val index = itemsInTheCartList!!.indexOf(menu)
+    fun updateCartClickListener(category: Category) {
+        val index = itemsInTheCartList!!.indexOf(category)
         itemsInTheCartList?.removeAt(index)
-        itemsInTheCartList?.add(menu)
+        itemsInTheCartList?.add(category)
         totalItemInCartCount = 0
         for(menu in itemsInTheCartList!!) {
             totalItemInCartCount = totalItemInCartCount + menu?.totalInCart!!
@@ -88,9 +80,9 @@ class TicketMenuActivity : AppCompatActivity() {
         checkoutButton.text = "Checkout (" + totalItemInCartCount +") Tickets"
     }
 
-    fun removeFromCartClickListener(menu: Menus) {
-        if(itemsInTheCartList!!.contains(menu)) {
-            itemsInTheCartList?.remove(menu)
+    fun removeFromCartClickListener(category: Category) {
+        if(itemsInTheCartList!!.contains(category)) {
+            itemsInTheCartList?.remove(category)
             totalItemInCartCount = 0
             for(menu in itemsInTheCartList!!) {
                 totalItemInCartCount = totalItemInCartCount + menu?.totalInCart!!

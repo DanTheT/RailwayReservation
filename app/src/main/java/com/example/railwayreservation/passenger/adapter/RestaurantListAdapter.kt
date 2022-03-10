@@ -8,11 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.railwayreservation.R
-import com.example.railwayreservation.passenger.models.RestaurentModel
+import com.example.railwayreservation.passenger.models.CategoryModel
 import java.text.SimpleDateFormat
 import java.util.*
 
-class RestaurantListAdapter(val restaurantList: List<RestaurentModel?>?, val clickListener: RestaurantListClickListener): RecyclerView.Adapter<RestaurantListAdapter.MyViewHolder>() {
+class RestaurantListAdapter(val categoryList: List<CategoryModel?>?, val clickListener: RestaurantListClickListener): RecyclerView.Adapter<RestaurantListAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(
@@ -25,37 +25,36 @@ class RestaurantListAdapter(val restaurantList: List<RestaurentModel?>?, val cli
     }
 
     override fun onBindViewHolder(holder: RestaurantListAdapter.MyViewHolder, position: Int) {
-        holder.bind(restaurantList?.get(position))
+        holder.bind(categoryList?.get(position))
         holder.itemView.setOnClickListener {
-            clickListener.onItemClick(restaurantList?.get(position)!!)
+            clickListener.onItemClick(categoryList?.get(position)!!)
         }
     }
 
     override fun getItemCount(): Int {
-        return restaurantList?.size!!
+        return categoryList?.size!!
     }
 
     inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view)
 
     {
-        val thumbImage: ImageView = view.findViewById(R.id.thumbImage)
         val tvRestaurantName: TextView = view.findViewById(R.id.tvRestaurantName)
         val tvRestaurantAddress: TextView = view.findViewById(R.id.tvRestaurantAddress)
         val tvRestaurantHours: TextView = view.findViewById(R.id.tvRestaurantHours)
 
-        fun bind(restaurentModel: RestaurentModel?) {
-            tvRestaurantName.text = "Origin: "+restaurentModel?.name
-            tvRestaurantAddress.text = "Destination: "+restaurentModel?.address
-            tvRestaurantHours.text = "Arrive Time - Reach Time: " + restaurentModel?.time
+        fun bind(restaurentModel: CategoryModel?) {
+            tvRestaurantName.text = "Ticket Type: "+restaurentModel?.name
+            tvRestaurantAddress.text = "Ticket Category: "+restaurentModel?.address
+            tvRestaurantHours.text = " " + restaurentModel?.time
 
-            Glide.with(thumbImage)
-                .load(restaurentModel?.image)
-                .into(thumbImage)
+//            Glide.with(thumbImage)
+//                .load(restaurentModel?.image)
+//                .into(thumbImage)
         }
     }
 
     interface RestaurantListClickListener {
-        fun onItemClick(restaurantModel: RestaurentModel)
+        fun onItemClick(categoryModel: CategoryModel)
     }
 
 }

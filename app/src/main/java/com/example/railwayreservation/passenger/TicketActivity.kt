@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
 import com.example.railwayreservation.passenger.adapter.RestaurantListAdapter
-import com.example.railwayreservation.passenger.models.RestaurentModel
+import com.example.railwayreservation.passenger.models.CategoryModel
 import com.google.gson.Gson
 import java.io.*
 import java.lang.Exception
@@ -17,18 +17,18 @@ class TicketActivity : AppCompatActivity(), RestaurantListAdapter.RestaurantList
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ticket)
 
-        val restaurantModel = getRestaurantData()
-        initRecyclerView(restaurantModel)
+        val categoryModel = getCategoryData()
+        initRecyclerView(categoryModel)
     }
 
-    private fun initRecyclerView(restaurantList: List<RestaurentModel?>?) {
+    private fun initRecyclerView(categoryList: List<CategoryModel?>?) {
         val recyclerViewRestaurant = findViewById<RecyclerView>(R.id.recyclerViewRestaurant)
         recyclerViewRestaurant.layoutManager = LinearLayoutManager(this)
-        val adapter = RestaurantListAdapter(restaurantList, this)
+        val adapter = RestaurantListAdapter(categoryList, this)
         recyclerViewRestaurant.adapter =adapter
     }
 
-    private fun getRestaurantData(): List<RestaurentModel?>? {
+    private fun getCategoryData(): List<CategoryModel?>? {
         val inputStream: InputStream = resources.openRawResource(R.raw.railway)
         val writer: Writer = StringWriter()
         val buffer = CharArray(1024)
@@ -43,14 +43,14 @@ class TicketActivity : AppCompatActivity(), RestaurantListAdapter.RestaurantList
         }catch (e: Exception){}
         val jsonStr: String = writer.toString()
         val gson = Gson()
-        val restaurantModel = gson.fromJson<Array<RestaurentModel>>(jsonStr, Array<RestaurentModel>::class.java).toList()
+        val categoryModel = gson.fromJson<Array<CategoryModel>>(jsonStr, Array<CategoryModel>::class.java).toList()
 
-        return restaurantModel
+        return categoryModel
     }
 
-    override fun onItemClick(restaurantModel: RestaurentModel) {
+    override fun onItemClick(categoryModel: CategoryModel) {
         val intent = Intent(this@TicketActivity, TicketMenuActivity::class.java)
-        intent.putExtra("RestaurantModel", restaurantModel)
+        intent.putExtra("CategoryModel", categoryModel)
         startActivity(intent)
     }
 }

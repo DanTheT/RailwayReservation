@@ -24,7 +24,7 @@
                 app:titleTextColor="@color/white"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:title="Payment"
+                app:title="Payment Gateway"
                 app:navigationIconTint="@color/white"/>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -127,7 +127,7 @@
         android:layout_marginStart="65dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="66dp"
-        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
         android:text="Make Payment"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -175,7 +175,7 @@
         android:layout_marginStart="65dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="66dp"
-        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
         android:text="View Wallet"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -190,7 +190,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="66dp"
         android:layout_marginBottom="52dp"
-        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/primary_blue"
         android:text="Done Payment"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

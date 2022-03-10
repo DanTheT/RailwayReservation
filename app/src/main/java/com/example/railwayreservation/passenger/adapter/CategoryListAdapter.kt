@@ -10,20 +10,19 @@ import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
 import com.example.railwayreservation.passenger.TicketMenuActivity
-import com.example.railwayreservation.passenger.models.Menus
-import org.w3c.dom.Text
+import com.example.railwayreservation.passenger.models.Category
 
-class MenuListAdapter(val menuList: List<Menus?>?, val clickListener: TicketMenuActivity): RecyclerView.Adapter<MenuListAdapter.MyViewHolder>() {
+class CategoryListAdapter(val menuList: List<Category?>?, val clickListener: TicketMenuActivity): RecyclerView.Adapter<CategoryListAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MenuListAdapter.MyViewHolder {
+    ): CategoryListAdapter.MyViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.menu_list_row, parent, false)
         return MyViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MenuListAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CategoryListAdapter.MyViewHolder, position: Int) {
         holder.bind(menuList?.get(position)!!)
     }
 
@@ -41,50 +40,50 @@ class MenuListAdapter(val menuList: List<Menus?>?, val clickListener: TicketMenu
         val imageAddOne: ImageView = view.findViewById(R.id.imageAddOne)
         val tvCount: TextView = view.findViewById(R.id.tvCount)
 
-        fun bind(menus: Menus) {
-            menuName.text = menus?.name
-            menuPrice.text = "Price: RM ${menus?.price}"
+        fun bind(category: Category) {
+            menuName.text = category?.name
+            menuPrice.text = "Price: RM ${category?.price}"
             addToCartButton.setOnClickListener {
-                menus?.totalInCart = 1
-                clickListener.addToCartClickListener(menus)
+                category?.totalInCart = 1
+                clickListener.addToCartClickListener(category)
                 addMoreLayout?.visibility = View.VISIBLE
                 addToCartButton.visibility = View.GONE
-                tvCount.text = menus?.totalInCart.toString()
+                tvCount.text = category?.totalInCart.toString()
             }
             imageMinus.setOnClickListener {
-                var total: Int =  menus?.totalInCart
+                var total: Int =  category?.totalInCart
                 total--
                 if(total > 0) {
-                    menus?.totalInCart = total
-                    clickListener.updateCartClickListener(menus)
-                    tvCount.text = menus?.totalInCart.toString()
+                    category?.totalInCart = total
+                    clickListener.updateCartClickListener(category)
+                    tvCount.text = category?.totalInCart.toString()
                 } else {
-                    menus.totalInCart = total
-                    clickListener.removeFromCartClickListener(menus)
+                    category.totalInCart = total
+                    clickListener.removeFromCartClickListener(category)
                     addMoreLayout.visibility = View.GONE
                     addToCartButton.visibility = View.VISIBLE
                 }
             }
             imageAddOne.setOnClickListener {
-                var total: Int  = menus?.totalInCart
+                var total: Int  = category?.totalInCart
                 total++
                 if(total <= 10) {
-                    menus.totalInCart = total
-                    clickListener.updateCartClickListener(menus)
+                    category.totalInCart = total
+                    clickListener.updateCartClickListener(category)
                     tvCount.text = total.toString()
                 }
             }
 
             Glide.with(thumbImage)
-                .load(menus?.url)
+                .load(category?.url)
                 .into(thumbImage)
 
         }
     }
 
-    interface MenuListClickListener {
-        fun addToCartClickListener(menu: Menus)
-        fun updateCartClickListener(menu: Menus)
-        fun removeFromCartClickListener(menu: Menus)
+    interface CategoryListClickListener {
+        fun addToCartClickListener(category: Category)
+        fun updateCartClickListener(category: Category)
+        fun removeFromCartClickListener(category: Category)
     }
 }

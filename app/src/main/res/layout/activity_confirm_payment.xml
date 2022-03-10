@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".passenger.ConfirmPayment">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_dark_blue">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/myReservation_topAppBar"
+                android:layout_width="match_parent"
+                app:titleTextColor="@color/white"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:title="My Reservation"
+                app:navigationIconTint="@color/white"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
@@ -32,6 +57,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="Proceed to make payment"
+        android:backgroundTint="@color/primary_blue"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -50,6 +76,7 @@
         android:padding="10dp"
         android:text="Done"
         android:textColor="@color/white"
+        android:backgroundTint="@color/primary_blue"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

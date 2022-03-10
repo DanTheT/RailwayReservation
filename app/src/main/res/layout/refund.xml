@@ -306,13 +306,9 @@
             android:id="@+id/btnApprove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Approve" />
-
-        <Button
-            android:id="@+id/btnReject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reject" />
+            android:text="Approve"
+            android:backgroundTint="@color/primary_blue"
+            />
 
         <Button
             android:id="@+id/btnMakeRefund"
@@ -321,10 +317,17 @@
             android:text="Make Refund"
             android:visibility="gone"/>
 
+        <Button
+            android:id="@+id/btnReject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary_blue"
+            android:text="Reject" />
+
 
     </LinearLayout>
 
-<!--    <LinearLayout-->
+    <!--    <LinearLayout-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:orientation="horizontal"-->
