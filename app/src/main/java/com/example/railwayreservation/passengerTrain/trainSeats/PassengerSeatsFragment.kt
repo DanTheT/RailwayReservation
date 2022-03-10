@@ -4,24 +4,19 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentPassengerSeatsBinding
-import com.example.railwayreservation.passenger.*
-import com.example.railwayreservation.passenger.adapter.CategoryListAdapter
-import com.example.railwayreservation.passenger.models.Category
+import com.example.railwayreservation.passenger.PassengerDatePicker
+import com.example.railwayreservation.passenger.PassengerPayment
+import com.example.railwayreservation.passenger.PassengerReservation
 import com.google.firebase.database.*
-import com.example.railwayreservation.passenger.models.CategoryModel
 
 class PassengerSeatsFragment : Fragment() {
 
@@ -54,7 +49,7 @@ class PassengerSeatsFragment : Fragment() {
             seatsDatabase = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
             seatsDatabase.child(getNameTrain).child("car").get().addOnSuccessListener {
 
-                when(it.value.toString()) {
+                when (it.value.toString()) {
                     "4 Coaches" -> {
                         insertSeatsCoachesFour()
                     }
@@ -62,8 +57,9 @@ class PassengerSeatsFragment : Fragment() {
                         insertSeatsCoachesFive()
                     }
                 }
-//                insertSeatsCategory()
-//                insertSeatsRange()
+
+                insertSeatsCategory()
+                insertSeatsRange()
 //                "VIP seats" -> {
 //                        insertVIPSeats()
 //                    }
@@ -80,6 +76,7 @@ class PassengerSeatsFragment : Fragment() {
         }
 
         binding.confirmPayment.setOnClickListener {
+
 //            try {
 //                if (binding.seatTrainType.text.isEmpty()) {
 //                    Toast.makeText(requireContext(), "No selected coach, category and seats", Toast.LENGTH_SHORT)
@@ -91,7 +88,12 @@ class PassengerSeatsFragment : Fragment() {
 //                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
 //            }
 
-            startActivity(Intent(context,TicketActivity::class.java))
+            startActivity(Intent(context, PassengerPayment::class.java))
+
+        }
+
+        binding.passengerSeatsTopAppBar.setOnClickListener {
+            findNavController().navigate(R.id.action_passengerSeatsFragment_to_trainInfoFragment)
         }
     }
 
@@ -110,22 +112,21 @@ class PassengerSeatsFragment : Fragment() {
         binding.selectSeatCoach.setAdapter(listsAdapter)
     }
 
+    private fun insertSeatsCategory() {
+        val lists = resources.getStringArray(R.array.seat_category)
 
-//    private fun insertSeatsCategory() {
-//        val lists = resources.getStringArray(R.array.seat_category)
-//
-//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeatCategory.setAdapter(listsAdapter)
-//
-//    }
-//
-//    private fun insertSeatsRange() {
-//        val lists = resources.getStringArray(R.array.seats_range)
-//
-//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeatRange.setAdapter(listsAdapter)
-//
-//    }
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.selectSeatCategory.setAdapter(listsAdapter)
+
+    }
+
+    private fun insertSeatsRange() {
+        val lists = resources.getStringArray(R.array.seats_range)
+
+        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
+        binding.selectSeatRange.setAdapter(listsAdapter)
+
+    }
 
 
 //    private fun insertVIPSeats() {
@@ -151,6 +152,10 @@ class PassengerSeatsFragment : Fragment() {
 //        binding.selectSeatCategory.setAdapter(listsAdapter)
 //
 //    }
+
+//        val lists = resources.getStringArray(R.array.vip_seats_price)
+//        val lists = resources.getStringArray(R.array.standard_windowSeats_price)
+//        val lists = resources.getStringArray(R.array.standard_alleySeats_price)
 
 
 }

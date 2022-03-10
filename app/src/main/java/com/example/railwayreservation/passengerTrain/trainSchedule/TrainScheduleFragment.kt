@@ -1,11 +1,14 @@
 package com.example.railwayreservation.passengerTrain.trainSchedule
 
+import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -15,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.databinding.FragmentTrainScheduleBinding
 import com.example.railwayreservation.passengerTrain.trainInfo.ParcelizedNameDest
 import com.google.firebase.database.*
+import com.example.railwayreservation.R
 
 class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
 
@@ -24,6 +28,7 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
     private lateinit var scheduleRecycleView: RecyclerView
     private lateinit var scheduleArrayList: ArrayList<ScheduleData>
     private lateinit var navController: NavController
+    private var deactiveDialog: AlertDialog? = null
     private val args by navArgs<TrainScheduleFragmentArgs>()
 
     override fun onCreateView(
@@ -51,6 +56,10 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
         }catch (e: Exception) {
             Toast.makeText(requireContext(), "${e.message}", Toast.LENGTH_SHORT).show()
         }
+
+        binding.passengerTrainScheduleMainTopAppBar.setOnClickListener {
+            findNavController().navigate(R.id.action_trainScheduleFragment_to_trainInfoFragment)
+        }
     }
 
     private fun retrieveScheduleTime(trainName: String){
@@ -77,19 +86,35 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
         val railName: String = data.trainName
         val railStart: String = data.fromStation
         val railDestination = data.nextStation
+        val railStatus = data.status
 
         val nameAndDest = ParcelizedNameDest (
             railName, railStart, railDestination
                 )
 
         try {
-            val action = TrainScheduleFragmentDirections.actionTrainScheduleFragmentToPassengerSeatsFragment(nameAndDest)
-            findNavController().navigate(action)
+            when(railStatus) {
+                "Deactivate" -> {
+                    displayDialog()
+                }
+                else -> {
+                    val action = TrainScheduleFragmentDirections.actionTrainScheduleFragmentToPassengerSeatsFragment(nameAndDest)
+                    Toast.makeText(requireContext(), "You have selected from ${data.fromStation} to ${data.nextStation} ", Toast.LENGTH_LONG).show()
+                    findNavController().navigate(action)
+                }
+            }
         } catch (e: Exception) {
-            Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            val passengerScheduleTag = "TrainScheduleFragment"
+            Log.d(passengerScheduleTag, "${e.message}")
         }
+    }
 
-        Toast.makeText(requireContext(), "You have selected from ${data.fromStation} to ${data.nextStation} ", Toast.LENGTH_LONG).show()
+    private fun displayDialog() {
+        val aDialogBuilder = AlertDialog.Builder(requireContext())
+        aDialogBuilder.setTitle("Attention")
+        aDialogBuilder.setMessage("The selected schedule is currently unavailable")
+        aDialogBuilder.setPositiveButton("Ok") { dialogInterface: DialogInterface, i: Int -> }
+        deactiveDialog = aDialogBuilder.show()
     }
 
     override fun onDestroyView() {
