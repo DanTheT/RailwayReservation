@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentPassengerSeatsBinding
@@ -42,15 +43,13 @@ class PassengerSeatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         binding.selectSeatGetBtn.setOnClickListener {
             val getNameTrain = binding.seatTrainType.text.toString()
 
             seatsDatabase = FirebaseDatabase.getInstance().getReference("SpecificTrainInfo")
             seatsDatabase.child(getNameTrain).child("car").get().addOnSuccessListener {
 
-                when(it.value.toString()) {
+                when (it.value.toString()) {
                     "4 Coaches" -> {
                         insertSeatsCoachesFour()
                     }
@@ -89,11 +88,14 @@ class PassengerSeatsFragment : Fragment() {
 //                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
 //            }
 
-            startActivity(Intent(context,PassengerPayment::class.java))
+            startActivity(Intent(context, PassengerPayment::class.java))
 
         }
 
+        binding.passengerSeatsTopAppBar.setOnClickListener {
+            findNavController().navigate(R.id.action_passengerSeatsFragment_to_trainInfoFragment)
         }
+    }
 
 
     private fun insertSeatsCoachesFive() {
@@ -154,7 +156,6 @@ class PassengerSeatsFragment : Fragment() {
 //        val lists = resources.getStringArray(R.array.vip_seats_price)
 //        val lists = resources.getStringArray(R.array.standard_windowSeats_price)
 //        val lists = resources.getStringArray(R.array.standard_alleySeats_price)
-
 
 
 }

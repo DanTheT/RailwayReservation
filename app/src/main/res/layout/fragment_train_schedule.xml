@@ -22,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIconTint="@color/white"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
                 app:title="Schedule"
                 app:titleTextColor="@color/white"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>

@@ -1,5 +1,6 @@
 package com.example.railwayreservation.passengerTrain.trainInfo
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentTrainInfoBinding
+import com.example.railwayreservation.passenger.PassengerDatePicker
 import com.example.railwayreservation.passenger.PassengerReservation
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -23,6 +26,7 @@ class TrainInfoFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var trainInfoDb: DatabaseReference
     private lateinit var navController: NavController
+    var deactiveDialog: AlertDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,25 +67,31 @@ class TrainInfoFragment : Fragment() {
                     Toast.makeText(requireContext(), "Please select a train name", Toast.LENGTH_SHORT)
                         .show()
                 } else {
+                    when(binding.trainStatusTextview.text.toString()) {
+                        "Deactivate" -> {
+                            displayDialog()
+                        }
+                        else -> {
+                            val trainN = TrainName (
+                                name
 
-                    val trainN = TrainName (
-                        name
+                            )
+                            val intent = Intent(context, PassengerReservation::class.java)
+                            intent.putExtra("Train Name : ", name)
 
-                    )
-                    val intent = Intent(context, PassengerReservation::class.java)
-                    intent.putExtra("Train Name : ", name)
-
-                    val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
-                    findNavController().navigate(action)
-
+                            val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
+                            findNavController().navigate(action)
+                        }
+                    }
                 }
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
         }
 
-
-
+        binding.passengerMainTopAppBar.setOnClickListener {
+            startActivity(Intent(requireContext(), PassengerDatePicker::class.java))
+        }
     }
 
     private fun checkTrainLine(trainName: String){
@@ -100,6 +110,14 @@ class TrainInfoFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun displayDialog() {
+        val aDialogBuilder = AlertDialog.Builder(requireContext())
+        aDialogBuilder.setTitle("Attention")
+        aDialogBuilder.setMessage("The current train selected is not available")
+        aDialogBuilder.setPositiveButton("Ok") { dialogInterface: DialogInterface, i: Int -> }
+        deactiveDialog = aDialogBuilder.show()
     }
 
     private fun preloadTrainType(){

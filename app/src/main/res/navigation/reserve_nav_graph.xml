@@ -25,6 +25,9 @@
         <argument
             android:name="name"
             app:argType="com.example.railwayreservation.passengerTrain.trainInfo.TrainName" />
+        <action
+            android:id="@+id/action_trainScheduleFragment_to_trainInfoFragment"
+            app:destination="@id/trainInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/passengerSeatsFragment"
@@ -34,5 +37,8 @@
         <argument
             android:name="trainNameDest"
             app:argType="com.example.railwayreservation.passengerTrain.trainInfo.ParcelizedNameDest" />
+        <action
+            android:id="@+id/action_passengerSeatsFragment_to_trainInfoFragment"
+            app:destination="@id/trainInfoFragment" />
     </fragment>
 </navigation>
