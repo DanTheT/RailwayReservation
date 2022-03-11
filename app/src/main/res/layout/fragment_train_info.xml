@@ -24,7 +24,7 @@
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:navigationIconTint="@color/white"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:title="Search Train"
+                app:title="My Reservation - Select Origin"
                 app:titleTextColor="@color/white"/>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -32,7 +32,7 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/searchTrainNameLayout"
+        android:id="@+id/searchOriginLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="355dp"
         android:layout_height="wrap_content"
@@ -42,152 +42,201 @@
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout">
 
         <AutoCompleteTextView
-            android:id="@+id/train_type_spinner"
+            android:id="@+id/origin_spinner"
             android:layout_width="match_parent"
-            android:hint="Train Name"
             android:layout_height="match_parent"
+            android:hint="Origin"
             android:inputType="none"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <DatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="334dp"
+        android:layout_height="385dp"
+        android:layout_margin="12dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="52dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchOriginLayout" />
+
     <Button
-        android:id="@+id/search_button"
-        android:layout_width="270dp"
+        android:id="@+id/btnPickDate"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/primary_blue"
-        android:text="@string/search_train_btn"
+        android:text="Confirm Selected Date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchTrainNameLayout" />
-
-
-    <TextView
-        android:id="@+id/trainLineTV"
-        style="@style/Widget.MaterialComponents.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="10dp"
-        android:minHeight="48dp"
-        android:text="Train Line :"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/train_line_textview"
-        app:layout_constraintTop_toBottomOf="@+id/search_button" />
+        app:layout_constraintTop_toBottomOf="@+id/date_picker" />
 
     <TextView
-        android:id="@+id/train_line_textview"
-        style="@style/Widget.MaterialComponents.TextView"
-        android:layout_width="270dp"
-        android:textAlignment="center"
+        android:id="@+id/dateTV"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="4dp"
-        android:minHeight="48dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_button" />
-
-
-    <TextView
-        android:id="@+id/trainStartTV"
-        style="@style/Widget.MaterialComponents.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="10dp"
-        android:minHeight="48dp"
-        android:text="Start Station :"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/train_start_textview"
-        app:layout_constraintTop_toBottomOf="@+id/trainLineTV" />
-
-    <TextView
-        android:id="@+id/train_start_textview"
-        android:layout_width="270dp"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="4dp"
-        android:minHeight="48dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/train_line_textview" />
-
-    <TextView
-        android:id="@+id/trainEndTV"
-        style="@style/Widget.MaterialComponents.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="37dp"
-        android:layout_marginEnd="10dp"
-        android:minHeight="48dp"
-        android:text="End Station :"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/train_end_textview"
-        app:layout_constraintTop_toBottomOf="@+id/trainStartTV" />
-
-    <TextView
-        android:id="@+id/train_end_textview"
-        android:layout_width="270dp"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="4dp"
-        android:minHeight="48dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/train_start_textview" />
-
-
-    <TextView
-        android:id="@+id/trainStatusTV"
-        style="@style/Widget.MaterialComponents.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="10dp"
-        android:minHeight="48dp"
-        android:text="Train Status :"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/train_status_textview"
-        app:layout_constraintTop_toBottomOf="@+id/trainEndTV" />
-
-    <TextView
-        android:id="@+id/train_status_textview"
-        android:layout_width="270dp"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="4dp"
-        android:minHeight="48dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/train_end_textview" />
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnPickDate"
+        tools:layout_editor_absoluteX="218dp" />
 
     <Button
         android:id="@+id/selection_btn"
         android:layout_width="270dp"
-        android:backgroundTint="@color/primary_blue"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/selection_train_btn"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="71dp"
+        android:backgroundTint="@color/primary_blue"
+        android:text="Next"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/train_status_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/dateTV" />
+
+    <!--    <Button-->
+<!--        android:id="@+id/search_button"-->
+<!--        android:layout_width="270dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:backgroundTint="@color/primary_blue"-->
+<!--        android:text="@string/search_train_btn"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.496"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/searchTrainNameLayout" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/trainLineTV"-->
+<!--        style="@style/Widget.MaterialComponents.TextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:text="Train Line :"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/train_line_textview"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/search_button" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/train_line_textview"-->
+<!--        style="@style/Widget.MaterialComponents.TextView"-->
+<!--        android:layout_width="270dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:layout_marginEnd="4dp"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/search_button" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/trainStartTV"-->
+<!--        style="@style/Widget.MaterialComponents.TextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:text="Start Station :"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/train_start_textview"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/trainLineTV" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/train_start_textview"-->
+<!--        android:layout_width="270dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:layout_marginEnd="4dp"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/train_line_textview" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/trainEndTV"-->
+<!--        style="@style/Widget.MaterialComponents.TextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:layout_marginTop="37dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:text="End Station :"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/train_end_textview"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/trainStartTV" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/train_end_textview"-->
+<!--        android:layout_width="270dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:layout_marginEnd="4dp"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/train_start_textview" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/trainStatusTV"-->
+<!--        style="@style/Widget.MaterialComponents.TextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:text="Train Status :"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/train_status_textview"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/trainEndTV" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/train_status_textview"-->
+<!--        android:layout_width="270dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:layout_marginEnd="4dp"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/train_end_textview" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/selection_btn"-->
+<!--        android:layout_width="270dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/primary_blue"-->
+<!--        android:text="@string/selection_train_btn"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.496"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        tools:layout_editor_absoluteY="643dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

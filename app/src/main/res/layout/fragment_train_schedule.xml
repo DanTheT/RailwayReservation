@@ -23,7 +23,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIconTint="@color/white"
                 app:navigationIcon="@drawable/ic_arrow_back_24"
-                app:title="Schedule"
+                app:title="My Reservation - Select Schedule"
                 app:titleTextColor="@color/white"
                 app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
@@ -45,9 +45,9 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="136dp"
         android:layout_marginTop="20dp"
-        android:text="@string/schedule_train_type_txt"
+        android:text="Origin: "
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topBarLayout" />

@@ -35,9 +35,8 @@ class RestaurantListAdapter(val categoryList: List<CategoryModel?>?, val clickLi
         return categoryList?.size!!
     }
 
-    inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view)
-
-    {
+    inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
+        var thumbImage: ImageView = view.findViewById(R.id.thumbImage)
         val tvRestaurantName: TextView = view.findViewById(R.id.tvRestaurantName)
         val tvRestaurantAddress: TextView = view.findViewById(R.id.tvRestaurantAddress)
         val tvRestaurantHours: TextView = view.findViewById(R.id.tvRestaurantHours)
@@ -47,9 +46,9 @@ class RestaurantListAdapter(val categoryList: List<CategoryModel?>?, val clickLi
             tvRestaurantAddress.text = "Ticket Category: "+restaurentModel?.address
             tvRestaurantHours.text = " " + restaurentModel?.time
 
-//            Glide.with(thumbImage)
-//                .load(restaurentModel?.image)
-//                .into(thumbImage)
+            Glide.with(thumbImage)
+                .load(restaurentModel?.image)
+                .into(thumbImage)
         }
     }
 
