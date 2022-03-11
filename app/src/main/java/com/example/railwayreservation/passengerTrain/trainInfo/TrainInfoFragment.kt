@@ -26,7 +26,7 @@ class TrainInfoFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var trainInfoDb: DatabaseReference
     private lateinit var navController: NavController
-    var deactiveDialog: AlertDialog? = null
+    private var deactiveDialog: AlertDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -28,7 +28,7 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
     private lateinit var scheduleRecycleView: RecyclerView
     private lateinit var scheduleArrayList: ArrayList<ScheduleData>
     private lateinit var navController: NavController
-    private var deactiveDialog: AlertDialog? = null
+    private var deactivateDialog: AlertDialog? = null
     private val args by navArgs<TrainScheduleFragmentArgs>()
 
     override fun onCreateView(
@@ -114,7 +114,7 @@ class TrainScheduleFragment : Fragment(), PassengerScheduleAdapter.OnItemClick {
         aDialogBuilder.setTitle("Attention")
         aDialogBuilder.setMessage("The selected schedule is currently unavailable")
         aDialogBuilder.setPositiveButton("Ok") { dialogInterface: DialogInterface, i: Int -> }
-        deactiveDialog = aDialogBuilder.show()
+        deactivateDialog = aDialogBuilder.show()
     }
 
     override fun onDestroyView() {
