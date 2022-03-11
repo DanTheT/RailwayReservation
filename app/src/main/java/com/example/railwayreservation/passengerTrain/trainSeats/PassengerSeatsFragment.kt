@@ -7,22 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentPassengerSeatsBinding
-import com.example.railwayreservation.passenger.PassengerDatePicker
 import com.example.railwayreservation.passenger.PassengerPayment
-import com.example.railwayreservation.passenger.PassengerReservation
 import com.google.firebase.database.*
 
 class PassengerSeatsFragment : Fragment() {
 
     private var _binding: FragmentPassengerSeatsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var navController: NavController
     private lateinit var seatsDatabase: DatabaseReference
     private lateinit var seatsArrayList: ArrayList<PassengerSeatsData>
     private val args by navArgs<PassengerSeatsFragmentArgs>()
