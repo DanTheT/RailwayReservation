@@ -1,5 +1,7 @@
 package com.example.railwayreservation.admin.refund
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,25 +15,7 @@ import com.google.firebase.database.*
 
 class MakeRefund : AppCompatActivity() {
 
-    private lateinit var etReservationDate: EditText
-    private lateinit var etTrainName: EditText
-    private lateinit var etCoach: EditText
-    private lateinit var etSeatCat: EditText
-    private lateinit var etSeats: EditText
-    private lateinit var etSeatPrice: EditText
-    private lateinit var etFrom: EditText
-    private lateinit var etTo: EditText
-    private lateinit var etArrival: EditText
-    private lateinit var etReach: EditText
 
-    private lateinit var btnSave: Button
-    private lateinit var btnClear: Button
-    private lateinit var btnRequest: Button
-    private lateinit var statusTV: TextView
-
-
-
-    private lateinit var myRef: DatabaseReference
     private lateinit var refundList: MutableList<Refund>
     private lateinit var refundListView: ListView
 
@@ -39,7 +23,6 @@ class MakeRefund : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_make_refund)
-
 
         //view refund
         refundList = mutableListOf()
@@ -72,6 +55,8 @@ class MakeRefund : AppCompatActivity() {
             }
 
         })
+
+
 
     }
 }

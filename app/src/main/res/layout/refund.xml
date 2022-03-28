@@ -146,30 +146,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#73b2ff"
-            android:layout_marginBottom="1dp"
-            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:text="Seat : "
-                android:textColor="#000"
-                android:textSize="18sp" />
-            <TextView
-                android:id="@+id/tvSeat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#8fc1ff"
-                android:text="Seat"
-                android:textColor="#000"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -208,7 +185,7 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="From Station : "
+                android:text="Origin : "
                 android:textColor="#000"
                 android:textSize="18sp" />
             <TextView
@@ -258,7 +235,7 @@
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="Next Station : "
+            android:text="Destination : "
             android:textColor="#000"
             android:textSize="18sp" />
         <TextView
@@ -311,21 +288,23 @@
             />
 
         <Button
-            android:id="@+id/btnMakeRefund"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Make Refund"
-            android:visibility="gone"/>
-
-        <Button
             android:id="@+id/btnReject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/primary_blue"
             android:text="Reject" />
 
-
     </LinearLayout>
+
+<!--    <Button-->
+<!--        android:id="@+id/btnMakeRefund"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/primary_blue"-->
+<!--        android:text="Make Refund"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="false"-->
+<!--        android:focusableInTouchMode="false" />-->
 
     <!--    <LinearLayout-->
 <!--        android:layout_width="wrap_content"-->

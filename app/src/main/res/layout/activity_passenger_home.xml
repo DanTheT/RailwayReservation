@@ -21,11 +21,10 @@
                 android:id="@+id/passengerHomeTopAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:navigationIconTint="@color/white"
                 app:menu="@menu/top_app_bar_issue"
+                app:navigationIconTint="@color/white"
                 app:title="Home"
-                app:titleTextColor="@color/white"
-                />
+                app:titleTextColor="@color/white" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -92,16 +91,16 @@
         app:srcCompat="@drawable/account" />
 
     <ImageButton
-        android:id="@+id/btnReport"
+        android:id="@+id/btnMembership"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="70dp"
         android:background="@null"
         android:contentDescription="something1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnTicket"
-        app:srcCompat="@drawable/reporting" />
+        app:srcCompat="@drawable/membership" />
 
     <TextView
         android:id="@+id/textView5"
@@ -166,12 +165,12 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="70dp"
         android:fontFamily="serif"
-        android:text="Report Issue"
+        android:text="Membership"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnReport" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMembership" />
 
     <TextView
         android:id="@+id/textView8"

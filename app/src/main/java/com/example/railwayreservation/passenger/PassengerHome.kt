@@ -51,14 +51,10 @@ class PassengerHome : AppCompatActivity() {
 //        //to set back button
 //        actionBar.setDisplayHomeAsUpEnabled(true)
 
-//go to reservation screen
+        //go to refund policy screen
         btnReservation = findViewById(R.id.btnReservation)
         btnReservation.setOnClickListener {
             startActivity(Intent(this,RefundPolicy::class.java))
-
-//            startActivity(Intent(this,MakeReservation::class.java))
-
-//             startActivity(Intent(this, TrainMainActivity::class.java))
             }
 
         //go to cancellation screen
@@ -86,9 +82,9 @@ class PassengerHome : AppCompatActivity() {
         }
 
         //go to membership screen
-        btnReport = findViewById(R.id.btnReport)
+        btnReport = findViewById(R.id.btnMembership)
         btnReport.setOnClickListener{
-            startActivity(Intent(this, ReportIssue::class.java))
+            startActivity(Intent(this, PassengerMembership::class.java))
         }
 
 
@@ -108,12 +104,6 @@ class PassengerHome : AppCompatActivity() {
             }
         }
     }
-
-//    //to set back button
-//    override fun onSupportNavigateUp(): Boolean {
-//        onBackPressed()
-//        return true
-//    }
 
 }
 

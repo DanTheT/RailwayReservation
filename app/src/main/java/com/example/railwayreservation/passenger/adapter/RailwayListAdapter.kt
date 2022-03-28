@@ -9,22 +9,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.railwayreservation.R
 import com.example.railwayreservation.passenger.models.CategoryModel
-import java.text.SimpleDateFormat
 import java.util.*
 
-class RestaurantListAdapter(val categoryList: List<CategoryModel?>?, val clickListener: RestaurantListClickListener): RecyclerView.Adapter<RestaurantListAdapter.MyViewHolder>() {
+class RailwayListAdapter(val categoryList: List<CategoryModel?>?, val clickListener: RailwayListClickListener): RecyclerView.Adapter<RailwayListAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RestaurantListAdapter.MyViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.recycler_restautant_list_row, parent, false)
+    ): RailwayListAdapter.MyViewHolder {
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.recycler_railway_list_row, parent, false)
 
         return MyViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: RestaurantListAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RailwayListAdapter.MyViewHolder, position: Int) {
         holder.bind(categoryList?.get(position))
         holder.itemView.setOnClickListener {
             clickListener.onItemClick(categoryList?.get(position)!!)
@@ -37,22 +36,22 @@ class RestaurantListAdapter(val categoryList: List<CategoryModel?>?, val clickLi
 
     inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
         var thumbImage: ImageView = view.findViewById(R.id.thumbImage)
-        val tvRestaurantName: TextView = view.findViewById(R.id.tvRestaurantName)
-        val tvRestaurantAddress: TextView = view.findViewById(R.id.tvRestaurantAddress)
-        val tvRestaurantHours: TextView = view.findViewById(R.id.tvRestaurantHours)
+        val tvName: TextView = view.findViewById(R.id.tvName)
+        val tvAddress: TextView = view.findViewById(R.id.tvAddress)
+        val tvHours: TextView = view.findViewById(R.id.tvHours)
 
-        fun bind(restaurentModel: CategoryModel?) {
-            tvRestaurantName.text = "Ticket Type: "+restaurentModel?.name
-            tvRestaurantAddress.text = "Ticket Category: "+restaurentModel?.address
-            tvRestaurantHours.text = " " + restaurentModel?.time
+        fun bind(categoryModel: CategoryModel?) {
+            tvName.text = "Ticket Type: "+categoryModel?.name
+            tvAddress.text = "Ticket Category: "+categoryModel?.address
+            tvHours.text = " " + categoryModel?.time
 
             Glide.with(thumbImage)
-                .load(restaurentModel?.image)
+                .load(categoryModel?.image)
                 .into(thumbImage)
         }
     }
 
-    interface RestaurantListClickListener {
+    interface RailwayListClickListener {
         fun onItemClick(categoryModel: CategoryModel)
     }
 

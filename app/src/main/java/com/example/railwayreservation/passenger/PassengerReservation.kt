@@ -34,17 +34,16 @@ class PassengerReservation : AppCompatActivity() {
         setContentView(R.layout.activity_passenger_reservation)
 
 
-//        val categoryModel = getCategoryData()
 
-//        var intent = intent
-//        val date = intent.getStringExtra("Reservation Date" )
-//        val trainName = intent.getStringExtra("Train Name : ")
-//
-//        val reservationDateTV = findViewById<TextView>(R.id.reservationDateTV)
-//        val trainNameTV = findViewById<TextView>(R.id.trainNameTV)
-//
-//        reservationDateTV.text = "Reservation Date" + date
-//        trainNameTV.text = "Train Name : $trainName"
+        var intent = intent
+        val date = intent.getStringExtra("Reservation Date" )
+        val trainName = intent.getStringExtra("Train Name : ")
+
+        val reservationDateTV = findViewById<TextView>(R.id.reservationDateTV)
+        val trainNameTV = findViewById<TextView>(R.id.trainNameTV)
+
+        reservationDateTV.text = "Reservation Date" + date
+        trainNameTV.text = "Train Name : $trainName"
 
 
     }

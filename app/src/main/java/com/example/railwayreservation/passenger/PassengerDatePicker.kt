@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.railwayreservation.R
+import com.example.railwayreservation.passenger.cancellation.MakeCancellation
 import com.example.railwayreservation.passengerTrain.TrainMainActivity
 import java.util.*
 
@@ -33,18 +34,15 @@ class PassengerDatePicker : AppCompatActivity() {
         btnProceed = findViewById(R.id.btnProceed)
 
 
-        // disable dates before today
+        // disable dates 1 day before today's date
         val today = Calendar.getInstance()
-        val twoDaysLater = today.clone() as Calendar
-        twoDaysLater.add(Calendar.DATE, 2)
-//        val now = today.timeInMillis
-//        datePicker.setMinDate(now)
-        datePicker.minDate = twoDaysLater.timeInMillis
+        val oneDayLater = today.clone() as Calendar
+        oneDayLater.add(Calendar.DATE, 1)
+        datePicker.minDate = oneDayLater.timeInMillis
 
-
-        //disable dates after half year later
+        //disable dates after one month later
         val halfYearLater = today.clone() as Calendar
-        halfYearLater.add(Calendar.DATE, 183)
+        halfYearLater.add(Calendar.DATE, 30)
         datePicker.maxDate = halfYearLater.timeInMillis
 
         btnPickDate.setOnClickListener(View.OnClickListener {
@@ -52,32 +50,16 @@ class PassengerDatePicker : AppCompatActivity() {
                 ("Your selected date : " + datePicker.getDayOfMonth() + "/" + (datePicker.getMonth() + 1) + "/" + datePicker.getYear())
         })
 
-//        btnSave.setOnClickListener {
-//            val date = dateTV.text.toString()
-//
-//            if (dateTV.text.isEmpty()) {
-//                Toast.makeText(this, "No date is selected.", Toast.LENGTH_SHORT)
-//                    .show()
-//            } else {
-//                val intent = Intent(this, PassengerReservation::class.java)
-//                intent.putExtra("Reservation Date:", date)
-//            }
-//        }
 
         btnProceed.setOnClickListener {
+            if(dateTV.text.isNotEmpty()) {
+                startActivity(Intent(this, TrainMainActivity::class.java))
 
-            val date = dateTV.text.toString()
-
-
-            if (dateTV.text.isEmpty()) {
+            }
+            else {
                 Toast.makeText(this, "No date is selected.", Toast.LENGTH_SHORT)
                     .show()
-            } else {
-                val intent = Intent(this, PassengerReservation::class.java)
-                intent.putExtra("Reservation Date", date)
-                startActivity(Intent(this, TicketActivity::class.java))
             }
-
         }
     }
 }

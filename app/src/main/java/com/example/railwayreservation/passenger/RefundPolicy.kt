@@ -24,7 +24,7 @@ class RefundPolicy : AppCompatActivity() {
         btnNext.setOnClickListener {
 
             if (chkAgreement.isChecked)
-                startActivity(Intent(this,TrainMainActivity::class.java))
+                startActivity(Intent(this,PassengerDatePicker::class.java))
             else {
                 Toast.makeText(this, "Please agree to the terms and conditions to proceed further.", Toast.LENGTH_SHORT).show()
             }

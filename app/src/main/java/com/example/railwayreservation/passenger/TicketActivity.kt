@@ -6,13 +6,13 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
-import com.example.railwayreservation.passenger.adapter.RestaurantListAdapter
+import com.example.railwayreservation.passenger.adapter.RailwayListAdapter
 import com.example.railwayreservation.passenger.models.CategoryModel
 import com.google.gson.Gson
 import java.io.*
 import java.lang.Exception
 
-class TicketActivity : AppCompatActivity(), RestaurantListAdapter.RestaurantListClickListener {
+class TicketActivity : AppCompatActivity(), RailwayListAdapter.RailwayListClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ticket)
@@ -22,10 +22,10 @@ class TicketActivity : AppCompatActivity(), RestaurantListAdapter.RestaurantList
     }
 
     private fun initRecyclerView(categoryList: List<CategoryModel?>?) {
-        val recyclerViewRestaurant = findViewById<RecyclerView>(R.id.recyclerViewRestaurant)
-        recyclerViewRestaurant.layoutManager = LinearLayoutManager(this)
-        val adapter = RestaurantListAdapter(categoryList, this)
-        recyclerViewRestaurant.adapter =adapter
+        val recyclerViewRailway = findViewById<RecyclerView>(R.id.recyclerViewRailway)
+        recyclerViewRailway.layoutManager = LinearLayoutManager(this)
+        val adapter = RailwayListAdapter(categoryList, this)
+        recyclerViewRailway.adapter =adapter
     }
 
     private fun getCategoryData(): List<CategoryModel?>? {

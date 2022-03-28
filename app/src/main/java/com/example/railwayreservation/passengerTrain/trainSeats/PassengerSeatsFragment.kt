@@ -55,19 +55,6 @@ class PassengerSeatsFragment : Fragment() {
                     }
                 }
 
-//                insertSeatsCategory()
-//                insertSeatsRange()
-//                "VIP seats" -> {
-//                        insertVIPSeats()
-//                    }
-//                    "Standard seats - At Window" -> {
-//                        insertStandardWindowSeats()
-//                    }
-//
-//                    "Standard seats - At Alley" -> {
-//                        insertStandardAlleySeats()
-//                    }
-//                }
             }
 
         }
@@ -109,50 +96,6 @@ class PassengerSeatsFragment : Fragment() {
         binding.selectSeatCoach.setAdapter(listsAdapter)
     }
 
-//    private fun insertSeatsCategory() {
-//        val lists = resources.getStringArray(R.array.seat_category)
-//
-//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeatCategory.setAdapter(listsAdapter)
-//
-//    }
-//
-//    private fun insertSeatsRange() {
-//        val lists = resources.getStringArray(R.array.seats_range)
-//
-//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeatRange.setAdapter(listsAdapter)
-//
-//    }
-
-
-//    private fun insertVIPSeats() {
-//        val lists = resources.getStringArray(R.array.vip_seats)
-//
-//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeatCategory.setAdapter(listsAdapter)
-//
-//    }
-//
-//    private fun insertStandardWindowSeats() {
-//        val lists = resources.getStringArray(R.array.standard_windowSeats)
-//
-//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeatCategory.setAdapter(listsAdapter)
-//
-//    }
-//
-//    private fun insertStandardAlleySeats() {
-//        val lists = resources.getStringArray(R.array.standard_alleySeats)
-//
-//        val listsAdapter = ArrayAdapter(requireContext(), R.layout.list_for_dropdown, lists)
-//        binding.selectSeatCategory.setAdapter(listsAdapter)
-//
-//    }
-
-//        val lists = resources.getStringArray(R.array.vip_seats_price)
-//        val lists = resources.getStringArray(R.array.standard_windowSeats_price)
-//        val lists = resources.getStringArray(R.array.standard_alleySeats_price)
 
 
 }

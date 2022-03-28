@@ -314,4 +314,89 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <Button
+        android:id="@+id/btnToRefunds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="157dp"
+        android:backgroundTint="@color/primary_blue"
+        android:text="To Refunds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/train_issues" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/train_refunds"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/train_issues"-->
+<!--        android:layout_margin="8dp"-->
+<!--        app:cardCornerRadius="20dp"-->
+<!--        app:cardBackgroundColor="@color/primary_blue"-->
+<!--        app:cardElevation="8dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="130dp"-->
+<!--                android:contentDescription="Train refunds image"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:src="@drawable/refund" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:paddingStart="5dp"-->
+<!--                android:paddingEnd="5dp">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:text="@string/txt_train_refunds"-->
+<!--                    android:textAppearance="?attr/textAppearanceHeadline6"-->
+<!--                    android:layout_marginTop="8dp"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:text="@string/body_train_refunds"-->
+<!--                    android:textAppearance="?attr/textAppearanceBody2"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    />-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:layout_gravity="end">-->
+
+<!--                    <com.google.android.material.button.MaterialButton-->
+<!--                        android:id="@+id/train_refunds_btn"-->
+<!--                        style="?attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:backgroundTint="@color/primary_light_blue"-->
+<!--                        android:text="@string/button_train_refunds" />-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+

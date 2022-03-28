@@ -40,7 +40,7 @@ class PlaceYourTicketActivity : AppCompatActivity() {
     }
 
     private fun calculateTotalAmount(categoryModel: CategoryModel?) {
-        var subTotalAmount = 0f
+        var subTotalAmount = 2f
         for(category in categoryModel?.category!!) {
             subTotalAmount += category?.price!! * category?.totalInCart!!
 

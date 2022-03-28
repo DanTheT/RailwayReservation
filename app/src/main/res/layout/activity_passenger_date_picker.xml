@@ -52,6 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirm Selected Date"
+        android:backgroundTint="@color/primary_blue"
         tools:layout_editor_absoluteX="123dp"
         tools:layout_editor_absoluteY="533dp" />
 
@@ -69,7 +70,8 @@
         android:id="@+id/btnProceed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Proceed to select train"
+        android:text="Proceed to select origin"
+        android:backgroundTint="@color/primary_blue"
         tools:layout_editor_absoluteX="123dp"
         tools:layout_editor_absoluteY="533dp" />
 

@@ -43,13 +43,6 @@ class PassengerTicket : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_passenger_ticket)
 
-//        //actionbar
-//        val actionbar = supportActionBar
-//        //set actionbar title
-//        actionbar!!.title = "My Ticket"
-//        //set back button
-//        actionbar.setDisplayHomeAsUpEnabled(true)
-
 
         ivQRCode = findViewById(R.id.ivQRCode)
         etData = findViewById(R.id.etData)
@@ -99,10 +92,6 @@ class PassengerTicket : AppCompatActivity() {
         }
     }
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        onBackPressed()
-//        return true
-//    }
 }
 
 

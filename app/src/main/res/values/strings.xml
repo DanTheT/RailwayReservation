@@ -26,6 +26,11 @@
     <string name="txt_train_issues">Train Issues</string>
     <string name="body_train_issues">Attain a list of issues being reported</string>
     <string name="button_train_issues">To issues</string>
+    <string name="button_train_refunds">To refunds</string>
+
+        <string name="txt_train_refunds">Train Refunds</string>
+        <string name="body_train_refunds">Requests for refunds of ticket cancellations</string>
+
 
     //admin login
     <string name="title_activity_admin_login">Login</string>
