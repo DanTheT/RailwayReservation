@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
@@ -16,7 +17,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentTrainInfoBinding
 import com.example.railwayreservation.passenger.PassengerDatePicker
-import com.example.railwayreservation.passenger.PassengerReservation
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.util.*
@@ -49,7 +49,7 @@ class TrainInfoFragment : Fragment() {
 
             try {
                 if (binding.originSpinner.text.isEmpty()) {
-                    Toast.makeText(requireContext(), "No selected train name", Toast.LENGTH_SHORT)
+                    Toast.makeText(requireContext(), "No selected origin", Toast.LENGTH_SHORT)
                         .show()
                 } else {
                     checkTrainLine(selectTrain)
@@ -70,11 +70,7 @@ class TrainInfoFragment : Fragment() {
 
                     val trainN = TrainName (
                         name
-
                     )
-                    val intent = Intent(context, PassengerReservation::class.java)
-                    intent.putExtra("Origin : ", name)
-
                     val action = TrainInfoFragmentDirections.actionTrainInfoFragmentToTrainScheduleFragment(trainN)
                     findNavController().navigate(action)
 

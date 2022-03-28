@@ -40,13 +40,17 @@ class PlaceYourTicketActivity : AppCompatActivity() {
     }
 
     private fun calculateTotalAmount(categoryModel: CategoryModel?) {
-        var subTotalAmount = 2f
+        var subTotalAmount = 0f
         for(category in categoryModel?.category!!) {
             subTotalAmount += category?.price!! * category?.totalInCart!!
 
         }
-
+        var tvSubtotalAmount = findViewById<TextView>(R.id.tvTotalAmount)
         var tvTotalAmount = findViewById<TextView>(R.id.tvTotalAmount)
+
+        tvSubtotalAmount.text = "RM"+ String.format("%.2f", subTotalAmount)
+
+
         tvTotalAmount.text = "RM"+ String.format("%.2f", subTotalAmount)
     }
 

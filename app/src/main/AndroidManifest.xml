@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.railwayreservation">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,6 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwayReservation">
+        <activity
+            android:name=".passenger.MakeReservations"
+            android:exported="false" />
         <activity
             android:name=".admin.refund.GoRefund"
             android:exported="false" />
@@ -68,9 +72,7 @@
         <activity
             android:name=".passenger.PassengerScreen"
             android:exported="false" />
-        <activity
-            android:name=".passenger.PassengerReservation"
-            android:exported="false" />
+
         <activity
             android:name=".passenger.PassengerPayment"
             android:exported="false" />
@@ -87,10 +89,22 @@
             android:name=".passenger.PassengerCancellation"
             android:exported="false" />
         <activity
+            android:name=".passenger.cancellation.MakeCancellation"
+            android:exported="false" />
+        <activity
+            android:name=".passenger.reservation.ViewReservation"
+            android:exported="false" />
+        <activity
             android:name=".passenger.PassengerAccount"
             android:exported="false" />
         <activity
             android:name=".passengerTrain.TrainMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".passenger.TrainRouteImage"
+            android:exported="true" />
+        <activity
+            android:name=".passenger.SeatPlanImage"
             android:exported="true" />
         <activity
             android:name=".reportIssue.ReportIssue"

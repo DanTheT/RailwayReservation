@@ -1,6 +1,7 @@
 package com.example.railwayreservation.passenger
 
 import android.app.DatePickerDialog
+import android.app.PendingIntent.getActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,10 +11,15 @@ import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.Fragment
 import com.example.railwayreservation.R
 import com.example.railwayreservation.passenger.cancellation.MakeCancellation
 import com.example.railwayreservation.passengerTrain.TrainMainActivity
+import com.example.railwayreservation.passengerTrain.trainInfo.TrainInfoFragment
 import java.util.*
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.railwayreservation.admin.trainInfo.data.TrainInfo
 
 class PassengerDatePicker : AppCompatActivity() {
 
@@ -27,6 +33,10 @@ class PassengerDatePicker : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_passenger_date_picker)
+
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        val myFragment = TrainInfoFragment()
 
         datePicker = findViewById(R.id.date_picker)
         dateTV = findViewById(R.id.dateTV)
@@ -52,6 +62,15 @@ class PassengerDatePicker : AppCompatActivity() {
 
 
         btnProceed.setOnClickListener {
+
+
+//            val fragment = TrainInfoFragment()
+//            val bundle = Bundle()
+//            bundle.putString("date", dateTV.text.toString())
+//            fragment.arguments = bundle
+//            supportFragmentManager.beginTransaction().replace(R.id.frameLayout,fragment).commit()
+
+
             if(dateTV.text.isNotEmpty()) {
                 startActivity(Intent(this, TrainMainActivity::class.java))
 

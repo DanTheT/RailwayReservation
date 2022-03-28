@@ -21,7 +21,7 @@ import com.google.zxing.qrcode.QRCodeWriter
 import android.graphics.drawable.ColorDrawable
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
-import com.example.railwayreservation.passenger.reservation.MakeReservation
+import com.example.railwayreservation.passenger.reservation.ViewReservation
 
 
 class PassengerTicket : AppCompatActivity() {
@@ -56,7 +56,7 @@ class PassengerTicket : AppCompatActivity() {
         }
 
         btnViewCurrentHistory.setOnClickListener {
-            startActivity(Intent(this, MakeReservation::class.java))
+            startActivity(Intent(this, ViewReservation::class.java))
 
         }
 

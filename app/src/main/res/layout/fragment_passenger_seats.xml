@@ -37,51 +37,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="TextView"
+        android:text="Train Type"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topBarLayout" />
 
     <TextView
-        android:id="@+id/seat_destination"
+        android:id="@+id/seat_origin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="destination"
-        app:layout_constraintEnd_toStartOf="@+id/seat_destination2"
+        android:text="origin"
+        app:layout_constraintEnd_toStartOf="@+id/seat_destination"
         app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/seat_trainType" />
-
-    <Button
-        android:id="@+id/selectSeatGetBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/primary_blue"
-        android:text="Get"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/seat_destination" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/selectSeatCoachLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/selectSeatGetBtn">
-
-        <AutoCompleteTextView
-            android:id="@+id/selectSeatCoach"
-            android:hint="Coach"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"/>
-    </com.google.android.material.textfield.TextInputLayout>
 
 
     <!--    <com.google.android.material.textfield.TextInputLayout-->
@@ -122,20 +93,53 @@
 
 
     <Button
-        android:id="@+id/confirmPayment"
+        android:id="@+id/selectSeatGetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="19dp"
+        android:backgroundTint="@color/primary_blue"
+        android:text="Get"
+        app:layout_constraintBottom_toTopOf="@+id/selectSeatCoachLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seat_arriveTime" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/selectSeatCoachLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectSeatGetBtn">
+
+        <AutoCompleteTextView
+            android:id="@+id/selectSeatCoach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Coach"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/proceedReservation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="154dp"
         android:backgroundTint="@color/primary_blue"
         android:text="Proceed"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectSeatCoachLayout" />
 
     <TextView
-        android:id="@+id/seat_destination2"
+        android:id="@+id/seat_destination"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -152,11 +156,42 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="27dp"
         android:text="to"
-        app:layout_constraintEnd_toStartOf="@+id/seat_destination2"
-        app:layout_constraintStart_toEndOf="@+id/seat_destination"
+        app:layout_constraintEnd_toStartOf="@+id/seat_destination"
+        app:layout_constraintStart_toEndOf="@+id/seat_origin"
         app:layout_constraintTop_toBottomOf="@+id/seat_trainType" />
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
+    <TextView
+        android:id="@+id/seat_reachTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="10dp"
+        android:text="reachtime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seat_origin" />
+
+    <TextView
+        android:id="@+id/seat_arriveTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="102dp"
+        android:text="arrivaltime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seat_destination" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="15dp"
+        android:text="*Free Seating"
+        android:textColor="@color/primary_dark_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectSeatCoachLayout" />
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:id="@+id/selectSeatRangeLayout"-->
 <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"-->
 <!--        android:layout_width="match_parent"-->

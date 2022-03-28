@@ -3,10 +3,9 @@ package com.example.railwayreservation.passenger.models
 import android.os.Parcel
 import android.os.Parcelable
 
-data class CategoryModel(val name: String?, val address: String?,
-                val image: String?, val time: String?, var category: List<Category?>?) : Parcelable {
+data class CategoryModel(val type: String?, val cat: String?,
+                val image: String?, var category: List<Category?>?) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -15,10 +14,9 @@ data class CategoryModel(val name: String?, val address: String?,
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(name)
-        parcel.writeString(address)
+        parcel.writeString(type)
+        parcel.writeString(cat)
         parcel.writeString(image)
-        parcel.writeString(time)
         parcel.writeTypedList(category)
     }
 

@@ -29,11 +29,11 @@ class ReservationAdapter(val myContext: Context, val layoutResId: Int, val reser
         val reservationDate = view.findViewById<TextView>(R.id.tvReservationDate)
         val trainName = view.findViewById<TextView>(R.id.tvTrainName)
         val coach = view.findViewById<TextView>(R.id.tvCoach)
-        val seatCat = view.findViewById<TextView>(R.id.tvSeatCat)
-        val seat = view.findViewById<TextView>(R.id.tvSeat)
-        val seatPrice = view.findViewById<TextView>(R.id.tvSeatPrice)
-        val fromStation = view.findViewById<TextView>(R.id.tvFromStation)
-        val nextStation = view.findViewById<TextView>(R.id.tvNextStation)
+//        val seatCat = view.findViewById<TextView>(R.id.tvSeatCat)
+//        val seat = view.findViewById<TextView>(R.id.tvSeat)
+//        val seatPrice = view.findViewById<TextView>(R.id.tvSeatPrice)
+        val origin = view.findViewById<TextView>(R.id.tvOrigin)
+        val destination = view.findViewById<TextView>(R.id.tvDestination)
         val arriveTime = view.findViewById<TextView>(R.id.tvArriveTime)
         val reachTime = view.findViewById<TextView>(R.id.tvReachTime)
 
@@ -43,11 +43,11 @@ class ReservationAdapter(val myContext: Context, val layoutResId: Int, val reser
         reservationDate.text = reservation.reservationDate
         trainName.text = reservation.trainName
         coach.text = reservation.coach
-        seatCat.text = reservation.seatCat
-        seat.text = reservation.seats
-        seatPrice.text = reservation.seatPrice
-        fromStation.text = reservation.fromStation
-        nextStation.text = reservation.nextStation
+//        seatCat.text = reservation.seatCat
+//        seat.text = reservation.seats
+//        seatPrice.text = reservation.seatPrice
+        origin.text = reservation.origin
+        destination.text = reservation.destination
         arriveTime.text = reservation.arriveTime
         reachTime.text = reservation.reachTime
 

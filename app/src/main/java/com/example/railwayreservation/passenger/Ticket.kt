@@ -1,7 +1,7 @@
-package com.example.railwayreservation.admin.refund
+package com.example.railwayreservation.passenger
 
 
-class Refund (
+class Ticket (
     val id: String,
     val reservationDate: String,
     val seatCategory: String,

@@ -28,8 +28,8 @@
     <string name="button_train_issues">To issues</string>
     <string name="button_train_refunds">To refunds</string>
 
-        <string name="txt_train_refunds">Train Refunds</string>
-        <string name="body_train_refunds">Requests for refunds of ticket cancellations</string>
+    <string name="txt_train_refunds">Train Refunds</string>
+    <string name="body_train_refunds">Requests for refunds of ticket cancellations</string>
 
 
     //admin login

@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.railwayreservation.R
 import com.example.railwayreservation.databinding.FragmentPassengerSeatsBinding
+import com.example.railwayreservation.passenger.MakeReservations
 import com.example.railwayreservation.passenger.PassengerPayment
 import com.example.railwayreservation.passenger.TicketActivity
 import com.google.firebase.database.*
@@ -31,8 +33,11 @@ class PassengerSeatsFragment : Fragment() {
         _binding = FragmentPassengerSeatsBinding.inflate(inflater, container, false)
 
         binding.seatTrainType.text = args.trainNameDest.trainName
-        binding.seatDestination.text = args.trainNameDest.fromStation
-        binding.seatDestination2.text = args.trainNameDest.nextStation
+        binding.seatOrigin.text = args.trainNameDest.fromStation
+        binding.seatDestination.text = args.trainNameDest.nextStation
+        binding.seatReachTime.text = args.trainNameDest.reachTime
+        binding.seatArriveTime.text = args.trainNameDest.arrivalTime
+
 
         return binding.root
     }
@@ -59,20 +64,19 @@ class PassengerSeatsFragment : Fragment() {
 
         }
 
-        binding.confirmPayment.setOnClickListener {
+        binding.proceedReservation.setOnClickListener {
 
-//            try {
-//                if (binding.seatTrainType.text.isEmpty()) {
-//                    Toast.makeText(requireContext(), "No selected coach, category and seats", Toast.LENGTH_SHORT)
-//                        .show()
-//                } else {
-//
-//                }
-//            } catch (e: Exception) {
-//                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
-//            }
+            try {
+                if (binding.seatTrainType.text.isEmpty()) {
+                    Toast.makeText(requireContext(), "Please select a coach", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    startActivity(Intent(context, MakeReservations::class.java))
 
-            startActivity(Intent(context, TicketActivity::class.java))
+                }
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            }
 
         }
 

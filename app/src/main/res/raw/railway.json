@@ -1,8 +1,8 @@
 [
   {
-    "name":"One-Way Ticket",
-    "address":"Three",
-    "time": "",
+    "type":"One-Way Ticket",
+    "cat":"Three",
+    "member_price": 5,
     "image":"https://cdn-icons-png.flaticon.com/512/3248/3248824.png",
 
     "category": [
@@ -14,7 +14,7 @@
       {
         "name": "Children (Age 12 and below)",
         "price": 13.00,
-        "url":"https://cdn-icons.flaticon.com/png/512/46/premium/46928.png?token=exp=1646344016~hmac=056f6fef2fcd315d7c646d0258fc66c0"
+        "url":"https://as1.ftcdn.net/v2/jpg/02/84/59/02/1000_F_284590266_sUY2Tr2PlU04himO6bSgX4QAJFsj0igi.jpg"
       },
       {
         "name": "Senior (Age 60 and above)",

@@ -49,7 +49,7 @@ class MakeCancellation : AppCompatActivity() {
         //view cancellation
         cancellationList = mutableListOf()
 
-        val myRef = FirebaseDatabase.getInstance().getReference("Reservations")
+        val myRef = FirebaseDatabase.getInstance().getReference("Tickets")
 
         cancellationListView = findViewById(R.id.cancellationListView)
 
@@ -82,6 +82,10 @@ class MakeCancellation : AppCompatActivity() {
 }
 
 //        //save cancellation records
+
+//            etSeatCategory = findViewById(R.id.etSeatCategory)
+//            etTotalAmount = findViewById(R.id.etTotalAmount)
+
 //        etReservationDate = findViewById(R.id.etReservationDate)
 //        etTrainName = findViewById(R.id.etTrainName)
 //        etCoach = findViewById(R.id.etCoach)

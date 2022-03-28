@@ -8,4 +8,8 @@ data class ParcelizedNameDest(
     val trainName: String = "",
     val fromStation: String = "",
     val nextStation: String = "",
-): Parcelable
+    val reachTime: String = "",
+    val arrivalTime: String = "",
+
+
+    ): Parcelable

@@ -3,16 +3,24 @@ package com.example.railwayreservation.passenger
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ListView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.railwayreservation.R
 import com.example.railwayreservation.passenger.adapter.RailwayListAdapter
 import com.example.railwayreservation.passenger.models.CategoryModel
+import com.example.railwayreservation.passenger.reservation.Reservation
+import com.google.firebase.database.DatabaseReference
 import com.google.gson.Gson
 import java.io.*
 import java.lang.Exception
 
 class TicketActivity : AppCompatActivity(), RailwayListAdapter.RailwayListClickListener {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ticket)

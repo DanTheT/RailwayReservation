@@ -29,8 +29,6 @@ class TransactionAdapter(val myContext: Context, val layoutResId: Int, val trans
         val reservationDate = view.findViewById<TextView>(R.id.tvReservationDate)
         val trainName = view.findViewById<TextView>(R.id.tvTrainName)
         val coach = view.findViewById<TextView>(R.id.tvCoach)
-        val seatCat = view.findViewById<TextView>(R.id.tvSeatCat)
-        val seat = view.findViewById<TextView>(R.id.tvSeat)
         val fromStation = view.findViewById<TextView>(R.id.tvFromStation)
         val nextStation = view.findViewById<TextView>(R.id.tvNextStation)
         val arriveTime = view.findViewById<TextView>(R.id.tvArriveTime)
@@ -42,8 +40,6 @@ class TransactionAdapter(val myContext: Context, val layoutResId: Int, val trans
         reservationDate.text = transaction.reservationDate
         trainName.text = transaction.trainName
         coach.text = transaction.coach
-        seatCat.text = transaction.seatCat
-        seat.text = transaction.seats
         fromStation.text = transaction.fromStation
         nextStation.text = transaction.nextStation
         arriveTime.text = transaction.arriveTime

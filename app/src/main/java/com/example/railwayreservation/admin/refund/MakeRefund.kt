@@ -27,7 +27,7 @@ class MakeRefund : AppCompatActivity() {
         //view refund
         refundList = mutableListOf()
 
-        val myRef = FirebaseDatabase.getInstance().getReference("Cancellation")
+        val myRef = FirebaseDatabase.getInstance().getReference("Tickets")
 
         refundListView = findViewById(R.id.refundListView)
 

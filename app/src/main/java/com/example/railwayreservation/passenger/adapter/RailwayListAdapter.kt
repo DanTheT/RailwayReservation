@@ -36,14 +36,12 @@ class RailwayListAdapter(val categoryList: List<CategoryModel?>?, val clickListe
 
     inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
         var thumbImage: ImageView = view.findViewById(R.id.thumbImage)
-        val tvName: TextView = view.findViewById(R.id.tvName)
-        val tvAddress: TextView = view.findViewById(R.id.tvAddress)
-        val tvHours: TextView = view.findViewById(R.id.tvHours)
+        var tvType: TextView = view.findViewById(R.id.tvType)
+        var tvCat: TextView = view.findViewById(R.id.tvCat)
 
         fun bind(categoryModel: CategoryModel?) {
-            tvName.text = "Ticket Type: "+categoryModel?.name
-            tvAddress.text = "Ticket Category: "+categoryModel?.address
-            tvHours.text = " " + categoryModel?.time
+            tvType.text = "Ticket Type: "+categoryModel?.type
+            tvCat.text = "Ticket Category: "+categoryModel?.cat
 
             Glide.with(thumbImage)
                 .load(categoryModel?.image)

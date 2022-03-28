@@ -23,14 +23,9 @@ class RefundAdapter(val myContext: Context, val layoutResId: Int, val refundList
 
         val transID = view.findViewById<TextView>(R.id.tvTransID)
         val reservationDate = view.findViewById<TextView>(R.id.tvReservationDate)
-        val trainName = view.findViewById<TextView>(R.id.tvTrainName)
-        val coach = view.findViewById<TextView>(R.id.tvCoach)
-        val seatCat = view.findViewById<TextView>(R.id.tvSeatCat)
-        val seatPrice = view.findViewById<TextView>(R.id.tvSeatPrice)
-        val fromStation = view.findViewById<TextView>(R.id.tvFromStation)
-        val nextStation = view.findViewById<TextView>(R.id.tvNextStation)
-        val arriveTime = view.findViewById<TextView>(R.id.tvArriveTime)
-        val reachTime = view.findViewById<TextView>(R.id.tvReachTime)
+        val seatCategory = view.findViewById<TextView>(R.id.tvSeatCategory)
+        val totalAmount = view.findViewById<TextView>(R.id.tvTotalAmount)
+
         val btnApprove = view.findViewById<Button>(R.id.btnApprove)
         val btnReject = view.findViewById<Button>(R.id.btnReject)
 
@@ -39,14 +34,8 @@ class RefundAdapter(val myContext: Context, val layoutResId: Int, val refundList
 
         transID.text = refund.id
         reservationDate.text = refund.reservationDate
-        trainName.text = refund.trainName
-        coach.text = refund.coach
-        seatCat.text = refund.seatCat
-        seatPrice.text = refund.seatPrice
-        fromStation.text = refund.fromStation
-        nextStation.text = refund.nextStation
-        arriveTime.text = refund.arriveTime
-        reachTime.text = refund.reachTime
+        seatCategory.text = refund.seatCategory
+        totalAmount.text = refund.totalAmount
 
         btnApprove.setOnClickListener{
             btnApprove.text = "Approved"
