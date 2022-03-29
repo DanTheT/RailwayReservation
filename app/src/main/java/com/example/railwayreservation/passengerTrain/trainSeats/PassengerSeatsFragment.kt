@@ -71,7 +71,7 @@ class PassengerSeatsFragment : Fragment() {
                     Toast.makeText(requireContext(), "Please select a coach", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    startActivity(Intent(context, MakeReservations::class.java))
+                    startActivity(Intent(context, TicketActivity::class.java))
 
                 }
             } catch (e: Exception) {

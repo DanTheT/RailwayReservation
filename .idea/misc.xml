@@ -94,7 +94,7 @@
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_cancellation.xml" value="0.16271442986881937" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_chg_pw.xml" value="0.2504528985507246" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_date_picker.xml" value="0.24583333333333332" />
-        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_faq.xml" value="0.22" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_faq.xml" value="0.33" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_home.xml" value="0.2504528985507246" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_login.xml" value="0.2504528985507246" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_passenger_membership.xml" value="0.2504528985507246" />
@@ -124,7 +124,10 @@
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/activity_view_reservation.xml" value="0.1" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/applynewmembership_dialog.xml" value="0.2513586956521739" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/cancellation.xml" value="0.2513586956521739" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/claim1.xml" value="0.12239583333333333" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/claim2.xml" value="0.3359375" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/claim200points_dialog.xml" value="0.2513586956521739" />
+        <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/claim3.xml" value="0.3359375" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/claim400points_dialog.xml" value="0.2513586956521739" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/claim800points_dialog.xml" value="0.2513586956521739" />
         <entry key="..\:/Users/USER PC/AndroidStudioProjects/RailwayReservation/app/src/main/res/layout/forgotpw_dialog.xml" value="0.2504528985507246" />

@@ -83,6 +83,156 @@
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
+            android:text="Train Name : "
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvTrainName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#8fc1ff"
+            android:text="Train Name"
+            android:textColor="#000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#73b2ff"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Coach : "
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvCoach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#8fc1ff"
+            android:text="Coach"
+            android:textColor="#000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#73b2ff"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Origin : "
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvOrigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#8fc1ff"
+            android:text="Origin"
+            android:textColor="#000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#73b2ff"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Arrive Time : "
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvArriveTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#8fc1ff"
+            android:text="Arrive Time"
+            android:textColor="#000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#73b2ff"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="149dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Destination : "
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#8fc1ff"
+            android:text="Destination"
+            android:textColor="#000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#73b2ff"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="149dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="Reach Time : "
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvReachTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#8fc1ff"
+            android:text="Reach Time"
+            android:textColor="#000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#73b2ff"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
             android:text="Seat Category : "
             android:textColor="#000"
             android:textSize="18sp" />

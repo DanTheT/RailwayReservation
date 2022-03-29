@@ -29,18 +29,12 @@ class CancellationAdapter(val myContext: Context, val layoutResId: Int, val canc
         val reservationDate = view.findViewById<TextView>(R.id.tvReservationDate)
         val seatCategory = view.findViewById<TextView>(R.id.tvSeatCategory)
         val totalAmount = view.findViewById<TextView>(R.id.tvTotalAmount)
-
-
-
-//        val trainName = view.findViewById<TextView>(R.id.tvTrainName)
-//        val coach = view.findViewById<TextView>(R.id.tvCoach)
-//        val seatCat = view.findViewById<TextView>(R.id.tvSeatCat)
-//        val seat = view.findViewById<TextView>(R.id.tvSeat)
-//        val seatPrice = view.findViewById<TextView>(R.id.tvSeatPrice)
-//        val fromStation = view.findViewById<TextView>(R.id.tvFromStation)
-//        val nextStation = view.findViewById<TextView>(R.id.tvNextStation)
-//        val arriveTime = view.findViewById<TextView>(R.id.tvArriveTime)
-//        val reachTime = view.findViewById<TextView>(R.id.tvReachTime)
+        val trainName = view.findViewById<TextView>(R.id.tvTrainName)
+        val coach = view.findViewById<TextView>(R.id.tvCoach)
+        val origin = view.findViewById<TextView>(R.id.tvOrigin)
+        val destination = view.findViewById<TextView>(R.id.tvDestination)
+        val arriveTime = view.findViewById<TextView>(R.id.tvArriveTime)
+        val reachTime = view.findViewById<TextView>(R.id.tvReachTime)
         val btnRequest = view.findViewById<Button>(R.id.btnRequest)
        val statusTV = view.findViewById<TextView>(R.id.statusTV)
 
@@ -51,15 +45,13 @@ class CancellationAdapter(val myContext: Context, val layoutResId: Int, val canc
         seatCategory.text = cancellation.seatCategory
         totalAmount.text = cancellation.totalAmount
 
-//        trainName.text = cancellation.trainName
-//        coach.text = cancellation.coach
-//        seatCat.text = cancellation.seatCat
-//        seat.text = cancellation.seats
-//        seatPrice.text = cancellation.seatPrice
-//        fromStation.text = cancellation.fromStation
-//        nextStation.text = cancellation.nextStation
-//        arriveTime.text = cancellation.arriveTime
-//        reachTime.text = cancellation.reachTime
+        trainName.text = cancellation.trainName
+        coach.text = cancellation.coach
+
+        origin.text = cancellation.origin
+        destination.text = cancellation.destination
+        arriveTime.text = cancellation.arriveTime
+        reachTime.text = cancellation.reachTime
 
         btnRequest.setOnClickListener{
 

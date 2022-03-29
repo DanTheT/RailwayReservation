@@ -24,7 +24,7 @@ class PlaceYourTicketActivity : AppCompatActivity() {
 
         val buttonPlaceYourOrder = findViewById<TextView>(R.id.buttonPlaceYourOrder)
         buttonPlaceYourOrder.setOnClickListener {
-            startActivity(Intent(this,ConfirmPayment::class.java))
+            startActivity(Intent(this,MakeReservations::class.java))
         }
 
 

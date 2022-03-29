@@ -9,8 +9,10 @@ class Reservation (
     val origin: String,
     val destination: String,
     val arriveTime: String,
-    val reachTime: String
+    val reachTime: String,
+    val seatCategory: String,
+    val totalAmount: String
 ) {
-    constructor() : this ("", "", "", "", "", "", "", ""){
+    constructor() : this ("", "", "", "", "", "", "", "", "", ""){
     }
 }

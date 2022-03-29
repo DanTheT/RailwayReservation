@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EditText xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/et_email"
+    android:id="@+id/claim1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
-    android:text="Deduct your next ticket price for 80% discount." />
+    android:text="Membership price -> Have RM5 deduction on ticket per transaction!" />
 

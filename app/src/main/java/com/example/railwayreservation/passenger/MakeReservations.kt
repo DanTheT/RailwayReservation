@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
 import com.example.railwayreservation.R
 import com.example.railwayreservation.passenger.cancellation.MakeCancellation
 import com.example.railwayreservation.passenger.reservation.Reservation
@@ -23,6 +20,9 @@ class MakeReservations : AppCompatActivity() {
     private lateinit var etDestination: EditText
     private lateinit var etArrival: EditText
     private lateinit var etReach: EditText
+    private lateinit var etSeatCategory: EditText
+    private lateinit var etTotalAmount: EditText
+
     private lateinit var btnSave: Button
     private lateinit var btnNext: Button
 
@@ -41,6 +41,8 @@ class MakeReservations : AppCompatActivity() {
         etDestination = findViewById(R.id.etDestination)
         etArrival = findViewById(R.id.etArrival)
         etReach = findViewById(R.id.etReach)
+        etSeatCategory = findViewById(R.id.etSeatCategory)
+        etTotalAmount = findViewById(R.id.etTotalAmount)
         btnSave = findViewById(R.id.btnSave)
         btnNext = findViewById(R.id.btnNext)
 
@@ -52,7 +54,7 @@ class MakeReservations : AppCompatActivity() {
 
         btnNext.setOnClickListener {
             saveReservation()
-            startActivity(Intent(this, TicketActivity::class.java))
+            startActivity(Intent(this, ConfirmPayment::class.java))
 
 
         }
@@ -70,7 +72,8 @@ class MakeReservations : AppCompatActivity() {
         val destination = etDestination.text.toString().trim()
         val arriveTime = etArrival.text.toString().trim()
         val reachTime = etReach.text.toString().trim()
-
+        val seatCategory = etSeatCategory.text.toString().trim()
+        val totalAmount = etTotalAmount.text.toString().trim()
 
         val myRef = FirebaseDatabase.getInstance().getReference("Reservations")
 
@@ -84,7 +87,9 @@ class MakeReservations : AppCompatActivity() {
             origin,
             destination,
             arriveTime,
-            reachTime
+            reachTime,
+            seatCategory,
+            totalAmount
         )
 
         myRef.child(transactionID).setValue(reservation).addOnCompleteListener {
@@ -116,8 +121,14 @@ class MakeReservations : AppCompatActivity() {
         } else if (TextUtils.isEmpty(etReach.text.toString())) {
             etReach.error = "Enter the reach time"
             return
+        } else if (TextUtils.isEmpty(etSeatCategory.text.toString())) {
+            etSeatCategory.error = "Enter seat category. Example: Adult x2 type as Ax2."
+            return
+        } else if (TextUtils.isEmpty(etTotalAmount.text.toString())) {
+            etTotalAmount.error = "Enter coach you selected"
+            return
         } else {
-            Toast.makeText(applicationContext, "Reservation details has all been entered. You may proceed.", Toast.LENGTH_LONG)
+            Toast.makeText(applicationContext, "Reservation details has all been entered. You may proceed to make payment.", Toast.LENGTH_LONG)
                 .show()
         }
     }

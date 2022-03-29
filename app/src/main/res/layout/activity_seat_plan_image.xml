@@ -30,25 +30,20 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="390dp"
-        android:layout_height="144dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBarLayout"
-        app:srcCompat="@drawable/seatcat" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="361dp"
-        android:layout_height="468dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="375dp"
+        android:layout_height="549dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/seat" />
+        app:layout_constraintTop_toBottomOf="@+id/topBarLayout"
+        app:srcCompat="@drawable/seatplan" />
 
     <!--    <Button-->
 <!--        android:id="@+id/btnBack"-->

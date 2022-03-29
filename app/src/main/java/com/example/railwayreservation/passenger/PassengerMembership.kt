@@ -5,12 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Patterns
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.railwayreservation.R
 import com.google.firebase.auth.FirebaseAuth
@@ -26,13 +22,11 @@ class PassengerMembership : AppCompatActivity() {
 
     private lateinit var statusTV: TextView
     private lateinit var sinceDateTV: TextView
-    private lateinit var pointsTV: TextView
-
 
     private lateinit var btnApplyMembership: Button
-    private lateinit var btn200points: Button
-    private lateinit var btn400points: Button
-    private lateinit var btn800points: Button
+    private lateinit var btnclaim1: Button
+    private lateinit var btnclaim2: Button
+    private lateinit var btnclaim3: Button
 
 
 
@@ -46,17 +40,12 @@ class PassengerMembership : AppCompatActivity() {
 
         statusTV = findViewById(R.id.StatusView)
         sinceDateTV = findViewById(R.id.sinceDateView)
-        pointsTV = findViewById(R.id.pointsView)
 
         btnApplyMembership = findViewById(R.id.btnApplyMembership)
-        btn200points = findViewById(R.id.btn200points)
-        btn400points = findViewById(R.id.btn400points)
-        btn800points = findViewById(R.id.btn800points)
+        btnclaim1 = findViewById(R.id.btnclaim1)
+        btnclaim2 = findViewById(R.id.btnclaim2)
+        btnclaim3 = findViewById(R.id.btnclaim3)
 
-//        btnApplyMembership.isEnabled = false
-//        btn200points.isEnabled = false
-//        btn400points.isEnabled = false
-//        btn800points.isEnabled = false
 
         loadProfile()
 
@@ -74,51 +63,48 @@ class PassengerMembership : AppCompatActivity() {
                 builder.setNegativeButton("Close", DialogInterface.OnClickListener { _, _ ->  })
                 builder.show()
 
-            btn200points.setOnClickListener {
+            btnclaim1.setOnClickListener {
 
                 val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-                builder.setTitle("Enough points. Applicable to claim 20% discount. ")
-                val view = layoutInflater.inflate(R.layout.claim200points_dialog, null)
+                builder.setTitle("Membership")
+                val view = layoutInflater.inflate(R.layout.claim1, null)
 
                 builder.setView(view)
                 builder.setPositiveButton("Claim", DialogInterface.OnClickListener { _, _ ->
-                    claim200points()
                 })
 
                 builder.setNegativeButton("Close", DialogInterface.OnClickListener { _, _ ->  })
                 builder.show()
             }
 
-            btn400points.setOnClickListener {
+            btnclaim2.setOnClickListener {
 
-//                btn400points.isEnabled = false
+                btnclaim2.isEnabled = false
 
                 val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-                builder.setTitle("Not enough points. Not applicable to claim 40% discount. ")
-                val view = layoutInflater.inflate(R.layout.claim400points_dialog, null)
+                builder.setTitle("Few more days to go!")
+                val view = layoutInflater.inflate(R.layout.claim2, null)
 
-//                builder.setView(view)
-//                builder.setPositiveButton("Claim", DialogInterface.OnClickListener { _, _ ->
-//                    claim400points()
-//                })
+                builder.setView(view)
+                builder.setPositiveButton("Claim", DialogInterface.OnClickListener { _, _ ->
+                })
 
                 builder.setNegativeButton("Close", DialogInterface.OnClickListener { _, _ ->  })
                 builder.show()
             }
 
-            btn800points.setOnClickListener {
+            btnclaim3.setOnClickListener {
 
-//                btn800points.isEnabled = false
+                btnclaim3.isEnabled = false
 
                 val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-                builder.setTitle("Not enough points. Not applicable to claim 80% discount. ")
-                val view = layoutInflater.inflate(R.layout.claim800points_dialog, null)
+                builder.setTitle("Few more days to go!")
+                val view = layoutInflater.inflate(R.layout.claim3, null)
 
 
-//                builder.setView(view)
-//                builder.setPositiveButton("Claim", DialogInterface.OnClickListener { _, _ ->
-//                    claim800points()
-//                })
+                builder.setView(view)
+                builder.setPositiveButton("Claim", DialogInterface.OnClickListener { _, _ ->
+                })
 
                 builder.setNegativeButton("Close", DialogInterface.OnClickListener { _, _ ->  })
                 builder.show()
@@ -142,38 +128,6 @@ class PassengerMembership : AppCompatActivity() {
         }
 
 
-    private fun claim200points() {
-
-        val applyNewURL = Intent(Intent.ACTION_VIEW)
-        applyNewURL.data = Uri.parse("https://www.sandbox.paypal.com/myaccount/transfer/homepage/buy/preview")
-        startActivity(applyNewURL)
-
-        pointsTV.text = "2"
-
-    }
-
-    private fun claim400points() {
-
-        val currentDateTimeString = DateFormat.getDateTimeInstance().format(Date())
-
-        val applyNewURL = Intent(Intent.ACTION_VIEW)
-        applyNewURL.data = Uri.parse("https://www.sandbox.paypal.com/myaccount/transfer/homepage/buy/preview")
-        startActivity(applyNewURL)
-
-
-    }
-
-    private fun claim800points() {
-
-        val currentDateTimeString = DateFormat.getDateTimeInstance().format(Date())
-
-        val applyNewURL = Intent(Intent.ACTION_VIEW)
-        applyNewURL.data = Uri.parse("https://www.sandbox.paypal.com/myaccount/transfer/homepage/buy/preview")
-        startActivity(applyNewURL)
-
-    }
-
-
 
     private fun loadProfile() {
         val user = auth.currentUser
@@ -186,7 +140,6 @@ class PassengerMembership : AppCompatActivity() {
 
                 statusTV.text = snapshot.child("status").value.toString().trim()
                 sinceDateTV.text = snapshot.child("since").value.toString().trim()
-                pointsTV.text = snapshot.child("points").value.toString().trim()
 
             }
 
